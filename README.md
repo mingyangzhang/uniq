@@ -74,7 +74,7 @@ This project has been tested and working on Python 3.0+
     pip3 install -U setuptools
     ```
 
-*   Issue due to ```.pyc``` and ```__pycache__``
+*   Issue due to ```.pyc``` and ```__pycache__```
 
     if you see an error message like so:
     ```
