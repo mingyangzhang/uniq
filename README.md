@@ -58,3 +58,27 @@ For sample scripts check out the [sample_scripts](sample_scripts/) directory.
 # Python
 
 This project has been tested and working on Python 3.0+
+<<<<<<< f6198c55f0982f7ff4a01e00947dad9b0b365769
+=======
+
+#### Installation Issues
+
+*   Issue due to ```setuptools```
+
+    If you see an error message like so:
+    ```
+    error: can't copy 'opyright': doesn't exist or not a regular file
+    ```
+    please update the ```setuptools``` package by running the below command, and trying again.
+    ```
+    pip3 install -U setuptools
+    ```
+
+*   Issue due to ```.pyc``` and ```__pycache__``
+
+    if you see an error message like so:
+    ```
+    ValueError: bad marshal data (unknown type code)
+    ```
+    please delete all ```.pyc``` ```__pycache__``` ```build/``` ```dist/``` files and folders and install again.
+>>>>>>> typo
