@@ -1,67 +1,67 @@
 {
+    "apis": [
+        {
+            "description": "getVrfNames",
+            "path": "/topology/vrf/vrf-name",
+            "operations": [
+                {
+                    "summary": "getVrfNames",
+                    "nickname": "getVrfNames",
+                    "deprecated": "false",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "type": "VrfNamesResult",
+                    "notes": "This method is used to obtain the list of vrf names",
+                    "method": "GET",
+                    "responseMessages": [
+                        {
+                            "message": "This Request is OK",
+                            "responseModel": "VrfNamesResult",
+                            "code": 200
+                        },
+                        {
+                            "message": "This user is Forbidden Access to this Resource",
+                            "code": 403
+                        },
+                        {
+                            "message": "Not Authorized Yet, Credentials to be supplied",
+                            "code": 401
+                        },
+                        {
+                            "message": "No Resource Found",
+                            "code": 404
+                        }
+                    ],
+                    "parameters": []
+                }
+            ]
+        }
+    ],
+    "resourcePath": "/topology/vrf/vrf-name",
+    "produces": [
+        "application/json"
+    ],
+    "swaggerVersion": "1.2",
     "models": {
         "VrfNamesResult": {
-            "id": "VrfNamesResult",
             "description": "",
             "properties": {
                 "response": {
-                    "type": "array",
                     "items": {
                         "type": "string"
                     },
-                    "uniqueItems": true
+                    "uniqueItems": true,
+                    "type": "array"
                 },
                 "version": {
                     "type": "string"
                 }
             },
-            "extends": ""
+            "extends": "",
+            "id": "VrfNamesResult"
         }
     },
-    "apis": [
-        {
-            "description": "getVlanNames",
-            "operations": [
-                {
-                    "deprecated": "false",
-                    "nickname": "getVlanNames",
-                    "type": "VrfNamesResult",
-                    "method": "GET",
-                    "produces": [
-                        "application/json"
-                    ],
-                    "parameters": [],
-                    "notes": "This method is used to obtain the list of vrf names",
-                    "summary": "getVrfNames",
-                    "responseMessages": [
-                        {
-                            "responseModel": "VrfNamesResult",
-                            "code": 200,
-                            "message": "This Request is OK"
-                        },
-                        {
-                            "code": 403,
-                            "message": "This user is Forbidden Access to this Resource"
-                        },
-                        {
-                            "code": 401,
-                            "message": "Not Authorized Yet, Credentials to be supplied"
-                        },
-                        {
-                            "code": 404,
-                            "message": "No Resource Found"
-                        }
-                    ]
-                }
-            ],
-            "path": "/topology/vrf/vrf-name"
-        }
-    ],
     "apiVersion": "1.0",
-    "swaggerVersion": "1.2",
-    "basePath": "/",
-    "produces": [
-        "application/json"
-    ],
-    "resourcePath": "/topology/vrf/vrf-name"
+    "basePath": "/"
 }

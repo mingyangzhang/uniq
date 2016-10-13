@@ -1,59 +1,41 @@
 {
-    "models": {
-        "SegmentNamesResult": {
-            "id": "SegmentNamesResult",
-            "description": "",
-            "properties": {
-                "response": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "version": {
-                    "type": "string"
-                }
-            },
-            "extends": ""
-        }
-    },
+    "swaggerVersion": "1.2",
     "apis": [
         {
-            "description": "getWlanNames",
             "operations": [
                 {
                     "deprecated": "false",
-                    "nickname": "getWlanNames",
-                    "type": "SegmentNamesResult",
-                    "method": "GET",
-                    "produces": [
-                        "application/json"
-                    ],
                     "parameters": [
                         {
                             "required": true,
+                            "allowMultiple": false,
+                            "description": "Type of segment",
+                            "defaultValue": "",
                             "name": "type",
                             "type": "string",
-                            "description": "Type of segment",
-                            "allowMultiple": false,
-                            "defaultValue": "",
                             "paramType": "query"
                         },
                         {
-                            "required": true,
+                            "required": false,
+                            "allowMultiple": false,
+                            "description": "Policy tag",
+                            "defaultValue": "",
                             "name": "policyTag",
                             "type": "string",
-                            "description": "Policy tag",
-                            "allowMultiple": false,
-                            "defaultValue": "",
                             "paramType": "query"
                         }
                     ],
-                    "notes": "Gets list of wlan names based on policyTag",
-                    "summary": "list of unique wlan names based on the policyTag",
+                    "summary": "list of segment info based on the policyTag",
+                    "notes": "Gets list of segment info based on policyTag",
+                    "nickname": "getSegmentInfo",
+                    "method": "GET",
+                    "type": "SegmentResult",
+                    "produces": [
+                        "application/json"
+                    ],
                     "responseMessages": [
                         {
-                            "responseModel": "SegmentNamesResult",
+                            "responseModel": "SegmentResult",
                             "code": 200,
                             "message": "This Request is OK"
                         },
@@ -72,11 +54,58 @@
                     ]
                 }
             ],
+            "description": "getSegmentInfo",
             "path": "/segment"
         }
     ],
+    "models": {
+        "NetworkDeviceBrief": {
+            "properties": {
+                "hostName": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                }
+            },
+            "extends": "",
+            "id": "NetworkDeviceBrief",
+            "description": ""
+        },
+        "SegmentDto": {
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "networkDevices": {
+                    "items": {
+                        "$ref": "NetworkDeviceBrief"
+                    },
+                    "type": "array"
+                }
+            },
+            "extends": "",
+            "id": "SegmentDto",
+            "description": ""
+        },
+        "SegmentResult": {
+            "properties": {
+                "response": {
+                    "items": {
+                        "$ref": "SegmentDto"
+                    },
+                    "type": "array"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "extends": "",
+            "id": "SegmentResult",
+            "description": ""
+        }
+    },
     "apiVersion": "1.0",
-    "swaggerVersion": "1.2",
     "basePath": "/apic-em-inventory-manager-service",
     "produces": [
         "application/json"

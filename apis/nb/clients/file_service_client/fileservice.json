@@ -1,191 +1,156 @@
 {
+    "resourcePath": "/file",
     "models": {
-        "SuccessResult": {
-            "id": "SuccessResult",
-            "description": "",
-            "properties": {
-                "response": {
-                    "type": "string"
-                },
-                "version": {
-                    "type": "string"
-                }
-            },
-            "extends": ""
-        },
-        "NameSpaceListResult": {
-            "id": "NameSpaceListResult",
-            "description": "",
-            "properties": {
-                "response": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "version": {
-                    "type": "string"
-                }
-            },
-            "extends": ""
-        },
         "FileObject": {
+            "required": [
+                "name",
+                "nameSpace",
+                "id",
+                "md5Checksum",
+                "downloadPath",
+                "fileFormat",
+                "fileSize",
+                "sha1Checksum"
+            ],
+            "extends": "",
             "id": "FileObject",
-            "description": "",
             "properties": {
-                "nameSpace": {
-                    "description": "A group of file IDs contained in a common nameSpace",
-                    "type": "string"
-                },
-                "name": {
-                    "description": "Name of the file",
-                    "type": "string"
-                },
-                "attributeInfo": {
-                    "$ref": "object"
-                },
-                "downloadPath": {
-                    "description": "Absolute path of the file",
-                    "type": "string"
-                },
                 "md5Checksum": {
                     "description": "md5Checksum of the file",
-                    "type": "string"
-                },
-                "id": {
-                    "description": "file indentification number",
                     "type": "string"
                 },
                 "sha1Checksum": {
                     "description": "sha1Checksum of the file",
                     "type": "string"
                 },
+                "id": {
+                    "description": "file indentification number",
+                    "type": "string"
+                },
+                "encrypted": {
+                    "description": "isEncrypted of the file",
+                    "type": "boolean"
+                },
+                "nameSpace": {
+                    "description": "A group of file IDs contained in a common nameSpace",
+                    "type": "string"
+                },
+                "attributeInfo": {
+                    "$ref": "object"
+                },
                 "fileSize": {
                     "description": "Size of the file in bytes",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Name of the file",
                     "type": "string"
                 },
                 "fileFormat": {
                     "description": "MIME Type of the File. e.g. text/plain, application/xml, audio/mpeg",
                     "type": "string"
+                },
+                "downloadPath": {
+                    "description": "Absolute path of the file",
+                    "type": "string"
                 }
             },
+            "description": ""
+        },
+        "NameSpaceListResult": {
             "extends": "",
-            "required": [
-                "nameSpace",
-                "id",
-                "fileFormat",
-                "md5Checksum",
-                "sha1Checksum",
-                "fileSize",
-                "downloadPath",
-                "name"
-            ]
+            "id": "NameSpaceListResult",
+            "properties": {
+                "version": {
+                    "type": "string"
+                },
+                "response": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "description": ""
         },
         "FileObjectResult": {
+            "extends": "",
             "id": "FileObjectResult",
-            "description": "",
             "properties": {
+                "version": {
+                    "type": "string"
+                },
                 "response": {
                     "$ref": "FileObject"
-                },
+                }
+            },
+            "description": ""
+        },
+        "SuccessResult": {
+            "extends": "",
+            "id": "SuccessResult",
+            "properties": {
                 "version": {
+                    "type": "string"
+                },
+                "response": {
                     "type": "string"
                 }
             },
-            "extends": ""
+            "description": ""
         },
         "FileObjectListResult": {
+            "extends": "",
             "id": "FileObjectListResult",
-            "description": "",
             "properties": {
-                "response": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "FileObject"
-                    }
-                },
                 "version": {
                     "type": "string"
+                },
+                "response": {
+                    "items": {
+                        "$ref": "FileObject"
+                    },
+                    "type": "array"
                 }
             },
-            "extends": ""
+            "description": ""
         },
         "Void": {
+            "extends": "",
             "id": "Void",
-            "description": "",
             "properties": {},
-            "extends": ""
+            "description": ""
         }
     },
+    "swaggerVersion": "1.2",
     "apis": [
         {
-            "description": "uploadFileWithInternalUploadUrl",
             "operations": [
                 {
-                    "deprecated": "false",
-                    "nickname": "uploadFileWithInternalUploadUrl",
-                    "type": "FileObjectResult",
-                    "method": "POST",
-                    "produces": [
-                        "application/json"
-                    ],
-                    "parameters": [
-                        {
-                            "required": true,
-                            "name": "internalUploadId",
-                            "type": "string",
-                            "description": "internalUploadId",
-                            "allowMultiple": false,
-                            "defaultValue": "",
-                            "paramType": "path"
-                        },
-                        {
-                            "paramAccess": "",
-                            "required": false,
-                            "name": "fileUpload",
-                            "type": "file",
-                            "description": "",
-                            "allowMultiple": false,
-                            "defaultValue": "",
-                            "paramType": "body"
-                        }
-                    ],
-                    "notes": "uploadFileWithInternalUploadUrl",
-                    "summary": "uploadFileWithInternalUploadUrl",
+                    "summary": "Returns list of available namespaces",
                     "responseMessages": [
                         {
-                            "responseModel": "FileObjectResult",
-                            "code": 200,
-                            "message": "This Request is OK"
+                            "message": "This Request is OK",
+                            "responseModel": "NameSpaceListResult",
+                            "code": 200
                         },
                         {
-                            "code": 202,
-                            "message": "This Request is Accepted"
+                            "message": "This user is Forbidden Access to this Resource",
+                            "code": 403
                         },
                         {
-                            "code": 403,
-                            "message": "This user is Forbidden Access to this Resource"
+                            "message": "Not Authorized Yet, Credentials to be supplied",
+                            "code": 401
                         },
                         {
-                            "code": 401,
-                            "message": "Not Authorized Yet, Credentials to be supplied"
-                        },
-                        {
-                            "code": 404,
-                            "message": "No Resource Found"
+                            "message": "No Resource Found",
+                            "code": 404
                         }
-                    ]
-                }
-            ],
-            "path": "/file/internalupload/{internalUploadId}"
-        },
-        {
-            "description": "getNameSpaceList",
-            "operations": [
-                {
-                    "deprecated": "false",
-                    "nickname": "getNameSpaceList",
+                    ],
                     "type": "NameSpaceListResult",
+                    "nickname": "getNameSpaceList",
+                    "notes": "This method is used to obtain a list of available namespaces",
+                    "deprecated": "false",
                     "method": "GET",
                     "produces": [
                         "application/json"
@@ -193,185 +158,151 @@
                     "parameters": [
                         {
                             "required": true,
-                            "name": "scope",
                             "type": "List",
-                            "description": "Authorization Scope for RBAC",
-                            "allowMultiple": false,
+                            "name": "scope",
                             "defaultValue": "ALL",
-                            "paramType": "header"
-                        }
-                    ],
-                    "notes": "This method is used to obtain a  list of available namespaces",
-                    "summary": "getNameSpaceList",
-                    "responseMessages": [
-                        {
-                            "responseModel": "NameSpaceListResult",
-                            "code": 200,
-                            "message": "This Request is OK"
-                        },
-                        {
-                            "code": 403,
-                            "message": "This user is Forbidden Access to this Resource"
-                        },
-                        {
-                            "code": 401,
-                            "message": "Not Authorized Yet, Credentials to be supplied"
-                        },
-                        {
-                            "code": 404,
-                            "message": "No Resource Found"
+                            "allowMultiple": false,
+                            "paramType": "header",
+                            "description": "Authorization Scope for RBAC"
                         }
                     ]
                 }
             ],
+            "description": "getNameSpaceList",
             "path": "/file/namespace"
         },
         {
-            "description": "getFilesByNamespace",
             "operations": [
                 {
-                    "deprecated": "false",
-                    "nickname": "getFilesByNamespace",
+                    "summary": "Returns list of files under a specific namespace",
+                    "responseMessages": [
+                        {
+                            "message": "This Request is OK",
+                            "responseModel": "FileObjectListResult",
+                            "code": 200
+                        },
+                        {
+                            "message": "This user is Forbidden Access to this Resource",
+                            "code": 403
+                        },
+                        {
+                            "message": "Not Authorized Yet, Credentials to be supplied",
+                            "code": 401
+                        },
+                        {
+                            "message": "No Resource Found",
+                            "code": 404
+                        }
+                    ],
                     "type": "FileObjectListResult",
+                    "nickname": "getFilesByNamespace",
+                    "notes": "This method is used to obtain a list of files under a specific namespace",
+                    "deprecated": "false",
                     "method": "GET",
                     "parameters": [
                         {
                             "required": true,
-                            "name": "nameSpace",
                             "type": "string",
-                            "description": "A listing of fileId's",
-                            "allowMultiple": false,
+                            "name": "nameSpace",
                             "defaultValue": "",
-                            "paramType": "path"
+                            "allowMultiple": false,
+                            "paramType": "path",
+                            "description": "A listing of fileId's"
                         },
                         {
                             "required": true,
-                            "name": "scope",
                             "type": "List",
-                            "description": "Authorization Scope for RBAC",
-                            "allowMultiple": false,
+                            "name": "scope",
                             "defaultValue": "ALL",
-                            "paramType": "header"
-                        }
-                    ],
-                    "notes": "This method is used to obtain a list of files under a specific namespace",
-                    "summary": "getFilesByNamespace",
-                    "responseMessages": [
-                        {
-                            "responseModel": "FileObjectListResult",
-                            "code": 200,
-                            "message": "This Request is OK"
-                        },
-                        {
-                            "code": 403,
-                            "message": "This user is Forbidden Access to this Resource"
-                        },
-                        {
-                            "code": 401,
-                            "message": "Not Authorized Yet, Credentials to be supplied"
-                        },
-                        {
-                            "code": 404,
-                            "message": "No Resource Found"
+                            "allowMultiple": false,
+                            "paramType": "header",
+                            "description": "Authorization Scope for RBAC"
                         }
                     ]
                 }
             ],
+            "description": "getFilesByNamespace",
             "path": "/file/namespace/{nameSpace}"
         },
         {
-            "description": "downloadFileWithOneTimeDownloadUrl",
             "operations": [
                 {
-                    "deprecated": "false",
-                    "nickname": "downloadFileWithOneTimeDownloadUrl",
+                    "summary": "Downloads a file referred by the fileId",
+                    "responseMessages": [
+                        {
+                            "message": "This Request is OK",
+                            "code": 200
+                        },
+                        {
+                            "message": "This user is Forbidden Access to this Resource",
+                            "code": 403
+                        },
+                        {
+                            "message": "Not Authorized Yet, Credentials to be supplied",
+                            "code": 401
+                        },
+                        {
+                            "message": "No Resource Found",
+                            "code": 404
+                        }
+                    ],
                     "type": "void",
+                    "nickname": "downLoadFile",
+                    "notes": "This method is used to download a file referred by the fileId",
+                    "deprecated": "false",
                     "method": "GET",
                     "parameters": [
                         {
                             "required": true,
-                            "name": "onetimeDownloadId",
                             "type": "string",
-                            "description": "URL pointing to the location of the file",
-                            "allowMultiple": false,
+                            "name": "fileId",
                             "defaultValue": "",
-                            "paramType": "path"
-                        }
-                    ],
-                    "notes": "This method is used to download a file using the URL obtained using getOneTimeDownloadUrl API",
-                    "summary": "downloadFileWithOneTimeDownloadUrl",
-                    "responseMessages": [
-                        {
-                            "code": 200,
-                            "message": "This Request is OK"
+                            "allowMultiple": false,
+                            "paramType": "path",
+                            "description": "File Identification number"
                         },
-                        {
-                            "code": 403,
-                            "message": "This user is Forbidden Access to this Resource"
-                        },
-                        {
-                            "code": 401,
-                            "message": "Not Authorized Yet, Credentials to be supplied"
-                        },
-                        {
-                            "code": 404,
-                            "message": "No Resource Found"
-                        }
-                    ]
-                }
-            ],
-            "path": "/file/onetimedownload/{onetimeDownloadId}"
-        },
-        {
-            "description": "downloadFileWithTemporaryDownloadUrl",
-            "operations": [
-                {
-                    "deprecated": "false",
-                    "nickname": "downloadFileWithTemporaryDownloadUrl",
-                    "type": "void",
-                    "method": "GET",
-                    "parameters": [
                         {
                             "required": true,
-                            "name": "temporaryDownloadId",
-                            "type": "string",
-                            "description": "URL pointing to the location of the file",
+                            "type": "List",
+                            "name": "scope",
+                            "defaultValue": "ALL",
                             "allowMultiple": false,
-                            "defaultValue": "",
-                            "paramType": "path"
-                        }
-                    ],
-                    "notes": "This method is used to download a file using the URL obtained using timedDownload API.",
-                    "summary": "Download file via timedDownloadId",
-                    "responseMessages": [
-                        {
-                            "code": 200,
-                            "message": "This Request is OK"
-                        },
-                        {
-                            "code": 403,
-                            "message": "This user is Forbidden Access to this Resource"
-                        },
-                        {
-                            "code": 401,
-                            "message": "Not Authorized Yet, Credentials to be supplied"
-                        },
-                        {
-                            "code": 404,
-                            "message": "No Resource Found"
+                            "paramType": "header",
+                            "description": "Authorization Scope for RBAC"
                         }
                     ]
                 }
             ],
-            "path": "/file/temporary/{temporaryDownloadId}"
+            "description": "downLoadFile",
+            "path": "/file/{fileId}"
         },
         {
-            "description": "deleteFile",
             "operations": [
                 {
-                    "deprecated": "false",
-                    "nickname": "deleteFile",
+                    "summary": "Deletes a file with the specified fileId",
+                    "responseMessages": [
+                        {
+                            "message": "This Request is OK",
+                            "responseModel": "SuccessResult",
+                            "code": 200
+                        },
+                        {
+                            "message": "This user is Forbidden Access to this Resource",
+                            "code": 403
+                        },
+                        {
+                            "message": "Not Authorized Yet, Credentials to be supplied",
+                            "code": 401
+                        },
+                        {
+                            "message": "No Resource Found",
+                            "code": 404
+                        }
+                    ],
                     "type": "SuccessResult",
+                    "nickname": "deleteFile",
+                    "notes": "This method is used to delete a file associated with the specified fileId",
+                    "deprecated": "false",
                     "method": "DELETE",
                     "produces": [
                         "application/json"
@@ -379,107 +310,55 @@
                     "parameters": [
                         {
                             "required": true,
-                            "name": "fileId",
                             "type": "string",
-                            "description": "File Identification number",
-                            "allowMultiple": false,
+                            "name": "fileId",
                             "defaultValue": "",
-                            "paramType": "path"
+                            "allowMultiple": false,
+                            "paramType": "path",
+                            "description": "File Identification number"
                         },
                         {
                             "required": true,
-                            "name": "scope",
                             "type": "List",
-                            "description": "Authorization Scope for RBAC",
-                            "allowMultiple": false,
+                            "name": "scope",
                             "defaultValue": "ALL",
-                            "paramType": "header"
+                            "allowMultiple": false,
+                            "paramType": "header",
+                            "description": "Authorization Scope for RBAC"
                         }
-                    ],
-                    "notes": "This method is used to delete a file associated with the specified fileId",
-                    "summary": "deleteFile",
+                    ]
+                }
+            ],
+            "description": "deleteFile",
+            "path": "/file/{fileId}"
+        },
+        {
+            "operations": [
+                {
+                    "summary": "Retrieves checksum for the file referred to by the fileId",
                     "responseMessages": [
                         {
+                            "message": "This Request is OK",
                             "responseModel": "SuccessResult",
-                            "code": 200,
-                            "message": "This Request is OK"
+                            "code": 200
                         },
                         {
-                            "code": 403,
-                            "message": "This user is Forbidden Access to this Resource"
+                            "message": "This user is Forbidden Access to this Resource",
+                            "code": 403
                         },
                         {
-                            "code": 401,
-                            "message": "Not Authorized Yet, Credentials to be supplied"
+                            "message": "Not Authorized Yet, Credentials to be supplied",
+                            "code": 401
                         },
                         {
-                            "code": 404,
-                            "message": "No Resource Found"
-                        }
-                    ]
-                }
-            ],
-            "path": "/file/{fileId}"
-        },
-        {
-            "description": "downLoadFile",
-            "operations": [
-                {
-                    "deprecated": "false",
-                    "nickname": "downLoadFile",
-                    "type": "void",
-                    "method": "GET",
-                    "parameters": [
-                        {
-                            "required": true,
-                            "name": "fileId",
-                            "type": "string",
-                            "description": "File Identification number",
-                            "allowMultiple": false,
-                            "defaultValue": "",
-                            "paramType": "path"
-                        },
-                        {
-                            "required": true,
-                            "name": "scope",
-                            "type": "List",
-                            "description": "Authorization Scope for RBAC",
-                            "allowMultiple": false,
-                            "defaultValue": "ALL",
-                            "paramType": "header"
+                            "message": "No Resource Found",
+                            "code": 404
                         }
                     ],
-                    "notes": "This method is used to download a file referred by the fileId",
-                    "summary": "downloadFile",
-                    "responseMessages": [
-                        {
-                            "code": 200,
-                            "message": "This Request is OK"
-                        },
-                        {
-                            "code": 403,
-                            "message": "This user is Forbidden Access to this Resource"
-                        },
-                        {
-                            "code": 401,
-                            "message": "Not Authorized Yet, Credentials to be supplied"
-                        },
-                        {
-                            "code": 404,
-                            "message": "No Resource Found"
-                        }
-                    ]
-                }
-            ],
-            "path": "/file/{fileId}"
-        },
-        {
-            "description": "getChecksumOfFile",
-            "operations": [
-                {
-                    "deprecated": "false",
-                    "nickname": "getChecksumOfFile",
                     "type": "SuccessResult",
+                    "nickname": "getChecksumOfFile",
+                    "notes": "This method is used to obtain checksum for the file referred to by the fileId",
+                    "deprecated": "false",
                     "method": "GET",
                     "produces": [
                         "application/json"
@@ -487,55 +366,59 @@
                     "parameters": [
                         {
                             "required": true,
-                            "name": "fileId",
                             "type": "string",
-                            "description": "File Identification number",
-                            "allowMultiple": false,
+                            "name": "fileId",
                             "defaultValue": "",
-                            "paramType": "path"
+                            "allowMultiple": false,
+                            "paramType": "path",
+                            "description": "File Identification number"
                         },
                         {
                             "required": true,
-                            "name": "scope",
                             "type": "List",
-                            "description": "Authorization Scope for RBAC",
-                            "allowMultiple": false,
+                            "name": "scope",
                             "defaultValue": "ALL",
-                            "paramType": "header"
-                        }
-                    ],
-                    "notes": "This method is used to obtain checksum for the file referred to by the fileId",
-                    "summary": "getChecksumOfFile",
-                    "responseMessages": [
-                        {
-                            "responseModel": "SuccessResult",
-                            "code": 200,
-                            "message": "This Request is OK"
-                        },
-                        {
-                            "code": 403,
-                            "message": "This user is Forbidden Access to this Resource"
-                        },
-                        {
-                            "code": 401,
-                            "message": "Not Authorized Yet, Credentials to be supplied"
-                        },
-                        {
-                            "code": 404,
-                            "message": "No Resource Found"
+                            "allowMultiple": false,
+                            "paramType": "header",
+                            "description": "Authorization Scope for RBAC"
                         }
                     ]
                 }
             ],
+            "description": "getChecksumOfFile",
             "path": "/file/{fileId}/checksum"
         },
         {
-            "description": "uploadFile",
             "operations": [
                 {
-                    "deprecated": "false",
-                    "nickname": "uploadFile",
+                    "summary": "Uploads a new file within a specific nameSpace",
+                    "responseMessages": [
+                        {
+                            "message": "This Request is OK",
+                            "responseModel": "FileObjectResult",
+                            "code": 200
+                        },
+                        {
+                            "message": "This Request is Accepted",
+                            "code": 202
+                        },
+                        {
+                            "message": "This user is Forbidden Access to this Resource",
+                            "code": 403
+                        },
+                        {
+                            "message": "Not Authorized Yet, Credentials to be supplied",
+                            "code": 401
+                        },
+                        {
+                            "message": "No Resource Found",
+                            "code": 404
+                        }
+                    ],
                     "type": "FileObjectResult",
+                    "nickname": "uploadFile",
+                    "notes": "This method is used to upload a new file within a specific nameSpace",
+                    "deprecated": "false",
                     "method": "POST",
                     "consumes": [
                         "multipart/form-data"
@@ -546,69 +429,74 @@
                     "parameters": [
                         {
                             "required": true,
-                            "name": "nameSpace",
                             "type": "string",
-                            "description": "Specify File's namespace,namespace is a grouping of multiple files",
-                            "allowMultiple": false,
+                            "name": "nameSpace",
                             "defaultValue": "",
-                            "paramType": "path"
+                            "allowMultiple": false,
+                            "paramType": "path",
+                            "description": "Specify File's namespace,namespace is a grouping of multiple files"
+                        },
+                        {
+                            "required": false,
+                            "type": "boolean",
+                            "name": "toEncrypt",
+                            "defaultValue": "",
+                            "allowMultiple": false,
+                            "paramType": "query",
+                            "description": "toEncrypt"
                         },
                         {
                             "required": true,
-                            "name": "scope",
                             "type": "List",
-                            "description": "Authorization Scope for RBAC",
-                            "allowMultiple": false,
+                            "name": "scope",
                             "defaultValue": "ALL",
-                            "paramType": "header"
-                        },
-                        {
-                            "paramAccess": "",
-                            "required": false,
-                            "name": "fileUpload",
-                            "type": "file",
-                            "description": "",
                             "allowMultiple": false,
+                            "paramType": "header",
+                            "description": "Authorization Scope for RBAC"
+                        },
+                        {
+                            "required": false,
+                            "type": "file",
+                            "name": "fileUpload",
                             "defaultValue": "",
-                            "paramType": "body"
-                        }
-                    ],
-                    "notes": "This method is used to upload a new file within a specific nameSpace",
-                    "summary": "uploadFile",
-                    "responseMessages": [
-                        {
-                            "responseModel": "FileObjectResult",
-                            "code": 200,
-                            "message": "This Request is OK"
-                        },
-                        {
-                            "code": 202,
-                            "message": "This Request is Accepted"
-                        },
-                        {
-                            "code": 403,
-                            "message": "This user is Forbidden Access to this Resource"
-                        },
-                        {
-                            "code": 401,
-                            "message": "Not Authorized Yet, Credentials to be supplied"
-                        },
-                        {
-                            "code": 404,
-                            "message": "No Resource Found"
+                            "allowMultiple": false,
+                            "paramAccess": "",
+                            "paramType": "body",
+                            "description": ""
                         }
                     ]
                 }
             ],
+            "description": "uploadFile",
             "path": "/file/{nameSpace}"
         },
         {
-            "description": "updateFile",
             "operations": [
                 {
-                    "deprecated": "false",
-                    "nickname": "updateFile",
+                    "summary": "Updates an existing file within a specific nameSpace",
+                    "responseMessages": [
+                        {
+                            "message": "This Request is OK",
+                            "responseModel": "FileObjectResult",
+                            "code": 200
+                        },
+                        {
+                            "message": "This user is Forbidden Access to this Resource",
+                            "code": 403
+                        },
+                        {
+                            "message": "Not Authorized Yet, Credentials to be supplied",
+                            "code": 401
+                        },
+                        {
+                            "message": "No Resource Found",
+                            "code": 404
+                        }
+                    ],
                     "type": "FileObjectResult",
+                    "nickname": "updateFile",
+                    "notes": "This method is used to update an existing file within a specific nameSpace",
+                    "deprecated": "false",
                     "method": "PUT",
                     "produces": [
                         "application/json"
@@ -616,76 +504,54 @@
                     "parameters": [
                         {
                             "required": true,
+                            "type": "string",
                             "name": "nameSpace",
-                            "type": "string",
-                            "description": "Specify File's namespace,namespace is a grouping of multiple files",
-                            "allowMultiple": false,
                             "defaultValue": "",
-                            "paramType": "path"
+                            "allowMultiple": false,
+                            "paramType": "path",
+                            "description": "Specify File's namespace,namespace is a grouping of multiple files"
                         },
                         {
                             "required": true,
+                            "type": "string",
                             "name": "fileId",
-                            "type": "string",
-                            "description": "Specify File Identification number",
-                            "allowMultiple": false,
                             "defaultValue": "",
-                            "paramType": "path"
+                            "allowMultiple": false,
+                            "paramType": "path",
+                            "description": "Specify File Identification number"
                         },
                         {
                             "required": true,
-                            "name": "scope",
                             "type": "List",
-                            "description": "Authorization Scope for RBAC",
-                            "allowMultiple": false,
+                            "name": "scope",
                             "defaultValue": "ALL",
-                            "paramType": "header"
-                        },
-                        {
-                            "paramAccess": "",
-                            "required": false,
-                            "name": "fileUpload",
-                            "type": "file",
-                            "description": "",
                             "allowMultiple": false,
+                            "paramType": "header",
+                            "description": "Authorization Scope for RBAC"
+                        },
+                        {
+                            "required": false,
+                            "type": "file",
+                            "name": "fileUpload",
                             "defaultValue": "",
-                            "paramType": "body"
-                        }
-                    ],
-                    "notes": "This method is used to update an existing file within a specific nameSpace",
-                    "summary": "updateFile",
-                    "responseMessages": [
-                        {
-                            "responseModel": "FileObjectResult",
-                            "code": 200,
-                            "message": "This Request is OK"
-                        },
-                        {
-                            "code": 403,
-                            "message": "This user is Forbidden Access to this Resource"
-                        },
-                        {
-                            "code": 401,
-                            "message": "Not Authorized Yet, Credentials to be supplied"
-                        },
-                        {
-                            "code": 404,
-                            "message": "No Resource Found"
+                            "allowMultiple": false,
+                            "paramAccess": "",
+                            "paramType": "body",
+                            "description": ""
                         }
                     ]
                 }
             ],
+            "description": "updateFile",
             "path": "/file/{nameSpace}/{fileId}"
         }
     ],
     "apiVersion": "1.0",
+    "basePath": "/",
     "consumes": [
         "multipart/form-data"
     ],
-    "swaggerVersion": "1.2",
-    "basePath": "/",
     "produces": [
         "application/json"
-    ],
-    "resourcePath": "/file"
+    ]
 }

@@ -1,104 +1,104 @@
 {
+    "apis": [
+        {
+            "description": "getVlanNames",
+            "path": "/topology/vlan/vlan-names",
+            "operations": [
+                {
+                    "summary": "getVlanNames",
+                    "nickname": "getVlanNames",
+                    "deprecated": "false",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "type": "VlanNamesResult",
+                    "notes": "This method is used to obtain the list of vlan names",
+                    "method": "GET",
+                    "responseMessages": [
+                        {
+                            "message": "This Request is OK",
+                            "responseModel": "VlanNamesResult",
+                            "code": 200
+                        },
+                        {
+                            "message": "This user is Forbidden Access to this Resource",
+                            "code": 403
+                        },
+                        {
+                            "message": "Not Authorized Yet, Credentials to be supplied",
+                            "code": 401
+                        },
+                        {
+                            "message": "No Resource Found",
+                            "code": 404
+                        }
+                    ],
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "description": "getVlanNames",
+            "path": "/vlan/vlan-names",
+            "operations": [
+                {
+                    "summary": "getVlanNames",
+                    "nickname": "getVlanNames",
+                    "deprecated": "false",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "type": "VlanNamesResult",
+                    "notes": "This method is used to obtain the list of vlan names",
+                    "method": "GET",
+                    "responseMessages": [
+                        {
+                            "message": "This Request is OK",
+                            "responseModel": "VlanNamesResult",
+                            "code": 200
+                        },
+                        {
+                            "message": "This user is Forbidden Access to this Resource",
+                            "code": 403
+                        },
+                        {
+                            "message": "Not Authorized Yet, Credentials to be supplied",
+                            "code": 401
+                        },
+                        {
+                            "message": "No Resource Found",
+                            "code": 404
+                        }
+                    ],
+                    "parameters": []
+                }
+            ]
+        }
+    ],
+    "resourcePath": "/",
+    "produces": [
+        "application/json"
+    ],
+    "swaggerVersion": "1.2",
     "models": {
         "VlanNamesResult": {
-            "id": "VlanNamesResult",
             "description": "",
             "properties": {
                 "response": {
-                    "type": "array",
                     "items": {
                         "type": "string"
                     },
-                    "uniqueItems": true
+                    "uniqueItems": true,
+                    "type": "array"
                 },
                 "version": {
                     "type": "string"
                 }
             },
-            "extends": ""
+            "extends": "",
+            "id": "VlanNamesResult"
         }
     },
-    "apis": [
-        {
-            "description": "getVlanNames",
-            "operations": [
-                {
-                    "deprecated": "false",
-                    "nickname": "getVlanNames",
-                    "type": "VlanNamesResult",
-                    "method": "GET",
-                    "produces": [
-                        "application/json"
-                    ],
-                    "parameters": [],
-                    "notes": "This method is used to obtain the list of vlan names",
-                    "summary": "getVlanNames",
-                    "responseMessages": [
-                        {
-                            "responseModel": "VlanNamesResult",
-                            "code": 200,
-                            "message": "This Request is OK"
-                        },
-                        {
-                            "code": 403,
-                            "message": "This user is Forbidden Access to this Resource"
-                        },
-                        {
-                            "code": 401,
-                            "message": "Not Authorized Yet, Credentials to be supplied"
-                        },
-                        {
-                            "code": 404,
-                            "message": "No Resource Found"
-                        }
-                    ]
-                }
-            ],
-            "path": "/topology/vlan/vlan-names"
-        },
-        {
-            "description": "getVlanNames",
-            "operations": [
-                {
-                    "deprecated": "false",
-                    "nickname": "getVlanNames",
-                    "type": "VlanNamesResult",
-                    "method": "GET",
-                    "produces": [
-                        "application/json"
-                    ],
-                    "parameters": [],
-                    "notes": "This method is used to obtain the list of vlan names",
-                    "summary": "getVlanNames",
-                    "responseMessages": [
-                        {
-                            "responseModel": "VlanNamesResult",
-                            "code": 200,
-                            "message": "This Request is OK"
-                        },
-                        {
-                            "code": 403,
-                            "message": "This user is Forbidden Access to this Resource"
-                        },
-                        {
-                            "code": 401,
-                            "message": "Not Authorized Yet, Credentials to be supplied"
-                        },
-                        {
-                            "code": 404,
-                            "message": "No Resource Found"
-                        }
-                    ]
-                }
-            ],
-            "path": "/vlan/vlan-names"
-        }
-    ],
     "apiVersion": "1.0",
-    "swaggerVersion": "1.2",
-    "basePath": "/",
-    "produces": [
-        "application/json"
-    ],
-    "resourcePath": "/"
+    "basePath": "/"
 }

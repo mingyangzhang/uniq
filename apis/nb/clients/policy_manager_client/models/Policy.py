@@ -1,23 +1,10 @@
 #!/usr/bin/env python
 #pylint: skip-file
-"""
-Copyright 2016 Cisco Systems
+# This source code is licensed under the Apache license found in the
+# LICENSE file in the root directory of this project.
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-"""
 
 class Policy(object):
-
 
 
     def __init__(self):
@@ -27,125 +14,125 @@ class Policy(object):
           attributeMap (dict): The key is attribute name and the value is json key in definition.
         """
         self.swaggerTypes = {
-
-            'resource': 'PolicyResource',
-
-
-            'id': 'str',
-
-
-            'state': 'str',
-
-
+            
             'policyScope': 'str',
-
-
-            'instanceUuid': 'str',
-
-
-            'policyName': 'str',
-
-
-            'taskId': 'str',
-
-
-            'actionProperty': 'ActionProperty',
-
-
+            
+            
+            'resource': 'PolicyResource',
+            
+            
+            'id': 'str',
+            
+            
+            'state': 'str',
+            
+            
             'scopeWirelessSegment': 'str',
-
-
+            
+            
+            'instanceUuid': 'str',
+            
+            
+            'policyName': 'str',
+            
+            
+            'actionProperty': 'ActionProperty',
+            
+            
+            'taskId': 'str',
+            
+            
             'policyPriority': 'int',
-
-
+            
+            
             'actions': 'list[str]',
-
-
+            
+            
             'networkUser': 'NetworkUser',
-
-
+            
+            
             'policyOwner': 'str'
-
+            
         }
 
         self.attributeMap = {
-
-            'resource': 'resource',
-
-            'id': 'id',
-
-            'state': 'state',
-
+            
             'policyScope': 'policyScope',
-
-            'instanceUuid': 'instanceUuid',
-
-            'policyName': 'policyName',
-
-            'taskId': 'taskId',
-
-            'actionProperty': 'actionProperty',
-
+            
+            'resource': 'resource',
+            
+            'id': 'id',
+            
+            'state': 'state',
+            
             'scopeWirelessSegment': 'scopeWirelessSegment',
-
+            
+            'instanceUuid': 'instanceUuid',
+            
+            'policyName': 'policyName',
+            
+            'actionProperty': 'actionProperty',
+            
+            'taskId': 'taskId',
+            
             'policyPriority': 'policyPriority',
-
+            
             'actions': 'actions',
-
+            
             'networkUser': 'networkUser',
-
+            
             'policyOwner': 'policyOwner'
+            
+        }       
 
-        }
-
-
-        #Resource
-
-        self.resource = None # PolicyResource
-
-        #id
-
-        self.id = None # str
-
-
-        self.state = None # str
-
+        
         #policyScope
-
+        
         self.policyScope = None # str
-
-        #
-
-        self.instanceUuid = None # str
-
-        #name of the policy
-
-        self.policyName = None # str
-
-        #Task ID
-
-        self.taskId = None # str
-
-        #ActionProperty
-
-        self.actionProperty = None # ActionProperty
-
-
+        
+        #Resource
+        
+        self.resource = None # PolicyResource
+        
+        #id
+        
+        self.id = None # str
+        
+        
+        self.state = None # str
+        
+        
         self.scopeWirelessSegment = None # str
-
+        
+        #
+        
+        self.instanceUuid = None # str
+        
+        #name of the policy
+        
+        self.policyName = None # str
+        
+        #ActionProperty
+        
+        self.actionProperty = None # ActionProperty
+        
+        #Task ID
+        
+        self.taskId = None # str
+        
         #Policy Priority
-
+        
         self.policyPriority = None # int
-
+        
         #Action Set
-
+        
         self.actions = None # list[str]
-
+        
         #Network User
-
+        
         self.networkUser = None # NetworkUser
-
+        
         #Policy Owner
-
+        
         self.policyOwner = None # str
-
+        

@@ -1,0 +1,207 @@
+{
+    "resourcePath": "/policy/interrupt",
+    "produces": [
+        "application/json"
+    ],
+    "basePath": "/",
+    "consumes": [
+        "application/json"
+    ],
+    "models": {
+        "PolicyInterruptDTO": {
+            "properties": {
+                "lastUpdateTime": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "policyScope": {
+                    "type": "string"
+                },
+                "scopeWirelessSegment": {
+                    "type": "string"
+                },
+                "action": {
+                    "type": "string"
+                },
+                "createTime": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "description": "",
+            "id": "PolicyInterruptDTO",
+            "extends": ""
+        },
+        "TaskIdResult": {
+            "properties": {
+                "response": {
+                    "$ref": "TaskIdResponse"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "description": "",
+            "id": "TaskIdResult",
+            "extends": ""
+        },
+        "TaskId": {
+            "properties": {},
+            "description": "",
+            "id": "TaskId",
+            "extends": ""
+        },
+        "PolicyInterruptDTOResult": {
+            "properties": {
+                "response": {
+                    "$ref": "PolicyInterruptDTO"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "description": "",
+            "id": "PolicyInterruptDTOResult",
+            "extends": ""
+        },
+        "TaskIdResponse": {
+            "properties": {
+                "url": {
+                    "type": "string"
+                },
+                "taskId": {
+                    "$ref": "TaskId"
+                }
+            },
+            "description": "",
+            "id": "TaskIdResponse",
+            "extends": ""
+        },
+        "PolicyInterruptInput": {
+            "properties": {
+                "action": {
+                    "type": "string"
+                },
+                "scopeWirelessSegment": {
+                    "type": "string"
+                },
+                "policyScope": {
+                    "type": "string"
+                }
+            },
+            "description": "",
+            "id": "PolicyInterruptInput",
+            "extends": ""
+        }
+    },
+    "swaggerVersion": "1.2",
+    "apiVersion": "1.0",
+    "apis": [
+        {
+            "operations": [
+                {
+                    "notes": "Get the latest policy interrupt by policy scope",
+                    "nickname": "getPolicyInterruptByScope",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
+                    "method": "GET",
+                    "parameters": [
+                        {
+                            "required": true,
+                            "allowMultiple": false,
+                            "name": "policyScope",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "policyScope"
+                        },
+                        {
+                            "required": false,
+                            "allowMultiple": false,
+                            "name": "scopeWirelessSegment",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "scopeWirelessSegment"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "responseModel": "PolicyInterruptDTOResult",
+                            "message": "This Request is OK",
+                            "code": 200
+                        },
+                        {
+                            "message": "This user is Forbidden Access to this Resource",
+                            "code": 403
+                        },
+                        {
+                            "message": "Not Authorized Yet, Credentials to be supplied",
+                            "code": 401
+                        },
+                        {
+                            "message": "No Resource Found",
+                            "code": 404
+                        }
+                    ],
+                    "type": "PolicyInterruptDTOResult",
+                    "summary": "Retrieves the latest interrupt on a policy scope"
+                }
+            ],
+            "description": "getPolicyInterruptByScope",
+            "path": "/policy/interrupt/"
+        },
+        {
+            "operations": [
+                {
+                    "notes": "updatePolicyInterrupt",
+                    "nickname": "updatePolicyInterrupt",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
+                    "method": "PUT",
+                    "parameters": [
+                        {
+                            "required": false,
+                            "allowMultiple": false,
+                            "name": "policyInterruptInput",
+                            "paramType": "body",
+                            "defaultValue": "",
+                            "type": "PolicyInterruptInput",
+                            "description": "policyInterruptInput"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "responseModel": "TaskIdResult",
+                            "message": "This Request is OK",
+                            "code": 200
+                        },
+                        {
+                            "message": "This user is Forbidden Access to this Resource",
+                            "code": 403
+                        },
+                        {
+                            "message": "Not Authorized Yet, Credentials to be supplied",
+                            "code": 401
+                        },
+                        {
+                            "message": "No Resource Found",
+                            "code": 404
+                        }
+                    ],
+                    "consumes": [
+                        "application/json"
+                    ],
+                    "type": "TaskIdResult",
+                    "summary": "Update policy interrupt on a scope. Triggers 'abort' and 'abort, restore to original' actions"
+                }
+            ],
+            "description": "updatePolicyInterrupt",
+            "path": "/policy/interrupt/"
+        }
+    ]
+}

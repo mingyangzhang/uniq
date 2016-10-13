@@ -1,22 +1,9 @@
 #!/usr/bin/env python
 #pylint: skip-file
-"""
-NetworkdeviceApi.py
-    Copyright 2016 Cisco Systems
+# This source code is licensed under the Apache license found in the
+# LICENSE file in the root directory of this project.
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
 
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-
-"""
 import sys
 import os
 import urllib.request, urllib.parse, urllib.error
@@ -39,7 +26,7 @@ class NetworkdeviceApi(object):
             scope, str: Authorization Scope for RBAC (required)
 
 
-
+        #changed this manually from 'object' to 'NetworkDeviceListResult'
         Returns: NetworkDeviceListResult
         """
 
@@ -87,6 +74,7 @@ class NetworkdeviceApi(object):
         if not response:
             return None
 
+        #changed this manually from 'object' to 'NetworkDeviceListResult'
         responseObject = self.apiClient.deserialize(response, 'NetworkDeviceListResult')
         return responseObject
 
@@ -907,6 +895,320 @@ class NetworkdeviceApi(object):
             return None
 
         responseObject = self.apiClient.deserialize(response, 'CountResult')
+        return responseObject
+
+
+
+    def getModuleByNetworkDeviceId(self, **kwargs):
+        """Gives all the modules associated with given device id
+
+        Args:
+
+            deviceId, str: deviceId (required)
+
+
+            limit, str: limit (required)
+
+
+            offset, str: offset (required)
+
+
+            nameList, list[str]: nameList (required)
+
+
+            equipmentTypeList, list[str]: equipmentTypeList (required)
+
+
+            serviceStateList, list[str]: serviceStateList (required)
+
+
+            isPhysicallyPresentList, list[str]: isPhysicallyPresentList (required)
+
+
+            vendorEquipmentTypeList, list[str]: vendorEquipmentTypeList (required)
+
+
+            partNumberList, list[str]: partNumberList (required)
+
+
+            operationalStateCodeList, list[str]: operationalStateCodeList (required)
+
+
+            filterOperation, str: filterOperation (required)
+
+
+            scope, str: Authorization Scope for RBAC (required)
+
+
+
+        Returns: ModuleListResult
+        """
+
+        allParams = ['deviceId', 'limit', 'offset', 'nameList', 'equipmentTypeList', 'serviceStateList', 'isPhysicallyPresentList', 'vendorEquipmentTypeList', 'partNumberList', 'operationalStateCodeList', 'filterOperation', 'scope']
+
+        params = locals()
+        for (key, val) in list(params['kwargs'].items()):
+            if key not in allParams:
+                raise TypeError("Got an unexpected keyword argument '%s' to method getModuleByNetworkDeviceId" % key)
+            params[key] = val
+        del params['kwargs']
+
+        resourcePath = '/network-device/module'
+        resourcePath = resourcePath.replace('{format}', 'json')
+        method = 'GET'
+
+        queryParams = {}
+        headerParams = {}
+        formParams = {}
+        files = {}
+        bodyParam = None
+
+        headerParams['Accept'] = 'application/json'
+        headerParams['Content-Type'] = 'application/json'
+
+
+        if ('deviceId' in params):
+            queryParams['deviceId'] = self.apiClient.toPathValue(params['deviceId'])
+
+        if ('limit' in params):
+            queryParams['limit'] = self.apiClient.toPathValue(params['limit'])
+
+        if ('offset' in params):
+            queryParams['offset'] = self.apiClient.toPathValue(params['offset'])
+
+        if ('nameList' in params):
+            queryParams['nameList'] = self.apiClient.toPathValue(params['nameList'])
+
+        if ('equipmentTypeList' in params):
+            queryParams['equipmentTypeList'] = self.apiClient.toPathValue(params['equipmentTypeList'])
+
+        if ('serviceStateList' in params):
+            queryParams['serviceStateList'] = self.apiClient.toPathValue(params['serviceStateList'])
+
+        if ('isPhysicallyPresentList' in params):
+            queryParams['isPhysicallyPresentList'] = self.apiClient.toPathValue(params['isPhysicallyPresentList'])
+
+        if ('vendorEquipmentTypeList' in params):
+            queryParams['vendorEquipmentTypeList'] = self.apiClient.toPathValue(params['vendorEquipmentTypeList'])
+
+        if ('partNumberList' in params):
+            queryParams['partNumberList'] = self.apiClient.toPathValue(params['partNumberList'])
+
+        if ('operationalStateCodeList' in params):
+            queryParams['operationalStateCodeList'] = self.apiClient.toPathValue(params['operationalStateCodeList'])
+
+        if ('filterOperation' in params):
+            queryParams['filterOperation'] = self.apiClient.toPathValue(params['filterOperation'])
+
+
+
+        if ('scope' in params):
+            headerParams['scope'] = params['scope']
+
+
+
+
+
+
+
+
+        postData = (formParams if formParams else bodyParam)
+
+        response = self.apiClient.callAPI(resourcePath, method, queryParams,
+                                          postData, headerParams, files=files)
+
+
+        if not response:
+            return None
+
+        responseObject = self.apiClient.deserialize(response, 'ModuleListResult')
+        return responseObject
+
+
+
+
+    def getModuleCount(self, **kwargs):
+        """Gives total number of Modules
+
+        Args:
+
+            deviceId, str: deviceId (required)
+
+
+            nameList, list[str]: nameList (required)
+
+
+            equipmentTypeList, list[str]: equipmentTypeList (required)
+
+
+            serviceStateList, list[str]: serviceStateList (required)
+
+
+            isPhysicallyPresentList, list[str]: isPhysicallyPresentList (required)
+
+
+            vendorEquipmentTypeList, list[str]: vendorEquipmentTypeList (required)
+
+
+            partNumberList, list[str]: partNumberList (required)
+
+
+            operationalStateCodeList, list[str]: operationalStateCodeList (required)
+
+
+            filterOperation, str: filterOperation (required)
+
+
+            scope, str: Authorization Scope for RBAC (required)
+
+
+
+        Returns: CountResult
+        """
+
+        allParams = ['deviceId', 'nameList', 'equipmentTypeList', 'serviceStateList', 'isPhysicallyPresentList', 'vendorEquipmentTypeList', 'partNumberList', 'operationalStateCodeList', 'filterOperation', 'scope']
+
+        params = locals()
+        for (key, val) in list(params['kwargs'].items()):
+            if key not in allParams:
+                raise TypeError("Got an unexpected keyword argument '%s' to method getModuleCount" % key)
+            params[key] = val
+        del params['kwargs']
+
+        resourcePath = '/network-device/module/count'
+        resourcePath = resourcePath.replace('{format}', 'json')
+        method = 'GET'
+
+        queryParams = {}
+        headerParams = {}
+        formParams = {}
+        files = {}
+        bodyParam = None
+
+        headerParams['Accept'] = 'application/json'
+        headerParams['Content-Type'] = 'application/json'
+
+
+        if ('deviceId' in params):
+            queryParams['deviceId'] = self.apiClient.toPathValue(params['deviceId'])
+
+        if ('nameList' in params):
+            queryParams['nameList'] = self.apiClient.toPathValue(params['nameList'])
+
+        if ('equipmentTypeList' in params):
+            queryParams['equipmentTypeList'] = self.apiClient.toPathValue(params['equipmentTypeList'])
+
+        if ('serviceStateList' in params):
+            queryParams['serviceStateList'] = self.apiClient.toPathValue(params['serviceStateList'])
+
+        if ('isPhysicallyPresentList' in params):
+            queryParams['isPhysicallyPresentList'] = self.apiClient.toPathValue(params['isPhysicallyPresentList'])
+
+        if ('vendorEquipmentTypeList' in params):
+            queryParams['vendorEquipmentTypeList'] = self.apiClient.toPathValue(params['vendorEquipmentTypeList'])
+
+        if ('partNumberList' in params):
+            queryParams['partNumberList'] = self.apiClient.toPathValue(params['partNumberList'])
+
+        if ('operationalStateCodeList' in params):
+            queryParams['operationalStateCodeList'] = self.apiClient.toPathValue(params['operationalStateCodeList'])
+
+        if ('filterOperation' in params):
+            queryParams['filterOperation'] = self.apiClient.toPathValue(params['filterOperation'])
+
+
+
+        if ('scope' in params):
+            headerParams['scope'] = params['scope']
+
+
+
+
+
+
+
+
+        postData = (formParams if formParams else bodyParam)
+
+        response = self.apiClient.callAPI(resourcePath, method, queryParams,
+                                          postData, headerParams, files=files)
+
+
+        if not response:
+            return None
+
+        responseObject = self.apiClient.deserialize(response, 'CountResult')
+        return responseObject
+
+
+
+
+    def getModuleById(self, **kwargs):
+        """Gives Module info by its id
+
+        Args:
+
+            id, str: id (required)
+
+
+            scope, str: Authorization Scope for RBAC (required)
+
+
+
+        Returns: ModuleResult
+        """
+
+        allParams = ['id', 'scope']
+
+        params = locals()
+        for (key, val) in list(params['kwargs'].items()):
+            if key not in allParams:
+                raise TypeError("Got an unexpected keyword argument '%s' to method getModuleById" % key)
+            params[key] = val
+        del params['kwargs']
+
+        resourcePath = '/network-device/module/{id}'
+        resourcePath = resourcePath.replace('{format}', 'json')
+        method = 'GET'
+
+        queryParams = {}
+        headerParams = {}
+        formParams = {}
+        files = {}
+        bodyParam = None
+
+        headerParams['Accept'] = 'application/json'
+        headerParams['Content-Type'] = 'application/json'
+
+
+
+
+        if ('scope' in params):
+            headerParams['scope'] = params['scope']
+
+
+
+        if ('id' in params):
+            replacement = str(self.apiClient.toPathValue(params['id']))
+            replacement = urllib.parse.quote(replacement)
+            resourcePath = resourcePath.replace('{' + 'id' + '}',
+                                                replacement)
+
+
+
+
+
+
+        postData = (formParams if formParams else bodyParam)
+
+        response = self.apiClient.callAPI(resourcePath, method, queryParams,
+                                          postData, headerParams, files=files)
+
+
+        if not response:
+            return None
+
+        responseObject = self.apiClient.deserialize(response, 'ModuleResult')
         return responseObject
 
 

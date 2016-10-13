@@ -1,0 +1,754 @@
+{
+    "resourcePath": "/policy/preview",
+    "produces": [
+        "application/json"
+    ],
+    "basePath": "/",
+    "consumes": [
+        "application/json"
+    ],
+    "models": {
+        "ActionProperty": {
+            "required": [
+                "trustLevel",
+                "relevanceLevel",
+                "pathControlFlag",
+                "pathPreferenceFlag",
+                "priorityLevel",
+                "experienceLevel",
+                "pathPreference"
+            ],
+            "properties": {
+                "pathControlFlag": {
+                    "type": "boolean",
+                    "description": "path control flag"
+                },
+                "SecondaryPathPref": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "PathOfLastResort": {
+                    "type": "string"
+                },
+                "pathPreference": {
+                    "type": "string",
+                    "description": "path preference for a policy"
+                },
+                "destinations": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "relevanceLevel": {
+                    "type": "string",
+                    "description": "relevance level for a policy"
+                },
+                "pathPreferenceFlag": {
+                    "type": "boolean",
+                    "description": "path preference flag"
+                },
+                "maintainExperience": {
+                    "type": "string"
+                },
+                "priorityLevel": {
+                    "type": "string",
+                    "description": "priority level for a policy"
+                },
+                "PrimaryPathPref": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "TertiaryPathPref": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "trustLevel": {
+                    "type": "string",
+                    "description": "trust level for a policy"
+                },
+                "experienceLevel": {
+                    "type": "string",
+                    "description": "experience level for a policy"
+                }
+            },
+            "description": "",
+            "id": "ActionProperty",
+            "extends": ""
+        },
+        "PolicyPreviewDTOResult": {
+            "properties": {
+                "response": {
+                    "$ref": "PolicyPreviewDTO"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "description": "",
+            "id": "PolicyPreviewDTOResult",
+            "extends": ""
+        },
+        "TaskId": {
+            "properties": {},
+            "description": "",
+            "id": "TaskId",
+            "extends": ""
+        },
+        "TaskIdResult": {
+            "properties": {
+                "response": {
+                    "$ref": "TaskIdResponse"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "description": "",
+            "id": "TaskIdResult",
+            "extends": ""
+        },
+        "Policy": {
+            "required": [
+                "policyScope",
+                "resource",
+                "id",
+                "policyName",
+                "actionProperty",
+                "taskId",
+                "policyPriority",
+                "actions",
+                "networkUser",
+                "policyOwner"
+            ],
+            "properties": {
+                "state": {
+                    "type": "string"
+                },
+                "networkUser": {
+                    "$ref": "NetworkUser",
+                    "description": "Network User"
+                },
+                "policyOwner": {
+                    "type": "string",
+                    "description": "Policy Owner"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "id"
+                },
+                "policyName": {
+                    "type": "string",
+                    "description": "name of the policy"
+                },
+                "policyPriority": {
+                    "type": "integer",
+                    "description": "Policy Priority",
+                    "format": "int32"
+                },
+                "instanceUuid": {
+                    "type": "string",
+                    "description": ""
+                },
+                "taskId": {
+                    "type": "string",
+                    "description": "Task ID"
+                },
+                "scopeWirelessSegment": {
+                    "type": "string"
+                },
+                "actionProperty": {
+                    "$ref": "ActionProperty",
+                    "description": "ActionProperty"
+                },
+                "actions": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "description": "Action Set",
+                    "uniqueItems": true
+                },
+                "resource": {
+                    "$ref": "PolicyResource",
+                    "description": "Resource"
+                },
+                "policyScope": {
+                    "type": "string",
+                    "description": "policyScope"
+                }
+            },
+            "description": "",
+            "id": "Policy",
+            "extends": ""
+        },
+        "PolicyApplicationDiffDTO": {
+            "properties": {
+                "operation": {
+                    "enum": [
+                        "CREATE",
+                        "UPDATE",
+                        "DELETE"
+                    ],
+                    "type": "string",
+                    "description": "operation"
+                },
+                "policyApplication": {
+                    "$ref": "PolicyApplication",
+                    "description": "application"
+                }
+            },
+            "description": "",
+            "id": "PolicyApplicationDiffDTO",
+            "extends": ""
+        },
+        "PolicyPreviewDeviceConfigDTO": {
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "fileId": {
+                    "type": "string",
+                    "description": "file id"
+                },
+                "createTime": {
+                    "type": "integer",
+                    "description": "createTime",
+                    "format": "int64"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "id"
+                },
+                "lastUpdateTime": {
+                    "type": "integer",
+                    "description": "lastUpdateTime",
+                    "format": "int64"
+                },
+                "failureReason": {
+                    "type": "string",
+                    "description": "failure reason"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "status"
+                },
+                "operationId": {
+                    "type": "string",
+                    "description": "operation id"
+                },
+                "deviceId": {
+                    "type": "string",
+                    "description": "network device id"
+                }
+            },
+            "description": "",
+            "id": "PolicyPreviewDeviceConfigDTO",
+            "extends": ""
+        },
+        "CategoryDTO": {
+            "required": [
+                "name",
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "id"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Category Name"
+                }
+            },
+            "description": "",
+            "id": "CategoryDTO",
+            "extends": ""
+        },
+        "NetworkUser": {
+            "properties": {
+                "applications": {
+                    "items": {
+                        "$ref": "PolicyApplication"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "applicationDiffs": {
+                    "items": {
+                        "$ref": "PolicyApplicationDiffDTO"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "categories": {
+                    "items": {
+                        "$ref": "CategoryDTO"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "deviceTypes": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "locations": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "userIdentifiers": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                }
+            },
+            "description": "",
+            "id": "NetworkUser",
+            "extends": ""
+        },
+        "PolicyPreviewDTO": {
+            "required": [
+                "state",
+                "id"
+            ],
+            "properties": {
+                "state": {
+                    "type": "string",
+                    "description": "state"
+                },
+                "deviceConfigs": {
+                    "items": {
+                        "$ref": "PolicyPreviewDeviceConfigDTO"
+                    },
+                    "type": "array",
+                    "description": "list of preview device configs"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "id"
+                },
+                "createTime": {
+                    "type": "integer",
+                    "description": "createTime",
+                    "format": "int64"
+                },
+                "networkDeviceIds": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "description": "list of network device ids"
+                },
+                "lastUpdateTime": {
+                    "type": "integer",
+                    "description": "lastUpdateTime",
+                    "format": "int64"
+                },
+                "policies": {
+                    "items": {
+                        "$ref": "Policy"
+                    },
+                    "type": "array",
+                    "description": "list of policies"
+                }
+            },
+            "description": "",
+            "id": "PolicyPreviewDTO",
+            "extends": ""
+        },
+        "PolicyApplication": {
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "raw": {
+                    "type": "string",
+                    "description": "Either raw Application of the form port:protocol should be specified or appId should be specified"
+                },
+                "appName": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "id"
+                },
+                "stale": {
+                    "type": "boolean",
+                    "description": "Indicates whether the application has been updated since the last time this policy was provisioned"
+                }
+            },
+            "description": "",
+            "id": "PolicyApplication",
+            "extends": ""
+        },
+        "TaskIdResponse": {
+            "properties": {
+                "url": {
+                    "type": "string"
+                },
+                "taskId": {
+                    "$ref": "TaskId"
+                }
+            },
+            "description": "",
+            "id": "TaskIdResponse",
+            "extends": ""
+        },
+        "PolicyResource": {
+            "properties": {
+                "applications": {
+                    "items": {
+                        "$ref": "PolicyApplication"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "applicationDiffs": {
+                    "items": {
+                        "$ref": "PolicyApplicationDiffDTO"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "categories": {
+                    "items": {
+                        "$ref": "CategoryDTO"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "deviceTypes": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "locations": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "userIdentifiers": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                }
+            },
+            "description": "",
+            "id": "PolicyResource",
+            "extends": ""
+        },
+        "PolicyPreviewDTOListResult": {
+            "properties": {
+                "response": {
+                    "items": {
+                        "$ref": "PolicyPreviewDTO"
+                    },
+                    "type": "array"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "description": "",
+            "id": "PolicyPreviewDTOListResult",
+            "extends": ""
+        }
+    },
+    "swaggerVersion": "1.2",
+    "apiVersion": "1.0",
+    "apis": [
+        {
+            "operations": [
+                {
+                    "notes": "Create a policy preview",
+                    "nickname": "add",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
+                    "method": "POST",
+                    "parameters": [
+                        {
+                            "required": true,
+                            "allowMultiple": false,
+                            "name": "policyPreviewDTO",
+                            "paramType": "body",
+                            "defaultValue": "",
+                            "type": "PolicyPreviewDTO",
+                            "description": "PolicyPreviewDTO"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "responseModel": "TaskIdResult",
+                            "message": "This Request is OK",
+                            "code": 200
+                        },
+                        {
+                            "message": "This Request is Accepted",
+                            "code": 202
+                        },
+                        {
+                            "message": "This user is Forbidden Access to this Resource",
+                            "code": 403
+                        },
+                        {
+                            "message": "Not Authorized Yet, Credentials to be supplied",
+                            "code": 401
+                        },
+                        {
+                            "message": "No Resource Found",
+                            "code": 404
+                        }
+                    ],
+                    "consumes": [
+                        "application/json"
+                    ],
+                    "type": "TaskIdResult",
+                    "summary": "Create a policy preview"
+                }
+            ],
+            "description": "add",
+            "path": "/policy/preview"
+        },
+        {
+            "operations": [
+                {
+                    "notes": "Retrieves policy previews based on a given filter",
+                    "nickname": "getPolicyPreviewListByFilters",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
+                    "method": "GET",
+                    "parameters": [
+                        {
+                            "required": false,
+                            "allowMultiple": false,
+                            "name": "policyScope",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Retrieve policy previews for a given scope"
+                        },
+                        {
+                            "required": false,
+                            "allowMultiple": false,
+                            "name": "scopeWirelessSegment",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Retrieve policy previews for a given wireless segment, within a policyScope (policyScope is mandatory for this)"
+                        },
+                        {
+                            "required": false,
+                            "allowMultiple": false,
+                            "name": "offset",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Starting index of the resources (1 based)"
+                        },
+                        {
+                            "required": false,
+                            "allowMultiple": false,
+                            "name": "limit",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Number of resources to return"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "responseModel": "PolicyPreviewDTOListResult",
+                            "message": "This Request is OK",
+                            "code": 200
+                        },
+                        {
+                            "message": "This user is Forbidden Access to this Resource",
+                            "code": 403
+                        },
+                        {
+                            "message": "Not Authorized Yet, Credentials to be supplied",
+                            "code": 401
+                        },
+                        {
+                            "message": "No Resource Found",
+                            "code": 404
+                        }
+                    ],
+                    "type": "PolicyPreviewDTOListResult",
+                    "summary": "Retrieves policy preview based on a given filter"
+                }
+            ],
+            "description": "getPolicyPreviewListByFilters",
+            "path": "/policy/preview"
+        },
+        {
+            "operations": [
+                {
+                    "notes": "Update a policy preview",
+                    "nickname": "update",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
+                    "method": "PUT",
+                    "parameters": [
+                        {
+                            "required": true,
+                            "allowMultiple": false,
+                            "name": "policyPreviewDTO",
+                            "paramType": "body",
+                            "defaultValue": "",
+                            "type": "PolicyPreviewDTO",
+                            "description": "PolicyPreviewDTO"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "responseModel": "TaskIdResult",
+                            "message": "This Request is OK",
+                            "code": 200
+                        },
+                        {
+                            "message": "This user is Forbidden Access to this Resource",
+                            "code": 403
+                        },
+                        {
+                            "message": "Not Authorized Yet, Credentials to be supplied",
+                            "code": 401
+                        },
+                        {
+                            "message": "No Resource Found",
+                            "code": 404
+                        }
+                    ],
+                    "consumes": [
+                        "application/json"
+                    ],
+                    "type": "TaskIdResult",
+                    "summary": "Update a policy preview"
+                }
+            ],
+            "description": "update",
+            "path": "/policy/preview"
+        },
+        {
+            "operations": [
+                {
+                    "notes": "Delete a policy preview by id",
+                    "nickname": "delete",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
+                    "method": "DELETE",
+                    "parameters": [
+                        {
+                            "required": true,
+                            "allowMultiple": false,
+                            "name": "id",
+                            "paramType": "path",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "id"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "responseModel": "TaskIdResult",
+                            "message": "This Request is OK",
+                            "code": 200
+                        },
+                        {
+                            "message": "This user is Forbidden Access to this Resource",
+                            "code": 403
+                        },
+                        {
+                            "message": "Not Authorized Yet, Credentials to be supplied",
+                            "code": 401
+                        },
+                        {
+                            "message": "No Resource Found",
+                            "code": 404
+                        }
+                    ],
+                    "type": "TaskIdResult",
+                    "summary": "Deletes a policy preview by its id"
+                }
+            ],
+            "description": "delete",
+            "path": "/policy/preview/{id}"
+        },
+        {
+            "operations": [
+                {
+                    "notes": "Get a policy preview by id",
+                    "nickname": "getById",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
+                    "method": "GET",
+                    "parameters": [
+                        {
+                            "required": true,
+                            "allowMultiple": false,
+                            "name": "id",
+                            "paramType": "path",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "id"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "responseModel": "PolicyPreviewDTOResult",
+                            "message": "This Request is OK",
+                            "code": 200
+                        },
+                        {
+                            "message": "This user is Forbidden Access to this Resource",
+                            "code": 403
+                        },
+                        {
+                            "message": "Not Authorized Yet, Credentials to be supplied",
+                            "code": 401
+                        },
+                        {
+                            "message": "No Resource Found",
+                            "code": 404
+                        }
+                    ],
+                    "type": "PolicyPreviewDTOResult",
+                    "summary": "Retrieves a policy preview based on its id"
+                }
+            ],
+            "description": "getById",
+            "path": "/policy/preview/{id}"
+        }
+    ]
+}

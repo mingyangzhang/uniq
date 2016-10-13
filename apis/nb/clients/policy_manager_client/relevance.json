@@ -1,18 +1,46 @@
 {
     "resourcePath": "/relevance",
+    "produces": [
+        "application/json"
+    ],
+    "basePath": "/",
+    "models": {
+        "RelevanceListResult": {
+            "properties": {
+                "response": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "description": "",
+            "id": "RelevanceListResult",
+            "extends": ""
+        }
+    },
+    "swaggerVersion": "1.2",
+    "apiVersion": "1.0",
     "apis": [
         {
             "operations": [
                 {
                     "notes": "Get all Relevance(s)",
-                    "type": "RelevanceListResult",
-                    "parameters": [],
+                    "nickname": "getAllRelevanceLevels",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
                     "method": "GET",
+                    "parameters": [],
                     "responseMessages": [
                         {
+                            "responseModel": "RelevanceListResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "RelevanceListResult"
+                            "code": 200
                         },
                         {
                             "message": "This user is Forbidden Access to this Resource",
@@ -27,40 +55,12 @@
                             "code": 404
                         }
                     ],
-                    "deprecated": "false",
-                    "summary": "Lists all relevances",
-                    "nickname": "getAllRelevanceLevels",
-                    "produces": [
-                        "application/json"
-                    ]
+                    "type": "RelevanceListResult",
+                    "summary": "Lists all relevances"
                 }
             ],
             "description": "getAllRelevanceLevels",
             "path": "/relevance"
         }
-    ],
-    "models": {
-        "RelevanceListResult": {
-            "description": "",
-            "id": "RelevanceListResult",
-            "properties": {
-                "version": {
-                    "type": "string"
-                },
-                "response": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                }
-            },
-            "extends": ""
-        }
-    },
-    "swaggerVersion": "1.2",
-    "apiVersion": "1.0",
-    "produces": [
-        "application/json"
-    ],
-    "basePath": "/"
+    ]
 }

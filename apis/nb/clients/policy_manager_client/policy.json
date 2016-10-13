@@ -1,64 +1,1031 @@
 {
     "resourcePath": "/policy",
+    "produces": [
+        "application/json"
+    ],
+    "basePath": "/",
+    "consumes": [
+        "application/json"
+    ],
+    "models": {
+        "ActionProperty": {
+            "required": [
+                "trustLevel",
+                "relevanceLevel",
+                "pathControlFlag",
+                "pathPreferenceFlag",
+                "priorityLevel",
+                "experienceLevel",
+                "pathPreference"
+            ],
+            "properties": {
+                "pathControlFlag": {
+                    "type": "boolean",
+                    "description": "path control flag"
+                },
+                "SecondaryPathPref": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "PathOfLastResort": {
+                    "type": "string"
+                },
+                "pathPreference": {
+                    "type": "string",
+                    "description": "path preference for a policy"
+                },
+                "destinations": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "relevanceLevel": {
+                    "type": "string",
+                    "description": "relevance level for a policy"
+                },
+                "pathPreferenceFlag": {
+                    "type": "boolean",
+                    "description": "path preference flag"
+                },
+                "maintainExperience": {
+                    "type": "string"
+                },
+                "priorityLevel": {
+                    "type": "string",
+                    "description": "priority level for a policy"
+                },
+                "PrimaryPathPref": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "TertiaryPathPref": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "trustLevel": {
+                    "type": "string",
+                    "description": "trust level for a policy"
+                },
+                "experienceLevel": {
+                    "type": "string",
+                    "description": "experience level for a policy"
+                }
+            },
+            "description": "",
+            "id": "ActionProperty",
+            "extends": ""
+        },
+        "VersionDiffDTO": {
+            "properties": {
+                "policies": {
+                    "items": {
+                        "$ref": "PolicyDiffDTO"
+                    },
+                    "type": "array",
+                    "description": "Policies from the cached diff. This attribute enables the user to make changes to the diffs that he can post for rollback."
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Id of the cached diff. Use id in the post api if you don't want to make any modifications to the diff corresponding to the diff id."
+                }
+            },
+            "description": "",
+            "id": "VersionDiffDTO",
+            "extends": ""
+        },
+        "FlowIdResponse": {
+            "properties": {
+                "flowId": {
+                    "type": "string"
+                },
+                "taskId": {
+                    "type": "string"
+                }
+            },
+            "description": "",
+            "id": "FlowIdResponse",
+            "extends": ""
+        },
+        "NetworkUser": {
+            "properties": {
+                "applications": {
+                    "items": {
+                        "$ref": "PolicyApplication"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "applicationDiffs": {
+                    "items": {
+                        "$ref": "PolicyApplicationDiffDTO"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "categories": {
+                    "items": {
+                        "$ref": "CategoryDTO"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "deviceTypes": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "locations": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "userIdentifiers": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                }
+            },
+            "description": "",
+            "id": "NetworkUser",
+            "extends": ""
+        },
+        "PolicyListResult": {
+            "properties": {
+                "response": {
+                    "items": {
+                        "$ref": "Policy"
+                    },
+                    "type": "array"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "description": "",
+            "id": "PolicyListResult",
+            "extends": ""
+        },
+        "Policy": {
+            "required": [
+                "policyScope",
+                "resource",
+                "id",
+                "policyName",
+                "actionProperty",
+                "taskId",
+                "policyPriority",
+                "actions",
+                "networkUser",
+                "policyOwner"
+            ],
+            "properties": {
+                "state": {
+                    "type": "string"
+                },
+                "networkUser": {
+                    "$ref": "NetworkUser",
+                    "description": "Network User"
+                },
+                "policyOwner": {
+                    "type": "string",
+                    "description": "Policy Owner"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "id"
+                },
+                "policyName": {
+                    "type": "string",
+                    "description": "name of the policy"
+                },
+                "policyPriority": {
+                    "type": "integer",
+                    "description": "Policy Priority",
+                    "format": "int32"
+                },
+                "instanceUuid": {
+                    "type": "string",
+                    "description": ""
+                },
+                "taskId": {
+                    "type": "string",
+                    "description": "Task ID"
+                },
+                "scopeWirelessSegment": {
+                    "type": "string"
+                },
+                "actionProperty": {
+                    "$ref": "ActionProperty",
+                    "description": "ActionProperty"
+                },
+                "actions": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "description": "Action Set",
+                    "uniqueItems": true
+                },
+                "resource": {
+                    "$ref": "PolicyResource",
+                    "description": "Resource"
+                },
+                "policyScope": {
+                    "type": "string",
+                    "description": "policyScope"
+                }
+            },
+            "description": "",
+            "id": "Policy",
+            "extends": ""
+        },
+        "PolicyApplicationListResult": {
+            "properties": {
+                "response": {
+                    "items": {
+                        "$ref": "PolicyApplication"
+                    },
+                    "type": "array"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "description": "",
+            "id": "PolicyApplicationListResult",
+            "extends": ""
+        },
+        "PolicyVersionNumberListResult": {
+            "properties": {
+                "response": {
+                    "items": {
+                        "$ref": "VersionNumberDTO"
+                    },
+                    "type": "array"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "description": "",
+            "id": "PolicyVersionNumberListResult",
+            "extends": ""
+        },
+        "PolicyApplicationDiffDTO": {
+            "properties": {
+                "operation": {
+                    "enum": [
+                        "CREATE",
+                        "UPDATE",
+                        "DELETE"
+                    ],
+                    "type": "string",
+                    "description": "operation"
+                },
+                "policyApplication": {
+                    "$ref": "PolicyApplication",
+                    "description": "application"
+                }
+            },
+            "description": "",
+            "id": "PolicyApplicationDiffDTO",
+            "extends": ""
+        },
+        "PolicyFlowSettingResult": {
+            "properties": {
+                "response": {
+                    "$ref": "PolicyFlowSettingDTO"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "description": "",
+            "id": "PolicyFlowSettingResult",
+            "extends": ""
+        },
+        "FlowResult": {
+            "properties": {
+                "response": {
+                    "$ref": "FlowDTO"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "description": "",
+            "id": "FlowResult",
+            "extends": ""
+        },
+        "PolicyResult": {
+            "properties": {
+                "response": {
+                    "$ref": "Policy"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "description": "",
+            "id": "PolicyResult",
+            "extends": ""
+        },
+        "PolicyTagAssociationDTO": {
+            "properties": {
+                "networkDevices": {
+                    "items": {
+                        "$ref": "PolicyTagAssociationDeviceDTO"
+                    },
+                    "type": "array"
+                },
+                "unModifiable": {
+                    "type": "boolean"
+                },
+                "unModifiableReason": {
+                    "type": "string"
+                },
+                "policyTag": {
+                    "type": "string"
+                }
+            },
+            "description": "",
+            "id": "PolicyTagAssociationDTO",
+            "extends": ""
+        },
+        "PolicyTagAssociationListResult": {
+            "properties": {
+                "response": {
+                    "items": {
+                        "$ref": "PolicyTagAssociationDTO"
+                    },
+                    "type": "array"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "description": "",
+            "id": "PolicyTagAssociationListResult",
+            "extends": ""
+        },
+        "VersionDiffResult": {
+            "properties": {
+                "response": {
+                    "$ref": "VersionDiffDTO"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "description": "",
+            "id": "VersionDiffResult",
+            "extends": ""
+        },
+        "PolicyIntentSummaryDTO": {
+            "required": [
+                "operations",
+                "applicationsStale",
+                "policyScope",
+                "lastUpdateTime",
+                "latestPolicyVersion",
+                "numberOfAssignedApplications",
+                "numberOfDevices",
+                "allPoliciesDeleted"
+            ],
+            "properties": {
+                "operations": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "description": "The operations in that version. (policy-add, policy-update, policy-delete)"
+                },
+                "allPoliciesDeleted": {
+                    "type": "boolean",
+                    "description": "Flag to indicate if all policies are deleted in the policy scope"
+                },
+                "numberOfAssignedApplications": {
+                    "type": "integer",
+                    "description": "The number of assigned applications in the policy",
+                    "format": "int64"
+                },
+                "policyScope": {
+                    "type": "string",
+                    "description": "Scope of the policy"
+                },
+                "numberOfDevices": {
+                    "type": "integer",
+                    "description": "The number of devices in the policy scope",
+                    "format": "int64"
+                },
+                "lastUpdateTime": {
+                    "type": "integer",
+                    "description": "Last update time of the policy",
+                    "format": "int64"
+                },
+                "applicationsStale": {
+                    "type": "boolean",
+                    "description": "Flag to indicate if applications are stale in the policy"
+                },
+                "scopeWirelessSegment": {
+                    "type": "string",
+                    "description": "Wireless segment of the policy"
+                },
+                "latestPolicyVersion": {
+                    "type": "integer",
+                    "description": "Latest version of the policy",
+                    "format": "int64"
+                }
+            },
+            "description": "",
+            "id": "PolicyIntentSummaryDTO",
+            "extends": ""
+        },
+        "TaskIdResponse": {
+            "properties": {
+                "url": {
+                    "type": "string"
+                },
+                "taskId": {
+                    "$ref": "TaskId"
+                }
+            },
+            "description": "",
+            "id": "TaskIdResponse",
+            "extends": ""
+        },
+        "PolicyStatusListResult": {
+            "properties": {
+                "response": {
+                    "items": {
+                        "$ref": "PolicyStatusDTO"
+                    },
+                    "type": "array"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "description": "",
+            "id": "PolicyStatusListResult",
+            "extends": ""
+        },
+        "PolicyIntentSummaryDTOResult": {
+            "properties": {
+                "response": {
+                    "items": {
+                        "$ref": "PolicyIntentSummaryDTO"
+                    },
+                    "type": "array"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "description": "",
+            "id": "PolicyIntentSummaryDTOResult",
+            "extends": ""
+        },
+        "PolicyStatusDTO": {
+            "properties": {
+                "businessIrrelevantApplications": {
+                    "items": {
+                        "$ref": "PolicyApplication"
+                    },
+                    "type": "array"
+                },
+                "policyVersion": {
+                    "type": "string"
+                },
+                "outOfScope": {
+                    "type": "boolean"
+                },
+                "failureReason": {
+                    "type": "string"
+                },
+                "networkDeviceName": {
+                    "type": "string"
+                },
+                "networkDeviceIp": {
+                    "type": "string"
+                },
+                "scopeWirelessSegment": {
+                    "type": "string"
+                },
+                "businessRelevantApplications": {
+                    "items": {
+                        "$ref": "PolicyApplication"
+                    },
+                    "type": "array"
+                },
+                "businessIrrelevantConsumerProducerApplications": {
+                    "items": {
+                        "$ref": "PolicyConsumerProducerApplication"
+                    },
+                    "type": "array"
+                },
+                "instanceUuid": {
+                    "type": "string"
+                },
+                "businessRelevantConsumerProducerApplications": {
+                    "items": {
+                        "$ref": "PolicyConsumerProducerApplication"
+                    },
+                    "type": "array"
+                },
+                "networkDeviceId": {
+                    "type": "string"
+                },
+                "lastSuccessfulPolicyVersion": {
+                    "type": "string"
+                },
+                "policyScope": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "lastUpdated": {
+                    "type": "string"
+                },
+                "applicationPolicyCount": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            },
+            "description": "",
+            "id": "PolicyStatusDTO",
+            "extends": ""
+        },
+        "PolicyTagAssociationDeviceDTO": {
+            "properties": {
+                "deviceIp": {
+                    "type": "string"
+                },
+                "unAssigned": {
+                    "type": "boolean"
+                },
+                "restricted": {
+                    "type": "boolean"
+                },
+                "deviceName": {
+                    "type": "string"
+                },
+                "restrictedReason": {
+                    "type": "string"
+                },
+                "deviceType": {
+                    "type": "string"
+                },
+                "deviceId": {
+                    "type": "string"
+                },
+                "deviceRole": {
+                    "type": "string"
+                }
+            },
+            "description": "",
+            "id": "PolicyTagAssociationDeviceDTO",
+            "extends": ""
+        },
+        "TaskId": {
+            "properties": {},
+            "description": "",
+            "id": "TaskId",
+            "extends": ""
+        },
+        "FlowDTO": {
+            "required": [
+                "flowType",
+                "sourceIP"
+            ],
+            "properties": {
+                "flowType": {
+                    "type": "string",
+                    "description": "flowType"
+                },
+                "clientReference": {
+                    "type": "string",
+                    "description": "clientReference (can be used by the client as a reference to this resource"
+                },
+                "destIP": {
+                    "type": "string",
+                    "description": "destIP"
+                },
+                "matchDSCP": {
+                    "type": "string",
+                    "description": "DSCP of the flow"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "id"
+                },
+                "interfaceId": {
+                    "type": "string",
+                    "description": "interfaceId"
+                },
+                "sourceIP": {
+                    "type": "string",
+                    "description": "sourceIP"
+                },
+                "averageBandwidth": {
+                    "type": "string",
+                    "description": "averageBandwidth in kbps (min: 0, max: 2147483647 kbps)"
+                },
+                "sourcePort": {
+                    "type": "string",
+                    "description": "sourcePort"
+                },
+                "applicationName": {
+                    "type": "string",
+                    "description": "APIC-EM application name"
+                },
+                "networkDeviceName": {
+                    "type": "string",
+                    "description": "networkDeviceName"
+                },
+                "failureReason": {
+                    "type": "string"
+                },
+                "codec": {
+                    "type": "string",
+                    "description": "codec"
+                },
+                "networkDeviceId": {
+                    "type": "string",
+                    "description": "networkDeviceId"
+                },
+                "protocol": {
+                    "type": "string",
+                    "description": "protocol"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "destPort": {
+                    "type": "string",
+                    "description": "destPort"
+                },
+                "detailedFlowType": {
+                    "type": "string",
+                    "description": "detailedFlowType (more detailed classification than flowType)"
+                },
+                "interfaceName": {
+                    "type": "string",
+                    "description": "interfaceName"
+                },
+                "peakBandwidth": {
+                    "type": "string",
+                    "description": "peakBandwidth in kbps (min: 0, max: 2147483647 kbps)"
+                }
+            },
+            "description": "",
+            "id": "FlowDTO",
+            "extends": ""
+        },
+        "VersionNumberDTO": {
+            "properties": {
+                "createTime": {
+                    "type": "integer",
+                    "description": "time at which the version was created",
+                    "format": "int64"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "version number",
+                    "format": "int64"
+                },
+                "policyChanged": {
+                    "type": "boolean",
+                    "description": "true if the version was created as a result of put/post/delete on the policy"
+                }
+            },
+            "description": "",
+            "id": "VersionNumberDTO",
+            "extends": ""
+        },
+        "PolicyTagListResult": {
+            "properties": {
+                "response": {
+                    "items": {
+                        "$ref": "PolicyTagDTO"
+                    },
+                    "type": "array"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "description": "",
+            "id": "PolicyTagListResult",
+            "extends": ""
+        },
+        "FlowIdResult": {
+            "properties": {
+                "response": {
+                    "$ref": "FlowIdResponse"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "description": "",
+            "id": "FlowIdResult",
+            "extends": ""
+        },
+        "PolicyTagDTO": {
+            "required": [
+                "policyTag"
+            ],
+            "properties": {
+                "policyTag": {
+                    "type": "string",
+                    "description": "Policy Tag value"
+                }
+            },
+            "description": "",
+            "id": "PolicyTagDTO",
+            "extends": ""
+        },
+        "CategoryDTO": {
+            "required": [
+                "name",
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "id"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Category Name"
+                }
+            },
+            "description": "",
+            "id": "CategoryDTO",
+            "extends": ""
+        },
+        "PolicyApplication": {
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "raw": {
+                    "type": "string",
+                    "description": "Either raw Application of the form port:protocol should be specified or appId should be specified"
+                },
+                "appName": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "id"
+                },
+                "stale": {
+                    "type": "boolean",
+                    "description": "Indicates whether the application has been updated since the last time this policy was provisioned"
+                }
+            },
+            "description": "",
+            "id": "PolicyApplication",
+            "extends": ""
+        },
+        "CountResult": {
+            "properties": {
+                "response": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "description": "",
+            "id": "CountResult",
+            "extends": ""
+        },
+        "FlowListResult": {
+            "properties": {
+                "response": {
+                    "items": {
+                        "$ref": "FlowDTO"
+                    },
+                    "type": "array"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "description": "",
+            "id": "FlowListResult",
+            "extends": ""
+        },
+        "PolicyFlowSettingDTO": {
+            "required": [
+                "flowPolicyEnabled"
+            ],
+            "properties": {
+                "flowPolicyEnabled": {
+                    "type": "boolean",
+                    "description": "Allowed values are true, false"
+                }
+            },
+            "description": "",
+            "id": "PolicyFlowSettingDTO",
+            "extends": ""
+        },
+        "PolicyResource": {
+            "properties": {
+                "applications": {
+                    "items": {
+                        "$ref": "PolicyApplication"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "applicationDiffs": {
+                    "items": {
+                        "$ref": "PolicyApplicationDiffDTO"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "categories": {
+                    "items": {
+                        "$ref": "CategoryDTO"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "deviceTypes": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "locations": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "userIdentifiers": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array",
+                    "uniqueItems": true
+                }
+            },
+            "description": "",
+            "id": "PolicyResource",
+            "extends": ""
+        },
+        "PolicyDiffDTO": {
+            "properties": {
+                "policy": {
+                    "$ref": "Policy",
+                    "description": "policy"
+                },
+                "operation": {
+                    "enum": [
+                        "CREATE",
+                        "UPDATE",
+                        "DELETE"
+                    ],
+                    "type": "string",
+                    "description": "operation"
+                }
+            },
+            "description": "",
+            "id": "PolicyDiffDTO",
+            "extends": ""
+        },
+        "PolicyConsumerProducerApplication": {
+            "properties": {
+                "producerApplication": {
+                    "$ref": "PolicyApplication"
+                },
+                "consumerApplication": {
+                    "$ref": "PolicyApplication"
+                }
+            },
+            "description": "",
+            "id": "PolicyConsumerProducerApplication",
+            "extends": ""
+        },
+        "TaskIdResult": {
+            "properties": {
+                "response": {
+                    "$ref": "TaskIdResponse"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "description": "",
+            "id": "TaskIdResult",
+            "extends": ""
+        },
+        "PolicyTagAssociationDeviceListResult": {
+            "properties": {
+                "response": {
+                    "items": {
+                        "$ref": "PolicyTagAssociationDeviceDTO"
+                    },
+                    "type": "array"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "description": "",
+            "id": "PolicyTagAssociationDeviceListResult",
+            "extends": ""
+        }
+    },
+    "swaggerVersion": "1.2",
+    "apiVersion": "1.0",
     "apis": [
         {
             "operations": [
                 {
                     "notes": "Get policy(s) based on a filter provided",
-                    "type": "PolicyListResult",
+                    "nickname": "getFilterPolicies",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
+                    "method": "GET",
                     "parameters": [
                         {
+                            "required": false,
+                            "allowMultiple": false,
                             "name": "policyScope",
-                            "required": false,
-                            "defaultValue": "",
                             "paramType": "query",
-                            "allowMultiple": false,
-                            "description": "Retrieve policies for a given scope",
-                            "type": "string"
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Retrieve policies for a given scope"
                         },
                         {
+                            "required": false,
+                            "allowMultiple": false,
                             "name": "scopeWirelessSegment",
-                            "required": false,
-                            "defaultValue": "",
                             "paramType": "query",
-                            "allowMultiple": false,
-                            "description": "Retrieve policies for a given wireless segment, within a policyScope (policyScope is mandatory for this)",
-                            "type": "string"
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Retrieve policies for a given wireless segment, within a policyScope (policyScope is mandatory for this)"
                         },
                         {
+                            "required": false,
+                            "allowMultiple": false,
                             "name": "applicationId",
-                            "required": false,
-                            "defaultValue": "",
                             "paramType": "query",
-                            "allowMultiple": false,
-                            "description": "Retrieve policies for a given Resource Application Id",
-                            "type": "string"
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Retrieve policies for a given Resource Application Id"
                         },
                         {
+                            "required": false,
+                            "allowMultiple": false,
                             "name": "offset",
-                            "required": false,
-                            "defaultValue": "",
                             "paramType": "query",
-                            "allowMultiple": false,
-                            "description": "Starting index of the resources (1 based)",
-                            "type": "string"
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Starting index of the resources (1 based)"
                         },
                         {
-                            "name": "limit",
                             "required": false,
-                            "defaultValue": "",
-                            "paramType": "query",
                             "allowMultiple": false,
-                            "description": "Number of resources to return",
-                            "type": "string"
+                            "name": "limit",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Number of resources to return"
                         }
                     ],
-                    "method": "GET",
                     "responseMessages": [
                         {
+                            "responseModel": "PolicyListResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "PolicyListResult"
+                            "code": 200
                         },
                         {
                             "message": "This user is Forbidden Access to this Resource",
@@ -73,12 +1040,8 @@
                             "code": 404
                         }
                     ],
-                    "deprecated": "false",
-                    "summary": "Retrieves policies based on a given filter",
-                    "nickname": "getFilterPolicies",
-                    "produces": [
-                        "application/json"
-                    ]
+                    "type": "PolicyListResult",
+                    "summary": "Retrieves policies based on a given filter"
                 }
             ],
             "description": "getFilterPolicies",
@@ -88,33 +1051,37 @@
             "operations": [
                 {
                     "notes": "Delete policies based on a given filter",
-                    "type": "TaskIdResult",
+                    "nickname": "deleteFilterPolicies",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
+                    "method": "DELETE",
                     "parameters": [
                         {
-                            "name": "policyScope",
                             "required": true,
-                            "defaultValue": "",
-                            "paramType": "query",
                             "allowMultiple": false,
-                            "description": "Delete policies for a given scope",
-                            "type": "string"
+                            "name": "policyScope",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Delete policies for a given scope"
                         },
                         {
-                            "name": "scopeWirelessSegment",
                             "required": false,
-                            "defaultValue": "",
-                            "paramType": "query",
                             "allowMultiple": false,
-                            "description": "Delete policies for a given wireless segment, within a policyScope (policyScope is mandatory for this)",
-                            "type": "string"
+                            "name": "scopeWirelessSegment",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Delete policies for a given wireless segment, within a policyScope (policyScope is mandatory for this)"
                         }
                     ],
-                    "method": "DELETE",
                     "responseMessages": [
                         {
+                            "responseModel": "TaskIdResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "TaskIdResult"
+                            "code": 200
                         },
                         {
                             "message": "This user is Forbidden Access to this Resource",
@@ -129,12 +1096,8 @@
                             "code": 404
                         }
                     ],
-                    "deprecated": "false",
-                    "summary": "Delete policies based on a given filter",
-                    "nickname": "deleteFilterPolicies",
-                    "produces": [
-                        "application/json"
-                    ]
+                    "type": "TaskIdResult",
+                    "summary": "Delete policies based on a given filter"
                 }
             ],
             "description": "deleteFilterPolicies",
@@ -144,57 +1107,58 @@
             "operations": [
                 {
                     "notes": "Update a policy",
-                    "type": "TaskIdResult",
+                    "nickname": "update",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
+                    "method": "PUT",
                     "parameters": [
                         {
+                            "required": false,
+                            "allowMultiple": false,
                             "name": "scheduleAt",
-                            "required": false,
-                            "defaultValue": "",
                             "paramType": "query",
-                            "allowMultiple": false,
-                            "description": "Epoch Time (The number of milli-seconds since January 1 1970 UTC) at which the policy should be scheduled (Optional) ",
-                            "type": "string"
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Epoch Time (The number of milli-seconds since January 1 1970 UTC) at which the policy should be scheduled (Optional) "
                         },
                         {
+                            "required": false,
+                            "allowMultiple": false,
                             "name": "scheduleDesc",
-                            "required": false,
-                            "defaultValue": "",
                             "paramType": "query",
-                            "allowMultiple": false,
-                            "description": "Custom Description (Optional)",
-                            "type": "string"
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Custom Description (Optional)"
                         },
                         {
+                            "required": false,
+                            "allowMultiple": false,
                             "name": "scheduleOrigin",
-                            "required": false,
-                            "defaultValue": "",
                             "paramType": "query",
-                            "allowMultiple": false,
-                            "description": "Originator of this call (Optional)",
-                            "type": "string"
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Originator of this call (Optional)"
                         },
                         {
-                            "name": "policyList",
                             "required": true,
-                            "defaultValue": "",
+                            "allowMultiple": false,
                             "items": {
                                 "$ref": "Policy"
                             },
+                            "name": "policyList",
                             "paramType": "body",
-                            "allowMultiple": false,
-                            "description": "Policy Object",
-                            "type": "array"
+                            "defaultValue": "",
+                            "type": "array",
+                            "description": "Policy Object"
                         }
                     ],
-                    "consumes": [
-                        "application/json"
-                    ],
-                    "method": "PUT",
                     "responseMessages": [
                         {
+                            "responseModel": "TaskIdResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "TaskIdResult"
+                            "code": 200
                         },
                         {
                             "message": "This user is Forbidden Access to this Resource",
@@ -209,12 +1173,11 @@
                             "code": 404
                         }
                     ],
-                    "deprecated": "false",
-                    "summary": "Update policy(s)",
-                    "nickname": "update",
-                    "produces": [
+                    "consumes": [
                         "application/json"
-                    ]
+                    ],
+                    "type": "TaskIdResult",
+                    "summary": "Update policy(s)"
                 }
             ],
             "description": "update",
@@ -224,57 +1187,58 @@
             "operations": [
                 {
                     "notes": "Create a policy",
-                    "type": "TaskIdResult",
+                    "nickname": "add",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
+                    "method": "POST",
                     "parameters": [
                         {
+                            "required": false,
+                            "allowMultiple": false,
                             "name": "scheduleAt",
-                            "required": false,
-                            "defaultValue": "",
                             "paramType": "query",
-                            "allowMultiple": false,
-                            "description": "Epoch Time (The number of milli-seconds since January 1 1970 UTC) at which the policy should be scheduled (Optional) ",
-                            "type": "string"
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Epoch Time (The number of milli-seconds since January 1 1970 UTC) at which the policy should be scheduled (Optional) "
                         },
                         {
+                            "required": false,
+                            "allowMultiple": false,
                             "name": "scheduleDesc",
-                            "required": false,
-                            "defaultValue": "",
                             "paramType": "query",
-                            "allowMultiple": false,
-                            "description": "Custom Description (Optional)",
-                            "type": "string"
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Custom Description (Optional)"
                         },
                         {
+                            "required": false,
+                            "allowMultiple": false,
                             "name": "scheduleOrigin",
-                            "required": false,
-                            "defaultValue": "",
                             "paramType": "query",
-                            "allowMultiple": false,
-                            "description": "Originator of this call (Optional)",
-                            "type": "string"
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Originator of this call (Optional)"
                         },
                         {
-                            "name": "policyList",
                             "required": true,
-                            "defaultValue": "",
+                            "allowMultiple": false,
                             "items": {
                                 "$ref": "Policy"
                             },
+                            "name": "policyList",
                             "paramType": "body",
-                            "allowMultiple": false,
-                            "description": "Policy Object",
-                            "type": "array"
+                            "defaultValue": "",
+                            "type": "array",
+                            "description": "Policy Object"
                         }
                     ],
-                    "consumes": [
-                        "application/json"
-                    ],
-                    "method": "POST",
                     "responseMessages": [
                         {
+                            "responseModel": "TaskIdResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "TaskIdResult"
+                            "code": 200
                         },
                         {
                             "message": "This Request is Accepted",
@@ -293,12 +1257,11 @@
                             "code": 404
                         }
                     ],
-                    "deprecated": "false",
-                    "summary": "Create policy(s)",
-                    "nickname": "add",
-                    "produces": [
+                    "consumes": [
                         "application/json"
-                    ]
+                    ],
+                    "type": "TaskIdResult",
+                    "summary": "Create policy(s)"
                 }
             ],
             "description": "add",
@@ -308,14 +1271,18 @@
             "operations": [
                 {
                     "notes": "Get total count of policies",
-                    "type": "CountResult",
-                    "parameters": [],
+                    "nickname": "getCount",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
                     "method": "GET",
+                    "parameters": [],
                     "responseMessages": [
                         {
+                            "responseModel": "CountResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "CountResult"
+                            "code": 200
                         },
                         {
                             "message": "This user is Forbidden Access to this Resource",
@@ -330,12 +1297,8 @@
                             "code": 404
                         }
                     ],
-                    "deprecated": "false",
-                    "summary": "Return total count of policies",
-                    "nickname": "getCount",
-                    "produces": [
-                        "application/json"
-                    ]
+                    "type": "CountResult",
+                    "summary": "Return total count of policies"
                 }
             ],
             "description": "getCount",
@@ -344,28 +1307,94 @@
         {
             "operations": [
                 {
-                    "notes": "Adds the policy diff",
-                    "type": "TaskIdResult",
-                    "parameters": [
-                        {
-                            "name": "versionDiffDTO",
-                            "required": true,
-                            "defaultValue": "",
-                            "paramType": "body",
-                            "allowMultiple": false,
-                            "description": "VersionDiff",
-                            "type": "VersionDiffDTO"
-                        }
-                    ],
-                    "consumes": [
+                    "notes": "This will return the list of policies diffs for a given version and scope. Each element will be a wrapper on existing policy type and existing application type. The policy wrapper in addition to policy will have an operation enum (CREATE, UPDATE, DELETE). CREATE means the policy existed on the selected version but does not exist in the current version. DELETE means the policy did not exist in the selected version but exists in the current version. UPDATE means the policy exists in both versions. Application wrapper has the same semantics for CREATE, UPDATE, DELETE",
+                    "nickname": "getPolicyDiff",
+                    "produces": [
                         "application/json"
                     ],
-                    "method": "POST",
+                    "deprecated": "false",
+                    "method": "GET",
+                    "parameters": [
+                        {
+                            "required": true,
+                            "allowMultiple": false,
+                            "name": "version",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Retrieve policy diffs for the given version"
+                        },
+                        {
+                            "required": true,
+                            "allowMultiple": false,
+                            "name": "policyScope",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Retrieve policy diffs for the given scope"
+                        },
+                        {
+                            "required": false,
+                            "allowMultiple": false,
+                            "name": "scopeWirelessSegment",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Retrieve policy diffs for the given scopeWirelessSegment"
+                        }
+                    ],
                     "responseMessages": [
                         {
+                            "responseModel": "VersionDiffResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "TaskIdResult"
+                            "code": 200
+                        },
+                        {
+                            "message": "This user is Forbidden Access to this Resource",
+                            "code": 403
+                        },
+                        {
+                            "message": "Not Authorized Yet, Credentials to be supplied",
+                            "code": 401
+                        },
+                        {
+                            "message": "No Resource Found",
+                            "code": 404
+                        }
+                    ],
+                    "type": "VersionDiffResult",
+                    "summary": "Retrieves the policy diff"
+                }
+            ],
+            "description": "getPolicyDiff",
+            "path": "/policy/diff"
+        },
+        {
+            "operations": [
+                {
+                    "notes": "The body of the request will contain a list of policy wrappers as obtained by the GET /policy/diff api for a given version. This request will create and apply a new version of the policies. Id and policies in VersionDiffDTO are optional params. But one of them have to be specified. If policies is specified id is ignored.",
+                    "nickname": "addPolicyDiff",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
+                    "method": "POST",
+                    "parameters": [
+                        {
+                            "required": true,
+                            "allowMultiple": false,
+                            "name": "versionDiffDTO",
+                            "paramType": "body",
+                            "defaultValue": "",
+                            "type": "VersionDiffDTO",
+                            "description": "VersionDiff"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "responseModel": "TaskIdResult",
+                            "message": "This Request is OK",
+                            "code": 200
                         },
                         {
                             "message": "This Request is Accepted",
@@ -384,12 +1413,11 @@
                             "code": 404
                         }
                     ],
-                    "deprecated": "false",
-                    "summary": "Adds the policy diff",
-                    "nickname": "addPolicyDiff",
-                    "produces": [
+                    "consumes": [
                         "application/json"
-                    ]
+                    ],
+                    "type": "TaskIdResult",
+                    "summary": "Adds the policy diff"
                 }
             ],
             "description": "addPolicyDiff",
@@ -398,110 +1426,45 @@
         {
             "operations": [
                 {
-                    "notes": "Retrieves the policy diff",
-                    "type": "VersionDiffResult",
-                    "parameters": [
-                        {
-                            "name": "version",
-                            "required": true,
-                            "defaultValue": "",
-                            "paramType": "query",
-                            "allowMultiple": false,
-                            "description": "Retrieve policy diffs for the given version",
-                            "type": "string"
-                        },
-                        {
-                            "name": "policyScope",
-                            "required": true,
-                            "defaultValue": "",
-                            "paramType": "query",
-                            "allowMultiple": false,
-                            "description": "Retrieve policy diffs for the given scope",
-                            "type": "string"
-                        },
-                        {
-                            "name": "scopeWirelessSegment",
-                            "required": false,
-                            "defaultValue": "",
-                            "paramType": "query",
-                            "allowMultiple": false,
-                            "description": "Retrieve policy diffs for the given scopeWirelessSegment",
-                            "type": "string"
-                        }
-                    ],
-                    "method": "GET",
-                    "responseMessages": [
-                        {
-                            "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "VersionDiffResult"
-                        },
-                        {
-                            "message": "This user is Forbidden Access to this Resource",
-                            "code": 403
-                        },
-                        {
-                            "message": "Not Authorized Yet, Credentials to be supplied",
-                            "code": 401
-                        },
-                        {
-                            "message": "No Resource Found",
-                            "code": 404
-                        }
-                    ],
-                    "deprecated": "false",
-                    "summary": "Retrieves the policy diff",
-                    "nickname": "getPolicyDiff",
-                    "produces": [
-                        "application/json"
-                    ]
-                }
-            ],
-            "description": "getPolicyDiff",
-            "path": "/policy/diff"
-        },
-        {
-            "operations": [
-                {
                     "notes": "deleteFlowsByClientReference",
-                    "type": "TaskIdResult",
-                    "parameters": [
-                        {
-                            "name": "clientReference",
-                            "required": true,
-                            "defaultValue": "",
-                            "paramType": "query",
-                            "allowMultiple": false,
-                            "description": "clientReference",
-                            "type": "string"
-                        }
-                    ],
-                    "method": "DELETE",
-                    "responseMessages": [
-                        {
-                            "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "TaskIdResult"
-                        },
-                        {
-                            "message": "This user is Forbidden Access to this Resource",
-                            "code": 403
-                        },
-                        {
-                            "message": "Not Authorized Yet, Credentials to be supplied",
-                            "code": 401
-                        },
-                        {
-                            "message": "No Resource Found",
-                            "code": 404
-                        }
-                    ],
-                    "deprecated": "false",
-                    "summary": "Deletes flows based on clientReference prefix",
                     "nickname": "deleteFlowsByClientReference",
                     "produces": [
                         "application/json"
-                    ]
+                    ],
+                    "deprecated": "false",
+                    "method": "DELETE",
+                    "parameters": [
+                        {
+                            "required": true,
+                            "allowMultiple": false,
+                            "name": "clientReference",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "clientReference"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "responseModel": "TaskIdResult",
+                            "message": "This Request is OK",
+                            "code": 200
+                        },
+                        {
+                            "message": "This user is Forbidden Access to this Resource",
+                            "code": 403
+                        },
+                        {
+                            "message": "Not Authorized Yet, Credentials to be supplied",
+                            "code": 401
+                        },
+                        {
+                            "message": "No Resource Found",
+                            "code": 404
+                        }
+                    ],
+                    "type": "TaskIdResult",
+                    "summary": "Deletes flows based on clientReference prefix"
                 }
             ],
             "description": "deleteFlowsByClientReference",
@@ -511,33 +1474,37 @@
             "operations": [
                 {
                     "notes": "getFlows",
-                    "type": "FlowListResult",
+                    "nickname": "getFlows",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
+                    "method": "GET",
                     "parameters": [
                         {
-                            "name": "offset",
                             "required": false,
-                            "defaultValue": "",
-                            "paramType": "query",
                             "allowMultiple": false,
-                            "description": "Starting index of the resources (1 based)",
-                            "type": "string"
+                            "name": "offset",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Starting index of the resources (1 based)"
                         },
                         {
-                            "name": "limit",
                             "required": false,
-                            "defaultValue": "",
-                            "paramType": "query",
                             "allowMultiple": false,
-                            "description": "Number of resources to return",
-                            "type": "string"
+                            "name": "limit",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Number of resources to return"
                         }
                     ],
-                    "method": "GET",
                     "responseMessages": [
                         {
+                            "responseModel": "FlowListResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "FlowListResult"
+                            "code": 200
                         },
                         {
                             "message": "This user is Forbidden Access to this Resource",
@@ -552,12 +1519,8 @@
                             "code": 404
                         }
                     ],
-                    "deprecated": "false",
-                    "summary": "Retrieves flows with search criteria",
-                    "nickname": "getFlows",
-                    "produces": [
-                        "application/json"
-                    ]
+                    "type": "FlowListResult",
+                    "summary": "Retrieves flows with search criteria"
                 }
             ],
             "description": "getFlows",
@@ -567,27 +1530,28 @@
             "operations": [
                 {
                     "notes": "addFlow",
-                    "type": "FlowIdResult",
-                    "parameters": [
-                        {
-                            "name": "flowDTO",
-                            "required": false,
-                            "defaultValue": "",
-                            "paramType": "body",
-                            "allowMultiple": false,
-                            "description": "flowDTO",
-                            "type": "FlowDTO"
-                        }
-                    ],
-                    "consumes": [
+                    "nickname": "addFlow",
+                    "produces": [
                         "application/json"
                     ],
+                    "deprecated": "false",
                     "method": "POST",
+                    "parameters": [
+                        {
+                            "required": false,
+                            "allowMultiple": false,
+                            "name": "flowDTO",
+                            "paramType": "body",
+                            "defaultValue": "",
+                            "type": "FlowDTO",
+                            "description": "flowDTO"
+                        }
+                    ],
                     "responseMessages": [
                         {
+                            "responseModel": "FlowIdResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "FlowIdResult"
+                            "code": 200
                         },
                         {
                             "message": "This Request is Accepted",
@@ -606,12 +1570,11 @@
                             "code": 404
                         }
                     ],
-                    "deprecated": "false",
-                    "summary": "Creates a new traffic flow for which qos policies will be applied",
-                    "nickname": "addFlow",
-                    "produces": [
+                    "consumes": [
                         "application/json"
-                    ]
+                    ],
+                    "type": "FlowIdResult",
+                    "summary": "Creates a new traffic flow for which qos policies will be applied"
                 }
             ],
             "description": "addFlow",
@@ -620,28 +1583,19 @@
         {
             "operations": [
                 {
-                    "notes": "updateFlowPolicySetting",
-                    "type": "TaskIdResult",
-                    "parameters": [
-                        {
-                            "name": "policyFlowSettingDTO",
-                            "required": false,
-                            "defaultValue": "",
-                            "paramType": "body",
-                            "allowMultiple": false,
-                            "description": "policyFlowSettingDTO",
-                            "type": "PolicyFlowSettingDTO"
-                        }
-                    ],
-                    "consumes": [
+                    "notes": "getFlowCount",
+                    "nickname": "getFlowCount",
+                    "produces": [
                         "application/json"
                     ],
-                    "method": "PUT",
+                    "deprecated": "false",
+                    "method": "GET",
+                    "parameters": [],
                     "responseMessages": [
                         {
+                            "responseModel": "CountResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "TaskIdResult"
+                            "code": 200
                         },
                         {
                             "message": "This user is Forbidden Access to this Resource",
@@ -656,12 +1610,58 @@
                             "code": 404
                         }
                     ],
-                    "deprecated": "false",
-                    "summary": "Update the dynamic policy flow setting. This setting will be used to allow/disallow dynamic flows /policy/flow requests.",
+                    "type": "CountResult",
+                    "summary": "Retrieves the number of flows"
+                }
+            ],
+            "description": "getFlowCount",
+            "path": "/policy/flow/count"
+        },
+        {
+            "operations": [
+                {
+                    "notes": "updateFlowPolicySetting",
                     "nickname": "updateFlowPolicySetting",
                     "produces": [
                         "application/json"
-                    ]
+                    ],
+                    "deprecated": "false",
+                    "method": "PUT",
+                    "parameters": [
+                        {
+                            "required": false,
+                            "allowMultiple": false,
+                            "name": "policyFlowSettingDTO",
+                            "paramType": "body",
+                            "defaultValue": "",
+                            "type": "PolicyFlowSettingDTO",
+                            "description": "policyFlowSettingDTO"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "responseModel": "TaskIdResult",
+                            "message": "This Request is OK",
+                            "code": 200
+                        },
+                        {
+                            "message": "This user is Forbidden Access to this Resource",
+                            "code": 403
+                        },
+                        {
+                            "message": "Not Authorized Yet, Credentials to be supplied",
+                            "code": 401
+                        },
+                        {
+                            "message": "No Resource Found",
+                            "code": 404
+                        }
+                    ],
+                    "consumes": [
+                        "application/json"
+                    ],
+                    "type": "TaskIdResult",
+                    "summary": "Update the dynamic policy flow setting. This setting will be used to allow/disallow dynamic flows /policy/flow requests."
                 }
             ],
             "description": "updateFlowPolicySetting",
@@ -671,14 +1671,18 @@
             "operations": [
                 {
                     "notes": "getPolicyFlowSetting",
-                    "type": "PolicyFlowSettingResult",
-                    "parameters": [],
+                    "nickname": "getPolicyFlowSetting",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
                     "method": "GET",
+                    "parameters": [],
                     "responseMessages": [
                         {
+                            "responseModel": "PolicyFlowSettingResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "PolicyFlowSettingResult"
+                            "code": 200
                         },
                         {
                             "message": "This user is Forbidden Access to this Resource",
@@ -693,12 +1697,8 @@
                             "code": 404
                         }
                     ],
-                    "deprecated": "false",
-                    "summary": "Retrieves dynamic policy flow setting",
-                    "nickname": "getPolicyFlowSetting",
-                    "produces": [
-                        "application/json"
-                    ]
+                    "type": "PolicyFlowSettingResult",
+                    "summary": "Retrieves dynamic policy flow setting"
                 }
             ],
             "description": "getPolicyFlowSetting",
@@ -708,24 +1708,28 @@
             "operations": [
                 {
                     "notes": "Delete a policy for the flow by its id",
-                    "type": "TaskIdResult",
+                    "nickname": "deleteFlow",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
+                    "method": "DELETE",
                     "parameters": [
                         {
-                            "name": "id",
                             "required": true,
-                            "defaultValue": "",
-                            "paramType": "path",
                             "allowMultiple": false,
-                            "description": "id",
-                            "type": "string"
+                            "name": "id",
+                            "paramType": "path",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "id"
                         }
                     ],
-                    "method": "DELETE",
                     "responseMessages": [
                         {
+                            "responseModel": "TaskIdResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "TaskIdResult"
+                            "code": 200
                         },
                         {
                             "message": "This user is Forbidden Access to this Resource",
@@ -740,12 +1744,8 @@
                             "code": 404
                         }
                     ],
-                    "deprecated": "false",
-                    "summary": "Delete a policy for the flow by its id",
-                    "nickname": "deleteFlow",
-                    "produces": [
-                        "application/json"
-                    ]
+                    "type": "TaskIdResult",
+                    "summary": "Delete a policy for the flow by its id"
                 }
             ],
             "description": "deleteFlow",
@@ -755,24 +1755,28 @@
             "operations": [
                 {
                     "notes": "getFlow",
-                    "type": "FlowResult",
+                    "nickname": "getFlow",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
+                    "method": "GET",
                     "parameters": [
                         {
-                            "name": "id",
                             "required": true,
-                            "defaultValue": "",
-                            "paramType": "path",
                             "allowMultiple": false,
-                            "description": "id",
-                            "type": "string"
+                            "name": "id",
+                            "paramType": "path",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "id"
                         }
                     ],
-                    "method": "GET",
                     "responseMessages": [
                         {
+                            "responseModel": "FlowResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "FlowResult"
+                            "code": 200
                         },
                         {
                             "message": "This user is Forbidden Access to this Resource",
@@ -787,12 +1791,8 @@
                             "code": 404
                         }
                     ],
-                    "deprecated": "false",
-                    "summary": "Retrieves a flow by its id",
-                    "nickname": "getFlow",
-                    "produces": [
-                        "application/json"
-                    ]
+                    "type": "FlowResult",
+                    "summary": "Retrieves a flow by its id"
                 }
             ],
             "description": "getFlow",
@@ -801,52 +1801,56 @@
         {
             "operations": [
                 {
-                    "notes": "Get policy status(s) based on filter(s) provided. Either provide networkDeviceId or provide policyScope, offset, limit",
-                    "type": "PolicyStatusListResult",
+                    "notes": "Get the policy intent summary based on a given filter",
+                    "nickname": "getPolicyIntentSummary",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
+                    "method": "GET",
                     "parameters": [
                         {
-                            "name": "networkDeviceId",
                             "required": false,
-                            "defaultValue": "",
-                            "paramType": "query",
                             "allowMultiple": false,
-                            "description": "Retrieve policies for a given networkDeviceId",
-                            "type": "string"
-                        },
-                        {
                             "name": "policyScope",
-                            "required": false,
-                            "defaultValue": "",
                             "paramType": "query",
-                            "allowMultiple": false,
-                            "description": "Retrieve policies for a given scope",
-                            "type": "string"
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Retrieve the policy intent summary based on a given policyScope"
                         },
                         {
+                            "required": false,
+                            "allowMultiple": false,
+                            "name": "scopeWirelessSegment",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Retrieve the policy intent summary based on a given scopeWirelessSegment given the policyScope"
+                        },
+                        {
+                            "required": false,
+                            "allowMultiple": false,
                             "name": "offset",
-                            "required": false,
-                            "defaultValue": "",
                             "paramType": "query",
-                            "allowMultiple": false,
-                            "description": "Starting index of the resources (1 based)",
-                            "type": "string"
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Starting index of the resources (1 based)"
                         },
                         {
-                            "name": "limit",
                             "required": false,
-                            "defaultValue": "",
-                            "paramType": "query",
                             "allowMultiple": false,
-                            "description": "Number of resources to return (Use smaller limit value for better response times. Max 50)",
-                            "type": "string"
+                            "name": "limit",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Number of resources to return"
                         }
                     ],
-                    "method": "GET",
                     "responseMessages": [
                         {
+                            "responseModel": "PolicyIntentSummaryDTOResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "PolicyStatusListResult"
+                            "code": 200
                         },
                         {
                             "message": "This user is Forbidden Access to this Resource",
@@ -861,12 +1865,203 @@
                             "code": 404
                         }
                     ],
+                    "type": "PolicyIntentSummaryDTOResult",
+                    "summary": "Retrieves the policy intent summary based on a given filter"
+                }
+            ],
+            "description": "getPolicyIntentSummary",
+            "path": "/policy/intent/summary"
+        },
+        {
+            "operations": [
+                {
+                    "notes": "Get applications(s) based on a filter provided",
+                    "nickname": "getAssignedPolicyApplications",
+                    "produces": [
+                        "application/json"
+                    ],
                     "deprecated": "false",
-                    "summary": "Retrieves policy statuses based on a given filter",
+                    "method": "GET",
+                    "parameters": [
+                        {
+                            "required": true,
+                            "allowMultiple": false,
+                            "name": "policyScope",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Retrieve policies for a given policyScope"
+                        },
+                        {
+                            "required": false,
+                            "allowMultiple": false,
+                            "name": "scopeWirelessSegment",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Retrieve policies for a given wireless segment, within a policyScope"
+                        },
+                        {
+                            "required": false,
+                            "allowMultiple": false,
+                            "name": "stale",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Indicates whether the retrieved applications have/have not been updated since the last time the policy was provisioned. If unspecified, both will be returned"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "responseModel": "PolicyApplicationListResult",
+                            "message": "This Request is OK",
+                            "code": 200
+                        },
+                        {
+                            "message": "This user is Forbidden Access to this Resource",
+                            "code": 403
+                        },
+                        {
+                            "message": "Not Authorized Yet, Credentials to be supplied",
+                            "code": 401
+                        },
+                        {
+                            "message": "No Resource Found",
+                            "code": 404
+                        }
+                    ],
+                    "type": "PolicyApplicationListResult",
+                    "summary": "Retrieves Assigned applications that are (or aren't) stale in policies for a given policyScope & scopeWirelessSegment based on a given filter"
+                }
+            ],
+            "description": "getAssignedPolicyApplications",
+            "path": "/policy/intent/summary/application/assigned"
+        },
+        {
+            "operations": [
+                {
+                    "notes": "Get applications(s) based on a filter provided",
+                    "nickname": "getUnassignedPolicyApplications",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
+                    "method": "GET",
+                    "parameters": [
+                        {
+                            "required": true,
+                            "allowMultiple": false,
+                            "name": "policyScope",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Retrieve policies for a given policyScope"
+                        },
+                        {
+                            "required": false,
+                            "allowMultiple": false,
+                            "name": "scopeWirelessSegment",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Retrieve policies for a given wireless segment, within a policyScope"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "responseModel": "PolicyApplicationListResult",
+                            "message": "This Request is OK",
+                            "code": 200
+                        },
+                        {
+                            "message": "This user is Forbidden Access to this Resource",
+                            "code": 403
+                        },
+                        {
+                            "message": "Not Authorized Yet, Credentials to be supplied",
+                            "code": 401
+                        },
+                        {
+                            "message": "No Resource Found",
+                            "code": 404
+                        }
+                    ],
+                    "type": "PolicyApplicationListResult",
+                    "summary": "Retrieves Unassigned applications for a given policyScope & scopeWirelessSegment"
+                }
+            ],
+            "description": "getUnassignedPolicyApplications",
+            "path": "/policy/intent/summary/application/unassigned"
+        },
+        {
+            "operations": [
+                {
+                    "notes": "Get policy status(s) based on filter(s) provided. Either provide networkDeviceId or provide policyScope, offset, limit",
                     "nickname": "getPolicyStatus",
                     "produces": [
                         "application/json"
-                    ]
+                    ],
+                    "deprecated": "false",
+                    "method": "GET",
+                    "parameters": [
+                        {
+                            "required": false,
+                            "allowMultiple": false,
+                            "name": "networkDeviceId",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Retrieve policies for a given networkDeviceId"
+                        },
+                        {
+                            "required": false,
+                            "allowMultiple": false,
+                            "name": "policyScope",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Retrieve policies for a given scope"
+                        },
+                        {
+                            "required": false,
+                            "allowMultiple": false,
+                            "name": "offset",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Starting index of the resources (1 based)"
+                        },
+                        {
+                            "required": false,
+                            "allowMultiple": false,
+                            "name": "limit",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Number of resources to return (Use smaller limit value for better response times. Max 50)"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "responseModel": "PolicyStatusListResult",
+                            "message": "This Request is OK",
+                            "code": 200
+                        },
+                        {
+                            "message": "This user is Forbidden Access to this Resource",
+                            "code": 403
+                        },
+                        {
+                            "message": "Not Authorized Yet, Credentials to be supplied",
+                            "code": 401
+                        },
+                        {
+                            "message": "No Resource Found",
+                            "code": 404
+                        }
+                    ],
+                    "type": "PolicyStatusListResult",
+                    "summary": "Retrieves policy statuses based on a given filter"
                 }
             ],
             "description": "getPolicyStatus",
@@ -876,33 +2071,37 @@
             "operations": [
                 {
                     "notes": "Get count of policy status(es) based on a given policyScope & scopeWirelessSegment",
-                    "type": "CountResult",
+                    "nickname": "getCountByPolicyScope",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
+                    "method": "GET",
                     "parameters": [
                         {
-                            "name": "policyScope",
                             "required": true,
-                            "defaultValue": "",
-                            "paramType": "query",
                             "allowMultiple": false,
-                            "description": "Retrieve count of policy status(es) based on a given policyScope",
-                            "type": "string"
+                            "name": "policyScope",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Retrieve count of policy status(es) based on a given policyScope"
                         },
                         {
-                            "name": "scopeWirelessSegment",
                             "required": false,
-                            "defaultValue": "",
-                            "paramType": "query",
                             "allowMultiple": false,
-                            "description": "Retrieve count of policy status(es) based on a given scopeWirelessSegment",
-                            "type": "string"
+                            "name": "scopeWirelessSegment",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Retrieve count of policy status(es) based on a given scopeWirelessSegment"
                         }
                     ],
-                    "method": "GET",
                     "responseMessages": [
                         {
+                            "responseModel": "CountResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "CountResult"
+                            "code": 200
                         },
                         {
                             "message": "This user is Forbidden Access to this Resource",
@@ -917,12 +2116,8 @@
                             "code": 404
                         }
                     ],
-                    "deprecated": "false",
-                    "summary": "Retrieves count of policy status(es) based on a given policyScope & scopeWirelessSegment",
-                    "nickname": "getCountByPolicyScope",
-                    "produces": [
-                        "application/json"
-                    ]
+                    "type": "CountResult",
+                    "summary": "Retrieves count of policy status(es) based on a given policyScope & scopeWirelessSegment"
                 }
             ],
             "description": "getCountByPolicyScope",
@@ -932,42 +2127,46 @@
             "operations": [
                 {
                     "notes": "Get policy status(s) summary based on a filter provided",
-                    "type": "PolicyStatusListResult",
+                    "nickname": "getPolicyStatusSummary",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
+                    "method": "GET",
                     "parameters": [
                         {
-                            "name": "policyScope",
                             "required": true,
-                            "defaultValue": "",
-                            "paramType": "query",
                             "allowMultiple": false,
-                            "description": "Retrieve policy status(es) for a given scope",
-                            "type": "string"
+                            "name": "policyScope",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Retrieve policy status(es) for a given scope"
                         },
                         {
+                            "required": false,
+                            "allowMultiple": false,
                             "name": "offset",
-                            "required": false,
-                            "defaultValue": "",
                             "paramType": "query",
-                            "allowMultiple": false,
-                            "description": "Starting index of the resources (1 based)",
-                            "type": "string"
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Starting index of the resources (1 based)"
                         },
                         {
-                            "name": "limit",
                             "required": false,
-                            "defaultValue": "",
-                            "paramType": "query",
                             "allowMultiple": false,
-                            "description": "Number of resources to return (Use smaller limit value for better response times. Max 50)",
-                            "type": "string"
+                            "name": "limit",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Number of resources to return (Use smaller limit value for better response times. Max 50)"
                         }
                     ],
-                    "method": "GET",
                     "responseMessages": [
                         {
+                            "responseModel": "PolicyStatusListResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "PolicyStatusListResult"
+                            "code": 200
                         },
                         {
                             "message": "This user is Forbidden Access to this Resource",
@@ -982,12 +2181,8 @@
                             "code": 404
                         }
                     ],
-                    "deprecated": "false",
-                    "summary": "Retrieves policy statuses summary based on a given filter",
-                    "nickname": "getPolicyStatusSummary",
-                    "produces": [
-                        "application/json"
-                    ]
+                    "type": "PolicyStatusListResult",
+                    "summary": "Retrieves policy statuses summary based on a given filter"
                 }
             ],
             "description": "getPolicyStatusSummary",
@@ -997,27 +2192,28 @@
             "operations": [
                 {
                     "notes": "addPolicyTag",
-                    "type": "TaskIdResult",
-                    "parameters": [
-                        {
-                            "name": "policyTagDTO",
-                            "required": false,
-                            "defaultValue": "",
-                            "paramType": "body",
-                            "allowMultiple": false,
-                            "description": "policyTagDTO",
-                            "type": "PolicyTagDTO"
-                        }
-                    ],
-                    "consumes": [
+                    "nickname": "addPolicyTag",
+                    "produces": [
                         "application/json"
                     ],
+                    "deprecated": "false",
                     "method": "POST",
+                    "parameters": [
+                        {
+                            "required": false,
+                            "allowMultiple": false,
+                            "name": "policyTagDTO",
+                            "paramType": "body",
+                            "defaultValue": "",
+                            "type": "PolicyTagDTO",
+                            "description": "policyTagDTO"
+                        }
+                    ],
                     "responseMessages": [
                         {
+                            "responseModel": "TaskIdResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "TaskIdResult"
+                            "code": 200
                         },
                         {
                             "message": "This Request is Accepted",
@@ -1036,12 +2232,11 @@
                             "code": 404
                         }
                     ],
-                    "deprecated": "false",
-                    "summary": "Create a policy tag",
-                    "nickname": "addPolicyTag",
-                    "produces": [
+                    "consumes": [
                         "application/json"
-                    ]
+                    ],
+                    "type": "TaskIdResult",
+                    "summary": "Create a policy tag"
                 }
             ],
             "description": "addPolicyTag",
@@ -1051,27 +2246,28 @@
             "operations": [
                 {
                     "notes": "deletePolicyTag",
-                    "type": "TaskIdResult",
-                    "parameters": [
-                        {
-                            "name": "policyTag",
-                            "required": true,
-                            "defaultValue": "",
-                            "paramType": "query",
-                            "allowMultiple": false,
-                            "description": "Policy Tag",
-                            "type": "string"
-                        }
-                    ],
-                    "consumes": [
+                    "nickname": "deletePolicyTag",
+                    "produces": [
                         "application/json"
                     ],
+                    "deprecated": "false",
                     "method": "DELETE",
+                    "parameters": [
+                        {
+                            "required": true,
+                            "allowMultiple": false,
+                            "name": "policyTag",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Policy Tag"
+                        }
+                    ],
                     "responseMessages": [
                         {
+                            "responseModel": "TaskIdResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "TaskIdResult"
+                            "code": 200
                         },
                         {
                             "message": "This user is Forbidden Access to this Resource",
@@ -1086,12 +2282,11 @@
                             "code": 404
                         }
                     ],
-                    "deprecated": "false",
-                    "summary": "Delete a policy tag.",
-                    "nickname": "deletePolicyTag",
-                    "produces": [
+                    "consumes": [
                         "application/json"
-                    ]
+                    ],
+                    "type": "TaskIdResult",
+                    "summary": "Delete a policy tag."
                 }
             ],
             "description": "deletePolicyTag",
@@ -1101,33 +2296,37 @@
             "operations": [
                 {
                     "notes": "getPolicyTags",
-                    "type": "PolicyTagListResult",
+                    "nickname": "getPolicyTags",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
+                    "method": "GET",
                     "parameters": [
                         {
-                            "name": "policyTag",
                             "required": false,
-                            "defaultValue": "",
-                            "paramType": "query",
                             "allowMultiple": false,
-                            "description": "policyTag search substring",
-                            "type": "string"
+                            "name": "policyTag",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "policyTag search substring"
                         },
                         {
-                            "name": "filterOperation",
                             "required": false,
-                            "defaultValue": "",
-                            "paramType": "query",
                             "allowMultiple": false,
-                            "description": "type of search (startsWith, endsWith, contains",
-                            "type": "string"
+                            "name": "filterOperation",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "type of search (startsWith, endsWith, contains"
                         }
                     ],
-                    "method": "GET",
                     "responseMessages": [
                         {
+                            "responseModel": "PolicyTagListResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "PolicyTagListResult"
+                            "code": 200
                         },
                         {
                             "message": "This user is Forbidden Access to this Resource",
@@ -1142,12 +2341,8 @@
                             "code": 404
                         }
                     ],
-                    "deprecated": "false",
-                    "summary": "Retrieves policy tags",
-                    "nickname": "getPolicyTags",
-                    "produces": [
-                        "application/json"
-                    ]
+                    "type": "PolicyTagListResult",
+                    "summary": "Retrieves policy tags"
                 }
             ],
             "description": "getPolicyTags",
@@ -1157,51 +2352,64 @@
             "operations": [
                 {
                     "notes": "getPolicyTagAssociation",
-                    "type": "PolicyTagAssociationListResult",
+                    "nickname": "getPolicyTagAssociation",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
+                    "method": "GET",
                     "parameters": [
                         {
+                            "required": false,
+                            "allowMultiple": false,
                             "name": "policyTag",
-                            "required": false,
-                            "defaultValue": "",
                             "paramType": "query",
-                            "allowMultiple": false,
-                            "description": "Policy Tag",
-                            "type": "string"
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Policy Tag"
                         },
                         {
+                            "required": false,
+                            "allowMultiple": false,
                             "name": "networkDeviceId",
-                            "required": false,
-                            "defaultValue": "",
                             "paramType": "query",
-                            "allowMultiple": false,
-                            "description": "Network device Id",
-                            "type": "string"
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Network device Id"
                         },
                         {
+                            "required": false,
+                            "allowMultiple": false,
+                            "name": "networkDevices+restricted",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Restricted Flag"
+                        },
+                        {
+                            "required": false,
+                            "allowMultiple": false,
                             "name": "offset",
-                            "required": false,
-                            "defaultValue": "",
                             "paramType": "query",
-                            "allowMultiple": false,
-                            "description": "Starting index of the resources (1 based)",
-                            "type": "string"
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Starting index of the resources (1 based)"
                         },
                         {
-                            "name": "limit",
                             "required": false,
-                            "defaultValue": "",
-                            "paramType": "query",
                             "allowMultiple": false,
-                            "description": "Number of resources to return",
-                            "type": "string"
+                            "name": "limit",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Number of resources to return"
                         }
                     ],
-                    "method": "GET",
                     "responseMessages": [
                         {
+                            "responseModel": "PolicyTagAssociationListResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "PolicyTagAssociationListResult"
+                            "code": 200
                         },
                         {
                             "message": "This user is Forbidden Access to this Resource",
@@ -1216,12 +2424,8 @@
                             "code": 404
                         }
                     ],
-                    "deprecated": "false",
-                    "summary": "Retrieves network device ids that have the policy tag",
-                    "nickname": "getPolicyTagAssociation",
-                    "produces": [
-                        "application/json"
-                    ]
+                    "type": "PolicyTagAssociationListResult",
+                    "summary": "Retrieves network device ids that have the policy tag"
                 }
             ],
             "description": "getPolicyTagAssociation",
@@ -1231,27 +2435,28 @@
             "operations": [
                 {
                     "notes": "addPolicyTagAssociation",
-                    "type": "TaskIdResult",
-                    "parameters": [
-                        {
-                            "name": "policyTagAssociationDTO",
-                            "required": false,
-                            "defaultValue": "",
-                            "paramType": "body",
-                            "allowMultiple": false,
-                            "description": "policyTagAssociationDTO",
-                            "type": "PolicyTagAssociationDTO"
-                        }
-                    ],
-                    "consumes": [
+                    "nickname": "addPolicyTagAssociation",
+                    "produces": [
                         "application/json"
                     ],
+                    "deprecated": "false",
                     "method": "POST",
+                    "parameters": [
+                        {
+                            "required": false,
+                            "allowMultiple": false,
+                            "name": "policyTagAssociationDTO",
+                            "paramType": "body",
+                            "defaultValue": "",
+                            "type": "PolicyTagAssociationDTO",
+                            "description": "policyTagAssociationDTO"
+                        }
+                    ],
                     "responseMessages": [
                         {
+                            "responseModel": "TaskIdResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "TaskIdResult"
+                            "code": 200
                         },
                         {
                             "message": "This Request is Accepted",
@@ -1270,12 +2475,11 @@
                             "code": 404
                         }
                     ],
-                    "deprecated": "false",
-                    "summary": "Add a policy tag to network devices.",
-                    "nickname": "addPolicyTagAssociation",
-                    "produces": [
+                    "consumes": [
                         "application/json"
-                    ]
+                    ],
+                    "type": "TaskIdResult",
+                    "summary": "Add a policy tag to network devices."
                 }
             ],
             "description": "addPolicyTagAssociation",
@@ -1285,36 +2489,37 @@
             "operations": [
                 {
                     "notes": "deletePolicyTagAssociation",
-                    "type": "TaskIdResult",
-                    "parameters": [
-                        {
-                            "name": "policyTag",
-                            "required": true,
-                            "defaultValue": "",
-                            "paramType": "query",
-                            "allowMultiple": false,
-                            "description": "Policy Tag",
-                            "type": "string"
-                        },
-                        {
-                            "name": "networkDeviceId",
-                            "required": true,
-                            "defaultValue": "",
-                            "paramType": "query",
-                            "allowMultiple": false,
-                            "description": "NetworkDeviceId",
-                            "type": "string"
-                        }
-                    ],
-                    "consumes": [
+                    "nickname": "deletePolicyTagAssociation",
+                    "produces": [
                         "application/json"
                     ],
+                    "deprecated": "false",
                     "method": "DELETE",
+                    "parameters": [
+                        {
+                            "required": true,
+                            "allowMultiple": false,
+                            "name": "policyTag",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Policy Tag"
+                        },
+                        {
+                            "required": true,
+                            "allowMultiple": false,
+                            "name": "networkDeviceId",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "NetworkDeviceId"
+                        }
+                    ],
                     "responseMessages": [
                         {
+                            "responseModel": "TaskIdResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "TaskIdResult"
+                            "code": 200
                         },
                         {
                             "message": "This user is Forbidden Access to this Resource",
@@ -1329,12 +2534,11 @@
                             "code": 404
                         }
                     ],
-                    "deprecated": "false",
-                    "summary": "Remove a policy tag from network device.",
-                    "nickname": "deletePolicyTagAssociation",
-                    "produces": [
+                    "consumes": [
                         "application/json"
-                    ]
+                    ],
+                    "type": "TaskIdResult",
+                    "summary": "Remove a policy tag from network device."
                 }
             ],
             "description": "deletePolicyTagAssociation",
@@ -1343,15 +2547,47 @@
         {
             "operations": [
                 {
-                    "notes": "getPolicyTagsCount",
-                    "type": "CountResult",
-                    "parameters": [],
+                    "notes": "Retrieves network devices in policy tags based on filters.",
+                    "nickname": "getPolicyTagAssociationNetworkDevices",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
                     "method": "GET",
+                    "parameters": [
+                        {
+                            "required": true,
+                            "allowMultiple": false,
+                            "name": "unAssigned",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Boolean to indicate if the device is currently not assigned to any policy tag."
+                        },
+                        {
+                            "required": false,
+                            "allowMultiple": false,
+                            "name": "offset",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Starting index of the resources (1 based)"
+                        },
+                        {
+                            "required": false,
+                            "allowMultiple": false,
+                            "name": "limit",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Number of resources to return"
+                        }
+                    ],
                     "responseMessages": [
                         {
+                            "responseModel": "PolicyTagAssociationDeviceListResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "CountResult"
+                            "code": 200
                         },
                         {
                             "message": "This user is Forbidden Access to this Resource",
@@ -1366,12 +2602,92 @@
                             "code": 404
                         }
                     ],
+                    "type": "PolicyTagAssociationDeviceListResult",
+                    "summary": "Retrieves network devices in policy tags based on filters."
+                }
+            ],
+            "description": "getPolicyTagAssociationNetworkDevices",
+            "path": "/policy/tag/association/network-device"
+        },
+        {
+            "operations": [
+                {
+                    "notes": "Retrieves the number of network devices in policy tags based on filters.",
+                    "nickname": "getPolicyTagAssociationNetworkDevicesCount",
+                    "produces": [
+                        "application/json"
+                    ],
                     "deprecated": "false",
-                    "summary": "Retrieves the number of policy tags",
+                    "method": "GET",
+                    "parameters": [
+                        {
+                            "required": true,
+                            "allowMultiple": false,
+                            "name": "unAssigned",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Boolean to indicate if the device is currently not assigned to any policy tag."
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "responseModel": "CountResult",
+                            "message": "This Request is OK",
+                            "code": 200
+                        },
+                        {
+                            "message": "This user is Forbidden Access to this Resource",
+                            "code": 403
+                        },
+                        {
+                            "message": "Not Authorized Yet, Credentials to be supplied",
+                            "code": 401
+                        },
+                        {
+                            "message": "No Resource Found",
+                            "code": 404
+                        }
+                    ],
+                    "type": "CountResult",
+                    "summary": "Retrieves the number of network devices in policy tags based on filters."
+                }
+            ],
+            "description": "getPolicyTagAssociationNetworkDevicesCount",
+            "path": "/policy/tag/association/network-device/count"
+        },
+        {
+            "operations": [
+                {
+                    "notes": "getPolicyTagsCount",
                     "nickname": "getPolicyTagsCount",
                     "produces": [
                         "application/json"
-                    ]
+                    ],
+                    "deprecated": "false",
+                    "method": "GET",
+                    "parameters": [],
+                    "responseMessages": [
+                        {
+                            "responseModel": "CountResult",
+                            "message": "This Request is OK",
+                            "code": 200
+                        },
+                        {
+                            "message": "This user is Forbidden Access to this Resource",
+                            "code": 403
+                        },
+                        {
+                            "message": "Not Authorized Yet, Credentials to be supplied",
+                            "code": 401
+                        },
+                        {
+                            "message": "No Resource Found",
+                            "code": 404
+                        }
+                    ],
+                    "type": "CountResult",
+                    "summary": "Retrieves the number of policy tags"
                 }
             ],
             "description": "getPolicyTagsCount",
@@ -1380,52 +2696,56 @@
         {
             "operations": [
                 {
-                    "notes": "Retrieves the policy version numbers",
-                    "type": "PolicyVersionNumberListResult",
+                    "notes": "Retrieves the policy version numbers. The first element in the list is the current version. The versions are in descending order.",
+                    "nickname": "getPolicyVersionNumbers",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
+                    "method": "GET",
                     "parameters": [
                         {
+                            "required": false,
+                            "allowMultiple": false,
                             "name": "policyScope",
-                            "required": false,
-                            "defaultValue": "",
                             "paramType": "query",
-                            "allowMultiple": false,
-                            "description": "Retrieve policy version numbers for the given scope",
-                            "type": "string"
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Retrieve policy version numbers for the given scope"
                         },
                         {
+                            "required": false,
+                            "allowMultiple": false,
                             "name": "scopeWirelessSegment",
-                            "required": false,
-                            "defaultValue": "",
                             "paramType": "query",
-                            "allowMultiple": false,
-                            "description": "Retrieve policy version numbers for the given scopeWirelessSegment",
-                            "type": "string"
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Retrieve policy version numbers for the given scopeWirelessSegment"
                         },
                         {
+                            "required": false,
+                            "allowMultiple": false,
                             "name": "offset",
-                            "required": false,
-                            "defaultValue": "",
                             "paramType": "query",
-                            "allowMultiple": false,
-                            "description": "Starting index of the resources (1 based)",
-                            "type": "string"
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Starting index of the resources (1 based)"
                         },
                         {
-                            "name": "limit",
                             "required": false,
-                            "defaultValue": "",
-                            "paramType": "query",
                             "allowMultiple": false,
-                            "description": "Number of resources to return",
-                            "type": "string"
+                            "name": "limit",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Number of resources to return"
                         }
                     ],
-                    "method": "GET",
                     "responseMessages": [
                         {
+                            "responseModel": "PolicyVersionNumberListResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "PolicyVersionNumberListResult"
+                            "code": 200
                         },
                         {
                             "message": "This user is Forbidden Access to this Resource",
@@ -1440,12 +2760,8 @@
                             "code": 404
                         }
                     ],
-                    "deprecated": "false",
-                    "summary": "Retrieves the policy version numbers",
-                    "nickname": "getPolicyVersionNumbers",
-                    "produces": [
-                        "application/json"
-                    ]
+                    "type": "PolicyVersionNumberListResult",
+                    "summary": "Retrieves the policy version numbers."
                 }
             ],
             "description": "getPolicyVersionNumbers",
@@ -1454,34 +2770,38 @@
         {
             "operations": [
                 {
-                    "notes": "Retrieves the count of policy version numbers",
-                    "type": "CountResult",
+                    "notes": "Retrieves the count of policy version numbers.",
+                    "nickname": "getPolicyVersionNumbersCount",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
+                    "method": "GET",
                     "parameters": [
                         {
-                            "name": "policyScope",
                             "required": true,
-                            "defaultValue": "",
-                            "paramType": "query",
                             "allowMultiple": false,
-                            "description": "Retrieve the count of policy version numbers for the given scope",
-                            "type": "string"
+                            "name": "policyScope",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Retrieve the count of policy version numbers for the given scope"
                         },
                         {
-                            "name": "scopeWirelessSegment",
                             "required": false,
-                            "defaultValue": "",
-                            "paramType": "query",
                             "allowMultiple": false,
-                            "description": "Retrieve the count of policy version numbers for the given scopeWirelessSegment",
-                            "type": "string"
+                            "name": "scopeWirelessSegment",
+                            "paramType": "query",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "Retrieve the count of policy version numbers for the given scopeWirelessSegment"
                         }
                     ],
-                    "method": "GET",
                     "responseMessages": [
                         {
+                            "responseModel": "CountResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "CountResult"
+                            "code": 200
                         },
                         {
                             "message": "This user is Forbidden Access to this Resource",
@@ -1496,12 +2816,8 @@
                             "code": 404
                         }
                     ],
-                    "deprecated": "false",
-                    "summary": "Retrieves the count of policy version numbers",
-                    "nickname": "getPolicyVersionNumbersCount",
-                    "produces": [
-                        "application/json"
-                    ]
+                    "type": "CountResult",
+                    "summary": "Retrieves the count of policy version numbers."
                 }
             ],
             "description": "getPolicyVersionNumbersCount",
@@ -1511,24 +2827,28 @@
             "operations": [
                 {
                     "notes": "Delete a policy by id",
-                    "type": "TaskIdResult",
+                    "nickname": "delete",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
+                    "method": "DELETE",
                     "parameters": [
                         {
-                            "name": "id",
                             "required": true,
-                            "defaultValue": "",
-                            "paramType": "path",
                             "allowMultiple": false,
-                            "description": "id",
-                            "type": "string"
+                            "name": "id",
+                            "paramType": "path",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "id"
                         }
                     ],
-                    "method": "DELETE",
                     "responseMessages": [
                         {
+                            "responseModel": "TaskIdResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "TaskIdResult"
+                            "code": 200
                         },
                         {
                             "message": "This user is Forbidden Access to this Resource",
@@ -1543,12 +2863,8 @@
                             "code": 404
                         }
                     ],
-                    "deprecated": "false",
-                    "summary": "Deletes a policy by its id",
-                    "nickname": "delete",
-                    "produces": [
-                        "application/json"
-                    ]
+                    "type": "TaskIdResult",
+                    "summary": "Deletes a policy by its id"
                 }
             ],
             "description": "delete",
@@ -1558,24 +2874,28 @@
             "operations": [
                 {
                     "notes": "Get a policy by id",
-                    "type": "PolicyResult",
+                    "nickname": "get",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
+                    "method": "GET",
                     "parameters": [
                         {
-                            "name": "id",
                             "required": true,
-                            "defaultValue": "",
-                            "paramType": "path",
                             "allowMultiple": false,
-                            "description": "id",
-                            "type": "string"
+                            "name": "id",
+                            "paramType": "path",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "id"
                         }
                     ],
-                    "method": "GET",
                     "responseMessages": [
                         {
+                            "responseModel": "PolicyResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "PolicyResult"
+                            "code": 200
                         },
                         {
                             "message": "This user is Forbidden Access to this Resource",
@@ -1590,807 +2910,12 @@
                             "code": 404
                         }
                     ],
-                    "deprecated": "false",
-                    "summary": "Retrieves a policy based on its id",
-                    "nickname": "get",
-                    "produces": [
-                        "application/json"
-                    ]
+                    "type": "PolicyResult",
+                    "summary": "Retrieves a policy based on its id"
                 }
             ],
             "description": "get",
             "path": "/policy/{id}"
         }
-    ],
-    "models": {
-        "NetworkUser": {
-            "description": "",
-            "id": "NetworkUser",
-            "properties": {
-                "locations": {
-                    "uniqueItems": true,
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "applications": {
-                    "uniqueItems": true,
-                    "items": {
-                        "$ref": "PolicyApplication"
-                    },
-                    "type": "array"
-                },
-                "categories": {
-                    "uniqueItems": true,
-                    "items": {
-                        "$ref": "CategoryDTO"
-                    },
-                    "type": "array"
-                },
-                "applicationDiffs": {
-                    "uniqueItems": true,
-                    "items": {
-                        "$ref": "PolicyApplicationDiffDTO"
-                    },
-                    "type": "array"
-                },
-                "userIdentifiers": {
-                    "uniqueItems": true,
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "deviceTypes": {
-                    "uniqueItems": true,
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                }
-            },
-            "extends": ""
-        },
-        "VersionDiffResult": {
-            "description": "",
-            "id": "VersionDiffResult",
-            "properties": {
-                "version": {
-                    "type": "string"
-                },
-                "response": {
-                    "$ref": "VersionDiffDTO"
-                }
-            },
-            "extends": ""
-        },
-        "Policy": {
-            "description": "",
-            "required": [
-                "resource",
-                "id",
-                "policyScope",
-                "policyName",
-                "taskId",
-                "actionProperty",
-                "policyPriority",
-                "actions",
-                "networkUser",
-                "policyOwner"
-            ],
-            "id": "Policy",
-            "properties": {
-                "policyName": {
-                    "description": "name of the policy",
-                    "type": "string"
-                },
-                "actionProperty": {
-                    "$ref": "ActionProperty",
-                    "description": "ActionProperty"
-                },
-                "resource": {
-                    "$ref": "PolicyResource",
-                    "description": "Resource"
-                },
-                "policyScope": {
-                    "description": "policyScope",
-                    "type": "string"
-                },
-                "actions": {
-                    "uniqueItems": true,
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array",
-                    "description": "Action Set"
-                },
-                "scopeWirelessSegment": {
-                    "type": "string"
-                },
-                "id": {
-                    "description": "id",
-                    "type": "string"
-                },
-                "policyOwner": {
-                    "description": "Policy Owner",
-                    "type": "string"
-                },
-                "policyPriority": {
-                    "format": "int32",
-                    "type": "integer",
-                    "description": "Policy Priority"
-                },
-                "networkUser": {
-                    "$ref": "NetworkUser",
-                    "description": "Network User"
-                },
-                "instanceUuid": {
-                    "description": "",
-                    "type": "string"
-                },
-                "state": {
-                    "type": "string"
-                },
-                "taskId": {
-                    "description": "Task ID",
-                    "type": "string"
-                }
-            },
-            "extends": ""
-        },
-        "PolicyFlowSettingDTO": {
-            "description": "",
-            "required": [
-                "flowPolicyEnabled"
-            ],
-            "id": "PolicyFlowSettingDTO",
-            "properties": {
-                "flowPolicyEnabled": {
-                    "description": "Allowed values are true, false",
-                    "type": "boolean"
-                }
-            },
-            "extends": ""
-        },
-        "PolicyTagDTO": {
-            "description": "",
-            "required": [
-                "policyTag"
-            ],
-            "id": "PolicyTagDTO",
-            "properties": {
-                "policyTag": {
-                    "description": "Policy Tag value",
-                    "type": "string"
-                }
-            },
-            "extends": ""
-        },
-        "VersionDiffDTO": {
-            "description": "",
-            "id": "VersionDiffDTO",
-            "properties": {
-                "policies": {
-                    "description": "policies",
-                    "items": {
-                        "$ref": "PolicyDiffDTO"
-                    },
-                    "type": "array"
-                },
-                "id": {
-                    "description": "id",
-                    "type": "string"
-                }
-            },
-            "extends": ""
-        },
-        "PolicyApplication": {
-            "description": "",
-            "required": [
-                "id"
-            ],
-            "id": "PolicyApplication",
-            "properties": {
-                "raw": {
-                    "description": "Either raw Application of the form port:protocol should be specified or appId should be specified",
-                    "type": "string"
-                },
-                "id": {
-                    "description": "id",
-                    "type": "string"
-                },
-                "appName": {
-                    "type": "string"
-                }
-            },
-            "extends": ""
-        },
-        "FlowIdResponse": {
-            "description": "",
-            "id": "FlowIdResponse",
-            "properties": {
-                "flowId": {
-                    "type": "string"
-                },
-                "taskId": {
-                    "type": "string"
-                }
-            },
-            "extends": ""
-        },
-        "TaskIdResult": {
-            "description": "",
-            "id": "TaskIdResult",
-            "properties": {
-                "version": {
-                    "type": "string"
-                },
-                "response": {
-                    "$ref": "TaskIdResponse"
-                }
-            },
-            "extends": ""
-        },
-        "CountResult": {
-            "description": "",
-            "id": "CountResult",
-            "properties": {
-                "version": {
-                    "type": "string"
-                },
-                "response": {
-                    "format": "int32",
-                    "type": "integer"
-                }
-            },
-            "extends": ""
-        },
-        "PolicyDiffDTO": {
-            "description": "",
-            "id": "PolicyDiffDTO",
-            "properties": {
-                "policy": {
-                    "$ref": "Policy",
-                    "description": "policy"
-                },
-                "operation": {
-                    "description": "operation",
-                    "type": "string",
-                    "enum": [
-                        "CREATE",
-                        "UPDATE",
-                        "DELETE"
-                    ]
-                }
-            },
-            "extends": ""
-        },
-        "TaskIdResponse": {
-            "description": "",
-            "id": "TaskIdResponse",
-            "properties": {
-                "url": {
-                    "type": "string"
-                },
-                "taskId": {
-                    "$ref": "TaskId"
-                }
-            },
-            "extends": ""
-        },
-        "PolicyApplicationDiffDTO": {
-            "description": "",
-            "id": "PolicyApplicationDiffDTO",
-            "properties": {
-                "policyApplication": {
-                    "$ref": "PolicyApplication",
-                    "description": "application"
-                },
-                "operation": {
-                    "description": "operation",
-                    "type": "string",
-                    "enum": [
-                        "CREATE",
-                        "UPDATE",
-                        "DELETE"
-                    ]
-                }
-            },
-            "extends": ""
-        },
-        "PolicyResult": {
-            "description": "",
-            "id": "PolicyResult",
-            "properties": {
-                "version": {
-                    "type": "string"
-                },
-                "response": {
-                    "$ref": "Policy"
-                }
-            },
-            "extends": ""
-        },
-        "PolicyVersionNumberListResult": {
-            "description": "",
-            "id": "PolicyVersionNumberListResult",
-            "properties": {
-                "version": {
-                    "type": "string"
-                },
-                "response": {
-                    "items": {
-                        "$ref": "VersionNumberDTO"
-                    },
-                    "type": "array"
-                }
-            },
-            "extends": ""
-        },
-        "VersionNumberDTO": {
-            "description": "",
-            "id": "VersionNumberDTO",
-            "properties": {
-                "version": {
-                    "format": "int64",
-                    "type": "integer"
-                },
-                "createTime": {
-                    "format": "int64",
-                    "type": "integer"
-                }
-            },
-            "extends": ""
-        },
-        "TaskId": {
-            "description": "",
-            "id": "TaskId",
-            "properties": {},
-            "extends": ""
-        },
-        "PolicyResource": {
-            "description": "",
-            "id": "PolicyResource",
-            "properties": {
-                "locations": {
-                    "uniqueItems": true,
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "applications": {
-                    "uniqueItems": true,
-                    "items": {
-                        "$ref": "PolicyApplication"
-                    },
-                    "type": "array"
-                },
-                "categories": {
-                    "uniqueItems": true,
-                    "items": {
-                        "$ref": "CategoryDTO"
-                    },
-                    "type": "array"
-                },
-                "applicationDiffs": {
-                    "uniqueItems": true,
-                    "items": {
-                        "$ref": "PolicyApplicationDiffDTO"
-                    },
-                    "type": "array"
-                },
-                "userIdentifiers": {
-                    "uniqueItems": true,
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "deviceTypes": {
-                    "uniqueItems": true,
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                }
-            },
-            "extends": ""
-        },
-        "PolicyTagAssociationDTO": {
-            "description": "",
-            "id": "PolicyTagAssociationDTO",
-            "properties": {
-                "unModifiableReason": {
-                    "type": "string"
-                },
-                "policyTag": {
-                    "type": "string"
-                },
-                "unModifiable": {
-                    "type": "boolean"
-                },
-                "networkDevices": {
-                    "items": {
-                        "$ref": "PolicyTagAssociationDeviceDTO"
-                    },
-                    "type": "array"
-                }
-            },
-            "extends": ""
-        },
-        "FlowResult": {
-            "description": "",
-            "id": "FlowResult",
-            "properties": {
-                "version": {
-                    "type": "string"
-                },
-                "response": {
-                    "$ref": "FlowDTO"
-                }
-            },
-            "extends": ""
-        },
-        "PolicyFlowSettingResult": {
-            "description": "",
-            "id": "PolicyFlowSettingResult",
-            "properties": {
-                "version": {
-                    "type": "string"
-                },
-                "response": {
-                    "$ref": "PolicyFlowSettingDTO"
-                }
-            },
-            "extends": ""
-        },
-        "FlowListResult": {
-            "description": "",
-            "id": "FlowListResult",
-            "properties": {
-                "version": {
-                    "type": "string"
-                },
-                "response": {
-                    "items": {
-                        "$ref": "FlowDTO"
-                    },
-                    "type": "array"
-                }
-            },
-            "extends": ""
-        },
-        "FlowDTO": {
-            "description": "",
-            "required": [
-                "flowType",
-                "sourceIP"
-            ],
-            "id": "FlowDTO",
-            "properties": {
-                "failureReason": {
-                    "type": "string"
-                },
-                "protocol": {
-                    "description": "protocol",
-                    "type": "string"
-                },
-                "codec": {
-                    "description": "codec",
-                    "type": "string"
-                },
-                "interfaceId": {
-                    "description": "interfaceId",
-                    "type": "string"
-                },
-                "peakBandwidth": {
-                    "description": "peakBandwidth in kbps (min: 0, max: 2147483647 kbps)",
-                    "type": "string"
-                },
-                "averageBandwidth": {
-                    "description": "averageBandwidth in kbps (min: 0, max: 2147483647 kbps)",
-                    "type": "string"
-                },
-                "destIP": {
-                    "description": "destIP",
-                    "type": "string"
-                },
-                "networkDeviceName": {
-                    "description": "networkDeviceName",
-                    "type": "string"
-                },
-                "networkDeviceId": {
-                    "description": "networkDeviceId",
-                    "type": "string"
-                },
-                "id": {
-                    "description": "id",
-                    "type": "string"
-                },
-                "clientReference": {
-                    "description": "clientReference (can be used by the client as a reference to this resource",
-                    "type": "string"
-                },
-                "flowType": {
-                    "description": "flowType",
-                    "type": "string"
-                },
-                "sourcePort": {
-                    "description": "sourcePort",
-                    "type": "string"
-                },
-                "detailedFlowType": {
-                    "description": "detailedFlowType (more detailed classification than flowType)",
-                    "type": "string"
-                },
-                "status": {
-                    "type": "string"
-                },
-                "sourceIP": {
-                    "description": "sourceIP",
-                    "type": "string"
-                },
-                "destPort": {
-                    "description": "destPort",
-                    "type": "string"
-                },
-                "interfaceName": {
-                    "description": "interfaceName",
-                    "type": "string"
-                }
-            },
-            "extends": ""
-        },
-        "ActionProperty": {
-            "description": "",
-            "required": [
-                "relevanceLevel",
-                "pathControlFlag",
-                "pathPreferenceFlag",
-                "priorityLevel",
-                "experienceLevel",
-                "pathPreference",
-                "trustLevel"
-            ],
-            "id": "ActionProperty",
-            "properties": {
-                "pathControlFlag": {
-                    "description": "path control flag",
-                    "type": "boolean"
-                },
-                "TertiaryPathPref": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "destinations": {
-                    "uniqueItems": true,
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "PathOfLastResort": {
-                    "type": "string"
-                },
-                "maintainExperience": {
-                    "type": "string"
-                },
-                "pathPreferenceFlag": {
-                    "description": "path preference flag",
-                    "type": "boolean"
-                },
-                "trustLevel": {
-                    "description": "trust level for a policy",
-                    "type": "string"
-                },
-                "pathPreference": {
-                    "description": "path preference for a policy",
-                    "type": "string"
-                },
-                "relevanceLevel": {
-                    "description": "relevance level for a policy",
-                    "type": "string"
-                },
-                "priorityLevel": {
-                    "description": "priority level for a policy",
-                    "type": "string"
-                },
-                "SecondaryPathPref": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "experienceLevel": {
-                    "description": "experience level for a policy",
-                    "type": "string"
-                },
-                "PrimaryPathPref": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                }
-            },
-            "extends": ""
-        },
-        "PolicyTagAssociationDeviceDTO": {
-            "description": "",
-            "id": "PolicyTagAssociationDeviceDTO",
-            "properties": {
-                "deviceId": {
-                    "type": "string"
-                },
-                "deviceIp": {
-                    "type": "string"
-                },
-                "deviceName": {
-                    "type": "string"
-                }
-            },
-            "extends": ""
-        },
-        "PolicyTagListResult": {
-            "description": "",
-            "id": "PolicyTagListResult",
-            "properties": {
-                "version": {
-                    "type": "string"
-                },
-                "response": {
-                    "items": {
-                        "$ref": "PolicyTagDTO"
-                    },
-                    "type": "array"
-                }
-            },
-            "extends": ""
-        },
-        "PolicyStatusListResult": {
-            "description": "",
-            "id": "PolicyStatusListResult",
-            "properties": {
-                "version": {
-                    "type": "string"
-                },
-                "response": {
-                    "items": {
-                        "$ref": "PolicyStatusDTO"
-                    },
-                    "type": "array"
-                }
-            },
-            "extends": ""
-        },
-        "FlowIdResult": {
-            "description": "",
-            "id": "FlowIdResult",
-            "properties": {
-                "version": {
-                    "type": "string"
-                },
-                "response": {
-                    "$ref": "FlowIdResponse"
-                }
-            },
-            "extends": ""
-        },
-        "PolicyListResult": {
-            "description": "",
-            "id": "PolicyListResult",
-            "properties": {
-                "version": {
-                    "type": "string"
-                },
-                "response": {
-                    "items": {
-                        "$ref": "Policy"
-                    },
-                    "type": "array"
-                }
-            },
-            "extends": ""
-        },
-        "CategoryDTO": {
-            "description": "",
-            "required": [
-                "name",
-                "id"
-            ],
-            "id": "CategoryDTO",
-            "properties": {
-                "name": {
-                    "description": "Category Name",
-                    "type": "string"
-                },
-                "id": {
-                    "description": "id",
-                    "type": "string"
-                }
-            },
-            "extends": ""
-        },
-        "PolicyStatusDTO": {
-            "description": "",
-            "id": "PolicyStatusDTO",
-            "properties": {
-                "networkDeviceIp": {
-                    "type": "string"
-                },
-                "policyScope": {
-                    "type": "string"
-                },
-                "networkDeviceName": {
-                    "type": "string"
-                },
-                "networkDeviceId": {
-                    "type": "string"
-                },
-                "scopeWirelessSegment": {
-                    "type": "string"
-                },
-                "applicationPolicyCount": {
-                    "format": "int32",
-                    "type": "integer"
-                },
-                "businessIrrelevantApplications": {
-                    "items": {
-                        "$ref": "PolicyApplication"
-                    },
-                    "type": "array"
-                },
-                "lastUpdated": {
-                    "type": "string"
-                },
-                "status": {
-                    "type": "string"
-                },
-                "failureReason": {
-                    "type": "string"
-                },
-                "businessRelevantApplications": {
-                    "items": {
-                        "$ref": "PolicyApplication"
-                    },
-                    "type": "array"
-                },
-                "outOfScope": {
-                    "type": "boolean"
-                },
-                "instanceUuid": {
-                    "type": "string"
-                }
-            },
-            "extends": ""
-        },
-        "PolicyTagAssociationListResult": {
-            "description": "",
-            "id": "PolicyTagAssociationListResult",
-            "properties": {
-                "version": {
-                    "type": "string"
-                },
-                "response": {
-                    "items": {
-                        "$ref": "PolicyTagAssociationDTO"
-                    },
-                    "type": "array"
-                }
-            },
-            "extends": ""
-        }
-    },
-    "consumes": [
-        "application/json"
-    ],
-    "swaggerVersion": "1.2",
-    "apiVersion": "1.0",
-    "produces": [
-        "application/json"
-    ],
-    "basePath": "/"
+    ]
 }

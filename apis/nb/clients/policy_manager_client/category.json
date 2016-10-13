@@ -1,18 +1,92 @@
 {
     "resourcePath": "/category",
+    "produces": [
+        "application/json"
+    ],
+    "basePath": "/",
+    "models": {
+        "CategoryDTO": {
+            "required": [
+                "name",
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "id"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Category Name"
+                }
+            },
+            "description": "",
+            "id": "CategoryDTO",
+            "extends": ""
+        },
+        "CategoryResult": {
+            "properties": {
+                "response": {
+                    "$ref": "CategoryDTO"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "description": "",
+            "id": "CategoryResult",
+            "extends": ""
+        },
+        "CategoryListResult": {
+            "properties": {
+                "response": {
+                    "items": {
+                        "$ref": "CategoryDTO"
+                    },
+                    "type": "array"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "description": "",
+            "id": "CategoryListResult",
+            "extends": ""
+        },
+        "CountResult": {
+            "properties": {
+                "response": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "description": "",
+            "id": "CountResult",
+            "extends": ""
+        }
+    },
+    "swaggerVersion": "1.2",
+    "apiVersion": "1.0",
     "apis": [
         {
             "operations": [
                 {
                     "notes": "Get all categories",
-                    "type": "CategoryListResult",
-                    "parameters": [],
+                    "nickname": "getAllCategories",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
                     "method": "GET",
+                    "parameters": [],
                     "responseMessages": [
                         {
+                            "responseModel": "CategoryListResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "CategoryListResult"
+                            "code": 200
                         },
                         {
                             "message": "This user is Forbidden Access to this Resource",
@@ -27,12 +101,8 @@
                             "code": 404
                         }
                     ],
-                    "deprecated": "false",
-                    "summary": "Lists all categories",
-                    "nickname": "getAllCategories",
-                    "produces": [
-                        "application/json"
-                    ]
+                    "type": "CategoryListResult",
+                    "summary": "Lists all categories"
                 }
             ],
             "description": "getAllCategories",
@@ -42,14 +112,18 @@
             "operations": [
                 {
                     "notes": "Get total count for categories",
-                    "type": "CountResult",
-                    "parameters": [],
+                    "nickname": "getCategoryCount",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
                     "method": "GET",
+                    "parameters": [],
                     "responseMessages": [
                         {
+                            "responseModel": "CountResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "CountResult"
+                            "code": 200
                         },
                         {
                             "message": "This user is Forbidden Access to this Resource",
@@ -64,12 +138,8 @@
                             "code": 404
                         }
                     ],
-                    "deprecated": "false",
-                    "summary": "Return total count of categories",
-                    "nickname": "getCategoryCount",
-                    "produces": [
-                        "application/json"
-                    ]
+                    "type": "CountResult",
+                    "summary": "Return total count of categories"
                 }
             ],
             "description": "getCategoryCount",
@@ -79,24 +149,28 @@
             "operations": [
                 {
                     "notes": "Get category by id",
-                    "type": "CategoryResult",
+                    "nickname": "getCategoryById",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "deprecated": "false",
+                    "method": "GET",
                     "parameters": [
                         {
-                            "name": "id",
                             "required": true,
-                            "defaultValue": "",
-                            "paramType": "path",
                             "allowMultiple": false,
-                            "description": "id",
-                            "type": "string"
+                            "name": "id",
+                            "paramType": "path",
+                            "defaultValue": "",
+                            "type": "string",
+                            "description": "id"
                         }
                     ],
-                    "method": "GET",
                     "responseMessages": [
                         {
+                            "responseModel": "CategoryResult",
                             "message": "This Request is OK",
-                            "code": 200,
-                            "responseModel": "CategoryResult"
+                            "code": 200
                         },
                         {
                             "message": "This user is Forbidden Access to this Resource",
@@ -111,86 +185,12 @@
                             "code": 404
                         }
                     ],
-                    "deprecated": "false",
-                    "summary": "Retrieves a category based on their id",
-                    "nickname": "getCategoryById",
-                    "produces": [
-                        "application/json"
-                    ]
+                    "type": "CategoryResult",
+                    "summary": "Retrieves a category based on their id"
                 }
             ],
             "description": "getCategoryById",
             "path": "/category/{id}"
         }
-    ],
-    "models": {
-        "CategoryDTO": {
-            "description": "",
-            "required": [
-                "name",
-                "id"
-            ],
-            "id": "CategoryDTO",
-            "properties": {
-                "name": {
-                    "description": "Category Name",
-                    "type": "string"
-                },
-                "id": {
-                    "description": "id",
-                    "type": "string"
-                }
-            },
-            "extends": ""
-        },
-        "CategoryListResult": {
-            "description": "",
-            "id": "CategoryListResult",
-            "properties": {
-                "version": {
-                    "type": "string"
-                },
-                "response": {
-                    "items": {
-                        "$ref": "CategoryDTO"
-                    },
-                    "type": "array"
-                }
-            },
-            "extends": ""
-        },
-        "CategoryResult": {
-            "description": "",
-            "id": "CategoryResult",
-            "properties": {
-                "version": {
-                    "type": "string"
-                },
-                "response": {
-                    "$ref": "CategoryDTO"
-                }
-            },
-            "extends": ""
-        },
-        "CountResult": {
-            "description": "",
-            "id": "CountResult",
-            "properties": {
-                "version": {
-                    "type": "string"
-                },
-                "response": {
-                    "format": "int32",
-                    "type": "integer"
-                }
-            },
-            "extends": ""
-        }
-    },
-    "swaggerVersion": "1.2",
-    "apiVersion": "1.0",
-    "produces": [
-        "application/json"
-    ],
-    "basePath": "/"
+    ]
 }

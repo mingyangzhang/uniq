@@ -1,23 +1,10 @@
 #!/usr/bin/env python
 #pylint: skip-file
-"""
-Copyright 2016 Cisco Systems
+# This source code is licensed under the Apache license found in the
+# LICENSE file in the root directory of this project.
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-"""
 
 class ZtdSiteDevice(object):
-
 
 
     def __init__(self):
@@ -27,279 +14,305 @@ class ZtdSiteDevice(object):
           attributeMap (dict): The key is attribute name and the value is json key in definition.
         """
         self.swaggerTypes = {
-
-            'state': 'str',
-
-
-            'lastContact': 'str',
-
-
+            
             'authStatus': 'DeviceAuthState',
-
-
+            
+            
             'deviceId': 'str',
-
-
+            
+            
             'lastStateTransitionTime': 'str',
-
-
+            
+            
+            'lastContact': 'str',
+            
+            
             'stateDisplay': 'str',
-
-
-            'hostName': 'str',
-
-
+            
+            
+            'state': 'str',
+            
+            
             'serialNumber': 'str',
-
-
+            
+            
             'tag': 'str',
-
-
+            
+            
+            'aliases': 'list[str]',
+            
+            
             'id': 'str',
-
-
+            
+            
             'platformId': 'str',
-
-
+            
+            
             'site': 'str',
-
-
+            
+            
             'configId': 'str',
-
-
-            'bootStrapId': 'str',
-
-
-            'licenseString': 'str',
-
-
-            'apCount': 'str',
-
-
-            'isMobilityController': 'str',
-
-
+            
+            
             'pkiEnabled': 'bool',
-
-
-            'sudiRequired': 'bool',
-
-
+            
+            
             'imageId': 'str',
-
-
-            'connectedToDeviceId': 'str',
-
-
-            'connectedToPortId': 'str',
-
-
-            'imagePreference': 'str',
-
-
-            'configPreference': 'str',
-
-
-            'connetedToLocationGeoAddr': 'str',
-
-
-            'connectedToDeviceHostName': 'str',
-
-
-            'connectedToPortName': 'str',
-
-
-            'connetedToLocationCivicAddr': 'str',
-
-
-            # 'attributeInfo': 'object'
-
-            'licenseLevel': 'str',
-
-
+            
+            
+            'memberDetail': 'list[ZtdMemberDetail]',
+            
+            
+            'deviceDiscoveryInfo': 'ZtdDeviceDiscoveryInfo',
+            
+            
+            'bootStrapId': 'str',
+            
+            
+            'licenseString': 'str',
+            
+            
+            'apCount': 'str',
+            
+            
+            'isMobilityController': 'str',
+            
+            
+            'sudiRequired': 'bool',
+            
+            
             'memberCount': 'int',
-
-
-            'eulaAccepted': 'bool'
-
-
+            
+            
+            'licenseLevel': 'str',
+            
+            
+            'eulaAccepted': 'bool',
+            
+            
+            'connectedToDeviceId': 'str',
+            
+            
+            'connectedToPortId': 'str',
+            
+            
+            'templateConfigId': 'str',
+            
+            
+            'imagePreference': 'str',
+            
+            
+            'connetedToLocationGeoAddr': 'str',
+            
+            
+            'configPreference': 'str',
+            
+            
+            'connectedToPortName': 'str',
+            
+            
+            'connectedToDeviceHostName': 'str',
+            
+            
+            'connetedToLocationCivicAddr': 'str',
+            
+            
+            'hostName': 'str'
         }
 
         self.attributeMap = {
-
-            'state': 'state',
-
-            'lastContact': 'lastContact',
-
+            
             'authStatus': 'authStatus',
-
+            
             'deviceId': 'deviceId',
-
+            
             'lastStateTransitionTime': 'lastStateTransitionTime',
-
+            
+            'lastContact': 'lastContact',
+            
             'stateDisplay': 'stateDisplay',
-
-            'hostName': 'hostName',
-
+            
+            'state': 'state',
+            
             'serialNumber': 'serialNumber',
-
+            
             'tag': 'tag',
-
+            
+            'aliases': 'aliases',
+            
             'id': 'id',
-
+            
             'platformId': 'platformId',
-
+            
             'site': 'site',
-
+            
             'configId': 'configId',
-
-            'bootStrapId': 'bootStrapId',
-
-            'licenseString': 'licenseString',
-
-            'apCount': 'apCount',
-
-            'isMobilityController': 'isMobilityController',
-
+            
             'pkiEnabled': 'pkiEnabled',
-
-            'sudiRequired': 'sudiRequired',
-
+            
             'imageId': 'imageId',
-
-            'connectedToDeviceId': 'connectedToDeviceId',
-
-            'connectedToPortId': 'connectedToPortId',
-
-            'imagePreference': 'imagePreference',
-
-            'configPreference': 'configPreference',
-
-            'connetedToLocationGeoAddr': 'connetedToLocationGeoAddr',
-
-            'connectedToDeviceHostName': 'connectedToDeviceHostName',
-
-            'connectedToPortName': 'connectedToPortName',
-
-            'connetedToLocationCivicAddr': 'connetedToLocationCivicAddr',
-
-            # 'attributeInfo': 'attributeInfo'
-
-            'licenseLevel': 'licenseLevel',
-
+            
+            'memberDetail': 'memberDetail',
+            
+            'deviceDiscoveryInfo': 'deviceDiscoveryInfo',
+            
+            'bootStrapId': 'bootStrapId',
+            
+            'licenseString': 'licenseString',
+            
+            'apCount': 'apCount',
+            
+            'isMobilityController': 'isMobilityController',
+            
+            'sudiRequired': 'sudiRequired',
+            
             'memberCount': 'memberCount',
+            
+            'licenseLevel': 'licenseLevel',
+            
+            'eulaAccepted': 'eulaAccepted',
+            
+            'connectedToDeviceId': 'connectedToDeviceId',
+            
+            'connectedToPortId': 'connectedToPortId',
+            
+            'templateConfigId': 'templateConfigId',
+            
+            'imagePreference': 'imagePreference',
+            
+            'connetedToLocationGeoAddr': 'connetedToLocationGeoAddr',
+            
+            'configPreference': 'configPreference',
+            
+            'connectedToPortName': 'connectedToPortName',
+            
+            'connectedToDeviceHostName': 'connectedToDeviceHostName',
+            
+            'connetedToLocationCivicAddr': 'connetedToLocationCivicAddr',
+            
+            'hostName': 'hostName'            
+        }       
 
-            'eulaAccepted': 'eulaAccepted'
-
-        }
-
-
-
-        self.state = None # str
-
-
-        self.lastContact = None # str
-
-
+        
+        
         self.authStatus = None # DeviceAuthState
-
-
+        
+        
         self.deviceId = None # str
-
-
+        
+        
         self.lastStateTransitionTime = None # str
-
-
+        
+        
+        self.lastContact = None # str
+        
+        
         self.stateDisplay = None # str
-
-        #Host name
-
-        self.hostName = None # str
-
+        
+        
+        self.state = None # str
+        
         #Serial number
-
+        
         self.serialNumber = None # str
-
+        
         #Tag of device
-
+        
         self.tag = None # str
-
+        
+        
+        self.aliases = None # list[str]
+        
         #ID of device
-
+        
         self.id = None # str
-
+        
         #Platform ID
-
+        
         self.platformId = None # str
-
+        
         #Site to which device belongs if auto-provisioned
-
+        
         self.site = None # str
-
+        
         #Configuration file id
-
+        
         self.configId = None # str
-
-        #Bootstrap file id
-
-        self.bootStrapId = None # str
-
-        #License string
-
-        self.licenseString = None # str
-
-        #Wireless AP count
-
-        self.apCount = None # str
-
-        #Specify if device is a wireless mobility controller
-
-        self.isMobilityController = None # str
-
+        
         #Configure PKCS#12 trust point during PNP workflow if true
-
+        
         self.pkiEnabled = None # bool
-
-
-        self.sudiRequired = None # bool
-
+        
         #Image file ID
-
+        
         self.imageId = None # str
-
-
-        self.connectedToDeviceId = None # str
-
-
-        self.connectedToPortId = None # str
-
-
-        self.imagePreference = None # str
-
-
-        self.configPreference = None # str
-
-
-        self.connetedToLocationGeoAddr = None # str
-
-
-        self.connectedToDeviceHostName = None # str
-
-
-        self.connectedToPortName = None # str
-
-
-        self.connetedToLocationCivicAddr = None # str
-
-
-        # self.attributeInfo = None # object
-
-
-        #CLI execution license level
-        self.licenseLevel = None # str
-
+        
+        
+        self.memberDetail = None # list[ZtdMemberDetail]
+        
+        #Device discovery info
+        
+        self.deviceDiscoveryInfo = None # ZtdDeviceDiscoveryInfo
+        
+        #Bootstrap file id
+        
+        self.bootStrapId = None # str
+        
+        #License string
+        
+        self.licenseString = None # str
+        
+        #Wireless AP count
+        
+        self.apCount = None # str
+        
+        #Specify if device is a wireless mobility controller
+        
+        self.isMobilityController = None # str
+        
+        
+        self.sudiRequired = None # bool
+        
         #Count of members in a stack switch excluding master
+        
         self.memberCount = None # int
-
+        
+        #CLI execution license level
+        
+        self.licenseLevel = None # str
+        
         #CLI execution EULA accepted or not
+        
         self.eulaAccepted = None # bool
+        
+        
+        self.connectedToDeviceId = None # str
+        
+        
+        self.connectedToPortId = None # str
+        
+        #Template config ID
+        
+        self.templateConfigId = None # str
+        
+        
+        self.imagePreference = None # str
+        
+        
+        self.connetedToLocationGeoAddr = None # str
+        
+        
+        self.configPreference = None # str
+        
+        
+        self.connectedToPortName = None # str
+        
+        
+        self.connectedToDeviceHostName = None # str
+        
+        
+        self.connetedToLocationCivicAddr = None # str
+        
+        #Host name
+        
+        self.hostName = None # str        

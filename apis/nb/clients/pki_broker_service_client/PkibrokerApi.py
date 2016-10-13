@@ -1,22 +1,9 @@
 #!/usr/bin/env python
 #pylint: skip-file
-"""
-PkibrokerApi.py
-    Copyright 2016 Cisco Systems
+# This source code is licensed under the Apache license found in the
+# LICENSE file in the root directory of this project.
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
 
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-
-"""
 import sys
 import os
 import urllib.request, urllib.parse, urllib.error
@@ -35,15 +22,15 @@ class PkibrokerApi(object):
         """getDefaultCaPem
 
         Args:
-
+            
             id, str: Certificate ID (required)
-
-
+            
+            
             type, str: Certificate type (required)
-
-
-
-        Returns:
+            
+            
+        
+        Returns: 
         """
 
         allParams = ['id', 'type']
@@ -103,17 +90,17 @@ class PkibrokerApi(object):
         """updateDefaultCaPem
 
         Args:
-
+            
             id, str: Certificate ID (required)
-
-
+            
+            
             type, str: Certificate type (required)
-
-
+            
+            
             param, TrustpoolUpdateParam: param (required)
-
-
-
+            
+            
+        
         Returns: TrustpoolUpdateStatusResult
         """
 
@@ -183,17 +170,17 @@ class PkibrokerApi(object):
         """updateDefaultCaPem
 
         Args:
-
+            
             id, str: Certificate ID (required)
-
-
+            
+            
             type, str: Certificate type (required)
-
-
+            
+            
             param, TrustpoolUpdateParam: param (required)
-
-
-
+            
+            
+        
         Returns: TrustpoolUpdateStatusResult
         """
 
@@ -263,8 +250,8 @@ class PkibrokerApi(object):
         """pkiTrustPointListGet
 
         Args:
-
-
+            
+        
         Returns: PkiTrustPointListResult
         """
 
@@ -319,11 +306,11 @@ class PkibrokerApi(object):
         """pkiTrustPointPost
 
         Args:
-
+            
             pkiTrustPointInput, PkiTrustPoint: pkiTrustPointInput (required)
-
-
-
+            
+            
+        
         Returns: TaskIdResult
         """
 
@@ -381,8 +368,8 @@ class PkibrokerApi(object):
         """pkiTrustPointListGet
 
         Args:
-
-
+            
+        
         Returns: CountResult
         """
 
@@ -437,15 +424,15 @@ class PkibrokerApi(object):
         """pkiTrustPointPkcs12Download
 
         Args:
-
+            
             trustPointId, str: Trust-point ID (required)
-
-
+            
+            
             token, str: Download token (required)
-
-
-
-        Returns:
+            
+            
+        
+        Returns: 
         """
 
         allParams = ['trustPointId', 'token']
@@ -505,11 +492,11 @@ class PkibrokerApi(object):
         """pkiTrustPointGetByDeviceSN
 
         Args:
-
+            
             serialNumber, str: Device serial-number (required)
-
-
-
+            
+            
+        
         Returns: PkiTrustPointResult
         """
 
@@ -570,11 +557,11 @@ class PkibrokerApi(object):
         """pkiTrustPointDeleteByDeviceSN
 
         Args:
-
+            
             serialNumber, str: Device serial-number (required)
-
-
-
+            
+            
+        
         Returns: TaskIdResult
         """
 
@@ -635,14 +622,14 @@ class PkibrokerApi(object):
         """getCertificateBriefList
 
         Args:
-
+            
             startIndex, int: Index to start returning records from (required)
-
-
+            
+            
             recordsToReturn, int: Number of records to return (required)
-
-
-
+            
+            
+        
         Returns: PkiTrustPointListResult
         """
 
@@ -709,11 +696,11 @@ class PkibrokerApi(object):
         """pkiTrustPointGet
 
         Args:
-
+            
             trustPointId, str: Trust-point ID (required)
-
-
-
+            
+            
+        
         Returns: PkiTrustPointResult
         """
 
@@ -774,11 +761,11 @@ class PkibrokerApi(object):
         """pkiTrustPointPush
 
         Args:
-
+            
             trustPointId, str: Trust-point ID (required)
-
-
-
+            
+            
+        
         Returns: TaskIdResult
         """
 
@@ -839,11 +826,11 @@ class PkibrokerApi(object):
         """pkiTrustPointDelete
 
         Args:
-
+            
             trustPointId, str: Trust-point ID (required)
-
-
-
+            
+            
+        
         Returns: TaskIdResult
         """
 
@@ -904,11 +891,11 @@ class PkibrokerApi(object):
         """pkiTrustPointConfigGet
 
         Args:
-
+            
             trustPointId, str: Trust-point ID (required)
-
-
-
+            
+            
+        
         Returns: PkiTrustPointConfigResult
         """
 
@@ -969,17 +956,17 @@ class PkibrokerApi(object):
         """checkPKCS12Downloaded
 
         Args:
-
+            
             trustPointId, str: Trust-point ID (required)
-
-
+            
+            
             scope, str: Authorization Scope for RBAC (required)
-
-
+            
+            
             username, str: requestUsername (required)
-
-
-
+            
+            
+        
         Returns: SuccessResult
         """
 
