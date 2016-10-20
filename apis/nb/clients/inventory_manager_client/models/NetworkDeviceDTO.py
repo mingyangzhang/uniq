@@ -27,40 +27,13 @@ class NetworkDeviceDTO(object):
             'errorCode': 'str',
             
             
-            'errorDescription': 'str',
-            
-            
-            'series': 'str',
-            
-            
-            'inventoryStatusDetail': 'str',
-            
-            
-            'softwareVersion': 'str',
-            
-            
-            'upTime': 'str',
-            
-            
-            'lastUpdateTime': 'date-time',
-            
-            
-            'locationName': 'str',
-            
-            
-            'macAddress': 'str',
+            'family': 'str',
             
             
             'role': 'str',
             
             
-            'tagCount': 'str',
-            
-            
-            'lastUpdated': 'str',
-            
-            
-            'hostname': 'str',
+            'roleSource': 'str',
             
             
             'apManagerInterfaceIp': 'str',
@@ -70,9 +43,6 @@ class NetworkDeviceDTO(object):
             
             
             'collectionStatus': 'str',
-            
-            
-            'family': 'str',
             
             
             'interfaceCount': 'str',
@@ -99,9 +69,6 @@ class NetworkDeviceDTO(object):
             'reachabilityStatus': 'str',
             
             
-            'roleSource': 'str',
-            
-            
             'snmpContact': 'str',
             
             
@@ -109,6 +76,39 @@ class NetworkDeviceDTO(object):
             
             
             'tunnelUdpPort': 'str',
+            
+            
+            'inventoryStatusDetail': 'str',
+            
+            
+            'upTime': 'str',
+            
+            
+            'series': 'str',
+            
+            
+            'lastUpdateTime': 'date-time',
+            
+            
+            'locationName': 'str',
+            
+            
+            'tagCount': 'str',
+            
+            
+            'hostname': 'str',
+            
+            
+            'errorDescription': 'str',
+            
+            
+            'lastUpdated': 'str',
+            
+            
+            'macAddress': 'str',
+            
+            
+            'softwareVersion': 'str',
             
             
             'instanceUuid': 'str',
@@ -128,37 +128,17 @@ class NetworkDeviceDTO(object):
             
             'errorCode': 'errorCode',
             
-            'errorDescription': 'errorDescription',
-            
-            'series': 'series',
-            
-            'inventoryStatusDetail': 'inventoryStatusDetail',
-            
-            'softwareVersion': 'softwareVersion',
-            
-            'upTime': 'upTime',
-            
-            'lastUpdateTime': 'lastUpdateTime',
-            
-            'locationName': 'locationName',
-            
-            'macAddress': 'macAddress',
+            'family': 'family',
             
             'role': 'role',
             
-            'tagCount': 'tagCount',
-            
-            'lastUpdated': 'lastUpdated',
-            
-            'hostname': 'hostname',
+            'roleSource': 'roleSource',
             
             'apManagerInterfaceIp': 'apManagerInterfaceIp',
             
             'bootDateTime': 'bootDateTime',
             
             'collectionStatus': 'collectionStatus',
-            
-            'family': 'family',
             
             'interfaceCount': 'interfaceCount',
             
@@ -176,13 +156,33 @@ class NetworkDeviceDTO(object):
             
             'reachabilityStatus': 'reachabilityStatus',
             
-            'roleSource': 'roleSource',
-            
             'snmpContact': 'snmpContact',
             
             'snmpLocation': 'snmpLocation',
             
             'tunnelUdpPort': 'tunnelUdpPort',
+            
+            'inventoryStatusDetail': 'inventoryStatusDetail',
+            
+            'upTime': 'upTime',
+            
+            'series': 'series',
+            
+            'lastUpdateTime': 'lastUpdateTime',
+            
+            'locationName': 'locationName',
+            
+            'tagCount': 'tagCount',
+            
+            'hostname': 'hostname',
+            
+            'errorDescription': 'errorDescription',
+            
+            'lastUpdated': 'lastUpdated',
+            
+            'macAddress': 'macAddress',
+            
+            'softwareVersion': 'softwareVersion',
             
             'instanceUuid': 'instanceUuid',
             
@@ -207,52 +207,17 @@ class NetworkDeviceDTO(object):
         
         self.errorCode = None # str
         
-        #Inventory status description
+        #Family of device as switch, router, wireless lan controller, accesspoints
         
-        self.errorDescription = None # str
-        
-        #Device series
-        
-        self.series = None # str
-        
-        #Status detail of inventory sync
-        
-        self.inventoryStatusDetail = None # str
-        
-        #Software version on the device
-        
-        self.softwareVersion = None # str
-        
-        #Time that shows for how long the device has been up
-        
-        self.upTime = None # str
-        
-        
-        self.lastUpdateTime = None # date-time
-        
-        #Name of the associated location
-        
-        self.locationName = None # str
-        
-        #MAC address of device
-        
-        self.macAddress = None # str
+        self.family = None # str
         
         #Role of device as access, distribution, border router, core
         
         self.role = None # str
         
-        #Number of tags associated with the device
+        #Role source as manual / auto
         
-        self.tagCount = None # str
-        
-        #Time when the network device info last got updated
-        
-        self.lastUpdated = None # str
-        
-        #Device name
-        
-        self.hostname = None # str
+        self.roleSource = None # str
         
         #IP address of WLC on AP manager interface
         
@@ -265,10 +230,6 @@ class NetworkDeviceDTO(object):
         #Collection status as Synchronizing, Could not synchronize, Not manageable, Managed, Partial Collection Failure, Incomplete, Unreachable, Wrong credential, Reachable, In Progress
         
         self.collectionStatus = None # str
-        
-        #Family of device as switch, router, wireless lan controller, accesspoints
-        
-        self.family = None # str
         
         #Number of interfaces on the device
         
@@ -302,10 +263,6 @@ class NetworkDeviceDTO(object):
         
         self.reachabilityStatus = None # str
         
-        #Role source as manual / auto
-        
-        self.roleSource = None # str
-        
         #SNMP contact on device
         
         self.snmpContact = None # str
@@ -317,6 +274,49 @@ class NetworkDeviceDTO(object):
         #Mobility protocol port is stored as tunneludpport for WLC
         
         self.tunnelUdpPort = None # str
+        
+        #Status detail of inventory sync
+        
+        self.inventoryStatusDetail = None # str
+        
+        #Time that shows for how long the device has been up
+        
+        self.upTime = None # str
+        
+        #Device series
+        
+        self.series = None # str
+        
+        
+        self.lastUpdateTime = None # date-time
+        
+        #Name of the associated location
+        
+        self.locationName = None # str
+        
+        #Number of tags associated with the device
+        
+        self.tagCount = None # str
+        
+        #Device name
+        
+        self.hostname = None # str
+        
+        #Inventory status description
+        
+        self.errorDescription = None # str
+        
+        #Time when the network device info last got updated
+        
+        self.lastUpdated = None # str
+        
+        #MAC address of device
+        
+        self.macAddress = None # str
+        
+        #Software version on the device
+        
+        self.softwareVersion = None # str
         
         
         self.instanceUuid = None # str

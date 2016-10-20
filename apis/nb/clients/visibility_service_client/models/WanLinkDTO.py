@@ -18,6 +18,15 @@ class WanLinkDTO(object):
             'id': 'str',
             
             
+            'nextHopAddress': 'str',
+            
+            
+            'natAddress': 'str',
+            
+            
+            'uploadBW': 'float',
+            
+            
             'tunnelId': 'int',
             
             
@@ -36,25 +45,22 @@ class WanLinkDTO(object):
             'wanAddress': 'str',
             
             
-            'nextHopAddress': 'str',
+            'wanAddressSubnetMask': 'str',
             
             
-            'natAddress': 'str',
-            
-            
-            'wanCloudUuid': 'str',
-            
-            
-            'uploadBW': 'float',
-            
-            
-            'wanAddressSubnetMask': 'str'
+            'wanCloudUuid': 'str'
             
         }
 
         self.attributeMap = {
             
             'id': 'id',
+            
+            'nextHopAddress': 'nextHopAddress',
+            
+            'natAddress': 'natAddress',
+            
+            'uploadBW': 'uploadBW',
             
             'tunnelId': 'tunnelId',
             
@@ -68,21 +74,24 @@ class WanLinkDTO(object):
             
             'wanAddress': 'wanAddress',
             
-            'nextHopAddress': 'nextHopAddress',
+            'wanAddressSubnetMask': 'wanAddressSubnetMask',
             
-            'natAddress': 'natAddress',
-            
-            'wanCloudUuid': 'wanCloudUuid',
-            
-            'uploadBW': 'uploadBW',
-            
-            'wanAddressSubnetMask': 'wanAddressSubnetMask'
+            'wanCloudUuid': 'wanCloudUuid'
             
         }       
 
         
         
         self.id = None # str
+        
+        
+        self.nextHopAddress = None # str
+        
+        
+        self.natAddress = None # str
+        
+        
+        self.uploadBW = None # float
         
         
         self.tunnelId = None # int
@@ -103,17 +112,8 @@ class WanLinkDTO(object):
         self.wanAddress = None # str
         
         
-        self.nextHopAddress = None # str
-        
-        
-        self.natAddress = None # str
+        self.wanAddressSubnetMask = None # str
         
         
         self.wanCloudUuid = None # str
-        
-        
-        self.uploadBW = None # float
-        
-        
-        self.wanAddressSubnetMask = None # str
         

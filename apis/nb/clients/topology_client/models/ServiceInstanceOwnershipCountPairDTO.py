@@ -15,25 +15,25 @@ class ServiceInstanceOwnershipCountPairDTO(object):
         """
         self.swaggerTypes = {
             
-            'serviceInstance': 'str',
+            'ownershipCount': 'int',
             
             
-            'ownershipCount': 'int'
+            'serviceInstance': 'str'
             
         }
 
         self.attributeMap = {
             
-            'serviceInstance': 'serviceInstance',
+            'ownershipCount': 'ownershipCount',
             
-            'ownershipCount': 'ownershipCount'
+            'serviceInstance': 'serviceInstance'
             
         }       
 
         
         
-        self.serviceInstance = None # str
-        
-        
         self.ownershipCount = None # int
+        
+        
+        self.serviceInstance = None # str
         

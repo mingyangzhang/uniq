@@ -1253,6 +1253,9 @@ class PolicyApi(object):
             policyScope, str: Retrieve policies for a given scope (required)
             
             
+            scopeWirelessSegment, str: Retrieve policies for a given wirelessSegment within a policyScope (policyScope is mandatory for this) (required)
+            
+            
             offset, str: Starting index of the resources (1 based) (required)
             
             
@@ -1263,7 +1266,7 @@ class PolicyApi(object):
         Returns: PolicyStatusListResult
         """
 
-        allParams = ['networkDeviceId', 'policyScope', 'offset', 'limit']
+        allParams = ['networkDeviceId', 'policyScope', 'scopeWirelessSegment', 'offset', 'limit']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -1291,6 +1294,9 @@ class PolicyApi(object):
         
         if ('policyScope' in params):
             queryParams['policyScope'] = self.apiClient.toPathValue(params['policyScope'])
+        
+        if ('scopeWirelessSegment' in params):
+            queryParams['scopeWirelessSegment'] = self.apiClient.toPathValue(params['scopeWirelessSegment'])
         
         if ('offset' in params):
             queryParams['offset'] = self.apiClient.toPathValue(params['offset'])
@@ -1401,7 +1407,7 @@ class PolicyApi(object):
             offset, str: Starting index of the resources (1 based) (required)
             
             
-            limit, str: Number of resources to return (Use smaller limit value for better response times. Max 50) (required)
+            limit, str: Number of resources to return (Max 500) (required)
             
             
         
@@ -1877,20 +1883,35 @@ class PolicyApi(object):
 
         Args:
             
-            unAssigned, str: Boolean to indicate if the device is currently not assigned to any policy tag. (required)
+            unAssigned, str: Boolean to indicate if the device is currently not assigned to any policy tag. If empty, both assigned and unAssigned devices will be returned. (required)
             
             
-            offset, str: Starting index of the resources (1 based) (required)
+            restricted, str: Boolean to indicate if the user has restricted access to the device. If empty, devices with both restricted and unrestricted access will be returned. (required)
             
             
-            limit, str: Number of resources to return (required)
+            deviceName, str: The name of the device. (required)
+            
+            
+            locationName, str: The location name of the device. (required)
+            
+            
+            deviceIp, str: The ip address of the device. (required)
+            
+            
+            filterOperation, str: The filter operation for the query parameters (startsWith, contains, endsWith). If filterOperation is not provided, then it is an exact match. (required)
+            
+            
+            offset, str: Starting index of the resources (1 based). (required)
+            
+            
+            limit, str: Number of resources to return. Maximum limit is 500. (required)
             
             
         
         Returns: PolicyTagAssociationDeviceListResult
         """
 
-        allParams = ['unAssigned', 'offset', 'limit']
+        allParams = ['unAssigned', 'restricted', 'deviceName', 'locationName', 'deviceIp', 'filterOperation', 'offset', 'limit']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -1915,6 +1936,21 @@ class PolicyApi(object):
         
         if ('unAssigned' in params):
             queryParams['unAssigned'] = self.apiClient.toPathValue(params['unAssigned'])
+        
+        if ('restricted' in params):
+            queryParams['restricted'] = self.apiClient.toPathValue(params['restricted'])
+        
+        if ('deviceName' in params):
+            queryParams['deviceName'] = self.apiClient.toPathValue(params['deviceName'])
+        
+        if ('locationName' in params):
+            queryParams['locationName'] = self.apiClient.toPathValue(params['locationName'])
+        
+        if ('deviceIp' in params):
+            queryParams['deviceIp'] = self.apiClient.toPathValue(params['deviceIp'])
+        
+        if ('filterOperation' in params):
+            queryParams['filterOperation'] = self.apiClient.toPathValue(params['filterOperation'])
         
         if ('offset' in params):
             queryParams['offset'] = self.apiClient.toPathValue(params['offset'])
@@ -1951,14 +1987,29 @@ class PolicyApi(object):
 
         Args:
             
-            unAssigned, str: Boolean to indicate if the device is currently not assigned to any policy tag. (required)
+            unAssigned, str: Boolean to indicate if the device is currently not assigned to any policy tag. If empty count of both assigned and unAssigned devices will be returned. (required)
+            
+            
+            restricted, str: Boolean to indicate if the user has restricted access to the device. If empty, count of devices with both restricted and unrestricted access will be returned. (required)
+            
+            
+            deviceName, str: The name of the device. (required)
+            
+            
+            locationName, str: The location name of the device. (required)
+            
+            
+            deviceIp, str: The ip address of the device. (required)
+            
+            
+            filterOperation, str: The filter operation for the query parameters (startsWith, contains, endsWith). If filterOperation is not provided, then it is an exact match. (required)
             
             
         
         Returns: CountResult
         """
 
-        allParams = ['unAssigned']
+        allParams = ['unAssigned', 'restricted', 'deviceName', 'locationName', 'deviceIp', 'filterOperation']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -1983,6 +2034,21 @@ class PolicyApi(object):
         
         if ('unAssigned' in params):
             queryParams['unAssigned'] = self.apiClient.toPathValue(params['unAssigned'])
+        
+        if ('restricted' in params):
+            queryParams['restricted'] = self.apiClient.toPathValue(params['restricted'])
+        
+        if ('deviceName' in params):
+            queryParams['deviceName'] = self.apiClient.toPathValue(params['deviceName'])
+        
+        if ('locationName' in params):
+            queryParams['locationName'] = self.apiClient.toPathValue(params['locationName'])
+        
+        if ('deviceIp' in params):
+            queryParams['deviceIp'] = self.apiClient.toPathValue(params['deviceIp'])
+        
+        if ('filterOperation' in params):
+            queryParams['filterOperation'] = self.apiClient.toPathValue(params['filterOperation'])
         
 
         
@@ -2139,6 +2205,74 @@ class PolicyApi(object):
             return None
 
         responseObject = self.apiClient.deserialize(response, 'PolicyVersionNumberListResult')
+        return responseObject
+        
+        
+        
+    
+    def deleteFilterPoliciesHistory(self, **kwargs):
+        """Delete policies history based on a given filter
+
+        Args:
+            
+            policyScope, str: Delete policies history for a given scope (required)
+            
+            
+            scopeWirelessSegment, str: Delete policies history for a given wireless segment, within a policyScope (policyScope is mandatory for this) (required)
+            
+            
+        
+        Returns: TaskIdResult
+        """
+
+        allParams = ['policyScope', 'scopeWirelessSegment']
+
+        params = locals()
+        for (key, val) in list(params['kwargs'].items()):
+            if key not in allParams:
+                raise TypeError("Got an unexpected keyword argument '%s' to method deleteFilterPoliciesHistory" % key)
+            params[key] = val
+        del params['kwargs']
+
+        resourcePath = '/policy/version'
+        resourcePath = resourcePath.replace('{format}', 'json')
+        method = 'DELETE'
+
+        queryParams = {}
+        headerParams = {}
+        formParams = {}
+        files = {}
+        bodyParam = None
+
+        headerParams['Accept'] = 'application/json'
+        headerParams['Content-Type'] = 'application/json'
+
+        
+        if ('policyScope' in params):
+            queryParams['policyScope'] = self.apiClient.toPathValue(params['policyScope'])
+        
+        if ('scopeWirelessSegment' in params):
+            queryParams['scopeWirelessSegment'] = self.apiClient.toPathValue(params['scopeWirelessSegment'])
+        
+
+        
+
+        
+
+        
+
+        
+
+        postData = (formParams if formParams else bodyParam)
+
+        response = self.apiClient.callAPI(resourcePath, method, queryParams,
+                                          postData, headerParams, files=files)
+
+        
+        if not response:
+            return None
+
+        responseObject = self.apiClient.deserialize(response, 'TaskIdResult')
         return responseObject
         
         

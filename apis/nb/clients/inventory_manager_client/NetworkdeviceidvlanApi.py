@@ -29,14 +29,11 @@ class NetworkdeviceidvlanApi(object):
             interfaceType, str: Vlan assocaited with sub-interface (required)
             
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: VlanListResult
         """
 
-        allParams = ['id', 'interfaceType', 'scope']
+        allParams = ['id', 'interfaceType']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -63,9 +60,6 @@ class NetworkdeviceidvlanApi(object):
             queryParams['interfaceType'] = self.apiClient.toPathValue(params['interfaceType'])
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         

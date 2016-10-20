@@ -14,151 +14,153 @@ class ModuleDTO(object):
           attributeMap (dict): The key is attribute name and the value is json key in definition.
         """
         self.swaggerTypes = {
-
-            'isFieldReplaceable': 'str',
-
-
-            'entityPhysicalIndex': 'str',
-
-
-            'containmentEntity': 'str',
-
-
+            
             'name': 'str',
-
-
+            
+            
+            'isFieldReplaceable': 'str',
+            
+            
+            'entityPhysicalIndex': 'str',
+            
+            
+            'containmentEntity': 'str',
+            
+            
             'serialNumber': 'str',
-
-
+            
+            
             'description': 'str',
-
-
-            'assemblyNumber': 'str',
-
-
-            'assemblyRevision': 'str',
-
-
-            'isReportingAlarmsAllowed': 'str',
-
-
-            'manufacturer': 'str',
-
-
-            'operationalStateCode': 'str',
-
-
-            'partNumber': 'str',
-
-
-            'vendorEquipmentType': 'str',
-
-
-            'moduleIndex': 'int',
-
-
+            
+            
             'id': 'str',
-
-
+            
+            
+            'moduleIndex': 'int',
+            
+            
+            'assemblyNumber': 'str',
+            
+            
+            'assemblyRevision': 'str',
+            
+            
+            'isReportingAlarmsAllowed': 'str',
+            
+            
+            'manufacturer': 'str',
+            
+            
+            'operationalStateCode': 'str',
+            
+            
+            'partNumber': 'str',
+            
+            
+            'vendorEquipmentType': 'str',
+            
+            
             'attributeInfo': 'dict'
-
+            
         }
 
         self.attributeMap = {
-
-            'isFieldReplaceable': 'isFieldReplaceable',
-
-            'entityPhysicalIndex': 'entityPhysicalIndex',
-
-            'containmentEntity': 'containmentEntity',
-
+            
             'name': 'name',
-
+            
+            'isFieldReplaceable': 'isFieldReplaceable',
+            
+            'entityPhysicalIndex': 'entityPhysicalIndex',
+            
+            'containmentEntity': 'containmentEntity',
+            
             'serialNumber': 'serialNumber',
-
+            
             'description': 'description',
-
-            'assemblyNumber': 'assemblyNumber',
-
-            'assemblyRevision': 'assemblyRevision',
-
-            'isReportingAlarmsAllowed': 'isReportingAlarmsAllowed',
-
-            'manufacturer': 'manufacturer',
-
-            'operationalStateCode': 'operationalStateCode',
-
-            'partNumber': 'partNumber',
-
-            'vendorEquipmentType': 'vendorEquipmentType',
-
-            'moduleIndex': 'moduleIndex',
-
+            
             'id': 'id',
-
+            
+            'moduleIndex': 'moduleIndex',
+            
+            'assemblyNumber': 'assemblyNumber',
+            
+            'assemblyRevision': 'assemblyRevision',
+            
+            'isReportingAlarmsAllowed': 'isReportingAlarmsAllowed',
+            
+            'manufacturer': 'manufacturer',
+            
+            'operationalStateCode': 'operationalStateCode',
+            
+            'partNumber': 'partNumber',
+            
+            'vendorEquipmentType': 'vendorEquipmentType',
+            
             'attributeInfo': 'attributeInfo'
+            
+        }       
 
-        }
-
-
-        #To mention if field is replaceable
-
-        self.isFieldReplaceable = None # str
-
-        #Entity physical index of the module
-
-        self.entityPhysicalIndex = None # str
-
-        #Containment entity of the module
-
-        self.containmentEntity = None # str
-
+        
         #Name of the module
-
+        
         self.name = None # str
-
+        
+        #To mention if field is replaceable
+        
+        self.isFieldReplaceable = None # str
+        
+        #Entity physical index of the module
+        
+        self.entityPhysicalIndex = None # str
+        
+        #Containment entity of the module
+        
+        self.containmentEntity = None # str
+        
         #Serial number of the module
-
+        
         self.serialNumber = None # str
-
+        
         #Description of the module
-
+        
         self.description = None # str
-
-        #Assembly number of the module
-
-        self.assemblyNumber = None # str
-
-        #Assembly revision of the module
-
-        self.assemblyRevision = None # str
-
-        #To mention if reporting alarms are allowed
-
-        self.isReportingAlarmsAllowed = None # str
-
-        #Manufacturer of the module
-
-        self.manufacturer = None # str
-
-        #Operational state of the module
-
-        self.operationalStateCode = None # str
-
-        #Part number of the module
-
-        self.partNumber = None # str
-
-        #Vendor euipment type of the module
-
-        self.vendorEquipmentType = None # str
-
-        #Index of the module
-
-        self.moduleIndex = None # int
-
+        
         #Id of the module
-
+        
         self.id = None # str
-
+        
+        #Index of the module
+        
+        self.moduleIndex = None # int
+        
+        #Assembly number of the module
+        
+        self.assemblyNumber = None # str
+        
+        #Assembly revision of the module
+        
+        self.assemblyRevision = None # str
+        
+        #To mention if reporting alarms are allowed
+        
+        self.isReportingAlarmsAllowed = None # str
+        
+        #Manufacturer of the module
+        
+        self.manufacturer = None # str
+        
+        #Operational state of the module
+        
+        self.operationalStateCode = None # str
+        
+        #Part number of the module
+        
+        self.partNumber = None # str
+        
+        #Vendor euipment type of the module
+        
+        self.vendorEquipmentType = None # str
+        
+        
         self.attributeInfo = None # dict
+        

@@ -15,27 +15,27 @@ class TicketAttribute(object):
         """
         self.swaggerTypes = {
             
-            'value': 'int',
+            'attribute': 'str',
             
             
-            'attribute': 'str'
+            'value': 'int'
             
         }
 
         self.attributeMap = {
             
-            'value': 'value',
+            'attribute': 'attribute',
             
-            'attribute': 'attribute'
+            'value': 'value'
             
         }       
 
         
-        #Service Ticket Attribute Value
-        
-        self.value = None # int
-        
         #Service Ticket Attribute Name
         
         self.attribute = None # str
+        
+        #Service Ticket Attribute Value
+        
+        self.value = None # int
         

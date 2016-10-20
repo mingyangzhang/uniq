@@ -15,49 +15,52 @@ class PolicyInterruptDTO(object):
         """
         self.swaggerTypes = {
             
+            'createTime': 'int',
+            
+            
             'lastUpdateTime': 'int',
             
             
-            'createTime': 'int',
+            'action': 'str',
             
             
             'policyScope': 'str',
             
             
-            'scopeWirelessSegment': 'str',
-            
-            
-            'action': 'str'
+            'scopeWirelessSegment': 'str'
             
         }
 
         self.attributeMap = {
             
+            'createTime': 'createTime',
+            
             'lastUpdateTime': 'lastUpdateTime',
             
-            'createTime': 'createTime',
+            'action': 'action',
             
             'policyScope': 'policyScope',
             
-            'scopeWirelessSegment': 'scopeWirelessSegment',
-            
-            'action': 'action'
+            'scopeWirelessSegment': 'scopeWirelessSegment'
             
         }       
 
         
         
-        self.lastUpdateTime = None # int
-        
-        
         self.createTime = None # int
         
         
-        self.policyScope = None # str
+        self.lastUpdateTime = None # int
         
-        
-        self.scopeWirelessSegment = None # str
-        
+        #One of {ABORT, ABORT-RESTORE-TO-ORIGINAL}
         
         self.action = None # str
+        
+        #Policy scope
+        
+        self.policyScope = None # str
+        
+        #Scope wireless segment
+        
+        self.scopeWirelessSegment = None # str
         

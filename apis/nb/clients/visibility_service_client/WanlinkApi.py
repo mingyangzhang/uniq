@@ -335,7 +335,7 @@ class WanlinkApi(object):
             
             
         
-        Returns: IWanQosInterfaceBandwidthInfo
+        Returns: StdResult«IWanQosInterfaceBandwidthInfo»
         """
 
         allParams = ['linkId', 'scope', 'username']
@@ -391,7 +391,7 @@ class WanlinkApi(object):
         if not response:
             return None
 
-        responseObject = self.apiClient.deserialize(response, 'IWanQosInterfaceBandwidthInfoResult')
+        responseObject = self.apiClient.deserialize(response, 'StdResult«IWanQosInterfaceBandwidthInfo»')
         return responseObject
         
         

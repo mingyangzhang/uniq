@@ -18,7 +18,7 @@ class TrustpoolUpdateStatus(object):
             'update': 'str',
             
             
-            'attributeInfo': 'object',
+            'attributeInfo': 'dict',
             
             
             'id': 'str'
@@ -40,7 +40,7 @@ class TrustpoolUpdateStatus(object):
         self.update = None # str
         
         
-        self.attributeInfo = None # object
+        self.attributeInfo = None # dict
         
         
         self.id = None # str

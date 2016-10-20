@@ -18,12 +18,95 @@ class TaskApi(object):
 
     
     
+    def getTaskByOperationId(self, **kwargs):
+        """getTaskByOperationId
+
+        Args:
+            
+            operationId, str: operationId (required)
+            
+            
+            offset, int: Index, minimum value is 0 (required)
+            
+            
+            limit, int: The maximum value of {limit} supported is 500. &lt;br/&gt; Base 1 indexing for {limit}, minimum value is 1 (required)
+            
+            
+        
+        Returns: TaskDTOListResponse
+        """
+
+        allParams = ['operationId', 'offset', 'limit']
+
+        params = locals()
+        for (key, val) in list(params['kwargs'].items()):
+            if key not in allParams:
+                raise TypeError("Got an unexpected keyword argument '%s' to method getTaskByOperationId" % key)
+            params[key] = val
+        del params['kwargs']
+
+        resourcePath = '/task/operation/{operationId}/{offset}/{limit}'
+        resourcePath = resourcePath.replace('{format}', 'json')
+        method = 'GET'
+
+        queryParams = {}
+        headerParams = {}
+        formParams = {}
+        files = {}
+        bodyParam = None
+
+        headerParams['Accept'] = 'application/json'
+        headerParams['Content-Type'] = 'application/json'
+
+        
+
+        
+
+        
+        if ('operationId' in params):
+            replacement = str(self.apiClient.toPathValue(params['operationId']))
+            replacement = urllib.parse.quote(replacement)
+            resourcePath = resourcePath.replace('{' + 'operationId' + '}',
+                                                replacement)
+        
+        if ('offset' in params):
+            replacement = str(self.apiClient.toPathValue(params['offset']))
+            replacement = urllib.parse.quote(replacement)
+            resourcePath = resourcePath.replace('{' + 'offset' + '}',
+                                                replacement)
+        
+        if ('limit' in params):
+            replacement = str(self.apiClient.toPathValue(params['limit']))
+            replacement = urllib.parse.quote(replacement)
+            resourcePath = resourcePath.replace('{' + 'limit' + '}',
+                                                replacement)
+        
+
+        
+
+        
+
+        postData = (formParams if formParams else bodyParam)
+
+        response = self.apiClient.callAPI(resourcePath, method, queryParams,
+                                          postData, headerParams, files=files)
+
+        
+        if not response:
+            return None
+
+        responseObject = self.apiClient.deserialize(response, 'TaskDTOListResponse')
+        return responseObject
+        
+        
+        
+    
     def getTaskByRange(self, **kwargs):
         """getTaskByRange
 
         Args:
             
-            offset, int: Index (required)
+            offset, int: Index, minimum value is 0 (required)
             
             
             limit, int: The maximum value of {limit} supported is 500. &lt;br/&gt; Base 1 indexing for {limit}, minimum value is 1 (required)
@@ -36,7 +119,7 @@ class TaskApi(object):
         allParams = ['offset', 'limit']
 
         params = locals()
-        for (key, val) in params['kwargs'].items():
+        for (key, val) in list(params['kwargs'].items()):
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method getTaskByRange" % key)
             params[key] = val
@@ -107,7 +190,7 @@ class TaskApi(object):
         allParams = ['taskId']
 
         params = locals()
-        for (key, val) in params['kwargs'].items():
+        for (key, val) in list(params['kwargs'].items()):
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method getTask" % key)
             params[key] = val
@@ -172,7 +255,7 @@ class TaskApi(object):
         allParams = ['taskId']
 
         params = locals()
-        for (key, val) in params['kwargs'].items():
+        for (key, val) in list(params['kwargs'].items()):
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method getTaskTree" % key)
             params[key] = val

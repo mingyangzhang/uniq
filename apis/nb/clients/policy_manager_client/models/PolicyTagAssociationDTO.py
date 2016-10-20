@@ -21,10 +21,10 @@ class PolicyTagAssociationDTO(object):
             'policyTag': 'str',
             
             
-            'unModifiableReason': 'str',
+            'unModifiable': 'bool',
             
             
-            'unModifiable': 'bool'
+            'unModifiableReason': 'str'
             
         }
 
@@ -34,9 +34,9 @@ class PolicyTagAssociationDTO(object):
             
             'policyTag': 'policyTag',
             
-            'unModifiableReason': 'unModifiableReason',
+            'unModifiable': 'unModifiable',
             
-            'unModifiable': 'unModifiable'
+            'unModifiableReason': 'unModifiableReason'
             
         }       
 
@@ -48,8 +48,8 @@ class PolicyTagAssociationDTO(object):
         self.policyTag = None # str
         
         
-        self.unModifiableReason = None # str
-        
-        
         self.unModifiable = None # bool
+        
+        
+        self.unModifiableReason = None # str
         

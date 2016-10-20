@@ -45,7 +45,7 @@ class URL(object):
             'defaultPort': 'int',
             
             
-            'content': 'object'
+            'content': 'dict'
             
         }
 
@@ -107,5 +107,5 @@ class URL(object):
         self.defaultPort = None # int
         
         
-        self.content = None # object
+        self.content = None # dict
         

@@ -15,28 +15,25 @@ class ServiceProviderProfileInterfaceDTO(object):
         """
         self.swaggerTypes = {
             
-            'deviceId': 'str',
-            
-            
-            'policyScope': 'str',
-            
-            
-            'scopeWirelessSegment': 'str',
-            
-            
-            'deviceName': 'str',
-            
-            
-            'interfaceId': 'str',
+            'stale': 'bool',
             
             
             'interfaceName': 'str',
             
             
+            'deviceId': 'str',
+            
+            
+            'deviceName': 'str',
+            
+            
+            'policyScope': 'str',
+            
+            
             'serviceProviderProfileVersion': 'int',
             
             
-            'current': 'bool',
+            'interfaceId': 'str',
             
             
             'id': 'str',
@@ -51,21 +48,19 @@ class ServiceProviderProfileInterfaceDTO(object):
 
         self.attributeMap = {
             
-            'deviceId': 'deviceId',
-            
-            'policyScope': 'policyScope',
-            
-            'scopeWirelessSegment': 'scopeWirelessSegment',
-            
-            'deviceName': 'deviceName',
-            
-            'interfaceId': 'interfaceId',
+            'stale': 'stale',
             
             'interfaceName': 'interfaceName',
             
+            'deviceId': 'deviceId',
+            
+            'deviceName': 'deviceName',
+            
+            'policyScope': 'policyScope',
+            
             'serviceProviderProfileVersion': 'serviceProviderProfileVersion',
             
-            'current': 'current',
+            'interfaceId': 'interfaceId',
             
             'id': 'id',
             
@@ -76,29 +71,27 @@ class ServiceProviderProfileInterfaceDTO(object):
         }       
 
         
+        #Indicates whether the ServiceProviderProfile has been updated since the last time this interface was provisioned
         
-        self.deviceId = None # str
-        
-        
-        self.policyScope = None # str
-        
-        
-        self.scopeWirelessSegment = None # str
-        
-        
-        self.deviceName = None # str
-        
-        
-        self.interfaceId = None # str
+        self.stale = None # bool
         
         
         self.interfaceName = None # str
         
         
+        self.deviceId = None # str
+        
+        
+        self.deviceName = None # str
+        
+        
+        self.policyScope = None # str
+        
+        
         self.serviceProviderProfileVersion = None # int
         
         
-        self.current = None # bool
+        self.interfaceId = None # str
         
         #id
         

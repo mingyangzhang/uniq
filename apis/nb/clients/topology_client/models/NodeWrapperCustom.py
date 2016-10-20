@@ -15,9 +15,6 @@ class NodeWrapperCustom(object):
         """
         self.swaggerTypes = {
             
-            'label': 'str',
-            
-            
             'parentNodeId': 'str',
             
             
@@ -27,13 +24,14 @@ class NodeWrapperCustom(object):
             'x': 'int',
             
             
+            'label': 'str',
+            
+            
             'id': 'str'
             
         }
 
         self.attributeMap = {
-            
-            'label': 'label',
             
             'parentNodeId': 'parentNodeId',
             
@@ -41,14 +39,12 @@ class NodeWrapperCustom(object):
             
             'x': 'x',
             
+            'label': 'label',
+            
             'id': 'id'
             
         }       
 
-        
-        #Label for the node
-        
-        self.label = None # str
         
         #Unique Id of the Node for ehich the custom properties are being represented
         
@@ -61,6 +57,10 @@ class NodeWrapperCustom(object):
         #X - Coordinate for this Node in the topology View
         
         self.x = None # int
+        
+        #Label for the node
+        
+        self.label = None # str
         
         
         self.id = None # str

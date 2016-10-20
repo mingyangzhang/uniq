@@ -15,30 +15,6 @@ class NetworkElementInfo(object):
         """
         self.swaggerTypes = {
             
-            'role': 'str',
-            
-            
-            'ip': 'str',
-            
-            
-            'linkInformationSource': 'str',
-            
-            
-            'tunnels': 'list[str]',
-            
-            
-            'accuracyList': 'list[Accuracy]',
-            
-            
-            'perfMonCollection': 'str',
-            
-            
-            'egressInterface': 'InterfaceContainer',
-            
-            
-            'ingressInterface': 'InterfaceContainer',
-            
-            
             'deviceStatistics': 'DeviceStatistics',
             
             
@@ -54,6 +30,18 @@ class NetworkElementInfo(object):
             'detailedStatus': 'DetailedStatus',
             
             
+            'tunnels': 'list[str]',
+            
+            
+            'linkInformationSource': 'str',
+            
+            
+            'accuracyList': 'list[Accuracy]',
+            
+            
+            'perfMonCollection': 'str',
+            
+            
             'perfMonitorStatistics': 'list[PerfMonitorStatistics]',
             
             
@@ -63,27 +51,23 @@ class NetworkElementInfo(object):
             'id': 'str',
             
             
-            'type': 'str'
+            'type': 'str',
+            
+            
+            'role': 'str',
+            
+            
+            'egressInterface': 'InterfaceContainer',
+            
+            
+            'ingressInterface': 'InterfaceContainer',
+            
+            
+            'ip': 'str'
             
         }
 
         self.attributeMap = {
-            
-            'role': 'role',
-            
-            'ip': 'ip',
-            
-            'linkInformationSource': 'linkInformationSource',
-            
-            'tunnels': 'tunnels',
-            
-            'accuracyList': 'accuracyList',
-            
-            'perfMonCollection': 'perfMonCollection',
-            
-            'egressInterface': 'egressInterface',
-            
-            'ingressInterface': 'ingressInterface',
             
             'deviceStatistics': 'deviceStatistics',
             
@@ -95,47 +79,32 @@ class NetworkElementInfo(object):
             
             'detailedStatus': 'detailedStatus',
             
+            'tunnels': 'tunnels',
+            
+            'linkInformationSource': 'linkInformationSource',
+            
+            'accuracyList': 'accuracyList',
+            
+            'perfMonCollection': 'perfMonCollection',
+            
             'perfMonitorStatistics': 'perfMonitorStatistics',
             
             'name': 'name',
             
             'id': 'id',
             
-            'type': 'type'
+            'type': 'type',
+            
+            'role': 'role',
+            
+            'egressInterface': 'egressInterface',
+            
+            'ingressInterface': 'ingressInterface',
+            
+            'ip': 'ip'
             
         }       
 
-        
-        #Role of device in network(can be access,core,distribution or border router)
-        
-        self.role = None # str
-        
-        #Network Device IP
-        
-        self.ip = None # str
-        
-        #The source of the link information to the next hop
-        
-        self.linkInformationSource = None # str
-        
-        #Tunnels this network element is in
-        
-        self.tunnels = None # list[str]
-        
-        
-        self.accuracyList = None # list[Accuracy]
-        
-        #A status value from [ INPROGRESS, SUCCESS, FAILED ] 
-        
-        self.perfMonCollection = None # str
-        
-        #Egress interface of the network device
-        
-        self.egressInterface = None # InterfaceContainer
-        
-        #Ingress interface of the network device
-        
-        self.ingressInterface = None # InterfaceContainer
         
         #Device statistics
         
@@ -154,6 +123,21 @@ class NetworkElementInfo(object):
         
         self.detailedStatus = None # DetailedStatus
         
+        #Tunnels this network element is in
+        
+        self.tunnels = None # list[str]
+        
+        #The source of the link information to the next hop
+        
+        self.linkInformationSource = None # str
+        
+        
+        self.accuracyList = None # list[Accuracy]
+        
+        #A status value from [ INPROGRESS, SUCCESS, FAILED ] 
+        
+        self.perfMonCollection = None # str
+        
         #perf mon statistics on the device for give flow
         
         self.perfMonitorStatistics = None # list[PerfMonitorStatistics]
@@ -169,4 +153,20 @@ class NetworkElementInfo(object):
         #Network Device Type(can be switch,router,wired host or wireless host)
         
         self.type = None # str
+        
+        #Role of device in network(can be access,core,distribution or border router)
+        
+        self.role = None # str
+        
+        #Egress interface of the network device
+        
+        self.egressInterface = None # InterfaceContainer
+        
+        #Ingress interface of the network device
+        
+        self.ingressInterface = None # InterfaceContainer
+        
+        #Network Device IP
+        
+        self.ip = None # str
         

@@ -15,25 +15,25 @@ class NameSpaceListResult(object):
         """
         self.swaggerTypes = {
             
-            'response': 'list[str]',
+            'version': 'str',
             
             
-            'version': 'str'
+            'response': 'list[str]'
             
         }
 
         self.attributeMap = {
             
-            'response': 'response',
+            'version': 'version',
             
-            'version': 'version'
+            'response': 'response'
             
         }       
 
         
         
-        self.response = None # list[str]
-        
-        
         self.version = None # str
+        
+        
+        self.response = None # list[str]
         

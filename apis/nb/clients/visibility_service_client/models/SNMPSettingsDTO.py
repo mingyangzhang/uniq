@@ -15,13 +15,16 @@ class SNMPSettingsDTO(object):
         """
         self.swaggerTypes = {
             
+            'version': 'str',
+            
+            
             'mode': 'str',
             
             
             'timeout': 'str',
             
             
-            'version': 'str',
+            'trapReflectionDestIp': 'str',
             
             
             'username': 'str',
@@ -42,23 +45,22 @@ class SNMPSettingsDTO(object):
             'authType': 'str',
             
             
-            'privacyType': 'str',
-            
-            
             'retry': 'str',
             
             
-            'trapReflectionDestIp': 'str'
+            'privacyType': 'str'
             
         }
 
         self.attributeMap = {
             
+            'version': 'version',
+            
             'mode': 'mode',
             
             'timeout': 'timeout',
             
-            'version': 'version',
+            'trapReflectionDestIp': 'trapReflectionDestIp',
             
             'username': 'username',
             
@@ -72,14 +74,15 @@ class SNMPSettingsDTO(object):
             
             'authType': 'authType',
             
-            'privacyType': 'privacyType',
-            
             'retry': 'retry',
             
-            'trapReflectionDestIp': 'trapReflectionDestIp'
+            'privacyType': 'privacyType'
             
         }       
 
+        
+        
+        self.version = None # str
         
         
         self.mode = None # str
@@ -88,7 +91,7 @@ class SNMPSettingsDTO(object):
         self.timeout = None # str
         
         
-        self.version = None # str
+        self.trapReflectionDestIp = None # str
         
         
         self.username = None # str
@@ -109,11 +112,8 @@ class SNMPSettingsDTO(object):
         self.authType = None # str
         
         
-        self.privacyType = None # str
-        
-        
         self.retry = None # str
         
         
-        self.trapReflectionDestIp = None # str
+        self.privacyType = None # str
         

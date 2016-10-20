@@ -15,33 +15,33 @@ class AclAce(object):
         """
         self.swaggerTypes = {
             
-            'ace': 'str',
+            'result': 'str',
             
             
             'matchingPorts': 'list[AclMatchingPorts]',
             
             
-            'result': 'str'
+            'ace': 'str'
             
         }
 
         self.attributeMap = {
             
-            'ace': 'ace',
+            'result': 'result',
             
             'matchingPorts': 'matchingPorts',
             
-            'result': 'result'
+            'ace': 'ace'
             
         }       
 
         
         
-        self.ace = None # str
+        self.result = None # str
         
         
         self.matchingPorts = None # list[AclMatchingPorts]
         
         
-        self.result = None # str
+        self.ace = None # str
         

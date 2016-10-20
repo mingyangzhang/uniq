@@ -15,27 +15,27 @@ class DeviceStatistics(object):
         """
         self.swaggerTypes = {
             
-            'memoryStatistics': 'MemoryStatistics',
+            'cpuStatistics': 'CpuStatistics',
             
             
-            'cpuStatistics': 'CpuStatistics'
+            'memoryStatistics': 'MemoryStatistics'
             
         }
 
         self.attributeMap = {
             
-            'memoryStatistics': 'memoryStatistics',
+            'cpuStatistics': 'cpuStatistics',
             
-            'cpuStatistics': 'cpuStatistics'
+            'memoryStatistics': 'memoryStatistics'
             
         }       
 
         
-        #Device Memory statistics
-        
-        self.memoryStatistics = None # MemoryStatistics
-        
         #Device CPU statistics
         
         self.cpuStatistics = None # CpuStatistics
+        
+        #Device Memory statistics
+        
+        self.memoryStatistics = None # MemoryStatistics
         

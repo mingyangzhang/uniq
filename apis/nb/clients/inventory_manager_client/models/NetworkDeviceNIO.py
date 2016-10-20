@@ -30,73 +30,49 @@ class NetworkDeviceNIO(object):
             'wlcApDeviceStatus': 'str',
             
             
+            'pingStatus': 'str',
+            
+            
+            'snmpStatus': 'str',
+            
+            
+            'cliStatus': 'str',
+            
+            
             'inventoryReachabilityStatus': 'str',
-            
-            
-            'serialNumber': 'str',
-            
-            
-            'portRange': 'str',
             
             
             'type': 'str',
             
             
-            'hostname': 'str',
-            
-            
-            'inventoryCollectionStatus': 'str',
-            
-            
             'location': 'str',
-            
-            
-            'role': 'str',
-            
-            
-            'softwareVersion': 'str',
-            
-            
-            'vendor': 'str',
-            
-            
-            'errorDescription': 'str',
-            
-            
-            'imageName': 'str',
-            
-            
-            'lastUpdated': 'str',
-            
-            
-            'upTime': 'str',
-            
-            
-            'errorCode': 'str',
-            
-            
-            'locationName': 'str',
-            
-            
-            'tagCount': 'int',
             
             
             'id': 'str',
             
             
-            'macAddress': 'str',
-            
-            
-            'tag': 'str',
-            
-            
-            'avgUpdateFrequency': 'int',
+            'role': 'str',
             
             
             'roleSource': 'str',
             
             
+            'avgUpdateFrequency': 'int',
+            
+            
             'numUpdates': 'int',
+            
+            
+            'bootDateTime': 'DateTime',
+            
+            
+            'interfaceCount': 'str',
+            
+            
+            'lineCardCount': 'str',
+            
+            
+            'lineCardId': 'str',
             
             
             'managementIpAddress': 'str',
@@ -120,31 +96,55 @@ class NetworkDeviceNIO(object):
             'snmpLocation': 'str',
             
             
-            'bootDateTime': 'DateTime',
-            
-            
             'family': 'str',
-            
-            
-            'interfaceCount': 'str',
-            
-            
-            'lineCardCount': 'str',
-            
-            
-            'lineCardId': 'str',
             
             
             'qosStatus': 'str',
             
             
-            'pingStatus': 'str',
+            'tag': 'str',
             
             
-            'snmpStatus': 'str',
+            'inventoryCollectionStatus': 'str',
             
             
-            'cliStatus': 'str'
+            'upTime': 'str',
+            
+            
+            'locationName': 'str',
+            
+            
+            'tagCount': 'int',
+            
+            
+            'hostname': 'str',
+            
+            
+            'errorCode': 'str',
+            
+            
+            'errorDescription': 'str',
+            
+            
+            'imageName': 'str',
+            
+            
+            'lastUpdated': 'str',
+            
+            
+            'vendor': 'str',
+            
+            
+            'macAddress': 'str',
+            
+            
+            'softwareVersion': 'str',
+            
+            
+            'serialNumber': 'str',
+            
+            
+            'portRange': 'str'
             
         }
 
@@ -160,51 +160,35 @@ class NetworkDeviceNIO(object):
             
             'wlcApDeviceStatus': 'wlcApDeviceStatus',
             
+            'pingStatus': 'pingStatus',
+            
+            'snmpStatus': 'snmpStatus',
+            
+            'cliStatus': 'cliStatus',
+            
             'inventoryReachabilityStatus': 'inventoryReachabilityStatus',
-            
-            'serialNumber': 'serialNumber',
-            
-            'portRange': 'portRange',
             
             'type': 'type',
             
-            'hostname': 'hostname',
-            
-            'inventoryCollectionStatus': 'inventoryCollectionStatus',
-            
             'location': 'location',
-            
-            'role': 'role',
-            
-            'softwareVersion': 'softwareVersion',
-            
-            'vendor': 'vendor',
-            
-            'errorDescription': 'errorDescription',
-            
-            'imageName': 'imageName',
-            
-            'lastUpdated': 'lastUpdated',
-            
-            'upTime': 'upTime',
-            
-            'errorCode': 'errorCode',
-            
-            'locationName': 'locationName',
-            
-            'tagCount': 'tagCount',
             
             'id': 'id',
             
-            'macAddress': 'macAddress',
-            
-            'tag': 'tag',
-            
-            'avgUpdateFrequency': 'avgUpdateFrequency',
+            'role': 'role',
             
             'roleSource': 'roleSource',
             
+            'avgUpdateFrequency': 'avgUpdateFrequency',
+            
             'numUpdates': 'numUpdates',
+            
+            'bootDateTime': 'bootDateTime',
+            
+            'interfaceCount': 'interfaceCount',
+            
+            'lineCardCount': 'lineCardCount',
+            
+            'lineCardId': 'lineCardId',
             
             'managementIpAddress': 'managementIpAddress',
             
@@ -220,23 +204,39 @@ class NetworkDeviceNIO(object):
             
             'snmpLocation': 'snmpLocation',
             
-            'bootDateTime': 'bootDateTime',
-            
             'family': 'family',
-            
-            'interfaceCount': 'interfaceCount',
-            
-            'lineCardCount': 'lineCardCount',
-            
-            'lineCardId': 'lineCardId',
             
             'qosStatus': 'qosStatus',
             
-            'pingStatus': 'pingStatus',
+            'tag': 'tag',
             
-            'snmpStatus': 'snmpStatus',
+            'inventoryCollectionStatus': 'inventoryCollectionStatus',
             
-            'cliStatus': 'cliStatus'
+            'upTime': 'upTime',
+            
+            'locationName': 'locationName',
+            
+            'tagCount': 'tagCount',
+            
+            'hostname': 'hostname',
+            
+            'errorCode': 'errorCode',
+            
+            'errorDescription': 'errorDescription',
+            
+            'imageName': 'imageName',
+            
+            'lastUpdated': 'lastUpdated',
+            
+            'vendor': 'vendor',
+            
+            'macAddress': 'macAddress',
+            
+            'softwareVersion': 'softwareVersion',
+            
+            'serialNumber': 'serialNumber',
+            
+            'portRange': 'portRange'
             
         }       
 
@@ -261,97 +261,65 @@ class NetworkDeviceNIO(object):
         
         self.wlcApDeviceStatus = None # str
         
+        #Ping status at the time of discovery
+        
+        self.pingStatus = None # str
+        
+        #SNMP status at the time of discovery
+        
+        self.snmpStatus = None # str
+        
+        #CLI status at the time of discovery
+        
+        self.cliStatus = None # str
+        
         #Inventory reachablity status
         
         self.inventoryReachabilityStatus = None # str
-        
-        #Serial number of device
-        
-        self.serialNumber = None # str
-        
-        #Range of ports on device
-        
-        self.portRange = None # str
         
         #Type of device as switch, router, wireless lan controller, accesspoints
         
         self.type = None # str
         
-        #Device name
-        
-        self.hostname = None # str
-        
-        #Inventory status
-        
-        self.inventoryCollectionStatus = None # str
-        
         #Location ID that is associated with the device
         
         self.location = None # str
-        
-        #Role of device as access, distribution, border router, core
-        
-        self.role = None # str
-        
-        #Software version on the device
-        
-        self.softwareVersion = None # str
-        
-        #Vendor information of the device
-        
-        self.vendor = None # str
-        
-        #Inventory status description
-        
-        self.errorDescription = None # str
-        
-        #Image details on the device
-        
-        self.imageName = None # str
-        
-        #Time when the network device info last got updated
-        
-        self.lastUpdated = None # str
-        
-        #Time that shows for how long the device has been up
-        
-        self.upTime = None # str
-        
-        #Inventory status error code
-        
-        self.errorCode = None # str
-        
-        #Name of the associated location
-        
-        self.locationName = None # str
-        
-        #Number of tags associated with the device
-        
-        self.tagCount = None # int
         
         #Unique identifier of network device
         
         self.id = None # str
         
-        #MAC address of device
+        #Role of device as access, distribution, border router, core
         
-        self.macAddress = None # str
-        
-        #Tag ID that is associated with the device
-        
-        self.tag = None # str
-        
-        #Frequency in which interface info gets updated
-        
-        self.avgUpdateFrequency = None # int
+        self.role = None # str
         
         #Role source as manual / auto
         
         self.roleSource = None # str
         
+        #Frequency in which interface info gets updated
+        
+        self.avgUpdateFrequency = None # int
+        
         #Number of time network-device info got updated
         
         self.numUpdates = None # int
+        
+        #Device boot time
+        
+        self.bootDateTime = None # DateTime
+        
+        #Number of interfaces on the device
+        
+        self.interfaceCount = None # str
+        
+        #Number of linecards on the device
+        
+        self.lineCardCount = None # str
+        
+        #IDs of linecards of the device
+        
+        self.lineCardId = None # str
         
         #IP address of the device
         
@@ -381,39 +349,71 @@ class NetworkDeviceNIO(object):
         
         self.snmpLocation = None # str
         
-        #Device boot time
-        
-        self.bootDateTime = None # DateTime
-        
         #Family of device as switch, router, wireless lan controller, accesspoints
         
         self.family = None # str
-        
-        #Number of interfaces on the device
-        
-        self.interfaceCount = None # str
-        
-        #Number of linecards on the device
-        
-        self.lineCardCount = None # str
-        
-        #IDs of linecards of the device
-        
-        self.lineCardId = None # str
         
         #Qos status on device
         
         self.qosStatus = None # str
         
-        #Ping status at the time of discovery
+        #Tag ID that is associated with the device
         
-        self.pingStatus = None # str
+        self.tag = None # str
         
-        #SNMP status at the time of discovery
+        #Inventory status
         
-        self.snmpStatus = None # str
+        self.inventoryCollectionStatus = None # str
         
-        #CLI status at the time of discovery
+        #Time that shows for how long the device has been up
         
-        self.cliStatus = None # str
+        self.upTime = None # str
+        
+        #Name of the associated location
+        
+        self.locationName = None # str
+        
+        #Number of tags associated with the device
+        
+        self.tagCount = None # int
+        
+        #Device name
+        
+        self.hostname = None # str
+        
+        #Inventory status error code
+        
+        self.errorCode = None # str
+        
+        #Inventory status description
+        
+        self.errorDescription = None # str
+        
+        #Image details on the device
+        
+        self.imageName = None # str
+        
+        #Time when the network device info last got updated
+        
+        self.lastUpdated = None # str
+        
+        #Vendor information of the device
+        
+        self.vendor = None # str
+        
+        #MAC address of device
+        
+        self.macAddress = None # str
+        
+        #Software version on the device
+        
+        self.softwareVersion = None # str
+        
+        #Serial number of device
+        
+        self.serialNumber = None # str
+        
+        #Range of ports on device
+        
+        self.portRange = None # str
         

@@ -23,14 +23,11 @@ class ReachabilityinfoApi(object):
 
         Args:
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: NetworkDeviceReachabilityInfoNIOListResult
         """
 
-        allParams = ['scope']
+        allParams = []
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -54,9 +51,6 @@ class ReachabilityinfoApi(object):
 
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         
@@ -85,14 +79,11 @@ class ReachabilityinfoApi(object):
 
         Args:
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: CountResult
         """
 
-        allParams = ['scope']
+        allParams = []
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -116,9 +107,6 @@ class ReachabilityinfoApi(object):
 
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         
@@ -150,14 +138,11 @@ class ReachabilityinfoApi(object):
             ipAddress, str: IP address of device (required)
             
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: NetworkDeviceReachabilityInfoNIOResult
         """
 
-        allParams = ['ipAddress', 'scope']
+        allParams = ['ipAddress']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -181,9 +166,6 @@ class ReachabilityinfoApi(object):
 
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         
@@ -221,14 +203,11 @@ class ReachabilityinfoApi(object):
             networkDeviceId, str: ID of network-device (required)
             
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: NetworkDeviceReachabilityInfoNIOResult
         """
 
-        allParams = ['networkDeviceId', 'scope']
+        allParams = ['networkDeviceId']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -252,9 +231,6 @@ class ReachabilityinfoApi(object):
 
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         
@@ -295,14 +271,11 @@ class ReachabilityinfoApi(object):
             recordsToReturn, int: Number of records to return (required)
             
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: NetworkDeviceReachabilityInfoNIOListResult
         """
 
-        allParams = ['startIndex', 'recordsToReturn', 'scope']
+        allParams = ['startIndex', 'recordsToReturn']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -326,9 +299,6 @@ class ReachabilityinfoApi(object):
 
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         

@@ -18,10 +18,10 @@ class MemoryStatistics(object):
             'memoryUsage': 'int',
             
             
-            'refreshedAt': 'int',
+            'totalMemory': 'int',
             
             
-            'totalMemory': 'int'
+            'refreshedAt': 'int'
             
         }
 
@@ -29,9 +29,9 @@ class MemoryStatistics(object):
             
             'memoryUsage': 'memoryUsage',
             
-            'refreshedAt': 'refreshedAt',
+            'totalMemory': 'totalMemory',
             
-            'totalMemory': 'totalMemory'
+            'refreshedAt': 'refreshedAt'
             
         }       
 
@@ -40,8 +40,8 @@ class MemoryStatistics(object):
         self.memoryUsage = None # int
         
         
-        self.refreshedAt = None # int
-        
-        
         self.totalMemory = None # int
+        
+        
+        self.refreshedAt = None # int
         

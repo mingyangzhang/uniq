@@ -15,6 +15,9 @@ class RawCliInfoNIO(object):
         """
         self.swaggerTypes = {
             
+            'version': 'str',
+            
+            
             'inventory': 'str',
             
             
@@ -30,12 +33,6 @@ class RawCliInfoNIO(object):
             'healthMonitor': 'str',
             
             
-            'snmp': 'str',
-            
-            
-            'version': 'str',
-            
-            
             'id': 'str',
             
             
@@ -45,11 +42,16 @@ class RawCliInfoNIO(object):
             'cdpNeighbors': 'str',
             
             
-            'attributeInfo': 'object'
+            'snmp': 'str',
+            
+            
+            'attributeInfo': 'dict'
             
         }
 
         self.attributeMap = {
+            
+            'version': 'version',
             
             'inventory': 'inventory',
             
@@ -61,20 +63,22 @@ class RawCliInfoNIO(object):
             
             'healthMonitor': 'healthMonitor',
             
-            'snmp': 'snmp',
-            
-            'version': 'version',
-            
             'id': 'id',
             
             'runningConfig': 'runningConfig',
             
             'cdpNeighbors': 'cdpNeighbors',
             
+            'snmp': 'snmp',
+            
             'attributeInfo': 'attributeInfo'
             
         }       
 
+        
+        #Version configuration info of the device
+        
+        self.version = None # str
         
         #Inventory configuration info of the device
         
@@ -96,14 +100,6 @@ class RawCliInfoNIO(object):
         
         self.healthMonitor = None # str
         
-        #SNMP configuration info of the device
-        
-        self.snmp = None # str
-        
-        #Version configuration info of the device
-        
-        self.version = None # str
-        
         #Unique identifier for config
         
         self.id = None # str
@@ -116,6 +112,10 @@ class RawCliInfoNIO(object):
         
         self.cdpNeighbors = None # str
         
+        #SNMP configuration info of the device
         
-        self.attributeInfo = None # object
+        self.snmp = None # str
+        
+        
+        self.attributeInfo = None # dict
         

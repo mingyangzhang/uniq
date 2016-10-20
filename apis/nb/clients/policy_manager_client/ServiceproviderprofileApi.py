@@ -29,6 +29,12 @@ class ServiceproviderprofileApi(object):
             defaultModel, str: Retrieve Default(&#39;true&#39;) or Custom(&#39;false&#39;) ServiceProviderProfiles (required)
             
             
+            interfaces.stale, str: Retrieve ServiceProviderProfiles which have stale interfaces - only valid value is &#39;true&#39; (required)
+            
+            
+            interfaces.policyScope, str: Retrieve ServiceProviderProfiles which have stale interfaces within the policyScope (required)
+            
+            
             offset, str: Starting index of the resources (1 based) (required)
             
             
@@ -39,7 +45,7 @@ class ServiceproviderprofileApi(object):
         Returns: ServiceProviderProfileListResult
         """
 
-        allParams = ['name', 'defaultModel', 'offset', 'limit']
+        allParams = ['name', 'defaultModel', 'interfaces.stale', 'interfaces.policyScope', 'offset', 'limit']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -67,6 +73,12 @@ class ServiceproviderprofileApi(object):
         
         if ('defaultModel' in params):
             queryParams['defaultModel'] = self.apiClient.toPathValue(params['defaultModel'])
+        
+        if ('interfaces.stale' in params):
+            queryParams['interfaces.stale'] = self.apiClient.toPathValue(params['interfaces.stale'])
+        
+        if ('interfaces.policyScope' in params):
+            queryParams['interfaces.policyScope'] = self.apiClient.toPathValue(params['interfaces.policyScope'])
         
         if ('offset' in params):
             queryParams['offset'] = self.apiClient.toPathValue(params['offset'])

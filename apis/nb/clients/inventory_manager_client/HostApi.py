@@ -59,14 +59,11 @@ class HostApi(object):
             filterOperation, str: startswith/contains/endswith (required)
             
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: HostListResult
         """
 
-        allParams = ['limit', 'offset', 'sortBy', 'order', 'hostName', 'hostMac', 'hostType', 'connectedInterfaceName', 'hostIp', 'connectedNetworkDeviceIpAddress', 'subType', 'filterOperation', 'scope']
+        allParams = ['limit', 'offset', 'sortBy', 'order', 'hostName', 'hostMac', 'hostType', 'connectedInterfaceName', 'hostIp', 'connectedNetworkDeviceIpAddress', 'subType', 'filterOperation']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -127,9 +124,6 @@ class HostApi(object):
         
 
         
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
-        
 
         
 
@@ -181,14 +175,11 @@ class HostApi(object):
             filterOperation, str: startswith/contains/endswith (required)
             
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: CountResult
         """
 
-        allParams = ['hostName', 'hostMac', 'hostType', 'connectedInterfaceName', 'hostIp', 'connectedNetworkDeviceIpAddress', 'subType', 'filterOperation', 'scope']
+        allParams = ['hostName', 'hostMac', 'hostType', 'connectedInterfaceName', 'hostIp', 'connectedNetworkDeviceIpAddress', 'subType', 'filterOperation']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -237,9 +228,6 @@ class HostApi(object):
         
 
         
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
-        
 
         
 
@@ -270,14 +258,11 @@ class HostApi(object):
             id, str: Host Id (required)
             
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: HostResult
         """
 
-        allParams = ['id', 'scope']
+        allParams = ['id']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -301,9 +286,6 @@ class HostApi(object):
 
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         
@@ -333,6 +315,5 @@ class HostApi(object):
         
         
     
-
 
 

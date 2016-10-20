@@ -15,13 +15,16 @@ class QosClassMapStatistics(object):
         """
         self.swaggerTypes = {
             
-            'classMapName': 'str',
+            'queueNoBufferDrops': 'int',
             
             
             'refreshedAt': 'int',
             
             
-            'queueDepth': 'int',
+            'queueTotalDrops': 'int',
+            
+            
+            'classMapName': 'str',
             
             
             'dropRate': 'int',
@@ -33,26 +36,25 @@ class QosClassMapStatistics(object):
             'numPackets': 'int',
             
             
-            'offeredRate': 'int',
-            
-            
             'queueBandwidthbps': 'str',
             
             
-            'queueNoBufferDrops': 'int',
+            'queueDepth': 'int',
             
             
-            'queueTotalDrops': 'int'
+            'offeredRate': 'int'
             
         }
 
         self.attributeMap = {
             
-            'classMapName': 'classMapName',
+            'queueNoBufferDrops': 'queueNoBufferDrops',
             
             'refreshedAt': 'refreshedAt',
             
-            'queueDepth': 'queueDepth',
+            'queueTotalDrops': 'queueTotalDrops',
+            
+            'classMapName': 'classMapName',
             
             'dropRate': 'dropRate',
             
@@ -60,25 +62,26 @@ class QosClassMapStatistics(object):
             
             'numPackets': 'numPackets',
             
-            'offeredRate': 'offeredRate',
-            
             'queueBandwidthbps': 'queueBandwidthbps',
             
-            'queueNoBufferDrops': 'queueNoBufferDrops',
+            'queueDepth': 'queueDepth',
             
-            'queueTotalDrops': 'queueTotalDrops'
+            'offeredRate': 'offeredRate'
             
         }       
 
         
         
-        self.classMapName = None # str
+        self.queueNoBufferDrops = None # int
         
         
         self.refreshedAt = None # int
         
         
-        self.queueDepth = None # int
+        self.queueTotalDrops = None # int
+        
+        
+        self.classMapName = None # str
         
         
         self.dropRate = None # int
@@ -90,14 +93,11 @@ class QosClassMapStatistics(object):
         self.numPackets = None # int
         
         
-        self.offeredRate = None # int
-        
-        
         self.queueBandwidthbps = None # str
         
         
-        self.queueNoBufferDrops = None # int
+        self.queueDepth = None # int
         
         
-        self.queueTotalDrops = None # int
+        self.offeredRate = None # int
         

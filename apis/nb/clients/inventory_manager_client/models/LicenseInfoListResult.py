@@ -15,25 +15,25 @@ class LicenseInfoListResult(object):
         """
         self.swaggerTypes = {
             
-            'response': 'list[LicenseInfoDTO]',
+            'version': 'str',
             
             
-            'version': 'str'
+            'response': 'list[LicenseInfoDTO]'
             
         }
 
         self.attributeMap = {
             
-            'response': 'response',
+            'version': 'version',
             
-            'version': 'version'
+            'response': 'response'
             
         }       
 
         
         
-        self.response = None # list[LicenseInfoDTO]
-        
-        
         self.version = None # str
+        
+        
+        self.response = None # list[LicenseInfoDTO]
         

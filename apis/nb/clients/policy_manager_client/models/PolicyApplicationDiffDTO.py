@@ -15,27 +15,27 @@ class PolicyApplicationDiffDTO(object):
         """
         self.swaggerTypes = {
             
-            'operation': 'str',
+            'policyApplication': 'PolicyApplication',
             
             
-            'policyApplication': 'PolicyApplication'
+            'operation': 'str'
             
         }
 
         self.attributeMap = {
             
-            'operation': 'operation',
+            'policyApplication': 'policyApplication',
             
-            'policyApplication': 'policyApplication'
+            'operation': 'operation'
             
         }       
 
         
-        #operation
-        
-        self.operation = None # str
-        
         #application
         
         self.policyApplication = None # PolicyApplication
+        
+        #operation
+        
+        self.operation = None # str
         

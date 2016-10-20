@@ -15,26 +15,30 @@ class NetworkDeviceBriefNIO(object):
         """
         self.swaggerTypes = {
             
+            'id': 'str',
+            
+            
             'role': 'str',
             
             
-            'roleSource': 'str',
-            
-            
-            'id': 'str'
+            'roleSource': 'str'
             
         }
 
         self.attributeMap = {
             
+            'id': 'id',
+            
             'role': 'role',
             
-            'roleSource': 'roleSource',
-            
-            'id': 'id'
+            'roleSource': 'roleSource'
             
         }       
 
+        
+        #Unique identifier of the network device
+        
+        self.id = None # str
         
         #Role of device as access, distribution, border router, core
         
@@ -43,8 +47,4 @@ class NetworkDeviceBriefNIO(object):
         #Role source as manual / auto
         
         self.roleSource = None # str
-        
-        #Unique identifier of the network device
-        
-        self.id = None # str
         

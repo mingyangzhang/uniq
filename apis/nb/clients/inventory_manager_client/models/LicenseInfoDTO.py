@@ -15,61 +15,13 @@ class LicenseInfoDTO(object):
         """
         self.swaggerTypes = {
             
-            'id': 'str',
+            'name': 'str',
             
             
-            'deployPending': 'int',
-            
-            
-            'evalPeriodLeft': 'str',
-            
-            
-            'usageCount': 'int',
+            'priority': 'str',
             
             
             'type': 'str',
-            
-            
-            'isCounted': 'bool',
-            
-            
-            'validityPeriodRemaining': 'int',
-            
-            
-            'attributeInfo': 'object',
-            
-            
-            'storeName': 'str',
-            
-            
-            'validityPeriod': 'int',
-            
-            
-            'storedUsed': 'int',
-            
-            
-            'featureVersion': 'str',
-            
-            
-            'hostId': 'str',
-            
-            
-            'evalPeriodUsed': 'str',
-            
-            
-            'totalCount': 'int',
-            
-            
-            'usageCountRemaining': 'int',
-            
-            
-            'physicalIndex': 'str',
-            
-            
-            'isEulaAccepted': 'bool',
-            
-            
-            'expiredDate': 'str',
             
             
             'description': 'str',
@@ -78,195 +30,180 @@ class LicenseInfoDTO(object):
             'status': 'str',
             
             
+            'id': 'str',
+            
+            
+            'evalPeriodLeft': 'str',
+            
+            
+            'evalPeriodUsed': 'str',
+            
+            
+            'expiredDate': 'str',
+            
+            
+            'isCounted': 'bool',
+            
+            
+            'isEulaAccepted': 'bool',
+            
+            
             'isEulaApplicable': 'bool',
-            
-            
-            'provisionState': 'int',
-            
-            
-            'parentId': 'int',
-            
-            
-            'maxUsageCount': 'int',
-            
-            
-            'eulaStatus': 'bool',
-            
-            
-            'priority': 'str',
-            
-            
-            'name': 'str',
-            
-            
-            'counted': 'bool',
-            
-            
-            'licenseFileCount': 'int',
             
             
             'isTechnologyLicense': 'bool',
             
             
+            'licenseFileCount': 'int',
+            
+            
             'licenseFileName': 'str',
+            
+            
+            'storeName': 'str',
+            
+            
+            'storedUsed': 'int',
+            
+            
+            'hostId': 'str',
+            
+            
+            'totalCount': 'int',
+            
+            
+            'parentId': 'int',
+            
+            
+            'provisionState': 'int',
+            
+            
+            'physicalIndex': 'str',
             
             
             'licenseIndex': 'int',
             
             
-            'expiredPeriod': 'int'
+            'featureVersion': 'str',
+            
+            
+            'counted': 'bool',
+            
+            
+            'validityPeriod': 'int',
+            
+            
+            'validityPeriodRemaining': 'int',
+            
+            
+            'maxUsageCount': 'int',
+            
+            
+            'usageCount': 'int',
+            
+            
+            'eulaStatus': 'bool',
+            
+            
+            'usageCountRemaining': 'int',
+            
+            
+            'expiredPeriod': 'int',
+            
+            
+            'deployPending': 'int',
+            
+            
+            'attributeInfo': 'dict'
             
         }
 
         self.attributeMap = {
             
-            'id': 'id',
+            'name': 'name',
             
-            'deployPending': 'deployPending',
-            
-            'evalPeriodLeft': 'evalPeriodLeft',
-            
-            'usageCount': 'usageCount',
+            'priority': 'priority',
             
             'type': 'type',
-            
-            'isCounted': 'isCounted',
-            
-            'validityPeriodRemaining': 'validityPeriodRemaining',
-            
-            'attributeInfo': 'attributeInfo',
-            
-            'storeName': 'storeName',
-            
-            'validityPeriod': 'validityPeriod',
-            
-            'storedUsed': 'storedUsed',
-            
-            'featureVersion': 'featureVersion',
-            
-            'hostId': 'hostId',
-            
-            'evalPeriodUsed': 'evalPeriodUsed',
-            
-            'totalCount': 'totalCount',
-            
-            'usageCountRemaining': 'usageCountRemaining',
-            
-            'physicalIndex': 'physicalIndex',
-            
-            'isEulaAccepted': 'isEulaAccepted',
-            
-            'expiredDate': 'expiredDate',
             
             'description': 'description',
             
             'status': 'status',
             
+            'id': 'id',
+            
+            'evalPeriodLeft': 'evalPeriodLeft',
+            
+            'evalPeriodUsed': 'evalPeriodUsed',
+            
+            'expiredDate': 'expiredDate',
+            
+            'isCounted': 'isCounted',
+            
+            'isEulaAccepted': 'isEulaAccepted',
+            
             'isEulaApplicable': 'isEulaApplicable',
-            
-            'provisionState': 'provisionState',
-            
-            'parentId': 'parentId',
-            
-            'maxUsageCount': 'maxUsageCount',
-            
-            'eulaStatus': 'eulaStatus',
-            
-            'priority': 'priority',
-            
-            'name': 'name',
-            
-            'counted': 'counted',
-            
-            'licenseFileCount': 'licenseFileCount',
             
             'isTechnologyLicense': 'isTechnologyLicense',
             
+            'licenseFileCount': 'licenseFileCount',
+            
             'licenseFileName': 'licenseFileName',
+            
+            'storeName': 'storeName',
+            
+            'storedUsed': 'storedUsed',
+            
+            'hostId': 'hostId',
+            
+            'totalCount': 'totalCount',
+            
+            'parentId': 'parentId',
+            
+            'provisionState': 'provisionState',
+            
+            'physicalIndex': 'physicalIndex',
             
             'licenseIndex': 'licenseIndex',
             
-            'expiredPeriod': 'expiredPeriod'
+            'featureVersion': 'featureVersion',
+            
+            'counted': 'counted',
+            
+            'validityPeriod': 'validityPeriod',
+            
+            'validityPeriodRemaining': 'validityPeriodRemaining',
+            
+            'maxUsageCount': 'maxUsageCount',
+            
+            'usageCount': 'usageCount',
+            
+            'eulaStatus': 'eulaStatus',
+            
+            'usageCountRemaining': 'usageCountRemaining',
+            
+            'expiredPeriod': 'expiredPeriod',
+            
+            'deployPending': 'deployPending',
+            
+            'attributeInfo': 'attributeInfo'
             
         }       
 
         
-        #ID of license
+        #Name of the feature that is using or can use this license. Ex: &#39;IPBASE&#39;, &#39;ADVIPSERVICE&#39;
         
-        self.id = None # str
+        self.name = None # str
         
-        #Deploy Pending information of license
+        #License priority
         
-        self.deployPending = None # int
+        self.priority = None # str
         
-        #Number of days remaining in the eval period
-        
-        self.evalPeriodLeft = None # str
-        
-        #Usage count of the license feature
-        
-        self.usageCount = None # int
-        
-        #License type
+        #Type of license based on the validity period
         
         self.type = None # str
         
-        #If the license is counted as part of license usage
-        
-        self.isCounted = None # bool
-        
-        #Remaining validityPeriod
-        
-        self.validityPeriodRemaining = None # int
-        
-        
-        self.attributeInfo = None # object
-        
-        #Name of the license Store
-        
-        self.storeName = None # str
-        
-        #Validity period the the license
-        
-        self.validityPeriod = None # int
-        
-        #License store usage detail
-        
-        self.storedUsed = None # int
-        
-        #Version of the license feature
-        
-        self.featureVersion = None # str
-        
-        #Device Id/Name of the license info
-        
-        self.hostId = None # str
-        
-        #Number of days used in the eval period
-        
-        self.evalPeriodUsed = None # str
-        
-        #Number of license installed in the device
-        
-        self.totalCount = None # int
-        
-        #Unused license count
-        
-        self.usageCountRemaining = None # int
-        
-        #Physical entity index
-        
-        self.physicalIndex = None # str
-        
-        #If the EULA is accepted
-        
-        self.isEulaAccepted = None # bool
-        
-        #Expired date of the license
-        
-        self.expiredDate = None # str
-        
-        #Description about the license
+        #Description about the license. It is populated  with comments from the license file
         
         self.description = None # str
         
@@ -274,55 +211,118 @@ class LicenseInfoDTO(object):
         
         self.status = None # str
         
-        #If the EULA is applicable
+        #Id of the license
+        
+        self.id = None # str
+        
+        #Number of days remaining in the eval period
+        
+        self.evalPeriodLeft = None # str
+        
+        #Number of days used in the eval period
+        
+        self.evalPeriodUsed = None # str
+        
+        #Expired date of the license
+        
+        self.expiredDate = None # str
+        
+        #Whether the license is counted license. Values are true(1)  - counted license,false(2) - uncounted license
+        
+        self.isCounted = None # bool
+        
+        #This field is based on eulaStatus. Ex: If eulaStatus is true then it will be accepted else false
+        
+        self.isEulaAccepted = None # bool
+        
+        #This field is based on eulaStatus. Ex: If eulaStatus is true then it will be applicable else false
         
         self.isEulaApplicable = None # bool
         
-        #Provision state of the license feature
+        #Whether the license is technology license. Values are true(1)  - technology license,false(2) - nontechnology license
         
-        self.provisionState = None # int
+        self.isTechnologyLicense = None # bool
+        
+        #Number of installed license file in this feature
+        
+        self.licenseFileCount = None # int
+        
+        #Installed License file name
+        
+        self.licenseFileName = None # str
+        
+        #Name of the license store within the device. Ex: &#39;disk1:lic_store_1.txt&#39; or  &#39;flash:lic_store_2.txt
+        
+        self.storeName = None # str
+        
+        #License store that is used for storing this license
+        
+        self.storedUsed = None # int
+        
+        #An administratively-assigned fully-qualified domain name for this managed node
+        
+        self.hostId = None # str
+        
+        #Total number of this licensed feature
+        
+        self.totalCount = None # int
         
         #Parent Id of the license
         
         self.parentId = None # int
         
-        #Maximum usage of the license feature
+        #Provision state of the license feature
         
-        self.maxUsageCount = None # int
+        self.provisionState = None # int
         
-        #EULA status of the license
+        #Physical entity index
         
-        self.eulaStatus = None # bool
+        self.physicalIndex = None # str
         
-        #License priority
-        
-        self.priority = None # str
-        
-        #Name of the license feature
-        
-        self.name = None # str
-        
-        #If license feature is counted as part of the license
-        
-        self.counted = None # bool
-        
-        #Number of license file
-        
-        self.licenseFileCount = None # int
-        
-        #If the license is technology license or not
-        
-        self.isTechnologyLicense = None # bool
-        
-        #Name of license file
-        
-        self.licenseFileName = None # str
-        
-        #Index of the license
+        #Index of the license to uniquely identify a license within the device
         
         self.licenseIndex = None # int
         
-        #License expired period
+        #Version of the feature that is using or can use this license. Ex: &#39;1.0&#39;, &#39;2.0&#39; 
+        
+        self.featureVersion = None # str
+        
+        #If license feature is counted as part of the license. Values are true(1)  - counted license, false(2) - uncounted license
+        
+        self.counted = None # bool
+        
+        #Time period the license is valid for. Value will be in milliseconds
+        
+        self.validityPeriod = None # int
+        
+        #Time period remaining before the license expires or transitions to rightToUse(9) license. Value will be in milliseconds
+        
+        self.validityPeriodRemaining = None # int
+        
+        #Maximum number of entities that can use this license
+        
+        self.maxUsageCount = None # int
+        
+        #Number of current usages of this licensed feature
+        
+        self.usageCount = None # int
+        
+        #Whether the user accepted end user license agreement for this license. Values are true(1)  - EULA accepted, false(2) - EULA not accepted
+        
+        self.eulaStatus = None # bool
+        
+        #Number of entities that can still use this license
+        
+        self.usageCountRemaining = None # int
+        
+        #Time period after the license expires. Value will be in milliseconds
         
         self.expiredPeriod = None # int
+        
+        #Deploy Pending information of license
+        
+        self.deployPending = None # int
+        
+        
+        self.attributeInfo = None # dict
         

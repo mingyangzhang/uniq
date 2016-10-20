@@ -18,19 +18,10 @@ class InterfaceStatistics(object):
             'refreshedAt': 'int',
             
             
-            'adminStatus': 'str',
-            
-            
-            'operationalStatus': 'str',
-            
-            
             'inputPackets': 'int',
             
             
             'inputQueueCount': 'int',
-            
-            
-            'outputDrop': 'int',
             
             
             'inputQueueDrops': 'int',
@@ -45,6 +36,9 @@ class InterfaceStatistics(object):
             'inputRatebps': 'int',
             
             
+            'outputDrop': 'int',
+            
+            
             'outputPackets': 'int',
             
             
@@ -54,7 +48,13 @@ class InterfaceStatistics(object):
             'outputQueueDepth': 'int',
             
             
-            'outputRatebps': 'int'
+            'outputRatebps': 'int',
+            
+            
+            'adminStatus': 'str',
+            
+            
+            'operationalStatus': 'str'
             
         }
 
@@ -62,15 +62,9 @@ class InterfaceStatistics(object):
             
             'refreshedAt': 'refreshedAt',
             
-            'adminStatus': 'adminStatus',
-            
-            'operationalStatus': 'operationalStatus',
-            
             'inputPackets': 'inputPackets',
             
             'inputQueueCount': 'inputQueueCount',
-            
-            'outputDrop': 'outputDrop',
             
             'inputQueueDrops': 'inputQueueDrops',
             
@@ -80,13 +74,19 @@ class InterfaceStatistics(object):
             
             'inputRatebps': 'inputRatebps',
             
+            'outputDrop': 'outputDrop',
+            
             'outputPackets': 'outputPackets',
             
             'outputQueueCount': 'outputQueueCount',
             
             'outputQueueDepth': 'outputQueueDepth',
             
-            'outputRatebps': 'outputRatebps'
+            'outputRatebps': 'outputRatebps',
+            
+            'adminStatus': 'adminStatus',
+            
+            'operationalStatus': 'operationalStatus'
             
         }       
 
@@ -95,19 +95,10 @@ class InterfaceStatistics(object):
         self.refreshedAt = None # int
         
         
-        self.adminStatus = None # str
-        
-        
-        self.operationalStatus = None # str
-        
-        
         self.inputPackets = None # int
         
         
         self.inputQueueCount = None # int
-        
-        
-        self.outputDrop = None # int
         
         
         self.inputQueueDrops = None # int
@@ -122,6 +113,9 @@ class InterfaceStatistics(object):
         self.inputRatebps = None # int
         
         
+        self.outputDrop = None # int
+        
+        
         self.outputPackets = None # int
         
         
@@ -132,4 +126,10 @@ class InterfaceStatistics(object):
         
         
         self.outputRatebps = None # int
+        
+        
+        self.adminStatus = None # str
+        
+        
+        self.operationalStatus = None # str
         

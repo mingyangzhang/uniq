@@ -15,6 +15,21 @@ class Policy(object):
         """
         self.swaggerTypes = {
             
+            'actions': 'list[str]',
+            
+            
+            'networkUser': 'NetworkUser',
+            
+            
+            'policyOwner': 'str',
+            
+            
+            'actionProperty': 'ActionProperty',
+            
+            
+            'state': 'str',
+            
+            
             'policyScope': 'str',
             
             
@@ -24,38 +39,33 @@ class Policy(object):
             'id': 'str',
             
             
-            'state': 'str',
-            
-            
-            'scopeWirelessSegment': 'str',
-            
-            
             'instanceUuid': 'str',
-            
-            
-            'policyName': 'str',
-            
-            
-            'actionProperty': 'ActionProperty',
             
             
             'taskId': 'str',
             
             
+            'policyName': 'str',
+            
+            
             'policyPriority': 'int',
             
             
-            'actions': 'list[str]',
-            
-            
-            'networkUser': 'NetworkUser',
-            
-            
-            'policyOwner': 'str'
+            'scopeWirelessSegment': 'str'
             
         }
 
         self.attributeMap = {
+            
+            'actions': 'actions',
+            
+            'networkUser': 'networkUser',
+            
+            'policyOwner': 'policyOwner',
+            
+            'actionProperty': 'actionProperty',
+            
+            'state': 'state',
             
             'policyScope': 'policyScope',
             
@@ -63,28 +73,37 @@ class Policy(object):
             
             'id': 'id',
             
-            'state': 'state',
-            
-            'scopeWirelessSegment': 'scopeWirelessSegment',
-            
             'instanceUuid': 'instanceUuid',
-            
-            'policyName': 'policyName',
-            
-            'actionProperty': 'actionProperty',
             
             'taskId': 'taskId',
             
+            'policyName': 'policyName',
+            
             'policyPriority': 'policyPriority',
             
-            'actions': 'actions',
-            
-            'networkUser': 'networkUser',
-            
-            'policyOwner': 'policyOwner'
+            'scopeWirelessSegment': 'scopeWirelessSegment'
             
         }       
 
+        
+        #Action Set
+        
+        self.actions = None # list[str]
+        
+        #Network User
+        
+        self.networkUser = None # NetworkUser
+        
+        #Policy Owner
+        
+        self.policyOwner = None # str
+        
+        #ActionProperty
+        
+        self.actionProperty = None # ActionProperty
+        
+        
+        self.state = None # str
         
         #policyScope
         
@@ -98,41 +117,22 @@ class Policy(object):
         
         self.id = None # str
         
-        
-        self.state = None # str
-        
-        
-        self.scopeWirelessSegment = None # str
-        
         #
         
         self.instanceUuid = None # str
-        
-        #name of the policy
-        
-        self.policyName = None # str
-        
-        #ActionProperty
-        
-        self.actionProperty = None # ActionProperty
         
         #Task ID
         
         self.taskId = None # str
         
+        #name of the policy
+        
+        self.policyName = None # str
+        
         #Policy Priority
         
         self.policyPriority = None # int
         
-        #Action Set
         
-        self.actions = None # list[str]
-        
-        #Network User
-        
-        self.networkUser = None # NetworkUser
-        
-        #Policy Owner
-        
-        self.policyOwner = None # str
+        self.scopeWirelessSegment = None # str
         

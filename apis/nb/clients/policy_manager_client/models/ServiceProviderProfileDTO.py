@@ -15,7 +15,7 @@ class ServiceProviderProfileDTO(object):
         """
         self.swaggerTypes = {
             
-            'description': 'str',
+            'classModels': 'list[ClassModelDTO]',
             
             
             'name': 'str',
@@ -24,10 +24,7 @@ class ServiceProviderProfileDTO(object):
             'interfaces': 'list[ServiceProviderProfileInterfaceDTO]',
             
             
-            'defaultModel': 'bool',
-            
-            
-            'modelType': 'str',
+            'description': 'str',
             
             
             'vendor': 'str',
@@ -36,7 +33,10 @@ class ServiceProviderProfileDTO(object):
             'currentVersion': 'int',
             
             
-            'classModels': 'list[ClassModelDTO]',
+            'defaultModel': 'bool',
+            
+            
+            'modelType': 'str',
             
             
             'id': 'str',
@@ -51,21 +51,21 @@ class ServiceProviderProfileDTO(object):
 
         self.attributeMap = {
             
-            'description': 'description',
+            'classModels': 'classModels',
             
             'name': 'name',
             
             'interfaces': 'interfaces',
             
-            'defaultModel': 'defaultModel',
-            
-            'modelType': 'modelType',
+            'description': 'description',
             
             'vendor': 'vendor',
             
             'currentVersion': 'currentVersion',
             
-            'classModels': 'classModels',
+            'defaultModel': 'defaultModel',
+            
+            'modelType': 'modelType',
             
             'id': 'id',
             
@@ -76,15 +76,26 @@ class ServiceProviderProfileDTO(object):
         }       
 
         
+        #classModels list size should match the modelType
         
-        self.description = None # str
+        self.classModels = None # list[ClassModelDTO]
         
         #unique name for the ServiceProviderProfile
         
         self.name = None # str
         
+        #read only details of interfaces on which the ServiceProviderProfile has been provisioned
         
         self.interfaces = None # list[ServiceProviderProfileInterfaceDTO]
+        
+        
+        self.description = None # str
+        
+        
+        self.vendor = None # str
+        
+        
+        self.currentVersion = None # int
         
         #Read only attribute to indicate whether the ServiceProviderProfile is default(&#39;true&#39;) or custom(&#39;false&#39;)
         
@@ -93,16 +104,6 @@ class ServiceProviderProfileDTO(object):
         #Available options are: Three-Class, Four-Class, Five-Class, Six-Class, Eight-Class
         
         self.modelType = None # str
-        
-        
-        self.vendor = None # str
-        
-        
-        self.currentVersion = None # int
-        
-        #classModels list size should match the modelType
-        
-        self.classModels = None # list[ClassModelDTO]
         
         #id
         

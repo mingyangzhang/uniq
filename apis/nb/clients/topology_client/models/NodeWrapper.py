@@ -15,6 +15,18 @@ class NodeWrapper(object):
         """
         self.swaggerTypes = {
             
+            'customParam': 'NodeWrapperCustom',
+            
+            
+            'greyOut': 'bool',
+            
+            
+            'tags': 'list[str]',
+            
+            
+            'aclApplied': 'bool',
+            
+            
             'role': 'str',
             
             
@@ -24,28 +36,7 @@ class NodeWrapper(object):
             'id': 'str',
             
             
-            'label': 'str',
-            
-            
             'roleSource': 'str',
-            
-            
-            'customParam': 'NodeWrapperCustom',
-            
-            
-            'greyOut': 'bool',
-            
-            
-            'deviceType': 'str',
-            
-            
-            'ip': 'str',
-            
-            
-            'softwareVersion': 'str',
-            
-            
-            'nodeType': 'str',
             
             
             'family': 'str',
@@ -54,19 +45,22 @@ class NodeWrapper(object):
             'platformId': 'str',
             
             
-            'tags': 'list[str]',
+            'softwareVersion': 'str',
             
             
             'userId': 'str',
             
             
-            'osType': 'str',
-            
-            
             'vlanId': 'str',
             
             
+            'osType': 'str',
+            
+            
             'networkType': 'str',
+            
+            
+            'deviceType': 'str',
             
             
             'y': 'int',
@@ -75,7 +69,13 @@ class NodeWrapper(object):
             'x': 'int',
             
             
-            'dataPathId': 'str',
+            'label': 'str',
+            
+            
+            'ip': 'str',
+            
+            
+            'nodeType': 'str',
             
             
             'upperNode': 'str',
@@ -84,11 +84,19 @@ class NodeWrapper(object):
             'fixed': 'bool',
             
             
-            'aclApplied': 'bool'
+            'dataPathId': 'str'
             
         }
 
         self.attributeMap = {
+            
+            'customParam': 'customParam',
+            
+            'greyOut': 'greyOut',
+            
+            'tags': 'tags',
+            
+            'aclApplied': 'aclApplied',
             
             'role': 'role',
             
@@ -96,50 +104,58 @@ class NodeWrapper(object):
             
             'id': 'id',
             
-            'label': 'label',
-            
             'roleSource': 'roleSource',
-            
-            'customParam': 'customParam',
-            
-            'greyOut': 'greyOut',
-            
-            'deviceType': 'deviceType',
-            
-            'ip': 'ip',
-            
-            'softwareVersion': 'softwareVersion',
-            
-            'nodeType': 'nodeType',
             
             'family': 'family',
             
             'platformId': 'platformId',
             
-            'tags': 'tags',
+            'softwareVersion': 'softwareVersion',
             
             'userId': 'userId',
             
-            'osType': 'osType',
-            
             'vlanId': 'vlanId',
             
+            'osType': 'osType',
+            
             'networkType': 'networkType',
+            
+            'deviceType': 'deviceType',
             
             'y': 'y',
             
             'x': 'x',
             
-            'dataPathId': 'dataPathId',
+            'label': 'label',
+            
+            'ip': 'ip',
+            
+            'nodeType': 'nodeType',
             
             'upperNode': 'upperNode',
             
             'fixed': 'fixed',
             
-            'aclApplied': 'aclApplied'
+            'dataPathId': 'dataPathId'
             
         }       
 
+        
+        #Device custom parameters
+        
+        self.customParam = None # NodeWrapperCustom
+        
+        #Indicates if the device is active for this topology view
+        
+        self.greyOut = None # bool
+        
+        #List of tags applied on this device
+        
+        self.tags = None # list[str]
+        
+        #Indicates if the ACL that is applied on the device
+        
+        self.aclApplied = None # bool
         
         #Role of the device
         
@@ -153,37 +169,9 @@ class NodeWrapper(object):
         
         self.id = None # str
         
-        #Hostname of the device
-        
-        self.label = None # str
-        
         #Indicates whether role is assigned manually or automatically
         
         self.roleSource = None # str
-        
-        #Device custom parameters
-        
-        self.customParam = None # NodeWrapperCustom
-        
-        #Indicates if the device is active for this topology view
-        
-        self.greyOut = None # bool
-        
-        #Type of the device
-        
-        self.deviceType = None # str
-        
-        #IP address of the device
-        
-        self.ip = None # str
-        
-        #Device OS version
-        
-        self.softwareVersion = None # str
-        
-        #Host or device
-        
-        self.nodeType = None # str
         
         #Product family which is part of the product identifier
         
@@ -193,25 +181,29 @@ class NodeWrapper(object):
         
         self.platformId = None # str
         
-        #List of tags applied on this device
+        #Device OS version
         
-        self.tags = None # list[str]
+        self.softwareVersion = None # str
         
         #ID of the host 
         
         self.userId = None # str
         
-        #OS type of the device
-        
-        self.osType = None # str
-        
         #VLan id
         
         self.vlanId = None # str
         
+        #OS type of the device
+        
+        self.osType = None # str
+        
         #Type of network
         
         self.networkType = None # str
+        
+        #Type of the device
+        
+        self.deviceType = None # str
         
         #Y position of the device on the displayed topology view
         
@@ -221,9 +213,17 @@ class NodeWrapper(object):
         
         self.x = None # int
         
-        #ID of the path between devices
+        #Hostname of the device
         
-        self.dataPathId = None # str
+        self.label = None # str
+        
+        #IP address of the device
+        
+        self.ip = None # str
+        
+        #Host or device
+        
+        self.nodeType = None # str
         
         #Start node ID
         
@@ -233,7 +233,7 @@ class NodeWrapper(object):
         
         self.fixed = None # bool
         
-        #Indicates if the ACL that is applied on the device
+        #ID of the path between devices
         
-        self.aclApplied = None # bool
+        self.dataPathId = None # str
         

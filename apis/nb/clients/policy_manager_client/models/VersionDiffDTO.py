@@ -15,27 +15,27 @@ class VersionDiffDTO(object):
         """
         self.swaggerTypes = {
             
-            'id': 'str',
+            'policies': 'list[PolicyDiffDTO]',
             
             
-            'policies': 'list[PolicyDiffDTO]'
+            'id': 'str'
             
         }
 
         self.attributeMap = {
             
-            'id': 'id',
+            'policies': 'policies',
             
-            'policies': 'policies'
+            'id': 'id'
             
         }       
 
         
-        #Id of the cached diff. Use id in the post api if you don&#39;t want to make any modifications to the diff corresponding to the diff id.
-        
-        self.id = None # str
-        
         #Policies from the cached diff. This attribute enables the user to make changes to the diffs that he can post for rollback.
         
         self.policies = None # list[PolicyDiffDTO]
+        
+        #Id of the cached diff. Use id in the post api if you don&#39;t want to make any modifications to the diff corresponding to the diff id.
+        
+        self.id = None # str
         

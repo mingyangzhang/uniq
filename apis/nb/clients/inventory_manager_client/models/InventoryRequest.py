@@ -15,49 +15,22 @@ class InventoryRequest(object):
         """
         self.swaggerTypes = {
             
-            'snmpROCommunity': 'str',
-            
-            
-            'snmpRWCommunity': 'str',
-            
-            
-            'snmpUserName': 'str',
-            
-            
             'name': 'str',
-            
-            
-            'enablePasswordList': 'list[str]',
-            
-            
-            'passwordList': 'list[str]',
-            
-            
-            'userNameList': 'list[str]',
-            
-            
-            'protocolOrder': 'str',
             
             
             'cdpLevel': 'int',
             
             
-            'globalCredentialIdList': 'list[str]',
+            'enablePasswordList': 'list[str]',
             
             
             'ipFilterList': 'list[str]',
             
             
-            'snmpAuthPassphrase': 'str',
+            'passwordList': 'list[str]',
             
             
-            'snmpPrivPassphrase': 'str',
-            
-            
-            'snmpPrivProtocol': 'str',
-            
-            
-            'snmpAuthProtocol': 'str',
+            'protocolOrder': 'str',
             
             
             'reDiscovery': 'bool',
@@ -66,130 +39,126 @@ class InventoryRequest(object):
             'retry': 'int',
             
             
+            'snmpAuthPassphrase': 'str',
+            
+            
+            'snmpAuthProtocol': 'str',
+            
+            
+            'snmpPrivPassphrase': 'str',
+            
+            
+            'snmpPrivProtocol': 'str',
+            
+            
+            'snmpROCommunity': 'str',
+            
+            
+            'snmpRWCommunity': 'str',
+            
+            
+            'userNameList': 'list[str]',
+            
+            
+            'globalCredentialIdList': 'list[str]',
+            
+            
+            'parentDiscoveryId': 'str',
+            
+            
+            'snmpMode': 'str',
+            
+            
+            'snmpUserName': 'str',
+            
+            
             'snmpVersion': 'str',
             
             
             'timeout': 'int',
             
             
-            'discoveryType': 'str',
-            
-            
             'ipAddressList': 'str',
             
             
-            'snmpMode': 'str'
+            'discoveryType': 'str'
             
         }
 
         self.attributeMap = {
             
-            'snmpROCommunity': 'snmpROCommunity',
-            
-            'snmpRWCommunity': 'snmpRWCommunity',
-            
-            'snmpUserName': 'snmpUserName',
-            
             'name': 'name',
-            
-            'enablePasswordList': 'enablePasswordList',
-            
-            'passwordList': 'passwordList',
-            
-            'userNameList': 'userNameList',
-            
-            'protocolOrder': 'protocolOrder',
             
             'cdpLevel': 'cdpLevel',
             
-            'globalCredentialIdList': 'globalCredentialIdList',
+            'enablePasswordList': 'enablePasswordList',
             
             'ipFilterList': 'ipFilterList',
             
-            'snmpAuthPassphrase': 'snmpAuthPassphrase',
+            'passwordList': 'passwordList',
             
-            'snmpPrivPassphrase': 'snmpPrivPassphrase',
-            
-            'snmpPrivProtocol': 'snmpPrivProtocol',
-            
-            'snmpAuthProtocol': 'snmpAuthProtocol',
+            'protocolOrder': 'protocolOrder',
             
             'reDiscovery': 'reDiscovery',
             
             'retry': 'retry',
             
+            'snmpAuthPassphrase': 'snmpAuthPassphrase',
+            
+            'snmpAuthProtocol': 'snmpAuthProtocol',
+            
+            'snmpPrivPassphrase': 'snmpPrivPassphrase',
+            
+            'snmpPrivProtocol': 'snmpPrivProtocol',
+            
+            'snmpROCommunity': 'snmpROCommunity',
+            
+            'snmpRWCommunity': 'snmpRWCommunity',
+            
+            'userNameList': 'userNameList',
+            
+            'globalCredentialIdList': 'globalCredentialIdList',
+            
+            'parentDiscoveryId': 'parentDiscoveryId',
+            
+            'snmpMode': 'snmpMode',
+            
+            'snmpUserName': 'snmpUserName',
+            
             'snmpVersion': 'snmpVersion',
             
             'timeout': 'timeout',
             
-            'discoveryType': 'discoveryType',
-            
             'ipAddressList': 'ipAddressList',
             
-            'snmpMode': 'snmpMode'
+            'discoveryType': 'discoveryType'
             
         }       
 
-        
-        #Snmp RO community of the devices to be discovered
-        
-        self.snmpROCommunity = None # str
-        
-        #Snmp RW community of the devices to be discovered
-        
-        self.snmpRWCommunity = None # str
-        
-        #SNMP username of the device
-        
-        self.snmpUserName = None # str
         
         #Name for discovery
         
         self.name = None # str
         
-        #Enable Password of the devices to be discovered
-        
-        self.enablePasswordList = None # list[str]
-        
-        #Password of the devices to be discovered
-        
-        self.passwordList = None # list[str]
-        
-        #Username of the devices to be discovered
-        
-        self.userNameList = None # list[str]
-        
-        #Order of protocol in which device connection establishment to be tried
-        
-        self.protocolOrder = None # str
-        
         #CDP level to which neighbor devices to be discovered
         
         self.cdpLevel = None # int
         
-        #List of global credential ids to be used
+        #Enable Password of the devices to be discovered
         
-        self.globalCredentialIdList = None # list[str]
+        self.enablePasswordList = None # list[str]
         
         #Username of the devices to be discovered
         
         self.ipFilterList = None # list[str]
         
-        #Auth Pass phrase for SNMP
+        #Password of the devices to be discovered
         
-        self.snmpAuthPassphrase = None # str
+        self.passwordList = None # list[str]
         
-        #Pass phrase for SNMP privacy
+        #Order of protocol in which device connection establishment to be tried
         
-        self.snmpPrivPassphrase = None # str
-        
-        #SNMP privacy protocol. Available values:&#39;DES&#39; or &#39;AES128&#39;
-        
-        self.snmpPrivProtocol = None # str
-        
-        #SNMP auth protocol. Available values:&#39;SHA&#39; or &#39;MD5&#39;
-        
-        self.snmpAuthProtocol = None # str
+        self.protocolOrder = None # str
         
         #Flag to indicate is rediscovery or not
         
@@ -199,6 +168,49 @@ class InventoryRequest(object):
         
         self.retry = None # int
         
+        #Auth Pass phrase for SNMP
+        
+        self.snmpAuthPassphrase = None # str
+        
+        #SNMP auth protocol. Available values:&#39;SHA&#39; or &#39;MD5&#39;
+        
+        self.snmpAuthProtocol = None # str
+        
+        #Pass phrase for SNMP privacy
+        
+        self.snmpPrivPassphrase = None # str
+        
+        #SNMP privacy protocol. Available values:&#39;DES&#39; or &#39;AES128&#39;
+        
+        self.snmpPrivProtocol = None # str
+        
+        #Snmp RO community of the devices to be discovered
+        
+        self.snmpROCommunity = None # str
+        
+        #Snmp RW community of the devices to be discovered
+        
+        self.snmpRWCommunity = None # str
+        
+        #Username of the devices to be discovered
+        
+        self.userNameList = None # list[str]
+        
+        #List of global credential ids to be used
+        
+        self.globalCredentialIdList = None # list[str]
+        
+        
+        self.parentDiscoveryId = None # str
+        
+        #Mode of SNMP. Available values:&#39;AUTHPRIV&#39; or &#39;AUTHNOPRIV&#39; or &#39;NOAUTHNOPRIV&#39;
+        
+        self.snmpMode = None # str
+        
+        #SNMP username of the device
+        
+        self.snmpUserName = None # str
+        
         #Version of SNMP. Can be v2 or v3
         
         self.snmpVersion = None # str
@@ -207,15 +219,11 @@ class InventoryRequest(object):
         
         self.timeout = None # int
         
-        #Available types are: single, auto cdp discovery, range, multi range
-        
-        self.discoveryType = None # str
-        
         #Ip address of the device to be discovered
         
         self.ipAddressList = None # str
         
-        #Mode of SNMP. Available values:&#39;AUTHPRIV&#39; or &#39;AUTHNOPRIV&#39; or &#39;NOAUTHNOPRIV&#39;
+        #Available types are: single, auto cdp discovery, range, multi range
         
-        self.snmpMode = None # str
+        self.discoveryType = None # str
         

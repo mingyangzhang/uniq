@@ -18,6 +18,9 @@ class IpAddressPoolWrapperDTO(object):
             'genericPools': 'list[GenericIpAddressPoolDTO]',
             
             
+            'skipOverlapCheck': 'bool',
+            
+            
             'siteSpecificPools': 'list[SiteIPAddressPoolDTO]'
             
         }
@@ -26,6 +29,8 @@ class IpAddressPoolWrapperDTO(object):
             
             'genericPools': 'genericPools',
             
+            'skipOverlapCheck': 'skipOverlapCheck',
+            
             'siteSpecificPools': 'siteSpecificPools'
             
         }       
@@ -33,6 +38,9 @@ class IpAddressPoolWrapperDTO(object):
         
         
         self.genericPools = None # list[GenericIpAddressPoolDTO]
+        
+        
+        self.skipOverlapCheck = None # bool
         
         
         self.siteSpecificPools = None # list[SiteIPAddressPoolDTO]

@@ -18,10 +18,10 @@ class PublicKey(object):
             'format': 'str',
             
             
-            'encoded': 'list[byte]',
+            'algorithm': 'str',
             
             
-            'algorithm': 'str'
+            'encoded': 'list[byte]'
             
         }
 
@@ -29,9 +29,9 @@ class PublicKey(object):
             
             'format': 'format',
             
-            'encoded': 'encoded',
+            'algorithm': 'algorithm',
             
-            'algorithm': 'algorithm'
+            'encoded': 'encoded'
             
         }       
 
@@ -40,8 +40,8 @@ class PublicKey(object):
         self.format = None # str
         
         
-        self.encoded = None # list[byte]
-        
-        
         self.algorithm = None # str
+        
+        
+        self.encoded = None # list[byte]
         

@@ -26,14 +26,11 @@ class GlobalcredentialApi(object):
             credentialSubType, str: Credential type as CLI / SNMPV2_READ_COMMUNITY / SNMPV2_WRITE_COMMUNITY / SNMPV3 (required)
             
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: GlobalCredentialListResult
         """
 
-        allParams = ['credentialSubType', 'scope']
+        allParams = ['credentialSubType']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -60,9 +57,6 @@ class GlobalcredentialApi(object):
             queryParams['credentialSubType'] = self.apiClient.toPathValue(params['credentialSubType'])
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         
@@ -94,14 +88,11 @@ class GlobalcredentialApi(object):
             globalCredentialNioList, list[CLICredentialDTO]: List of CLI credentials (required)
             
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: TaskIdResult
         """
 
-        allParams = ['globalCredentialNioList', 'scope']
+        allParams = ['globalCredentialNioList']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -125,9 +116,6 @@ class GlobalcredentialApi(object):
 
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         
@@ -162,14 +150,11 @@ class GlobalcredentialApi(object):
             globalCredentialNioList, List[SNMPv2ReadCommunityDTO]: List of SNMP read communities (required)
             
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: TaskIdResult
         """
 
-        allParams = ['globalCredentialNioList', 'scope']
+        allParams = ['globalCredentialNioList']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -193,9 +178,6 @@ class GlobalcredentialApi(object):
 
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         
@@ -230,14 +212,11 @@ class GlobalcredentialApi(object):
             globalCredentialNioList, List[SNMPv2WriteCommunityDTO]: List of SNMP write communities (required)
             
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: TaskIdResult
         """
 
-        allParams = ['globalCredentialNioList', 'scope']
+        allParams = ['globalCredentialNioList']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -261,9 +240,6 @@ class GlobalcredentialApi(object):
 
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         
@@ -298,14 +274,11 @@ class GlobalcredentialApi(object):
             globalCredentialNioList, List[SNMPv3CredentialDTO]: List of SNMPv3 credentials (required)
             
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: TaskIdResult
         """
 
-        allParams = ['globalCredentialNioList', 'scope']
+        allParams = ['globalCredentialNioList']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -329,9 +302,6 @@ class GlobalcredentialApi(object):
 
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         
@@ -366,14 +336,11 @@ class GlobalcredentialApi(object):
             globalCredentialId, str: ID of global-credential (required)
             
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: TaskIdResult
         """
 
-        allParams = ['globalCredentialId', 'scope']
+        allParams = ['globalCredentialId']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -397,9 +364,6 @@ class GlobalcredentialApi(object):
 
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         
@@ -437,14 +401,11 @@ class GlobalcredentialApi(object):
             id, str: Global Credential ID (required)
             
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: GlobalCredentialSubTypeResult
         """
 
-        allParams = ['id', 'scope']
+        allParams = ['id']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -468,9 +429,6 @@ class GlobalcredentialApi(object):
 
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         

@@ -15,10 +15,10 @@ class PkiTrustPoint(object):
         """
         self.swaggerTypes = {
             
-            'serialNumber': 'str',
-            
-            
             'entityName': 'str',
+            
+            
+            'serialNumber': 'str',
             
             
             'id': 'str',
@@ -39,15 +39,18 @@ class PkiTrustPoint(object):
             'certificateAuthorityId': 'str',
             
             
-            'controllerIpAddress': 'str'
+            'controllerIpAddress': 'str',
+            
+            
+            'attributeInfo': 'dict'
             
         }
 
         self.attributeMap = {
             
-            'serialNumber': 'serialNumber',
-            
             'entityName': 'entityName',
+            
+            'serialNumber': 'serialNumber',
             
             'id': 'id',
             
@@ -61,35 +64,49 @@ class PkiTrustPoint(object):
             
             'certificateAuthorityId': 'certificateAuthorityId',
             
-            'controllerIpAddress': 'controllerIpAddress'
+            'controllerIpAddress': 'controllerIpAddress',
+            
+            'attributeInfo': 'attributeInfo'
             
         }       
 
         
-        
-        self.serialNumber = None # str
-        
+        #Devices hostname
         
         self.entityName = None # str
         
+        #Devices serial-number
+        
+        self.serialNumber = None # str
+        
+        #Trust-point identification. Automatically generated
         
         self.id = None # str
         
+        #Platform identification. Eg. ASR1006
         
         self.platformId = None # str
         
+        #Name of trust-profile (must already exist). Default: sdn-network-infra-iwan
         
         self.trustProfileName = None # str
         
+        #Available options: router, switch. Currently not used
         
         self.entityType = None # str
         
+        #Device identification. Currently not used
         
         self.networkDeviceId = None # str
         
+        #CA identification. Automatically populated
         
         self.certificateAuthorityId = None # str
         
+        #IP address device uses to connect to APIC-EM. Eg. Proxy server IP address. Automatically populated if not set
         
         self.controllerIpAddress = None # str
+        
+        
+        self.attributeInfo = None # dict
         

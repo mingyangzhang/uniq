@@ -22,65 +22,65 @@ class PnpdeviceApi(object):
         """Retrieves a list of devices
 
         Args:
-            
+
             serialNumber, str: Serial number (required)
-            
-            
+
+
             macAddress, str: MAC address (required)
-            
-            
+
+
             ipAddress, str: IP address (required)
-            
-            
+
+
             productId, str: Product ID (required)
-            
-            
+
+
             hostName, str: Host name (required)
-            
-            
+
+
             pkiEnabled, str: Device certificate provisioned (true) or not (false) (required)
-            
-            
+
+
             provisioningType, str: Provisioning type. Can be one of: new-device-adhoc, new-device-auto-provision, replacement-device (required)
-            
-            
+
+
             deviceType, str: Type of device. Currently only AP (Access Point) is supported (required)
-            
-            
+
+
             state, str: State of device. UNCLAIMED, IGNORED, PROVISIONED etc. Accepts a list of states (required)
-            
-            
+
+
             authStatus, str: Authentication status of device: authenticated, error, unsupported (required)
-            
-            
+
+
             startLastStateTransitionTime, str: Start of last state transition time (format: yyyy-MM-dd HH:mm:ss) (required)
-            
-            
+
+
             endLastStateTransitionTime, str: End of last state transition time (format: yyyy-MM-dd HH:mm:ss) (required)
-            
-            
+
+
             matchDeviceState, bool: Match device state. Boolean to match the given state (true) or not (false) (required)
-            
-            
+
+
             deviceMatchesARule, bool: Should device match a rule (true) or not (false) (required)
-            
-            
+
+
             sortBy, str: Sort response based on field (required)
-            
-            
+
+
             order, str: Order response in ascending (asc) or descending (des) order (required)
-            
-            
+
+
             offset, int: Starting index of the response. Minimum value is 1 (required)
-            
-            
+
+
             limit, int: Limit the number of responses. Maximum value supported is 500. Minimum value is 1 (required)
-            
-            
+
+
             scope, str: Authorization Scope for RBAC (required)
-            
-            
-        
+
+
+
         Returns: ZtdDeviceListResult
         """
 
@@ -192,14 +192,14 @@ class PnpdeviceApi(object):
         """Updates a device with its ID
 
         Args:
-            
+
             device, list[ZtdDevice]: PnP Device. The only modifiable properties are 1) state 2) configId and 3) imageId. Following are the only allowed combinations: 1) state = START_PROVISIONING, imageId = &lt;&gt; and/or configId = &lt;&gt;. 2) state = IGNORED 3) state = UNCLAIMED. Any other combinations of user input are rejected.  (required)
-            
-            
+
+
             scope, str: Authorization Scope for RBAC (required)
-            
-            
-        
+
+
+
         Returns: TaskIdResult
         """
 
@@ -260,23 +260,23 @@ class PnpdeviceApi(object):
         """Retrieves a device&#39;s history with its serial number
 
         Args:
-            
+
             serialNumber, str: Serial number (required)
-            
-            
+
+
             order, str: Order response in ascending (asc) or descending (des) order of serial number (required)
-            
-            
+
+
             offset, int: Starting index of the response. Minimum value is 1 (required)
-            
-            
+
+
             limit, int: Limit the number of responses. Maximum value supported is 500. Minimum value is 1 (required)
-            
-            
+
+
             scope, str: Authorization Scope for RBAC (required)
-            
-            
-        
+
+
+
         Returns: ZtdHistoryListResult
         """
 
@@ -346,14 +346,14 @@ class PnpdeviceApi(object):
         """Retrieves a count of a device&#39;s history with its serial number
 
         Args:
-            
+
             serialNumber, str: Serial number (required)
-            
-            
+
+
             scope, str: Authorization Scope for RBAC (required)
-            
-            
-        
+
+
+
         Returns: CountResult
         """
 
@@ -414,11 +414,11 @@ class PnpdeviceApi(object):
         """Retrieves a map of internal and external device states
 
         Args:
-            
+
             scope, str: Authorization Scope for RBAC (required)
-            
-            
-        
+
+
+
         Returns: ZtdDeviceStateMapResult
         """
 
@@ -476,53 +476,53 @@ class PnpdeviceApi(object):
         """Retrieves a count of devices
 
         Args:
-            
+
             serialNumber, str: Serial number (required)
-            
-            
+
+
             macAddress, str: MAC address (required)
-            
-            
+
+
             ipAddress, str: IP address (required)
-            
-            
+
+
             productId, str: Product ID (required)
-            
-            
+
+
             hostName, str: Host name (required)
-            
-            
+
+
             pkiEnabled, str: Device certificate provisioned (true) or not (false) (required)
-            
-            
+
+
             provisioningType, str: Provisioning type. Can be one of: new-device-adhoc, new-device-auto-provision, replacement-device (required)
-            
-            
+
+
             deviceType, str: Type of device. Currently only AP (Access Point) is supported (required)
-            
-            
+
+
             state, str: State of device. UNCLAIMED, IGNORED, PROVISIONED. Accepts a list of states (required)
-            
-            
+
+
             authStatus, str: Authentication status of device: authenticated, error, unsupported (required)
-            
-            
+
+
             startLastStateTransitionTime, str: Start of last state transition time (format: yyyy-MM-dd HH:mm:ss) (required)
-            
-            
+
+
             endLastStateTransitionTime, str: End of last state transition time (format: yyyy-MM-dd HH:mm:ss) (required)
-            
-            
+
+
             matchDeviceState, bool: Match device state. Boolean to match the given state (true) or not (false) (required)
-            
-            
+
+
             deviceMatchesARule, bool: Should device match a rule (true) or not (false) (required)
-            
-            
+
+
             scope, str: Authorization Scope for RBAC (required)
-            
-            
-        
+
+
+
         Returns: CountResult
         """
 
@@ -622,14 +622,14 @@ class PnpdeviceApi(object):
         """Retrieves a device with its ID
 
         Args:
-            
+
             deviceId, str: Device ID (required)
-            
-            
+
+
             scope, str: Authorization Scope for RBAC (required)
-            
-            
-        
+
+
+
         Returns: ZtdDeviceResult
         """
 
@@ -693,14 +693,14 @@ class PnpdeviceApi(object):
         """Deletes a device with its ID
 
         Args:
-            
+
             deviceId, str: Device ID (required)
-            
-            
+
+
             scope, str: Authorization Scope for RBAC (required)
-            
-            
-        
+
+
+
         Returns: TaskIdResult
         """
 

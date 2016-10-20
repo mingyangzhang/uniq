@@ -18,19 +18,22 @@ class LocationNIO(object):
             'civicAddress': 'str',
             
             
-            'id': 'str',
-            
-            
             'description': 'str',
             
             
-            'locationName': 'str',
+            'tag': 'str',
+            
+            
+            'id': 'str',
             
             
             'geographicalAddress': 'str',
             
             
-            'tag': 'str'
+            'locationName': 'str',
+            
+            
+            'attributeInfo': 'dict'
             
         }
 
@@ -38,15 +41,17 @@ class LocationNIO(object):
             
             'civicAddress': 'civicAddress',
             
-            'id': 'id',
-            
             'description': 'description',
             
-            'locationName': 'locationName',
+            'tag': 'tag',
+            
+            'id': 'id',
             
             'geographicalAddress': 'geographicalAddress',
             
-            'tag': 'tag'
+            'locationName': 'locationName',
+            
+            'attributeInfo': 'attributeInfo'
             
         }       
 
@@ -55,23 +60,26 @@ class LocationNIO(object):
         
         self.civicAddress = None # str
         
-        #Unique identifier for location
-        
-        self.id = None # str
-        
         #Description of the location
         
         self.description = None # str
         
-        #Name of the location
+        #Tag associated with the location
         
-        self.locationName = None # str
+        self.tag = None # str
+        
+        #Unique identifier for location
+        
+        self.id = None # str
         
         #Geographic address of the location
         
         self.geographicalAddress = None # str
         
-        #Tag associated with the location
+        #Name of the location
         
-        self.tag = None # str
+        self.locationName = None # str
+        
+        
+        self.attributeInfo = None # dict
         

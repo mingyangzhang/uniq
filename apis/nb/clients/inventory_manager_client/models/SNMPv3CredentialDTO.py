@@ -15,12 +15,6 @@ class SNMPv3CredentialDTO(object):
         """
         self.swaggerTypes = {
             
-            'username': 'str',
-            
-            
-            'authPassword': 'str',
-            
-            
             'privacyPassword': 'str',
             
             
@@ -30,16 +24,22 @@ class SNMPv3CredentialDTO(object):
             'snmpMode': 'str',
             
             
+            'username': 'str',
+            
+            
             'authType': 'str',
+            
+            
+            'authPassword': 'str',
             
             
             'description': 'str',
             
             
-            'comments': 'str',
-            
-            
             'credentialType': 'str',
+            
+            
+            'comments': 'str',
             
             
             'instanceUuid': 'str',
@@ -51,23 +51,23 @@ class SNMPv3CredentialDTO(object):
 
         self.attributeMap = {
             
-            'username': 'username',
-            
-            'authPassword': 'authPassword',
-            
             'privacyPassword': 'privacyPassword',
             
             'privacyType': 'privacyType',
             
             'snmpMode': 'snmpMode',
             
+            'username': 'username',
+            
             'authType': 'authType',
+            
+            'authPassword': 'authPassword',
             
             'description': 'description',
             
-            'comments': 'comments',
-            
             'credentialType': 'credentialType',
+            
+            'comments': 'comments',
             
             'instanceUuid': 'instanceUuid',
             
@@ -75,14 +75,6 @@ class SNMPv3CredentialDTO(object):
             
         }       
 
-        
-        #SNMP user name
-        
-        self.username = None # str
-        
-        #AuthPassword is required if SNMP mode is AuthPriv / AuthNoPriv
-        
-        self.authPassword = None # str
         
         #Privacy password is required if SNMP mode is AuthPriv
         
@@ -96,21 +88,29 @@ class SNMPv3CredentialDTO(object):
         
         self.snmpMode = None # str
         
+        #SNMP user name
+        
+        self.username = None # str
+        
         #Authentication type is required if SNMP mode is AuthPriv / AuthNoPriv
         
         self.authType = None # str
+        
+        #AuthPassword is required if SNMP mode is AuthPriv / AuthNoPriv
+        
+        self.authPassword = None # str
         
         #Description of the credential
         
         self.description = None # str
         
-        #Comments to identify the credential
-        
-        self.comments = None # str
-        
         #Credential type to identify the application that uses the credential
         
         self.credentialType = None # str
+        
+        #Comments to identify the credential
+        
+        self.comments = None # str
         
         
         self.instanceUuid = None # str

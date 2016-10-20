@@ -15,7 +15,7 @@ class CpuStatistics(object):
         """
         self.swaggerTypes = {
             
-            'refreshedAt': 'int',
+            'oneMinUsageInPercentage': 'float',
             
             
             'fiveMinUsageInPercentage': 'float',
@@ -24,25 +24,25 @@ class CpuStatistics(object):
             'fiveSecsUsageInPercentage': 'float',
             
             
-            'oneMinUsageInPercentage': 'float'
+            'refreshedAt': 'int'
             
         }
 
         self.attributeMap = {
             
-            'refreshedAt': 'refreshedAt',
+            'oneMinUsageInPercentage': 'oneMinUsageInPercentage',
             
             'fiveMinUsageInPercentage': 'fiveMinUsageInPercentage',
             
             'fiveSecsUsageInPercentage': 'fiveSecsUsageInPercentage',
             
-            'oneMinUsageInPercentage': 'oneMinUsageInPercentage'
+            'refreshedAt': 'refreshedAt'
             
         }       
 
         
         
-        self.refreshedAt = None # int
+        self.oneMinUsageInPercentage = None # float
         
         
         self.fiveMinUsageInPercentage = None # float
@@ -51,5 +51,5 @@ class CpuStatistics(object):
         self.fiveSecsUsageInPercentage = None # float
         
         
-        self.oneMinUsageInPercentage = None # float
+        self.refreshedAt = None # int
         

@@ -18,7 +18,7 @@ class PkiTrustPointListResult(object):
             'version': 'str',
             
             
-            'response': 'list[PkiBrokerTrustPoint]'
+            'response': 'list[PkiTrustPoint]'
             
         }
 
@@ -35,5 +35,5 @@ class PkiTrustPointListResult(object):
         self.version = None # str
         
         
-        self.response = None # list[PkiBrokerTrustPoint]
+        self.response = None # list[PkiTrustPoint]
         

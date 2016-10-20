@@ -15,56 +15,48 @@ class PathResponse(object):
         """
         self.swaggerTypes = {
             
-            'request': 'FlowAnalysis',
+            'detailedStatus': 'DetailedStatus',
             
             
             'networkElements': 'list[NetworkElement]',
             
             
-            'lastUpdate': 'str',
-            
-            
-            'detailedStatus': 'DetailedStatus',
-            
-            
             'networkElementsInfo': 'list[NetworkElementInfo]',
             
             
-            'properties': 'list[str]'
+            'properties': 'list[str]',
+            
+            
+            'lastUpdate': 'str',
+            
+            
+            'request': 'FlowAnalysis'
             
         }
 
         self.attributeMap = {
             
-            'request': 'request',
+            'detailedStatus': 'detailedStatus',
             
             'networkElements': 'networkElements',
             
-            'lastUpdate': 'lastUpdate',
-            
-            'detailedStatus': 'detailedStatus',
-            
             'networkElementsInfo': 'networkElementsInfo',
             
-            'properties': 'properties'
+            'properties': 'properties',
+            
+            'lastUpdate': 'lastUpdate',
+            
+            'request': 'request'
             
         }       
 
         
-        #Describes the source and destination for a path trace
-        
-        self.request = None # FlowAnalysis
-        
-        
-        self.networkElements = None # list[NetworkElement]
-        
-        #Last updated time
-        
-        self.lastUpdate = None # str
-        
         #Detailed Status of the calculation of Path Trace with its inclusions
         
         self.detailedStatus = None # DetailedStatus
+        
+        
+        self.networkElements = None # list[NetworkElement]
         
         #Nodes travesed along a path, including source and destination
         
@@ -73,4 +65,12 @@ class PathResponse(object):
         #Properties for path trace
         
         self.properties = None # list[str]
+        
+        #Last updated time
+        
+        self.lastUpdate = None # str
+        
+        #Describes the source and destination for a path trace
+        
+        self.request = None # FlowAnalysis
         

@@ -7,6 +7,7 @@
 class DeviceAuthState(object):
 
 
+
     def __init__(self):
         """
         Attributes:
@@ -14,50 +15,50 @@ class DeviceAuthState(object):
           attributeMap (dict): The key is attribute name and the value is json key in definition.
         """
         self.swaggerTypes = {
-            
+
             'type': 'str',
-            
-            
+
+
             'timestamp': 'int',
-            
-            
+
+
             'status': 'str',
-            
-            
+
+
             'errorMessage': 'str',
-            
-            
+
+
             'certInfo': 'CertificateInfo'
-            
+
         }
 
         self.attributeMap = {
-            
-            'type': 'type',
-            
-            'timestamp': 'timestamp',
-            
-            'status': 'status',
-            
-            'errorMessage': 'errorMessage',
-            
-            'certInfo': 'certInfo'
-            
-        }       
 
-        
-        
+            'type': 'type',
+
+            'timestamp': 'timestamp',
+
+            'status': 'status',
+
+            'errorMessage': 'errorMessage',
+
+            'certInfo': 'certInfo'
+
+        }
+
+
+
         self.type = None # str
-        
-        
+
+
         self.timestamp = None # int
-        
-        
+
+
         self.status = None # str
-        
-        
+
+
         self.errorMessage = None # str
-        
-        
+
+
         self.certInfo = None # CertificateInfo
-        
+

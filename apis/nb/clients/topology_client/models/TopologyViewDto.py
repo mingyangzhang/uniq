@@ -15,53 +15,41 @@ class TopologyViewDto(object):
         """
         self.swaggerTypes = {
             
-            'id': 'str',
-            
-            
-            'description': 'str',
-            
-            
-            'topology': 'Topology',
-            
-            
             'applicationUuid': 'str',
             
             
             'pageUuid': 'str',
             
             
-            'name': 'str'
+            'name': 'str',
+            
+            
+            'description': 'str',
+            
+            
+            'id': 'str',
+            
+            
+            'topology': 'Topology'
             
         }
 
         self.attributeMap = {
             
-            'id': 'id',
-            
-            'description': 'description',
-            
-            'topology': 'topology',
-            
             'applicationUuid': 'applicationUuid',
             
             'pageUuid': 'pageUuid',
             
-            'name': 'name'
+            'name': 'name',
+            
+            'description': 'description',
+            
+            'id': 'id',
+            
+            'topology': 'topology'
             
         }       
 
-        
-        #Unique Identifier for View
-        
-        self.id = None # str
-        
-        #View description
-        
-        self.description = None # str
-        
-        #Topology being represented by this view
-        
-        self.topology = None # Topology
         
         #Application unique identifier for this view
         
@@ -74,4 +62,16 @@ class TopologyViewDto(object):
         #View name
         
         self.name = None # str
+        
+        #View description
+        
+        self.description = None # str
+        
+        #Unique Identifier for View
+        
+        self.id = None # str
+        
+        #Topology being represented by this view
+        
+        self.topology = None # Topology
         

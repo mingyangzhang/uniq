@@ -24,6 +24,9 @@ class ReserveIpSubnetDTO(object):
             'siteName': 'str',
             
             
+            'ipv4Subnet': 'str',
+            
+            
             'vlanType': 'str',
             
             
@@ -31,9 +34,6 @@ class ReserveIpSubnetDTO(object):
             
             
             'deviceSerialNumber': 'list[str]',
-            
-            
-            'ipv4Subnet': 'str',
             
             
             'createSitePool': 'bool'
@@ -48,13 +48,13 @@ class ReserveIpSubnetDTO(object):
             
             'siteName': 'siteName',
             
+            'ipv4Subnet': 'ipv4Subnet',
+            
             'vlanType': 'vlanType',
             
             'vlanId': 'vlanId',
             
             'deviceSerialNumber': 'deviceSerialNumber',
-            
-            'ipv4Subnet': 'ipv4Subnet',
             
             'createSitePool': 'createSitePool'
             
@@ -71,6 +71,9 @@ class ReserveIpSubnetDTO(object):
         self.siteName = None # str
         
         
+        self.ipv4Subnet = None # str
+        
+        
         self.vlanType = None # str
         
         
@@ -78,9 +81,6 @@ class ReserveIpSubnetDTO(object):
         
         
         self.deviceSerialNumber = None # list[str]
-        
-        
-        self.ipv4Subnet = None # str
         
         
         self.createSitePool = None # bool

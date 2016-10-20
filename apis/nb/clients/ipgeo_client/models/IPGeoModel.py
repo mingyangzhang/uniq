@@ -27,6 +27,9 @@ class IPGeoModel(object):
             'continent': 'str',
             
             
+            'continentCode': 'str',
+            
+            
             'subDivision': 'str',
             
             
@@ -34,9 +37,6 @@ class IPGeoModel(object):
             
             
             'countryCode': 'str',
-            
-            
-            'continentCode': 'str',
             
             
             'country': 'str'
@@ -53,13 +53,13 @@ class IPGeoModel(object):
             
             'continent': 'continent',
             
+            'continentCode': 'continentCode',
+            
             'subDivision': 'subDivision',
             
             'subDivisionCode': 'subDivisionCode',
             
             'countryCode': 'countryCode',
-            
-            'continentCode': 'continentCode',
             
             'country': 'country'
             
@@ -79,6 +79,9 @@ class IPGeoModel(object):
         self.continent = None # str
         
         
+        self.continentCode = None # str
+        
+        
         self.subDivision = None # str
         
         
@@ -86,9 +89,6 @@ class IPGeoModel(object):
         
         
         self.countryCode = None # str
-        
-        
-        self.continentCode = None # str
         
         
         self.country = None # str

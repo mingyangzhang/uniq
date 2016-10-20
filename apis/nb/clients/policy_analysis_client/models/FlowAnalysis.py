@@ -15,6 +15,9 @@ class FlowAnalysis(object):
         """
         self.swaggerTypes = {
             
+            'id': 'str',
+            
+            
             'status': 'str',
             
             
@@ -27,32 +30,31 @@ class FlowAnalysis(object):
             'lastUpdateTime': 'int',
             
             
-            'id': 'str',
+            'periodicRefresh': 'bool',
             
             
-            'sourceIP': 'str',
-            
-            
-            'destIP': 'str',
+            'protocol': 'str',
             
             
             'sourcePort': 'str',
             
             
+            'destIP': 'str',
+            
+            
             'destPort': 'str',
             
             
-            'inclusions': 'list[str]',
+            'sourceIP': 'str',
             
             
-            'periodicRefresh': 'bool',
-            
-            
-            'protocol': 'str'
+            'inclusions': 'list[str]'
             
         }
 
         self.attributeMap = {
+            
+            'id': 'id',
             
             'status': 'status',
             
@@ -62,24 +64,26 @@ class FlowAnalysis(object):
             
             'lastUpdateTime': 'lastUpdateTime',
             
-            'id': 'id',
+            'periodicRefresh': 'periodicRefresh',
             
-            'sourceIP': 'sourceIP',
-            
-            'destIP': 'destIP',
+            'protocol': 'protocol',
             
             'sourcePort': 'sourcePort',
             
+            'destIP': 'destIP',
+            
             'destPort': 'destPort',
             
-            'inclusions': 'inclusions',
+            'sourceIP': 'sourceIP',
             
-            'periodicRefresh': 'periodicRefresh',
-            
-            'protocol': 'protocol'
+            'inclusions': 'inclusions'
             
         }       
 
+        
+        #
+        
+        self.id = None # str
         
         #Aggregated status of flow-analysis request. Value from a set of [INPROGRESS, COMPLETED, FAILED] 
         
@@ -96,30 +100,6 @@ class FlowAnalysis(object):
         
         self.lastUpdateTime = None # int
         
-        #
-        
-        self.id = None # str
-        
-        #Source IP address
-        
-        self.sourceIP = None # str
-        
-        #Destination IP address
-        
-        self.destIP = None # str
-        
-        #Source Port
-        
-        self.sourcePort = None # str
-        
-        #Destination Port
-        
-        self.destPort = None # str
-        
-        #Subset of {INTERFACE-STATS, QOS-STATS, DEVICE-STATS, PERFORMANCE-STATS, ACL-TRACE}
-        
-        self.inclusions = None # list[str]
-        
         #periodicRefresh of path for every 30 sec
         
         self.periodicRefresh = None # bool
@@ -127,4 +107,24 @@ class FlowAnalysis(object):
         #Protocol
         
         self.protocol = None # str
+        
+        #Source Port
+        
+        self.sourcePort = None # str
+        
+        #Destination IP address
+        
+        self.destIP = None # str
+        
+        #Destination Port
+        
+        self.destPort = None # str
+        
+        #Source IP address
+        
+        self.sourceIP = None # str
+        
+        #Subset of {INTERFACE-STATS, QOS-STATS, DEVICE-STATS, PERFORMANCE-STATS, ACL-TRACE}
+        
+        self.inclusions = None # list[str]
         

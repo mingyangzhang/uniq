@@ -18,9 +18,6 @@ class FlowAnalysisRequest(object):
             'protocol': 'str',
             
             
-            'sourceIP': 'str',
-            
-            
             'sourcePort': 'str',
             
             
@@ -28,6 +25,9 @@ class FlowAnalysisRequest(object):
             
             
             'destPort': 'str',
+            
+            
+            'sourceIP': 'str',
             
             
             'periodicRefresh': 'bool',
@@ -41,13 +41,13 @@ class FlowAnalysisRequest(object):
             
             'protocol': 'protocol',
             
-            'sourceIP': 'sourceIP',
-            
             'sourcePort': 'sourcePort',
             
             'destIP': 'destIP',
             
             'destPort': 'destPort',
+            
+            'sourceIP': 'sourceIP',
             
             'periodicRefresh': 'periodicRefresh',
             
@@ -60,10 +60,6 @@ class FlowAnalysisRequest(object):
         
         self.protocol = None # str
         
-        #Source IP address
-        
-        self.sourceIP = None # str
-        
         #Source Port
         
         self.sourcePort = None # str
@@ -75,6 +71,10 @@ class FlowAnalysisRequest(object):
         #Destination Port
         
         self.destPort = None # str
+        
+        #Source IP address
+        
+        self.sourceIP = None # str
         
         #periodicRefresh of path for every 30 sec
         

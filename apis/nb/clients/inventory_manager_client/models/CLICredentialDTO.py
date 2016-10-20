@@ -15,22 +15,22 @@ class CLICredentialDTO(object):
         """
         self.swaggerTypes = {
             
-            'password': 'str',
-            
-            
             'username': 'str',
             
             
             'enablePassword': 'str',
             
             
+            'password': 'str',
+            
+            
             'description': 'str',
             
             
-            'comments': 'str',
-            
-            
             'credentialType': 'str',
+            
+            
+            'comments': 'str',
             
             
             'instanceUuid': 'str',
@@ -42,17 +42,17 @@ class CLICredentialDTO(object):
 
         self.attributeMap = {
             
-            'password': 'password',
-            
             'username': 'username',
             
             'enablePassword': 'enablePassword',
             
+            'password': 'password',
+            
             'description': 'description',
             
-            'comments': 'comments',
-            
             'credentialType': 'credentialType',
+            
+            'comments': 'comments',
             
             'instanceUuid': 'instanceUuid',
             
@@ -60,10 +60,6 @@ class CLICredentialDTO(object):
             
         }       
 
-        
-        #CLI password
-        
-        self.password = None # str
         
         #CLI username
         
@@ -73,17 +69,21 @@ class CLICredentialDTO(object):
         
         self.enablePassword = None # str
         
+        #CLI password
+        
+        self.password = None # str
+        
         #Description of the credential
         
         self.description = None # str
         
-        #Comments to identify the credential
-        
-        self.comments = None # str
-        
         #Credential type to identify the application that uses the credential
         
         self.credentialType = None # str
+        
+        #Comments to identify the credential
+        
+        self.comments = None # str
         
         
         self.instanceUuid = None # str

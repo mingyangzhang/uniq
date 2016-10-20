@@ -15,12 +15,6 @@ class Interface(object):
         """
         self.swaggerTypes = {
             
-            'vrfName': 'str',
-            
-            
-            'aclAnalysis': 'AclAnalysisResponse',
-            
-            
             'interfaceStatistics': 'InterfaceStatistics',
             
             
@@ -42,15 +36,17 @@ class Interface(object):
             'name': 'str',
             
             
-            'id': 'str'
+            'id': 'str',
+            
+            
+            'vrfName': 'str',
+            
+            
+            'aclAnalysis': 'AclAnalysisResponse'
             
         }
 
         self.attributeMap = {
-            
-            'vrfName': 'vrfName',
-            
-            'aclAnalysis': 'aclAnalysis',
             
             'interfaceStatistics': 'interfaceStatistics',
             
@@ -66,18 +62,14 @@ class Interface(object):
             
             'name': 'name',
             
-            'id': 'id'
+            'id': 'id',
+            
+            'vrfName': 'vrfName',
+            
+            'aclAnalysis': 'aclAnalysis'
             
         }       
 
-        
-        #Name of VRF that the interface on a device belongs to
-        
-        self.vrfName = None # str
-        
-        #Analysis of ACLs on an interface of a device
-        
-        self.aclAnalysis = None # AclAnalysisResponse
         
         
         self.interfaceStatistics = None # InterfaceStatistics
@@ -106,4 +98,12 @@ class Interface(object):
         #ID of interface on a device
         
         self.id = None # str
+        
+        #Name of VRF that the interface on a device belongs to
+        
+        self.vrfName = None # str
+        
+        #Analysis of ACLs on an interface of a device
+        
+        self.aclAnalysis = None # AclAnalysisResponse
         

@@ -191,7 +191,6 @@ class FileApi(object):
 
 
 
-
         if ('scope' in params):
             headerParams['scope'] = params['scope']
 
@@ -214,11 +213,7 @@ class FileApi(object):
                                           postData, headerParams, files=files)
 
 
-        #added the return response manually.
-        if not response:
-            return None
 
-        return response
 
 
     def deleteFile(self, **kwargs):

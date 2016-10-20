@@ -18,25 +18,25 @@ class PolicyTagAssociationDeviceDTO(object):
             'restricted': 'bool',
             
             
-            'deviceIp': 'str',
-            
-            
             'unAssigned': 'bool',
             
             
-            'deviceId': 'str',
-            
-            
-            'deviceName': 'str',
+            'deviceRole': 'str',
             
             
             'restrictedReason': 'str',
             
             
+            'deviceId': 'str',
+            
+            
             'deviceType': 'str',
             
             
-            'deviceRole': 'str'
+            'deviceName': 'str',
+            
+            
+            'deviceIp': 'str'
             
         }
 
@@ -44,19 +44,19 @@ class PolicyTagAssociationDeviceDTO(object):
             
             'restricted': 'restricted',
             
-            'deviceIp': 'deviceIp',
-            
             'unAssigned': 'unAssigned',
             
-            'deviceId': 'deviceId',
-            
-            'deviceName': 'deviceName',
+            'deviceRole': 'deviceRole',
             
             'restrictedReason': 'restrictedReason',
             
+            'deviceId': 'deviceId',
+            
             'deviceType': 'deviceType',
             
-            'deviceRole': 'deviceRole'
+            'deviceName': 'deviceName',
+            
+            'deviceIp': 'deviceIp'
             
         }       
 
@@ -65,23 +65,23 @@ class PolicyTagAssociationDeviceDTO(object):
         self.restricted = None # bool
         
         
-        self.deviceIp = None # str
-        
-        
         self.unAssigned = None # bool
         
         
-        self.deviceId = None # str
-        
-        
-        self.deviceName = None # str
+        self.deviceRole = None # str
         
         
         self.restrictedReason = None # str
         
         
+        self.deviceId = None # str
+        
+        
         self.deviceType = None # str
         
         
-        self.deviceRole = None # str
+        self.deviceName = None # str
+        
+        
+        self.deviceIp = None # str
         

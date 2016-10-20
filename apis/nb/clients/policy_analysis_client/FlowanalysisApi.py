@@ -38,10 +38,10 @@ class FlowanalysisApi(object):
             destPort, str: Destination port (required)
             
             
-            gtCreateTime, long: Analyses requested after this time (required)
+            gtCreateTime, str: Analyses requested after this time (required)
             
             
-            ltCreateTime, long: Analyses requested before this time (required)
+            ltCreateTime, str: Analyses requested before this time (required)
             
             
             protocol, str: Protocol (required)

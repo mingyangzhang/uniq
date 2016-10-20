@@ -15,48 +15,36 @@ class GlobalCredentialDTO(object):
         """
         self.swaggerTypes = {
             
-            'comments': 'str',
-            
-            
             'description': 'str',
             
             
             'credentialType': 'str',
             
             
+            'comments': 'str',
+            
+            
             'instanceUuid': 'str',
             
             
-            'id': 'str',
-
-            'username': 'str' # added this manually
+            'id': 'str'
             
         }
 
         self.attributeMap = {
             
-            'comments': 'comments',
-            
             'description': 'description',
             
             'credentialType': 'credentialType',
             
+            'comments': 'comments',
+            
             'instanceUuid': 'instanceUuid',
             
-            'id': 'id',
-
-            'username': 'username' # added this manually
+            'id': 'id'
             
         }       
 
-        #Added line 66-69 manually
-        #CLI username or SNMP user name
-
-        self.username = None # str
-
-        #Comments to identify the credential
-        
-        self.comments = None # str
         
         #Description of the credential
         
@@ -65,6 +53,10 @@ class GlobalCredentialDTO(object):
         #Credential type to identify the application that uses the credential
         
         self.credentialType = None # str
+        
+        #Comments to identify the credential
+        
+        self.comments = None # str
         
         
         self.instanceUuid = None # str

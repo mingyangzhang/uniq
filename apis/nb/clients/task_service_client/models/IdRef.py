@@ -14,44 +14,42 @@ class IdRef(object):
           attributeMap (dict): The key is attribute name and the value is json key in definition.
         """
         self.swaggerTypes = {
-
+            
             'url': 'str',
-
-
+            
+            
+            'longType': 'Class«object»',
+            
+            
             'id': 'int',
-
-
-            'type': 'str'#,
-
-            # Manually comment out this attribute
-            # 'longType': 'Class«object»'
-
+            
+            
+            'type': 'str'
+            
         }
 
         self.attributeMap = {
-
+            
             'url': 'url',
-
+            
+            'longType': 'longType',
+            
             'id': 'id',
+            
+            'type': 'type'
+            
+        }       
 
-            'type': 'type'#,
-
-            # Manually comment out this attribute
-            # 'longType': 'longType'
-
-        }
-
-
-
+        
+        
         self.url = None # str
-
-
+        
+        
+        self.longType = None # Class«object»
+        
+        
         self.id = None # int
-
-
+        
+        
         self.type = None # str
-
-
-        # Manually comment out this attribute
-        # self.longType = None # Class«object»
-
+        

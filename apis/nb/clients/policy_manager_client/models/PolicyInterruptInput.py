@@ -18,10 +18,10 @@ class PolicyInterruptInput(object):
             'action': 'str',
             
             
-            'scopeWirelessSegment': 'str',
+            'policyScope': 'str',
             
             
-            'policyScope': 'str'
+            'scopeWirelessSegment': 'str'
             
         }
 
@@ -29,19 +29,22 @@ class PolicyInterruptInput(object):
             
             'action': 'action',
             
-            'scopeWirelessSegment': 'scopeWirelessSegment',
+            'policyScope': 'policyScope',
             
-            'policyScope': 'policyScope'
+            'scopeWirelessSegment': 'scopeWirelessSegment'
             
         }       
 
         
+        #One of {ABORT, ABORT-RESTORE-TO-ORIGINAL}
         
         self.action = None # str
         
-        
-        self.scopeWirelessSegment = None # str
-        
+        #Policy scope
         
         self.policyScope = None # str
+        
+        #Scope wireless segment
+        
+        self.scopeWirelessSegment = None # str
         

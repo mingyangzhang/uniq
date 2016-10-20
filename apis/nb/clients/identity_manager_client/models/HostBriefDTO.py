@@ -15,25 +15,25 @@ class HostBriefDTO(object):
         """
         self.swaggerTypes = {
             
-            'hostIp': 'str',
+            'id': 'str',
             
             
-            'id': 'str'
+            'hostIp': 'str'
             
         }
 
         self.attributeMap = {
             
-            'hostIp': 'hostIp',
+            'id': 'id',
             
-            'id': 'id'
+            'hostIp': 'hostIp'
             
         }       
 
         
         
-        self.hostIp = None # str
-        
-        
         self.id = None # str
+        
+        
+        self.hostIp = None # str
         

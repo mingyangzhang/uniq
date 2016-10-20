@@ -18,7 +18,10 @@ class DiscoveryNIO(object):
             'name': 'str',
             
             
-            'globalCredentialIdList': 'list[str]',
+            'cdpLevel': 'int',
+            
+            
+            'enablePasswordList': 'str',
             
             
             'ipFilterList': 'str',
@@ -27,10 +30,13 @@ class DiscoveryNIO(object):
             'passwordList': 'str',
             
             
-            'enablePasswordList': 'str',
+            'protocolOrder': 'str',
             
             
             'snmpAuthPassphrase': 'str',
+            
+            
+            'snmpAuthProtocol': 'str',
             
             
             'snmpPrivPassphrase': 'str',
@@ -39,19 +45,7 @@ class DiscoveryNIO(object):
             'snmpPrivProtocol': 'str',
             
             
-            'snmpAuthProtocol': 'str',
-            
-            
             'userNameList': 'str',
-            
-            
-            'isAutoCdp': 'bool',
-            
-            
-            'parentDiscoveryId': 'str',
-            
-            
-            'cdpLevel': 'int',
             
             
             'snmpRoCommunity': 'str',
@@ -60,34 +54,28 @@ class DiscoveryNIO(object):
             'snmpRwCommunity': 'str',
             
             
-            'protocolOrder': 'str',
-            
-            
             'discoveryCondition': 'str',
             
             
             'numDevices': 'int',
             
             
-            'retryCount': 'int',
+            'isAutoCdp': 'bool',
             
             
-            'discoveryType': 'str',
+            'globalCredentialIdList': 'list[str]',
             
             
-            'ipAddressList': 'str',
-            
-            
-            'timeOut': 'int',
+            'parentDiscoveryId': 'str',
             
             
             'id': 'str',
             
             
-            'discoveryStatus': 'str',
-            
-            
             'snmpMode': 'str',
+            
+            
+            'discoveryStatus': 'str',
             
             
             'deviceIds': 'str',
@@ -96,7 +84,16 @@ class DiscoveryNIO(object):
             'snmpUserName': 'str',
             
             
-            'attributeInfo': 'object'
+            'timeOut': 'int',
+            
+            
+            'ipAddressList': 'str',
+            
+            
+            'retryCount': 'int',
+            
+            
+            'discoveryType': 'str'
             
         }
 
@@ -104,59 +101,57 @@ class DiscoveryNIO(object):
             
             'name': 'name',
             
-            'globalCredentialIdList': 'globalCredentialIdList',
+            'cdpLevel': 'cdpLevel',
+            
+            'enablePasswordList': 'enablePasswordList',
             
             'ipFilterList': 'ipFilterList',
             
             'passwordList': 'passwordList',
             
-            'enablePasswordList': 'enablePasswordList',
+            'protocolOrder': 'protocolOrder',
             
             'snmpAuthPassphrase': 'snmpAuthPassphrase',
+            
+            'snmpAuthProtocol': 'snmpAuthProtocol',
             
             'snmpPrivPassphrase': 'snmpPrivPassphrase',
             
             'snmpPrivProtocol': 'snmpPrivProtocol',
             
-            'snmpAuthProtocol': 'snmpAuthProtocol',
-            
             'userNameList': 'userNameList',
-            
-            'isAutoCdp': 'isAutoCdp',
-            
-            'parentDiscoveryId': 'parentDiscoveryId',
-            
-            'cdpLevel': 'cdpLevel',
             
             'snmpRoCommunity': 'snmpRoCommunity',
             
             'snmpRwCommunity': 'snmpRwCommunity',
             
-            'protocolOrder': 'protocolOrder',
-            
             'discoveryCondition': 'discoveryCondition',
             
             'numDevices': 'numDevices',
             
-            'retryCount': 'retryCount',
+            'isAutoCdp': 'isAutoCdp',
             
-            'discoveryType': 'discoveryType',
+            'globalCredentialIdList': 'globalCredentialIdList',
             
-            'ipAddressList': 'ipAddressList',
-            
-            'timeOut': 'timeOut',
+            'parentDiscoveryId': 'parentDiscoveryId',
             
             'id': 'id',
             
-            'discoveryStatus': 'discoveryStatus',
-            
             'snmpMode': 'snmpMode',
+            
+            'discoveryStatus': 'discoveryStatus',
             
             'deviceIds': 'deviceIds',
             
             'snmpUserName': 'snmpUserName',
             
-            'attributeInfo': 'attributeInfo'
+            'timeOut': 'timeOut',
+            
+            'ipAddressList': 'ipAddressList',
+            
+            'retryCount': 'retryCount',
+            
+            'discoveryType': 'discoveryType'
             
         }       
 
@@ -165,9 +160,13 @@ class DiscoveryNIO(object):
         
         self.name = None # str
         
-        #To get the list of global credential of the discovery
+        #CDP level to which neighbor devices to be discovered
         
-        self.globalCredentialIdList = None # list[str]
+        self.cdpLevel = None # int
+        
+        #Enable Password of the devices to be discovered
+        
+        self.enablePasswordList = None # str
         
         #IP addresses of the devices to be filtered
         
@@ -177,12 +176,15 @@ class DiscoveryNIO(object):
         
         self.passwordList = None # str
         
-        #Enable Password of the devices to be discovered
+        #Order of protocol in which device connection establishment to be tried
         
-        self.enablePasswordList = None # str
+        self.protocolOrder = None # str
         
         
         self.snmpAuthPassphrase = None # str
+        
+        
+        self.snmpAuthProtocol = None # str
         
         
         self.snmpPrivPassphrase = None # str
@@ -190,24 +192,9 @@ class DiscoveryNIO(object):
         
         self.snmpPrivProtocol = None # str
         
-        
-        self.snmpAuthProtocol = None # str
-        
         #Username of the devices to be discovered
         
         self.userNameList = None # str
-        
-        #Flag to mention if CDP discovery or not
-        
-        self.isAutoCdp = None # bool
-        
-        #Parent Discovery Id from which the discovery initiated
-        
-        self.parentDiscoveryId = None # str
-        
-        #CDP level to which neighbor devices to be discovered
-        
-        self.cdpLevel = None # int
         
         #Snmp RO community of the devices to be discovered
         
@@ -217,10 +204,6 @@ class DiscoveryNIO(object):
         
         self.snmpRwCommunity = None # str
         
-        #Order of protocol in which device connection establishment to be tried
-        
-        self.protocolOrder = None # str
-        
         #To indicate the discovery status. Available options: Complete or In Progress
         
         self.discoveryCondition = None # str
@@ -229,32 +212,28 @@ class DiscoveryNIO(object):
         
         self.numDevices = None # int
         
-        #Number of times to try establishing connection to device
+        #Flag to mention if CDP discovery or not
         
-        self.retryCount = None # int
+        self.isAutoCdp = None # bool
         
-        #Available types are: single, auto cdp discovery, range, multi range
+        #To get the list of global credential of the discovery
         
-        self.discoveryType = None # str
+        self.globalCredentialIdList = None # list[str]
         
-        #Ip address of the device to be discovered
+        #Parent Discovery Id from which the discovery initiated
         
-        self.ipAddressList = None # str
-        
-        #Time to wait for device response.
-        
-        self.timeOut = None # int
+        self.parentDiscoveryId = None # str
         
         #Unique identifier for discovery
         
         self.id = None # str
         
-        #Available options are: active, inactive
-        
-        self.discoveryStatus = None # str
-        
         
         self.snmpMode = None # str
+        
+        #Available options are: active, inactive, edit
+        
+        self.discoveryStatus = None # str
         
         #Ids of the devices discovered in a discovery
         
@@ -263,6 +242,19 @@ class DiscoveryNIO(object):
         
         self.snmpUserName = None # str
         
+        #Time to wait for device response.
         
-        self.attributeInfo = None # object
+        self.timeOut = None # int
+        
+        #Ip address of the device to be discovered
+        
+        self.ipAddressList = None # str
+        
+        #Number of times to try establishing connection to device
+        
+        self.retryCount = None # int
+        
+        #Available types are: single, auto cdp discovery, range, multi range
+        
+        self.discoveryType = None # str
         

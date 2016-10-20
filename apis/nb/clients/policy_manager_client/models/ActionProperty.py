@@ -15,28 +15,7 @@ class ActionProperty(object):
         """
         self.swaggerTypes = {
             
-            'trustLevel': 'str',
-            
-            
-            'relevanceLevel': 'str',
-            
-            
-            'PrimaryPathPref': 'list[str]',
-            
-            
-            'SecondaryPathPref': 'list[str]',
-            
-            
-            'pathControlFlag': 'bool',
-            
-            
-            'pathPreferenceFlag': 'bool',
-            
-            
-            'TertiaryPathPref': 'list[str]',
-            
-            
-            'PathOfLastResort': 'str',
+            'destinations': 'list[str]',
             
             
             'priorityLevel': 'str',
@@ -45,60 +24,89 @@ class ActionProperty(object):
             'experienceLevel': 'str',
             
             
-            'destinations': 'list[str]',
-            
-            
             'pathPreference': 'str',
             
             
-            'maintainExperience': 'str'
+            'maintainExperience': 'str',
+            
+            
+            'trustLevel': 'str',
+            
+            
+            'pathControlFlag': 'bool',
+            
+            
+            'pathPreferenceFlag': 'bool',
+            
+            
+            'PrimaryPathPref': 'list[str]',
+            
+            
+            'SecondaryPathPref': 'list[str]',
+            
+            
+            'PathOfLastResort': 'str',
+            
+            
+            'TertiaryPathPref': 'list[str]',
+            
+            
+            'relevanceLevel': 'str'
             
         }
 
         self.attributeMap = {
             
-            'trustLevel': 'trustLevel',
-            
-            'relevanceLevel': 'relevanceLevel',
-            
-            'PrimaryPathPref': 'PrimaryPathPref',
-            
-            'SecondaryPathPref': 'SecondaryPathPref',
-            
-            'pathControlFlag': 'pathControlFlag',
-            
-            'pathPreferenceFlag': 'pathPreferenceFlag',
-            
-            'TertiaryPathPref': 'TertiaryPathPref',
-            
-            'PathOfLastResort': 'PathOfLastResort',
+            'destinations': 'destinations',
             
             'priorityLevel': 'priorityLevel',
             
             'experienceLevel': 'experienceLevel',
             
-            'destinations': 'destinations',
-            
             'pathPreference': 'pathPreference',
             
-            'maintainExperience': 'maintainExperience'
+            'maintainExperience': 'maintainExperience',
+            
+            'trustLevel': 'trustLevel',
+            
+            'pathControlFlag': 'pathControlFlag',
+            
+            'pathPreferenceFlag': 'pathPreferenceFlag',
+            
+            'PrimaryPathPref': 'PrimaryPathPref',
+            
+            'SecondaryPathPref': 'SecondaryPathPref',
+            
+            'PathOfLastResort': 'PathOfLastResort',
+            
+            'TertiaryPathPref': 'TertiaryPathPref',
+            
+            'relevanceLevel': 'relevanceLevel'
             
         }       
 
         
+        
+        self.destinations = None # list[str]
+        
+        #priority level for a policy
+        
+        self.priorityLevel = None # str
+        
+        #experience level for a policy
+        
+        self.experienceLevel = None # str
+        
+        #path preference for a policy
+        
+        self.pathPreference = None # str
+        
+        
+        self.maintainExperience = None # str
+        
         #trust level for a policy
         
         self.trustLevel = None # str
-        
-        #relevance level for a policy
-        
-        self.relevanceLevel = None # str
-        
-        
-        self.PrimaryPathPref = None # list[str]
-        
-        
-        self.SecondaryPathPref = None # list[str]
         
         #path control flag
         
@@ -109,26 +117,18 @@ class ActionProperty(object):
         self.pathPreferenceFlag = None # bool
         
         
-        self.TertiaryPathPref = None # list[str]
+        self.PrimaryPathPref = None # list[str]
+        
+        
+        self.SecondaryPathPref = None # list[str]
         
         
         self.PathOfLastResort = None # str
         
-        #priority level for a policy
         
-        self.priorityLevel = None # str
+        self.TertiaryPathPref = None # list[str]
         
-        #experience level for a policy
+        #relevance level for a policy
         
-        self.experienceLevel = None # str
-        
-        
-        self.destinations = None # list[str]
-        
-        #path preference for a policy
-        
-        self.pathPreference = None # str
-        
-        
-        self.maintainExperience = None # str
+        self.relevanceLevel = None # str
         

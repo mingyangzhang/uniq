@@ -15,12 +15,6 @@ class NetworkUser(object):
         """
         self.swaggerTypes = {
             
-            'categories': 'list[CategoryDTO]',
-            
-            
-            'applications': 'list[PolicyApplication]',
-            
-            
             'userIdentifiers': 'list[str]',
             
             
@@ -30,15 +24,17 @@ class NetworkUser(object):
             'locations': 'list[str]',
             
             
-            'applicationDiffs': 'list[PolicyApplicationDiffDTO]'
+            'applications': 'list[PolicyApplication]',
+            
+            
+            'applicationDiffs': 'list[PolicyApplicationDiffDTO]',
+            
+            
+            'categories': 'list[CategoryDTO]'
             
         }
 
         self.attributeMap = {
-            
-            'categories': 'categories',
-            
-            'applications': 'applications',
             
             'userIdentifiers': 'userIdentifiers',
             
@@ -46,16 +42,14 @@ class NetworkUser(object):
             
             'locations': 'locations',
             
-            'applicationDiffs': 'applicationDiffs'
+            'applications': 'applications',
+            
+            'applicationDiffs': 'applicationDiffs',
+            
+            'categories': 'categories'
             
         }       
 
-        
-        
-        self.categories = None # list[CategoryDTO]
-        
-        
-        self.applications = None # list[PolicyApplication]
         
         
         self.userIdentifiers = None # list[str]
@@ -67,5 +61,11 @@ class NetworkUser(object):
         self.locations = None # list[str]
         
         
+        self.applications = None # list[PolicyApplication]
+        
+        
         self.applicationDiffs = None # list[PolicyApplicationDiffDTO]
+        
+        
+        self.categories = None # list[CategoryDTO]
         

@@ -15,10 +15,13 @@ class PerfMonitorStatistics(object):
         """
         self.swaggerTypes = {
             
-            'sourcePort': 'str',
+            'destIpAddress': 'str',
             
             
-            'destPort': 'str',
+            'packetBytes': 'int',
+            
+            
+            'protocol': 'str',
             
             
             'byteRate': 'int',
@@ -48,33 +51,32 @@ class PerfMonitorStatistics(object):
             'refreshedAt': 'int',
             
             
-            'rtpJitterMean': 'int',
-            
-            
             'rtpJitterMax': 'int',
             
             
-            'sourceIpAddress': 'str',
-            
-            
-            'destIpAddress': 'str',
+            'rtpJitterMean': 'int',
             
             
             'rtpJitterMin': 'int',
             
             
-            'packetBytes': 'int',
+            'sourcePort': 'str',
             
             
-            'protocol': 'str'
+            'sourceIpAddress': 'str',
+            
+            
+            'destPort': 'str'
             
         }
 
         self.attributeMap = {
             
-            'sourcePort': 'sourcePort',
+            'destIpAddress': 'destIpAddress',
             
-            'destPort': 'destPort',
+            'packetBytes': 'packetBytes',
+            
+            'protocol': 'protocol',
             
             'byteRate': 'byteRate',
             
@@ -94,28 +96,29 @@ class PerfMonitorStatistics(object):
             
             'refreshedAt': 'refreshedAt',
             
-            'rtpJitterMean': 'rtpJitterMean',
-            
             'rtpJitterMax': 'rtpJitterMax',
             
-            'sourceIpAddress': 'sourceIpAddress',
-            
-            'destIpAddress': 'destIpAddress',
+            'rtpJitterMean': 'rtpJitterMean',
             
             'rtpJitterMin': 'rtpJitterMin',
             
-            'packetBytes': 'packetBytes',
+            'sourcePort': 'sourcePort',
             
-            'protocol': 'protocol'
+            'sourceIpAddress': 'sourceIpAddress',
+            
+            'destPort': 'destPort'
             
         }       
 
         
         
-        self.sourcePort = None # str
+        self.destIpAddress = None # str
         
         
-        self.destPort = None # str
+        self.packetBytes = None # int
+        
+        
+        self.protocol = None # str
         
         
         self.byteRate = None # int
@@ -145,23 +148,20 @@ class PerfMonitorStatistics(object):
         self.refreshedAt = None # int
         
         
-        self.rtpJitterMean = None # int
-        
-        
         self.rtpJitterMax = None # int
         
         
-        self.sourceIpAddress = None # str
-        
-        
-        self.destIpAddress = None # str
+        self.rtpJitterMean = None # int
         
         
         self.rtpJitterMin = None # int
         
         
-        self.packetBytes = None # int
+        self.sourcePort = None # str
         
         
-        self.protocol = None # str
+        self.sourceIpAddress = None # str
+        
+        
+        self.destPort = None # str
         

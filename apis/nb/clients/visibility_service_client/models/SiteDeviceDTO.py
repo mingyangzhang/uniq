@@ -24,6 +24,9 @@ class SiteDeviceDTO(object):
             'id': 'str',
             
             
+            'mcDevice': 'bool',
+            
+            
             'siteId': 'str',
             
             
@@ -69,10 +72,7 @@ class SiteDeviceDTO(object):
             'lanInterfaceName': 'list[str]',
             
             
-            'brownFieldDevice': 'bool',
-            
-            
-            'mcDevice': 'bool'
+            'brownFieldDevice': 'bool'
             
         }
 
@@ -83,6 +83,8 @@ class SiteDeviceDTO(object):
             'status': 'status',
             
             'id': 'id',
+            
+            'mcDevice': 'mcDevice',
             
             'siteId': 'siteId',
             
@@ -114,9 +116,7 @@ class SiteDeviceDTO(object):
             
             'lanInterfaceName': 'lanInterfaceName',
             
-            'brownFieldDevice': 'brownFieldDevice',
-            
-            'mcDevice': 'mcDevice'
+            'brownFieldDevice': 'brownFieldDevice'
             
         }       
 
@@ -129,6 +129,9 @@ class SiteDeviceDTO(object):
         
         
         self.id = None # str
+        
+        
+        self.mcDevice = None # bool
         
         
         self.siteId = None # str
@@ -177,7 +180,4 @@ class SiteDeviceDTO(object):
         
         
         self.brownFieldDevice = None # bool
-        
-        
-        self.mcDevice = None # bool
         

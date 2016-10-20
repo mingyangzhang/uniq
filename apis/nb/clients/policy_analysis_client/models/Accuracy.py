@@ -15,25 +15,25 @@ class Accuracy(object):
         """
         self.swaggerTypes = {
             
-            'percent': 'int',
+            'reason': 'str',
             
             
-            'reason': 'str'
+            'percent': 'int'
             
         }
 
         self.attributeMap = {
             
-            'percent': 'percent',
+            'reason': 'reason',
             
-            'reason': 'reason'
+            'percent': 'percent'
             
         }       
 
         
         
-        self.percent = None # int
-        
-        
         self.reason = None # str
+        
+        
+        self.percent = None # int
         

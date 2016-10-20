@@ -15,31 +15,43 @@ class PolicyApplication(object):
         """
         self.swaggerTypes = {
             
+            'trafficClass': 'str',
+            
+            
+            'appName': 'str',
+            
+            
             'stale': 'bool',
             
             
             'raw': 'str',
             
             
-            'id': 'str',
-            
-            
-            'appName': 'str'
+            'id': 'str'
             
         }
 
         self.attributeMap = {
             
+            'trafficClass': 'trafficClass',
+            
+            'appName': 'appName',
+            
             'stale': 'stale',
             
             'raw': 'raw',
             
-            'id': 'id',
-            
-            'appName': 'appName'
+            'id': 'id'
             
         }       
 
+        
+        #Traffic class to which the app belongs
+        
+        self.trafficClass = None # str
+        
+        
+        self.appName = None # str
         
         #Indicates whether the application has been updated since the last time this policy was provisioned
         
@@ -52,7 +64,4 @@ class PolicyApplication(object):
         #id
         
         self.id = None # str
-        
-        
-        self.appName = None # str
         

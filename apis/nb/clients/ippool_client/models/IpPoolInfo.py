@@ -18,34 +18,31 @@ class IpPoolInfo(object):
             'role': 'str',
             
             
-            'lastUpdateTime': 'int',
-            
-            
             'id': 'str',
-            
-            
-            'apicAppName': 'str',
-            
-            
-            'nextAddress': 'str',
-            
-            
-            'ipPoolName': 'str',
-            
-            
-            'creationOrder': 'int',
             
             
             'createTime': 'int',
             
             
-            'ipPool': 'str',
+            'nextAddress': 'str',
+            
+            
+            'endAddress': 'str',
             
             
             'startAddress': 'str',
             
             
-            'endAddress': 'str',
+            'ipPool': 'str',
+            
+            
+            'apicAppName': 'str',
+            
+            
+            'excludeNetworkBroadcastAddress': 'bool',
+            
+            
+            'ipPoolName': 'str',
             
             
             'dhcpServerIp': 'list[str]',
@@ -57,7 +54,13 @@ class IpPoolInfo(object):
             'interAppOverlap': 'bool',
             
             
-            'shared': 'bool',
+            'creationOrder': 'int',
+            
+            
+            'lastUpdateTime': 'int',
+            
+            
+            'parentId': 'str',
             
             
             'usagePercentage': 'int',
@@ -66,10 +69,7 @@ class IpPoolInfo(object):
             'freeIpCount': 'int',
             
             
-            'excludeNetworkBroadcastAddress': 'bool',
-            
-            
-            'parentId': 'str'
+            'shared': 'bool'
             
         }
 
@@ -77,25 +77,23 @@ class IpPoolInfo(object):
             
             'role': 'role',
             
-            'lastUpdateTime': 'lastUpdateTime',
-            
             'id': 'id',
-            
-            'apicAppName': 'apicAppName',
-            
-            'nextAddress': 'nextAddress',
-            
-            'ipPoolName': 'ipPoolName',
-            
-            'creationOrder': 'creationOrder',
             
             'createTime': 'createTime',
             
-            'ipPool': 'ipPool',
+            'nextAddress': 'nextAddress',
+            
+            'endAddress': 'endAddress',
             
             'startAddress': 'startAddress',
             
-            'endAddress': 'endAddress',
+            'ipPool': 'ipPool',
+            
+            'apicAppName': 'apicAppName',
+            
+            'excludeNetworkBroadcastAddress': 'excludeNetworkBroadcastAddress',
+            
+            'ipPoolName': 'ipPoolName',
             
             'dhcpServerIp': 'dhcpServerIp',
             
@@ -103,15 +101,17 @@ class IpPoolInfo(object):
             
             'interAppOverlap': 'interAppOverlap',
             
-            'shared': 'shared',
+            'creationOrder': 'creationOrder',
+            
+            'lastUpdateTime': 'lastUpdateTime',
+            
+            'parentId': 'parentId',
             
             'usagePercentage': 'usagePercentage',
             
             'freeIpCount': 'freeIpCount',
             
-            'excludeNetworkBroadcastAddress': 'excludeNetworkBroadcastAddress',
-            
-            'parentId': 'parentId'
+            'shared': 'shared'
             
         }       
 
@@ -120,45 +120,41 @@ class IpPoolInfo(object):
         
         self.role = None # str
         
-        #IP Address Pool last updated time
-        
-        self.lastUpdateTime = None # int
-        
         #UUID of IP Address Pool
         
         self.id = None # str
-        
-        #APIC-EM App Name
-        
-        self.apicAppName = None # str
-        
-        #Next available IP address in IP Address Pool
-        
-        self.nextAddress = None # str
-        
-        #IP Address Pool name
-        
-        self.ipPoolName = None # str
-        
-        #Creation order of IP Address Pool
-        
-        self.creationOrder = None # int
         
         #IP Address Pool creation time
         
         self.createTime = None # int
         
-        #IP subnet in CIDR format
+        #Next available IP address in IP Address Pool
         
-        self.ipPool = None # str
+        self.nextAddress = None # str
+        
+        #Last IP address in IP Address Pool
+        
+        self.endAddress = None # str
         
         #First IP address in IP Address Pool
         
         self.startAddress = None # str
         
-        #Last IP address in IP Address Pool
+        #IP subnet in CIDR format
         
-        self.endAddress = None # str
+        self.ipPool = None # str
+        
+        #APIC-EM App Name
+        
+        self.apicAppName = None # str
+        
+        #If true then network and broadcast IP address will not be used in the usable range. Default value is false
+        
+        self.excludeNetworkBroadcastAddress = None # bool
+        
+        #IP Address Pool name
+        
+        self.ipPoolName = None # str
         
         #DHCP server hostname or IP address list
         
@@ -172,9 +168,17 @@ class IpPoolInfo(object):
         
         self.interAppOverlap = None # bool
         
-        #If true then duplicate/overlapping pool is supported. Default value is false
+        #Creation order of IP Address Pool
         
-        self.shared = None # bool
+        self.creationOrder = None # int
+        
+        #IP Address Pool last updated time
+        
+        self.lastUpdateTime = None # int
+        
+        #Parent IP Address Pool UUID
+        
+        self.parentId = None # str
         
         #Current usage percentage of IP Address Pool
         
@@ -184,10 +188,7 @@ class IpPoolInfo(object):
         
         self.freeIpCount = None # int
         
-        #If true then network and broadcast IP address will not be used in the usable range. Default value is false
+        #If true then duplicate/overlapping pool is supported. Default value is false
         
-        self.excludeNetworkBroadcastAddress = None # bool
+        self.shared = None # bool
         
-        #Parent IP Address Pool UUID
-        
-        self.parentId = None # str

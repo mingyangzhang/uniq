@@ -15,7 +15,10 @@ class InetAddress(object):
         """
         self.swaggerTypes = {
             
-            'address': 'str',
+            'paddedAddress': 'str',
+            
+            
+            'addressType': 'str',
             
             
             'allZeros': 'bool',
@@ -27,16 +30,15 @@ class InetAddress(object):
             'octets': 'list[byte]',
             
             
-            'paddedAddress': 'str',
-            
-            
-            'addressType': 'str'
+            'address': 'str'
             
         }
 
         self.attributeMap = {
             
-            'address': 'address',
+            'paddedAddress': 'paddedAddress',
+            
+            'addressType': 'addressType',
             
             'allZeros': 'allZeros',
             
@@ -44,15 +46,16 @@ class InetAddress(object):
             
             'octets': 'octets',
             
-            'paddedAddress': 'paddedAddress',
-            
-            'addressType': 'addressType'
+            'address': 'address'
             
         }       
 
         
         
-        self.address = None # str
+        self.paddedAddress = None # str
+        
+        
+        self.addressType = None # str
         
         
         self.allZeros = None # bool
@@ -64,8 +67,5 @@ class InetAddress(object):
         self.octets = None # list[byte]
         
         
-        self.paddedAddress = None # str
-        
-        
-        self.addressType = None # str
+        self.address = None # str
         

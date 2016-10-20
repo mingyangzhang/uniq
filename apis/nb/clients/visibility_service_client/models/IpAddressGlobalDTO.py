@@ -15,25 +15,25 @@ class IpAddressGlobalDTO(object):
         """
         self.swaggerTypes = {
             
-            'numberOfSPs': 'str',
+            'numberOfSites': 'str',
             
             
-            'numberOfSites': 'str'
+            'numberOfSPs': 'str'
             
         }
 
         self.attributeMap = {
             
-            'numberOfSPs': 'numberOfSPs',
+            'numberOfSites': 'numberOfSites',
             
-            'numberOfSites': 'numberOfSites'
+            'numberOfSPs': 'numberOfSPs'
             
         }       
 
         
         
-        self.numberOfSPs = None # str
-        
-        
         self.numberOfSites = None # str
+        
+        
+        self.numberOfSPs = None # str
         

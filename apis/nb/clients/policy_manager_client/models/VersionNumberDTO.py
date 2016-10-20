@@ -15,26 +15,30 @@ class VersionNumberDTO(object):
         """
         self.swaggerTypes = {
             
+            'policyChanged': 'bool',
+            
+            
             'version': 'int',
             
             
-            'createTime': 'int',
-            
-            
-            'policyChanged': 'bool'
+            'createTime': 'int'
             
         }
 
         self.attributeMap = {
             
+            'policyChanged': 'policyChanged',
+            
             'version': 'version',
             
-            'createTime': 'createTime',
-            
-            'policyChanged': 'policyChanged'
+            'createTime': 'createTime'
             
         }       
 
+        
+        #true if the version was created as a result of put/post/delete on the policy
+        
+        self.policyChanged = None # bool
         
         #version number
         
@@ -43,8 +47,4 @@ class VersionNumberDTO(object):
         #time at which the version was created
         
         self.createTime = None # int
-        
-        #true if the version was created as a result of put/post/delete on the policy
-        
-        self.policyChanged = None # bool
         

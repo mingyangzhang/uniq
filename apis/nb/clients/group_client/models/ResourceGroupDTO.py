@@ -15,28 +15,10 @@ class ResourceGroupDTO(object):
         """
         self.swaggerTypes = {
             
-            'subGroup': 'list[IdRef]',
-            
-            
-            'groupMember': 'list[IdRef]',
-            
-            
             'groupTypeList': 'list[str]',
             
             
-            'additionalInfo': 'list[PropertyNameAndStringValue]',
-            
-            
-            'groupMemberUrl': 'str',
-            
-            
-            'subGroupUrl': 'str',
-            
-            
             'name': 'str',
-            
-            
-            'instanceUuid': 'str',
             
             
             'id': 'str'
@@ -45,21 +27,9 @@ class ResourceGroupDTO(object):
 
         self.attributeMap = {
             
-            'subGroup': 'subGroup',
-            
-            'groupMember': 'groupMember',
-            
             'groupTypeList': 'groupTypeList',
             
-            'additionalInfo': 'additionalInfo',
-            
-            'groupMemberUrl': 'groupMemberUrl',
-            
-            'subGroupUrl': 'subGroupUrl',
-            
             'name': 'name',
-            
-            'instanceUuid': 'instanceUuid',
             
             'id': 'id'
             
@@ -67,28 +37,10 @@ class ResourceGroupDTO(object):
 
         
         
-        self.subGroup = None # list[IdRef]
-        
-        
-        self.groupMember = None # list[IdRef]
-        
-        
         self.groupTypeList = None # list[str]
         
         
-        self.additionalInfo = None # list[PropertyNameAndStringValue]
-        
-        
-        self.groupMemberUrl = None # str
-        
-        
-        self.subGroupUrl = None # str
-        
-        
         self.name = None # str
-        
-        
-        self.instanceUuid = None # str
         
         
         self.id = None # str

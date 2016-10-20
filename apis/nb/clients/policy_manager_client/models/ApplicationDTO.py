@@ -15,13 +15,13 @@ class ApplicationDTO(object):
         """
         self.swaggerTypes = {
             
-            'url': 'str',
+            'trafficClass': 'str',
+            
+            
+            'applicationIpPortClassifiers': 'list[ApplicationIpPortClassifierDTO]',
             
             
             'category': 'str',
-            
-            
-            'trafficClass': 'str',
             
             
             'name': 'str',
@@ -30,91 +30,49 @@ class ApplicationDTO(object):
             'id': 'str',
             
             
-            'rank': 'int',
-            
-            
-            'appProtocol': 'str',
-            
-            
-            'applicationIpPortClassifiers': 'list[ApplicationIpPortClassifierDTO]',
-            
-            
-            'tcpPorts': 'str',
-            
-            
-            'indicativeTcpPorts': 'str',
-            
-            
-            'udpPorts': 'str',
-            
-            
-            'indicativeUdpPorts': 'str',
-            
-            
-            'transportIps': 'str',
-            
-            
             'status': 'str',
+            
+            
+            'rank': 'int',
             
             
             'longDescription': 'str',
             
             
-            'ipPorts': 'str',
-            
-            
-            'categoryId': 'str',
-            
-            
-            'subCategory': 'str',
-            
-            
             'instanceUuid': 'str',
             
             
-            'dscp': 'str',
-            
-            
-            'globalId': 'str',
-            
-            
-            'engineId': 'str',
-            
-            
-            'selectorId': 'str',
-            
-            
-            'helpString': 'str',
+            'url': 'str',
             
             
             'references': 'str',
             
             
-            'applicationGroup': 'str',
+            'dscp': 'str',
             
             
-            'encrypted': 'str',
+            'ipPorts': 'str',
             
             
-            'tunnel': 'str',
+            'engineId': 'str',
             
             
-            'pfrThresholdJitter': 'int',
+            'globalId': 'str',
             
             
-            'pfrThresholdLossRate': 'int',
+            'helpString': 'str',
             
             
-            'pfrThresholdOneWayDelay': 'int',
-            
-            
-            'popularity': 'int',
-            
-            
-            'enabled': 'str',
+            'ignoreConflict': 'bool',
             
             
             'indicativeIpPorts': 'str',
+            
+            
+            'indicativeTcpPorts': 'str',
+            
+            
+            'indicativeUdpPorts': 'str',
             
             
             'isRepresentativeApp': 'bool',
@@ -126,88 +84,102 @@ class ApplicationDTO(object):
             'p2pTechnology': 'str',
             
             
+            'pfrThresholdJitter': 'int',
+            
+            
             'pfrThresholdJitterPriority': 'int',
+            
+            
+            'pfrThresholdLossRate': 'int',
             
             
             'pfrThresholdLossRatePriority': 'int',
             
             
+            'pfrThresholdOneWayDelay': 'int',
+            
+            
             'pfrThresholdOneWayDelayPriority': 'int',
             
             
-            'ignoreConflict': 'bool'
+            'popularity': 'int',
+            
+            
+            'selectorId': 'str',
+            
+            
+            'subCategory': 'str',
+            
+            
+            'tcpPorts': 'str',
+            
+            
+            'transportIps': 'str',
+            
+            
+            'tunnel': 'str',
+            
+            
+            'udpPorts': 'str',
+            
+            
+            'appProtocol': 'str',
+            
+            
+            'applicationGroup': 'str',
+            
+            
+            'categoryId': 'str',
+            
+            
+            'enabled': 'str',
+            
+            
+            'encrypted': 'str'
             
         }
 
         self.attributeMap = {
             
-            'url': 'url',
+            'trafficClass': 'trafficClass',
+            
+            'applicationIpPortClassifiers': 'applicationIpPortClassifiers',
             
             'category': 'category',
-            
-            'trafficClass': 'trafficClass',
             
             'name': 'name',
             
             'id': 'id',
             
-            'rank': 'rank',
-            
-            'appProtocol': 'appProtocol',
-            
-            'applicationIpPortClassifiers': 'applicationIpPortClassifiers',
-            
-            'tcpPorts': 'tcpPorts',
-            
-            'indicativeTcpPorts': 'indicativeTcpPorts',
-            
-            'udpPorts': 'udpPorts',
-            
-            'indicativeUdpPorts': 'indicativeUdpPorts',
-            
-            'transportIps': 'transportIps',
-            
             'status': 'status',
+            
+            'rank': 'rank',
             
             'longDescription': 'longDescription',
             
-            'ipPorts': 'ipPorts',
-            
-            'categoryId': 'categoryId',
-            
-            'subCategory': 'subCategory',
-            
             'instanceUuid': 'instanceUuid',
             
-            'dscp': 'dscp',
-            
-            'globalId': 'globalId',
-            
-            'engineId': 'engineId',
-            
-            'selectorId': 'selectorId',
-            
-            'helpString': 'helpString',
+            'url': 'url',
             
             'references': 'references',
             
-            'applicationGroup': 'applicationGroup',
+            'dscp': 'dscp',
             
-            'encrypted': 'encrypted',
+            'ipPorts': 'ipPorts',
             
-            'tunnel': 'tunnel',
+            'engineId': 'engineId',
             
-            'pfrThresholdJitter': 'pfrThresholdJitter',
+            'globalId': 'globalId',
             
-            'pfrThresholdLossRate': 'pfrThresholdLossRate',
+            'helpString': 'helpString',
             
-            'pfrThresholdOneWayDelay': 'pfrThresholdOneWayDelay',
-            
-            'popularity': 'popularity',
-            
-            'enabled': 'enabled',
+            'ignoreConflict': 'ignoreConflict',
             
             'indicativeIpPorts': 'indicativeIpPorts',
+            
+            'indicativeTcpPorts': 'indicativeTcpPorts',
+            
+            'indicativeUdpPorts': 'indicativeUdpPorts',
             
             'isRepresentativeApp': 'isRepresentativeApp',
             
@@ -215,28 +187,56 @@ class ApplicationDTO(object):
             
             'p2pTechnology': 'p2pTechnology',
             
+            'pfrThresholdJitter': 'pfrThresholdJitter',
+            
             'pfrThresholdJitterPriority': 'pfrThresholdJitterPriority',
+            
+            'pfrThresholdLossRate': 'pfrThresholdLossRate',
             
             'pfrThresholdLossRatePriority': 'pfrThresholdLossRatePriority',
             
+            'pfrThresholdOneWayDelay': 'pfrThresholdOneWayDelay',
+            
             'pfrThresholdOneWayDelayPriority': 'pfrThresholdOneWayDelayPriority',
             
-            'ignoreConflict': 'ignoreConflict'
+            'popularity': 'popularity',
+            
+            'selectorId': 'selectorId',
+            
+            'subCategory': 'subCategory',
+            
+            'tcpPorts': 'tcpPorts',
+            
+            'transportIps': 'transportIps',
+            
+            'tunnel': 'tunnel',
+            
+            'udpPorts': 'udpPorts',
+            
+            'appProtocol': 'appProtocol',
+            
+            'applicationGroup': 'applicationGroup',
+            
+            'categoryId': 'categoryId',
+            
+            'enabled': 'enabled',
+            
+            'encrypted': 'encrypted'
             
         }       
 
         
-        #url of the app
+        #Traffic class to which the app belongs
         
-        self.url = None # str
+        self.trafficClass = None # str
+        
+        #IP Port classifiers for the application
+        
+        self.applicationIpPortClassifiers = None # list[ApplicationIpPortClassifierDTO]
         
         #Category name
         
         self.category = None # str
-        
-        #Traffic class to which the app belongs
-        
-        self.trafficClass = None # str
         
         #App Name
         
@@ -246,121 +246,65 @@ class ApplicationDTO(object):
         
         self.id = None # str
         
-        #rank
-        
-        self.rank = None # int
-        
-        #protocol of the app. Valid values are tcp, udp, tcp/udp, ip or it could be empty. Values are case sensitive.
-        
-        self.appProtocol = None # str
-        
-        #IP Port classifiers for the application
-        
-        self.applicationIpPortClassifiers = None # list[ApplicationIpPortClassifierDTO]
-        
-        #list of tcp ports
-        
-        self.tcpPorts = None # str
-        
-        #Indicative tcp ports
-        
-        self.indicativeTcpPorts = None # str
-        
-        #list of udp ports
-        
-        self.udpPorts = None # str
-        
-        #Indicative udp ports
-        
-        self.indicativeUdpPorts = None # str
-        
-        #Transport IP of the app
-        
-        self.transportIps = None # str
-        
         #Gives status of the app
         
         self.status = None # str
+        
+        #rank
+        
+        self.rank = None # int
         
         #Long description of the app
         
         self.longDescription = None # str
         
-        #list of ip ports
-        
-        self.ipPorts = None # str
-        
-        #Category id
-        
-        self.categoryId = None # str
-        
-        #Sub-Category Id
-        
-        self.subCategory = None # str
-        
         #
         
         self.instanceUuid = None # str
         
-        #dscp value
+        #url of the app
         
-        self.dscp = None # str
-        
-        #global id
-        
-        self.globalId = None # str
-        
-        #engine id
-        
-        self.engineId = None # str
-        
-        #selector id
-        
-        self.selectorId = None # str
-        
-        #help string to describe the app
-        
-        self.helpString = None # str
+        self.url = None # str
         
         #references of the app
         
         self.references = None # str
         
-        #App group name
+        #dscp value
         
-        self.applicationGroup = None # str
+        self.dscp = None # str
         
-        #If the app is encrypted
+        #list of ip ports
         
-        self.encrypted = None # str
+        self.ipPorts = None # str
         
-        #If the app is a tunnel
+        #engine id
         
-        self.tunnel = None # str
+        self.engineId = None # str
         
-        #PfR Threshold Jitter
+        #global id
         
-        self.pfrThresholdJitter = None # int
+        self.globalId = None # str
         
-        #PfR Threshold Loss Rate
+        #help string to describe the app
         
-        self.pfrThresholdLossRate = None # int
+        self.helpString = None # str
         
-        #PfR Threshold One Way Delay
+        #If true ignore conflicts with other Applications
         
-        self.pfrThresholdOneWayDelay = None # int
-        
-        #popularity of the app
-        
-        self.popularity = None # int
-        
-        #If the app enabled
-        
-        self.enabled = None # str
+        self.ignoreConflict = None # bool
         
         #Indicative ip ports
         
         self.indicativeIpPorts = None # str
+        
+        #Indicative tcp ports
+        
+        self.indicativeTcpPorts = None # str
+        
+        #Indicative udp ports
+        
+        self.indicativeUdpPorts = None # str
         
         #If the app is representative
         
@@ -374,19 +318,75 @@ class ApplicationDTO(object):
         
         self.p2pTechnology = None # str
         
+        #PfR Threshold Jitter
+        
+        self.pfrThresholdJitter = None # int
+        
         #PfR Threshold Jitter Priority
         
         self.pfrThresholdJitterPriority = None # int
+        
+        #PfR Threshold Loss Rate
+        
+        self.pfrThresholdLossRate = None # int
         
         #PfR Threshold Loss Rate Priority
         
         self.pfrThresholdLossRatePriority = None # int
         
+        #PfR Threshold One Way Delay
+        
+        self.pfrThresholdOneWayDelay = None # int
+        
         #PfR Threshold One Way Delay Priority
         
         self.pfrThresholdOneWayDelayPriority = None # int
         
-        #If true ignore conflicts with other Applications
+        #popularity of the app
         
-        self.ignoreConflict = None # bool
+        self.popularity = None # int
+        
+        #selector id
+        
+        self.selectorId = None # str
+        
+        #Sub-Category Id
+        
+        self.subCategory = None # str
+        
+        #list of tcp ports
+        
+        self.tcpPorts = None # str
+        
+        #Transport IP of the app
+        
+        self.transportIps = None # str
+        
+        #If the app is a tunnel
+        
+        self.tunnel = None # str
+        
+        #list of udp ports
+        
+        self.udpPorts = None # str
+        
+        #protocol of the app. Valid values are tcp, udp, tcp/udp, ip or it could be empty. Values are case sensitive.
+        
+        self.appProtocol = None # str
+        
+        #App group name
+        
+        self.applicationGroup = None # str
+        
+        #Category id
+        
+        self.categoryId = None # str
+        
+        #If the app enabled
+        
+        self.enabled = None # str
+        
+        #If the app is encrypted
+        
+        self.encrypted = None # str
         

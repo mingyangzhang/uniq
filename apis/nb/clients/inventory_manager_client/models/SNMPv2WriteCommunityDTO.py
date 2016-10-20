@@ -21,10 +21,10 @@ class SNMPv2WriteCommunityDTO(object):
             'description': 'str',
             
             
-            'comments': 'str',
-            
-            
             'credentialType': 'str',
+            
+            
+            'comments': 'str',
             
             
             'instanceUuid': 'str',
@@ -40,9 +40,9 @@ class SNMPv2WriteCommunityDTO(object):
             
             'description': 'description',
             
-            'comments': 'comments',
-            
             'credentialType': 'credentialType',
+            
+            'comments': 'comments',
             
             'instanceUuid': 'instanceUuid',
             
@@ -59,13 +59,13 @@ class SNMPv2WriteCommunityDTO(object):
         
         self.description = None # str
         
-        #Comments to identify the credential
-        
-        self.comments = None # str
-        
         #Credential type to identify the application that uses the credential
         
         self.credentialType = None # str
+        
+        #Comments to identify the credential
+        
+        self.comments = None # str
         
         
         self.instanceUuid = None # str

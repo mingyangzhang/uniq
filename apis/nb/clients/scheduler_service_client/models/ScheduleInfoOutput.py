@@ -15,61 +15,65 @@ class ScheduleInfoOutput(object):
         """
         self.swaggerTypes = {
             
+            'description': 'str',
+            
+            
             'startTime': 'date-time',
             
             
             'endTime': 'date-time',
             
             
-            'description': 'str',
-            
-            
             'origin': 'str',
-            
-            
-            'taskId': 'str',
             
             
             'operation': 'str',
             
             
+            'taskId': 'str',
+            
+            
             'groupName': 'str',
+            
+            
+            'scheduledWorkSpecId': 'str',
             
             
             'prevTime': 'date-time',
             
             
-            'nextTime': 'date-time',
-            
-            
-            'scheduledWorkSpecId': 'str'
+            'nextTime': 'date-time'
             
         }
 
         self.attributeMap = {
             
+            'description': 'description',
+            
             'startTime': 'startTime',
             
             'endTime': 'endTime',
             
-            'description': 'description',
-            
             'origin': 'origin',
-            
-            'taskId': 'taskId',
             
             'operation': 'operation',
             
+            'taskId': 'taskId',
+            
             'groupName': 'groupName',
+            
+            'scheduledWorkSpecId': 'scheduledWorkSpecId',
             
             'prevTime': 'prevTime',
             
-            'nextTime': 'nextTime',
-            
-            'scheduledWorkSpecId': 'scheduledWorkSpecId'
+            'nextTime': 'nextTime'
             
         }       
 
+        
+        #Simple description to be shown to end-users
+        
+        self.description = None # str
         
         #The time at which the trigger should first fire. If the schedule has fired and will not fire again, this value will be null
         
@@ -79,25 +83,25 @@ class ScheduleInfoOutput(object):
         
         self.endTime = None # date-time
         
-        #Simple description to be shown to end-users
-        
-        self.description = None # str
-        
         #Contextual field used to identify work spcifications originating from the same source
         
         self.origin = None # str
-        
-        #UUID of the Task
-        
-        self.taskId = None # str
         
         #Contextual field used by the service to identify an operation
         
         self.operation = None # str
         
+        #UUID of the Task
+        
+        self.taskId = None # str
+        
         #A grouping name that can be specified by the service to allow for filtered work spec retrieval
         
         self.groupName = None # str
+        
+        #UUID of the ScheduledWorkSpec associated with the scheduled task
+        
+        self.scheduledWorkSpecId = None # str
         
         #The previous time at which the trigger fired. If the trigger has not yet fired, null will be returned
         
@@ -106,8 +110,4 @@ class ScheduleInfoOutput(object):
         #The next time at which the trigger should fire
         
         self.nextTime = None # date-time
-        
-        #UUID of the ScheduledWorkSpec associated with the scheduled task
-        
-        self.scheduledWorkSpecId = None # str
         

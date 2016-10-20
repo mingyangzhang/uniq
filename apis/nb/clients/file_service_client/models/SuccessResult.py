@@ -15,25 +15,25 @@ class SuccessResult(object):
         """
         self.swaggerTypes = {
             
-            'response': 'str',
+            'version': 'str',
             
             
-            'version': 'str'
+            'response': 'str'
             
         }
 
         self.attributeMap = {
             
-            'response': 'response',
+            'version': 'version',
             
-            'version': 'version'
+            'response': 'response'
             
         }       
 
         
         
-        self.response = None # str
-        
-        
         self.version = None # str
+        
+        
+        self.response = None # str
         

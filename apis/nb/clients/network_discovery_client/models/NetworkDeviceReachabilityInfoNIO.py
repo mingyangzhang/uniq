@@ -30,19 +30,16 @@ class NetworkDeviceReachabilityInfoNIO(object):
             'discoveryStartTime': 'str',
             
             
-            'enablePassword': 'str',
-            
-            
             'userName': 'str',
             
             
             'password': 'str',
             
             
-            'discoveryId': 'str',
-            
-            
             'id': 'str',
+            
+            
+            'discoveryId': 'str',
             
             
             'reachabilityFailureReason': 'str',
@@ -51,7 +48,10 @@ class NetworkDeviceReachabilityInfoNIO(object):
             'reachabilityStatus': 'str',
             
             
-            'attributeInfo': 'object'
+            'enablePassword': 'str',
+            
+            
+            'attributeInfo': 'dict'
             
         }
 
@@ -67,19 +67,19 @@ class NetworkDeviceReachabilityInfoNIO(object):
             
             'discoveryStartTime': 'discoveryStartTime',
             
-            'enablePassword': 'enablePassword',
-            
             'userName': 'userName',
             
             'password': 'password',
             
-            'discoveryId': 'discoveryId',
-            
             'id': 'id',
+            
+            'discoveryId': 'discoveryId',
             
             'reachabilityFailureReason': 'reachabilityFailureReason',
             
             'reachabilityStatus': 'reachabilityStatus',
+            
+            'enablePassword': 'enablePassword',
             
             'attributeInfo': 'attributeInfo'
             
@@ -106,10 +106,6 @@ class NetworkDeviceReachabilityInfoNIO(object):
         
         self.discoveryStartTime = None # str
         
-        #CLI enable password used for device connectivity
-        
-        self.enablePassword = None # str
-        
         #CLI username used for device connectivity
         
         self.userName = None # str
@@ -118,13 +114,13 @@ class NetworkDeviceReachabilityInfoNIO(object):
         
         self.password = None # str
         
-        #ID of discovery thorugh which device was discovered
-        
-        self.discoveryId = None # str
-        
         #Unique identifier for reachability-info
         
         self.id = None # str
+        
+        #ID of discovery thorugh which device was discovered
+        
+        self.discoveryId = None # str
         
         #Reason for failure if the device is not discovered successfully
         
@@ -134,6 +130,10 @@ class NetworkDeviceReachabilityInfoNIO(object):
         
         self.reachabilityStatus = None # str
         
+        #CLI enable password used for device connectivity
         
-        self.attributeInfo = None # object
+        self.enablePassword = None # str
+        
+        
+        self.attributeInfo = None # dict
         

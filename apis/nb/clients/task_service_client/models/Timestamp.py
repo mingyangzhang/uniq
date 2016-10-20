@@ -15,25 +15,25 @@ class Timestamp(object):
         """
         self.swaggerTypes = {
             
-            'signerCertPath': 'CertPath',
+            'timestamp': 'date-time',
             
             
-            'timestamp': 'date-time'
+            'signerCertPath': 'CertPath'
             
         }
 
         self.attributeMap = {
             
-            'signerCertPath': 'signerCertPath',
+            'timestamp': 'timestamp',
             
-            'timestamp': 'timestamp'
+            'signerCertPath': 'signerCertPath'
             
         }       
 
         
         
-        self.signerCertPath = None # CertPath
-        
-        
         self.timestamp = None # date-time
+        
+        
+        self.signerCertPath = None # CertPath
         

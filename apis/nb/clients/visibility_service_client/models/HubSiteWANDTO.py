@@ -18,6 +18,9 @@ class HubSiteWanDTO(object):
             'capacity': 'str',
             
             
+            'vspEnabled': 'bool',
+            
+            
             'lanInterfaceName': 'list[str]',
             
             
@@ -39,13 +42,13 @@ class HubSiteWanDTO(object):
             'bandwidth': 'str',
             
             
+            'serviceProvider': 'str',
+            
+            
             'downloadBW': 'str',
             
             
             'natIp': 'str',
-            
-            
-            'serviceProvider': 'str',
             
             
             'pathId': 'int',
@@ -69,22 +72,19 @@ class HubSiteWanDTO(object):
             'coexistenceLoopbackInterfaceIpAddress': 'str',
             
             
+            'vspWanLebel': 'str',
+            
+            
+            'wanLabel': 'str',
+            
+            
             'geoLocation': 'str',
             
             
             'vspWanType': 'str',
             
             
-            'vspEnabled': 'bool',
-            
-            
             'dhcpEnabled': 'bool',
-            
-            
-            'wanLabel': 'str',
-            
-            
-            'vspWanLebel': 'str',
             
             
             'id': 'str'
@@ -94,6 +94,8 @@ class HubSiteWanDTO(object):
         self.attributeMap = {
             
             'capacity': 'capacity',
+            
+            'vspEnabled': 'vspEnabled',
             
             'lanInterfaceName': 'lanInterfaceName',
             
@@ -109,11 +111,11 @@ class HubSiteWanDTO(object):
             
             'bandwidth': 'bandwidth',
             
+            'serviceProvider': 'serviceProvider',
+            
             'downloadBW': 'downloadBW',
             
             'natIp': 'natIp',
-            
-            'serviceProvider': 'serviceProvider',
             
             'pathId': 'pathId',
             
@@ -129,17 +131,15 @@ class HubSiteWanDTO(object):
             
             'coexistenceLoopbackInterfaceIpAddress': 'coexistenceLoopbackInterfaceIpAddress',
             
+            'vspWanLebel': 'vspWanLebel',
+            
+            'wanLabel': 'wanLabel',
+            
             'geoLocation': 'geoLocation',
             
             'vspWanType': 'vspWanType',
             
-            'vspEnabled': 'vspEnabled',
-            
             'dhcpEnabled': 'dhcpEnabled',
-            
-            'wanLabel': 'wanLabel',
-            
-            'vspWanLebel': 'vspWanLebel',
             
             'id': 'id'
             
@@ -148,6 +148,9 @@ class HubSiteWanDTO(object):
         
         
         self.capacity = None # str
+        
+        
+        self.vspEnabled = None # bool
         
         
         self.lanInterfaceName = None # list[str]
@@ -171,13 +174,13 @@ class HubSiteWanDTO(object):
         self.bandwidth = None # str
         
         
+        self.serviceProvider = None # str
+        
+        
         self.downloadBW = None # str
         
         
         self.natIp = None # str
-        
-        
-        self.serviceProvider = None # str
         
         
         self.pathId = None # int
@@ -201,22 +204,19 @@ class HubSiteWanDTO(object):
         self.coexistenceLoopbackInterfaceIpAddress = None # str
         
         
+        self.vspWanLebel = None # str
+        
+        
+        self.wanLabel = None # str
+        
+        
         self.geoLocation = None # str
         
         
         self.vspWanType = None # str
         
         
-        self.vspEnabled = None # bool
-        
-        
         self.dhcpEnabled = None # bool
-        
-        
-        self.wanLabel = None # str
-        
-        
-        self.vspWanLebel = None # str
         
         
         self.id = None # str

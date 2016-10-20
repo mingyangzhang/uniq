@@ -1,132 +1,17 @@
 {
-    "apiVersion": "1.0",
     "apis": [
         {
+            "description": "getHosts",
             "operations": [
                 {
-                    "method": "GET",
-                    "summary": "Retrieve hosts",
-                    "parameters": [
-                        {
-                            "required": false,
-                            "allowMultiple": false,
-                            "defaultValue": "",
-                            "type": "string",
-                            "name": "limit",
-                            "paramType": "query",
-                            "description": "limit"
-                        },
-                        {
-                            "required": false,
-                            "allowMultiple": false,
-                            "defaultValue": "",
-                            "type": "string",
-                            "name": "offset",
-                            "paramType": "query",
-                            "description": "offset"
-                        },
-                        {
-                            "required": false,
-                            "allowMultiple": false,
-                            "defaultValue": "",
-                            "type": "string",
-                            "name": "sortBy",
-                            "paramType": "query",
-                            "description": "sortBy"
-                        },
-                        {
-                            "required": false,
-                            "allowMultiple": false,
-                            "defaultValue": "",
-                            "type": "string",
-                            "name": "order",
-                            "paramType": "query",
-                            "description": "order"
-                        },
-                        {
-                            "required": false,
-                            "allowMultiple": true,
-                            "defaultValue": "",
-                            "type": "List",
-                            "name": "hostName",
-                            "paramType": "query",
-                            "description": "hostName"
-                        },
-                        {
-                            "required": false,
-                            "allowMultiple": true,
-                            "defaultValue": "",
-                            "type": "List",
-                            "name": "hostMac",
-                            "paramType": "query",
-                            "description": "hostMac"
-                        },
-                        {
-                            "required": false,
-                            "allowMultiple": true,
-                            "defaultValue": "",
-                            "type": "List",
-                            "name": "hostType",
-                            "paramType": "query",
-                            "description": "hostType"
-                        },
-                        {
-                            "required": false,
-                            "allowMultiple": true,
-                            "defaultValue": "",
-                            "type": "List",
-                            "name": "connectedInterfaceName",
-                            "paramType": "query",
-                            "description": "connectedInterfaceName"
-                        },
-                        {
-                            "required": false,
-                            "allowMultiple": true,
-                            "defaultValue": "",
-                            "type": "List",
-                            "name": "hostIp",
-                            "paramType": "query",
-                            "description": "hostIp"
-                        },
-                        {
-                            "required": false,
-                            "allowMultiple": true,
-                            "defaultValue": "",
-                            "type": "List",
-                            "name": "connectedNetworkDeviceIpAddress",
-                            "paramType": "query",
-                            "description": "connectedNetworkDeviceIpAddress"
-                        },
-                        {
-                            "required": false,
-                            "allowMultiple": false,
-                            "defaultValue": "",
-                            "type": "List",
-                            "name": "subType",
-                            "paramType": "query",
-                            "description": "Available values: 'UNKNOWN' or 'IP_PHONE' or 'TELEPRESENCE' or 'VIDEO_SURVEILLANCE_IP_CAMERA' or 'VIDEO_ENDPOINT'. Only exact match filtering supported on this field"
-                        },
-                        {
-                            "required": false,
-                            "allowMultiple": false,
-                            "defaultValue": "",
-                            "type": "string",
-                            "name": "filterOperation",
-                            "paramType": "query",
-                            "description": "startswith/contains/endswith"
-                        },
-                        {
-                            "required": true,
-                            "allowMultiple": false,
-                            "defaultValue": "",
-                            "type": "List",
-                            "name": "scope",
-                            "paramType": "header",
-                            "description": "Authorization Scope for RBAC"
-                        }
-                    ],
+                    "nickname": "getHosts",
                     "notes": "Get Hosts",
-                    "type": "HostListResult",
+                    "summary": "Retrieve hosts",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "method": "GET",
+                    "deprecated": "false",
                     "responseMessages": [
                         {
                             "message": "This Request is OK",
@@ -146,106 +31,133 @@
                             "code": 404
                         }
                     ],
-                    "nickname": "getHosts",
-                    "deprecated": "false",
-                    "produces": [
-                        "application/json"
+                    "type": "HostListResult",
+                    "parameters": [
+                        {
+                            "name": "limit",
+                            "allowMultiple": false,
+                            "paramType": "query",
+                            "type": "string",
+                            "description": "limit",
+                            "required": false,
+                            "defaultValue": ""
+                        },
+                        {
+                            "name": "offset",
+                            "allowMultiple": false,
+                            "paramType": "query",
+                            "type": "string",
+                            "description": "offset",
+                            "required": false,
+                            "defaultValue": ""
+                        },
+                        {
+                            "name": "sortBy",
+                            "allowMultiple": false,
+                            "paramType": "query",
+                            "type": "string",
+                            "description": "sortBy",
+                            "required": false,
+                            "defaultValue": ""
+                        },
+                        {
+                            "name": "order",
+                            "allowMultiple": false,
+                            "paramType": "query",
+                            "type": "string",
+                            "description": "order",
+                            "required": false,
+                            "defaultValue": ""
+                        },
+                        {
+                            "name": "hostName",
+                            "allowMultiple": true,
+                            "paramType": "query",
+                            "type": "List",
+                            "description": "hostName",
+                            "required": false,
+                            "defaultValue": ""
+                        },
+                        {
+                            "name": "hostMac",
+                            "allowMultiple": true,
+                            "paramType": "query",
+                            "type": "List",
+                            "description": "hostMac",
+                            "required": false,
+                            "defaultValue": ""
+                        },
+                        {
+                            "name": "hostType",
+                            "allowMultiple": true,
+                            "paramType": "query",
+                            "type": "List",
+                            "description": "hostType",
+                            "required": false,
+                            "defaultValue": ""
+                        },
+                        {
+                            "name": "connectedInterfaceName",
+                            "allowMultiple": true,
+                            "paramType": "query",
+                            "type": "List",
+                            "description": "connectedInterfaceName",
+                            "required": false,
+                            "defaultValue": ""
+                        },
+                        {
+                            "name": "hostIp",
+                            "allowMultiple": true,
+                            "paramType": "query",
+                            "type": "List",
+                            "description": "hostIp",
+                            "required": false,
+                            "defaultValue": ""
+                        },
+                        {
+                            "name": "connectedNetworkDeviceIpAddress",
+                            "allowMultiple": true,
+                            "paramType": "query",
+                            "type": "List",
+                            "description": "connectedNetworkDeviceIpAddress",
+                            "required": false,
+                            "defaultValue": ""
+                        },
+                        {
+                            "name": "subType",
+                            "allowMultiple": false,
+                            "paramType": "query",
+                            "type": "List",
+                            "description": "Available values: 'UNKNOWN' or 'IP_PHONE' or 'TELEPRESENCE' or 'VIDEO_SURVEILLANCE_IP_CAMERA' or 'VIDEO_ENDPOINT'. Only exact match filtering supported on this field",
+                            "required": false,
+                            "defaultValue": ""
+                        },
+                        {
+                            "name": "filterOperation",
+                            "allowMultiple": false,
+                            "paramType": "query",
+                            "type": "string",
+                            "description": "startswith/contains/endswith",
+                            "required": false,
+                            "defaultValue": ""
+                        }
                     ]
                 }
             ],
-            "path": "/host",
-            "description": "getHosts"
+            "path": "/host"
         },
         {
+            "description": "getHostCount",
             "operations": [
                 {
-                    "method": "GET",
-                    "summary": "Gives total number of hosts",
-                    "parameters": [
-                        {
-                            "required": false,
-                            "allowMultiple": true,
-                            "defaultValue": "",
-                            "type": "List",
-                            "name": "hostName",
-                            "paramType": "query",
-                            "description": "hostName"
-                        },
-                        {
-                            "required": false,
-                            "allowMultiple": true,
-                            "defaultValue": "",
-                            "type": "List",
-                            "name": "hostMac",
-                            "paramType": "query",
-                            "description": "hostMac"
-                        },
-                        {
-                            "required": false,
-                            "allowMultiple": true,
-                            "defaultValue": "",
-                            "type": "List",
-                            "name": "hostType",
-                            "paramType": "query",
-                            "description": "hostType"
-                        },
-                        {
-                            "required": false,
-                            "allowMultiple": true,
-                            "defaultValue": "",
-                            "type": "List",
-                            "name": "connectedInterfaceName",
-                            "paramType": "query",
-                            "description": "connectedInterfaceName"
-                        },
-                        {
-                            "required": false,
-                            "allowMultiple": true,
-                            "defaultValue": "",
-                            "type": "List",
-                            "name": "hostIp",
-                            "paramType": "query",
-                            "description": "hostIp"
-                        },
-                        {
-                            "required": false,
-                            "allowMultiple": true,
-                            "defaultValue": "",
-                            "type": "List",
-                            "name": "connectedNetworkDeviceIpAddress",
-                            "paramType": "query",
-                            "description": "connectedNetworkDeviceIpAddress"
-                        },
-                        {
-                            "required": false,
-                            "allowMultiple": false,
-                            "defaultValue": "",
-                            "type": "List",
-                            "name": "subType",
-                            "paramType": "query",
-                            "description": "Available values: 'UNKNOWN' or 'IP_PHONE' or 'TELEPRESENCE' or 'VIDEO_SURVEILLANCE_IP_CAMERA' or 'VIDEO_ENDPOINT'. Only exact match filtering supported on this field"
-                        },
-                        {
-                            "required": false,
-                            "allowMultiple": false,
-                            "defaultValue": "",
-                            "type": "string",
-                            "name": "filterOperation",
-                            "paramType": "query",
-                            "description": "startswith/contains/endswith"
-                        },
-                        {
-                            "required": true,
-                            "allowMultiple": false,
-                            "defaultValue": "",
-                            "type": "List",
-                            "name": "scope",
-                            "paramType": "header",
-                            "description": "Authorization Scope for RBAC"
-                        }
-                    ],
+                    "nickname": "getHostCount",
                     "notes": "Get host Count",
-                    "type": "CountResult",
+                    "summary": "Gives total number of hosts",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "method": "GET",
+                    "deprecated": "false",
                     "responseMessages": [
                         {
                             "message": "This Request is OK",
@@ -265,43 +177,97 @@
                             "code": 404
                         }
                     ],
-                    "nickname": "getHostCount",
-                    "deprecated": "false",
-                    "produces": [
-                        "application/json"
+                    "type": "CountResult",
+                    "parameters": [
+                        {
+                            "name": "hostName",
+                            "allowMultiple": true,
+                            "paramType": "query",
+                            "type": "List",
+                            "description": "hostName",
+                            "required": false,
+                            "defaultValue": ""
+                        },
+                        {
+                            "name": "hostMac",
+                            "allowMultiple": true,
+                            "paramType": "query",
+                            "type": "List",
+                            "description": "hostMac",
+                            "required": false,
+                            "defaultValue": ""
+                        },
+                        {
+                            "name": "hostType",
+                            "allowMultiple": true,
+                            "paramType": "query",
+                            "type": "List",
+                            "description": "hostType",
+                            "required": false,
+                            "defaultValue": ""
+                        },
+                        {
+                            "name": "connectedInterfaceName",
+                            "allowMultiple": true,
+                            "paramType": "query",
+                            "type": "List",
+                            "description": "connectedInterfaceName",
+                            "required": false,
+                            "defaultValue": ""
+                        },
+                        {
+                            "name": "hostIp",
+                            "allowMultiple": true,
+                            "paramType": "query",
+                            "type": "List",
+                            "description": "hostIp",
+                            "required": false,
+                            "defaultValue": ""
+                        },
+                        {
+                            "name": "connectedNetworkDeviceIpAddress",
+                            "allowMultiple": true,
+                            "paramType": "query",
+                            "type": "List",
+                            "description": "connectedNetworkDeviceIpAddress",
+                            "required": false,
+                            "defaultValue": ""
+                        },
+                        {
+                            "name": "subType",
+                            "allowMultiple": false,
+                            "paramType": "query",
+                            "type": "List",
+                            "description": "Available values: 'UNKNOWN' or 'IP_PHONE' or 'TELEPRESENCE' or 'VIDEO_SURVEILLANCE_IP_CAMERA' or 'VIDEO_ENDPOINT'. Only exact match filtering supported on this field",
+                            "required": false,
+                            "defaultValue": ""
+                        },
+                        {
+                            "name": "filterOperation",
+                            "allowMultiple": false,
+                            "paramType": "query",
+                            "type": "string",
+                            "description": "startswith/contains/endswith",
+                            "required": false,
+                            "defaultValue": ""
+                        }
                     ]
                 }
             ],
-            "path": "/host/count",
-            "description": "getHostCount"
+            "path": "/host/count"
         },
         {
+            "description": "getHostById",
             "operations": [
                 {
-                    "method": "GET",
-                    "summary": "Retrieves host based on id",
-                    "parameters": [
-                        {
-                            "required": true,
-                            "allowMultiple": false,
-                            "defaultValue": "",
-                            "type": "string",
-                            "name": "id",
-                            "paramType": "path",
-                            "description": "Host Id"
-                        },
-                        {
-                            "required": true,
-                            "allowMultiple": false,
-                            "defaultValue": "",
-                            "type": "List",
-                            "name": "scope",
-                            "paramType": "header",
-                            "description": "Authorization Scope for RBAC"
-                        }
-                    ],
+                    "nickname": "getHostById",
                     "notes": "Get host by id",
-                    "type": "HostResult",
+                    "summary": "Retrieves host based on id",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "method": "GET",
+                    "deprecated": "false",
                     "responseMessages": [
                         {
                             "message": "This Request is OK",
@@ -321,115 +287,133 @@
                             "code": 404
                         }
                     ],
-                    "nickname": "getHostById",
-                    "deprecated": "false",
-                    "produces": [
-                        "application/json"
+                    "type": "HostResult",
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "allowMultiple": false,
+                            "paramType": "path",
+                            "type": "string",
+                            "description": "Host Id",
+                            "required": true,
+                            "defaultValue": ""
+                        }
                     ]
                 }
             ],
-            "path": "/host/{id}",
-            "description": "getHostById"
+            "path": "/host/{id}"
         }
     ],
+    "apiVersion": "1.0",
+    "swaggerVersion": "1.2",
     "models": {
-        "HostListResult": {
+        "CountResult": {
             "properties": {
-                "response": {
-                    "items": {
-                        "$ref": "HostDTO"
-                    },
-                    "type": "array"
-                },
                 "version": {
                     "type": "string"
+                },
+                "response": {
+                    "type": "integer",
+                    "format": "int32"
                 }
             },
+            "description": "",
             "extends": "",
-            "id": "HostListResult",
-            "description": ""
+            "id": "CountResult"
+        },
+        "HostListResult": {
+            "properties": {
+                "version": {
+                    "type": "string"
+                },
+                "response": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "HostDTO"
+                    }
+                }
+            },
+            "description": "",
+            "extends": "",
+            "id": "HostListResult"
         },
         "HostDTO": {
             "required": [
                 "source",
+                "id",
                 "avgUpdateFrequency",
                 "hostIp",
                 "connectedNetworkDeviceId",
                 "connectedNetworkDeviceIpAddress",
                 "hostMac",
                 "hostType",
-                "lastUpdated",
-                "id"
+                "lastUpdated"
             ],
             "properties": {
+                "vlanId": {
+                    "type": "string",
+                    "description": "Vlan Id of the host"
+                },
                 "connectedInterfaceId": {
                     "type": "string",
                     "description": "Id of the interface to which host gets connected"
                 },
-                "connectedNetworkDeviceId": {
+                "hostName": {
                     "type": "string",
-                    "description": "Id of the network device to which host gets connected"
+                    "description": "Name of the host"
                 },
-                "connectedAPMacAddress": {
+                "avgUpdateFrequency": {
                     "type": "string",
-                    "description": "Mac address of the AP to which wireless host gets connected"
-                },
-                "attributeInfo": {
-                    "$ref": "object"
-                },
-                "hostType": {
-                    "type": "string",
-                    "description": "Type of the host. Available options are: Wired, Wireless"
-                },
-                "pointOfAttachment": {
-                    "type": "string",
-                    "description": "Id of the Host's Point of attachment network device (wlc). Based on mobility"
-                },
-                "connectedInterfaceName": {
-                    "type": "string",
-                    "description": "Name of the interface to which host gets connected"
-                },
-                "connectedNetworkDeviceIpAddress": {
-                    "type": "string",
-                    "description": "Ip address of the network device to which host gets connected"
+                    "description": "Frequency in which host info gets updated"
                 },
                 "hostIp": {
                     "type": "string",
                     "description": "Ip address of the host"
                 },
-                "hostMac": {
+                "pointOfAttachment": {
                     "type": "string",
-                    "description": "Mac address of the host"
+                    "description": "Id of the Host's Point of attachment network device (wlc). Based on mobility"
+                },
+                "pointOfPresence": {
+                    "type": "string",
+                    "description": "Id of the Host's Point of presence network device (wlc). Based on mobility"
+                },
+                "connectedNetworkDeviceId": {
+                    "type": "string",
+                    "description": "Id of the network device to which host gets connected"
                 },
                 "lastUpdated": {
                     "type": "string",
                     "description": "Time when the host info last got updated"
                 },
-                "subType": {
+                "hostType": {
                     "type": "string",
+                    "description": "Type of the host. Available options are: Wired, Wireless"
+                },
+                "attributeInfo": {
+                    "$ref": "object"
+                },
+                "hostMac": {
+                    "type": "string",
+                    "description": "Mac address of the host"
+                },
+                "subType": {
                     "enum": [
                         "UNKNOWN",
                         "IP_PHONE",
                         "TELEPRESENCE",
                         "VIDEO_SURVEILLANCE_IP_CAMERA",
                         "VIDEO_ENDPOINT"
-                    ]
-                },
-                "pointOfPresence": {
-                    "type": "string",
-                    "description": "Id of the Host's Point of presence network device (wlc). Based on mobility"
-                },
-                "vlanId": {
-                    "type": "string",
-                    "description": "Vlan Id of the host"
+                    ],
+                    "type": "string"
                 },
                 "id": {
                     "type": "string",
                     "description": "Id of the host"
                 },
-                "hostName": {
+                "connectedInterfaceName": {
                     "type": "string",
-                    "description": "Name of the host"
+                    "description": "Name of the interface to which host gets connected"
                 },
                 "source": {
                     "type": "string",
@@ -439,47 +423,36 @@
                     "type": "string",
                     "description": "Name of the AP to which wireless host gets connected"
                 },
-                "avgUpdateFrequency": {
+                "connectedAPMacAddress": {
                     "type": "string",
-                    "description": "Frequency in which host info gets updated"
-                }
-            },
-            "extends": "",
-            "id": "HostDTO",
-            "description": ""
-        },
-        "CountResult": {
-            "properties": {
-                "response": {
-                    "format": "int32",
-                    "type": "integer"
+                    "description": "Mac address of the AP to which wireless host gets connected"
                 },
-                "version": {
-                    "type": "string"
+                "connectedNetworkDeviceIpAddress": {
+                    "type": "string",
+                    "description": "Ip address of the network device to which host gets connected"
                 }
             },
+            "description": "",
             "extends": "",
-            "id": "CountResult",
-            "description": ""
+            "id": "HostDTO"
         },
         "HostResult": {
             "properties": {
-                "response": {
-                    "$ref": "HostDTO"
-                },
                 "version": {
                     "type": "string"
+                },
+                "response": {
+                    "$ref": "HostDTO"
                 }
             },
+            "description": "",
             "extends": "",
-            "id": "HostResult",
-            "description": ""
+            "id": "HostResult"
         }
     },
-    "resourcePath": "/host",
     "basePath": "/apic-em-inventory-manager-service",
-    "swaggerVersion": "1.2",
     "produces": [
         "application/json"
-    ]
+    ],
+    "resourcePath": "/host"
 }

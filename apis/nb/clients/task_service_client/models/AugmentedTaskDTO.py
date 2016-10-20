@@ -18,22 +18,22 @@ class AugmentedTaskDTO(object):
             'id': 'str',
             
             
+            'progress': 'str',
+            
+            
+            'version': 'int',
+            
+            
             'startTime': 'date-time',
             
             
             'endTime': 'date-time',
             
             
-            'progress': 'str',
-            
-            
-            'errorCode': 'str',
-            
-            
             'data': 'str',
             
             
-            'version': 'int',
+            'errorCode': 'str',
             
             
             'serviceType': 'str',
@@ -42,22 +42,22 @@ class AugmentedTaskDTO(object):
             'username': 'str',
             
             
+            'isError': 'bool',
+            
+            
+            'lastUpdate': 'date-time',
+            
+            
+            'operationIdList': 'list[str]',
+            
+            
             'parentId': 'str',
             
             
             'rootId': 'str',
             
             
-            'operationIdList': 'list[str]',
-            
-            
-            'lastUpdate': 'date-time',
-            
-            
-            'failureReason': 'str',
-            
-            
-            'isError': 'bool'
+            'failureReason': 'str'
             
         }
 
@@ -65,33 +65,33 @@ class AugmentedTaskDTO(object):
             
             'id': 'id',
             
+            'progress': 'progress',
+            
+            'version': 'version',
+            
             'startTime': 'startTime',
             
             'endTime': 'endTime',
             
-            'progress': 'progress',
-            
-            'errorCode': 'errorCode',
-            
             'data': 'data',
             
-            'version': 'version',
+            'errorCode': 'errorCode',
             
             'serviceType': 'serviceType',
             
             'username': 'username',
             
+            'isError': 'isError',
+            
+            'lastUpdate': 'lastUpdate',
+            
+            'operationIdList': 'operationIdList',
+            
             'parentId': 'parentId',
             
             'rootId': 'rootId',
             
-            'operationIdList': 'operationIdList',
-            
-            'lastUpdate': 'lastUpdate',
-            
-            'failureReason': 'failureReason',
-            
-            'isError': 'isError'
+            'failureReason': 'failureReason'
             
         }       
 
@@ -99,6 +99,14 @@ class AugmentedTaskDTO(object):
         #id
         
         self.id = None # str
+        
+        #progress
+        
+        self.progress = None # str
+        
+        #version
+        
+        self.version = None # int
         
         #startTime
         
@@ -108,21 +116,13 @@ class AugmentedTaskDTO(object):
         
         self.endTime = None # date-time
         
-        #progress
-        
-        self.progress = None # str
-        
-        #errorCode
-        
-        self.errorCode = None # str
-        
         #data
         
         self.data = None # str
         
-        #version
+        #errorCode
         
-        self.version = None # int
+        self.errorCode = None # str
         
         #serviceType
         
@@ -132,6 +132,17 @@ class AugmentedTaskDTO(object):
         
         self.username = None # str
         
+        #isError
+        
+        self.isError = None # bool
+        
+        #lastUpdate
+        
+        self.lastUpdate = None # date-time
+        
+        
+        self.operationIdList = None # list[str]
+        
         #parentId
         
         self.parentId = None # str
@@ -140,18 +151,7 @@ class AugmentedTaskDTO(object):
         
         self.rootId = None # str
         
-        
-        self.operationIdList = None # list[str]
-        
-        #lastUpdate
-        
-        self.lastUpdate = None # date-time
-        
         #failureReason
         
         self.failureReason = None # str
-        
-        #isError
-        
-        self.isError = None # bool
         

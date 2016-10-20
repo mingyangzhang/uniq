@@ -15,6 +15,9 @@ class VlanDTO(object):
         """
         self.swaggerTypes = {
             
+            'numberOfIPs': 'int',
+            
+            
             'mask': 'int',
             
             
@@ -27,20 +30,19 @@ class VlanDTO(object):
             'vlanNumber': 'int',
             
             
-            'interfaceName': 'str',
-            
-            
-            'numberOfIPs': 'int',
+            'networkAddress': 'str',
             
             
             'ipAddress': 'str',
             
             
-            'networkAddress': 'str'
+            'interfaceName': 'str'
             
         }
 
         self.attributeMap = {
+            
+            'numberOfIPs': 'numberOfIPs',
             
             'mask': 'mask',
             
@@ -50,16 +52,17 @@ class VlanDTO(object):
             
             'vlanNumber': 'vlanNumber',
             
-            'interfaceName': 'interfaceName',
-            
-            'numberOfIPs': 'numberOfIPs',
+            'networkAddress': 'networkAddress',
             
             'ipAddress': 'ipAddress',
             
-            'networkAddress': 'networkAddress'
+            'interfaceName': 'interfaceName'
             
         }       
 
+        
+        
+        self.numberOfIPs = None # int
         
         
         self.mask = None # int
@@ -74,14 +77,11 @@ class VlanDTO(object):
         self.vlanNumber = None # int
         
         
-        self.interfaceName = None # str
-        
-        
-        self.numberOfIPs = None # int
+        self.networkAddress = None # str
         
         
         self.ipAddress = None # str
         
         
-        self.networkAddress = None # str
+        self.interfaceName = None # str
         

@@ -21,7 +21,7 @@ class HostDTO(object):
             'source': 'str',
             
             
-            'vlanId': 'str',
+            'id': 'str',
             
             
             'avgUpdateFrequency': 'str',
@@ -60,13 +60,13 @@ class HostDTO(object):
             'pointOfPresence': 'str',
             
             
+            'vlanId': 'str',
+            
+            
             'subType': 'str',
             
             
             'lastUpdated': 'str',
-            
-            
-            'id': 'str',
             
             
             'attributeInfo': 'dict'
@@ -79,7 +79,7 @@ class HostDTO(object):
             
             'source': 'source',
             
-            'vlanId': 'vlanId',
+            'id': 'id',
             
             'avgUpdateFrequency': 'avgUpdateFrequency',
             
@@ -105,11 +105,11 @@ class HostDTO(object):
             
             'pointOfPresence': 'pointOfPresence',
             
+            'vlanId': 'vlanId',
+            
             'subType': 'subType',
             
             'lastUpdated': 'lastUpdated',
-            
-            'id': 'id',
             
             'attributeInfo': 'attributeInfo'
             
@@ -124,9 +124,9 @@ class HostDTO(object):
         
         self.source = None # str
         
-        #Vlan Id of the host
+        #Id of the host
         
-        self.vlanId = None # str
+        self.id = None # str
         
         #Frequency in which host info gets updated
         
@@ -176,6 +176,10 @@ class HostDTO(object):
         
         self.pointOfPresence = None # str
         
+        #Vlan Id of the host
+        
+        self.vlanId = None # str
+        
         
         self.subType = None # str
         
@@ -183,11 +187,6 @@ class HostDTO(object):
         
         self.lastUpdated = None # str
         
-        #Id of the host
-        
-        self.id = None # str
-        
         
         self.attributeInfo = None # dict
         
-

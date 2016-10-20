@@ -15,12 +15,6 @@ class SiteIPAddressPoolDTO(object):
         """
         self.swaggerTypes = {
             
-            'id': 'str',
-            
-            
-            'prefix': 'str',
-            
-            
             'ipAddress': 'str',
             
             
@@ -30,30 +24,29 @@ class SiteIPAddressPoolDTO(object):
             'vlanId': 'str',
             
             
-            'siteName': 'str',
-            
-            
             'ipAddressType': 'str',
-            
-            
-            'isBrownFieldSite': 'bool',
-            
-            
-            'ipv4Subnet': 'str',
             
             
             'deviceSerialNumber': 'list[str]',
             
             
-            'layer3Site': 'bool'
+            'siteName': 'str',
+            
+            
+            'isBrownFieldSite': 'bool',
+            
+            
+            'layer3Site': 'bool',
+            
+            
+            'id': 'str',
+            
+            
+            'prefix': 'str'
             
         }
 
         self.attributeMap = {
-            
-            'id': 'id',
-            
-            'prefix': 'prefix',
             
             'ipAddress': 'ipAddress',
             
@@ -61,26 +54,22 @@ class SiteIPAddressPoolDTO(object):
             
             'vlanId': 'vlanId',
             
-            'siteName': 'siteName',
-            
             'ipAddressType': 'ipAddressType',
-            
-            'isBrownFieldSite': 'isBrownFieldSite',
-            
-            'ipv4Subnet': 'ipv4Subnet',
             
             'deviceSerialNumber': 'deviceSerialNumber',
             
-            'layer3Site': 'layer3Site'
+            'siteName': 'siteName',
+            
+            'isBrownFieldSite': 'isBrownFieldSite',
+            
+            'layer3Site': 'layer3Site',
+            
+            'id': 'id',
+            
+            'prefix': 'prefix'
             
         }       
 
-        
-        
-        self.id = None # str
-        
-        
-        self.prefix = None # str
         
         
         self.ipAddress = None # str
@@ -92,20 +81,23 @@ class SiteIPAddressPoolDTO(object):
         self.vlanId = None # str
         
         
-        self.siteName = None # str
-        
-        
         self.ipAddressType = None # str
-        
-        
-        self.isBrownFieldSite = None # bool
-        
-        
-        self.ipv4Subnet = None # str
         
         
         self.deviceSerialNumber = None # list[str]
         
         
+        self.siteName = None # str
+        
+        
+        self.isBrownFieldSite = None # bool
+        
+        
         self.layer3Site = None # bool
+        
+        
+        self.id = None # str
+        
+        
+        self.prefix = None # str
         

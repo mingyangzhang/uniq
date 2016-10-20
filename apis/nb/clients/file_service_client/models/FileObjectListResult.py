@@ -15,25 +15,25 @@ class FileObjectListResult(object):
         """
         self.swaggerTypes = {
             
-            'response': 'list[FileObject]',
+            'version': 'str',
             
             
-            'version': 'str'
+            'response': 'list[FileObject]'
             
         }
 
         self.attributeMap = {
             
-            'response': 'response',
+            'version': 'version',
             
-            'version': 'version'
+            'response': 'response'
             
         }       
 
         
         
-        self.response = None # list[FileObject]
-        
-        
         self.version = None # str
+        
+        
+        self.response = None # list[FileObject]
         

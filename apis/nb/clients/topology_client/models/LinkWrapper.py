@@ -15,25 +15,22 @@ class LinkWrapper(object):
         """
         self.swaggerTypes = {
             
-            'source': 'str',
-            
-            
-            'id': 'str',
+            'endPortID': 'str',
             
             
             'startPortID': 'str',
             
             
-            'endPortID': 'str',
-            
-            
             'greyOut': 'bool',
             
             
-            'linkStatus': 'str',
+            'source': 'str',
             
             
-            'tag': 'str',
+            'target': 'str',
+            
+            
+            'id': 'str',
             
             
             'endPortName': 'str',
@@ -48,37 +45,38 @@ class LinkWrapper(object):
             'startPortSpeed': 'str',
             
             
+            'linkStatus': 'str',
+            
+            
+            'tag': 'str',
+            
+            
             'startPortIpv4Mask': 'str',
-            
-            
-            'endPortIpv4Address': 'str',
-            
-            
-            'endPortIpv4Mask': 'str',
             
             
             'startPortIpv4Address': 'str',
             
             
-            'target': 'str'
+            'endPortIpv4Mask': 'str',
+            
+            
+            'endPortIpv4Address': 'str'
             
         }
 
         self.attributeMap = {
             
-            'source': 'source',
-            
-            'id': 'id',
+            'endPortID': 'endPortID',
             
             'startPortID': 'startPortID',
             
-            'endPortID': 'endPortID',
-            
             'greyOut': 'greyOut',
             
-            'linkStatus': 'linkStatus',
+            'source': 'source',
             
-            'tag': 'tag',
+            'target': 'target',
+            
+            'id': 'id',
             
             'endPortName': 'endPortName',
             
@@ -88,46 +86,44 @@ class LinkWrapper(object):
             
             'startPortSpeed': 'startPortSpeed',
             
+            'linkStatus': 'linkStatus',
+            
+            'tag': 'tag',
+            
             'startPortIpv4Mask': 'startPortIpv4Mask',
-            
-            'endPortIpv4Address': 'endPortIpv4Address',
-            
-            'endPortIpv4Mask': 'endPortIpv4Mask',
             
             'startPortIpv4Address': 'startPortIpv4Address',
             
-            'target': 'target'
+            'endPortIpv4Mask': 'endPortIpv4Mask',
+            
+            'endPortIpv4Address': 'endPortIpv4Address'
             
         }       
 
-        
-        #Device ID correspondng to the source device 
-        
-        self.source = None # str
-        
-        #Unified identifier for device
-        
-        self.id = None # str
-        
-        #Device port ID corresponding to start devices
-        
-        self.startPortID = None # str
         
         #Device port ID corresponding to end devices
         
         self.endPortID = None # str
         
+        #Device port ID corresponding to start devices
+        
+        self.startPortID = None # str
+        
         #Device greyout
         
         self.greyOut = None # bool
         
-        #Indicates whether link is working
+        #Device ID correspondng to the source device 
         
-        self.linkStatus = None # str
+        self.source = None # str
         
-        #Tag for the devices
+        #Device ID corresponding to the target device
         
-        self.tag = None # str
+        self.target = None # str
+        
+        #Unified identifier for device
+        
+        self.id = None # str
         
         #Interface port name corresponding to end devices
         
@@ -145,23 +141,27 @@ class LinkWrapper(object):
         
         self.startPortSpeed = None # str
         
+        #Indicates whether link is working
+        
+        self.linkStatus = None # str
+        
+        #Tag for the devices
+        
+        self.tag = None # str
+        
         #Interface port IPv4 mask corresponding to start devices
         
         self.startPortIpv4Mask = None # str
-        
-        #Interface port IPv4 address corresponding to end devices
-        
-        self.endPortIpv4Address = None # str
-        
-        #Interface port IPv4 mask corresponding to end devices
-        
-        self.endPortIpv4Mask = None # str
         
         #Interface port IPv4 address corresponding to start devices
         
         self.startPortIpv4Address = None # str
         
-        #Device ID corresponding to the target device
+        #Interface port IPv4 mask corresponding to end devices
         
-        self.target = None # str
+        self.endPortIpv4Mask = None # str
+        
+        #Interface port IPv4 address corresponding to end devices
+        
+        self.endPortIpv4Address = None # str
         

@@ -23,14 +23,11 @@ class InterfaceApi(object):
 
         Args:
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: DeviceIfListResult
         """
 
-        allParams = ['scope']
+        allParams = []
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -54,9 +51,6 @@ class InterfaceApi(object):
 
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         
@@ -85,14 +79,11 @@ class InterfaceApi(object):
 
         Args:
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: CountResult
         """
 
-        allParams = ['scope']
+        allParams = []
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -116,9 +107,6 @@ class InterfaceApi(object):
 
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         
@@ -150,14 +138,11 @@ class InterfaceApi(object):
             ipAddress, str: IP address of the interface (required)
             
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: DeviceIfListResult
         """
 
-        allParams = ['ipAddress', 'scope']
+        allParams = ['ipAddress']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -181,9 +166,6 @@ class InterfaceApi(object):
 
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         
@@ -218,14 +200,11 @@ class InterfaceApi(object):
 
         Args:
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: DeviceIfListResult
         """
 
-        allParams = ['scope']
+        allParams = []
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -249,9 +228,6 @@ class InterfaceApi(object):
 
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         
@@ -283,14 +259,11 @@ class InterfaceApi(object):
             deviceId, str: Device ID (required)
             
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: DeviceIfListResult
         """
 
-        allParams = ['deviceId', 'scope']
+        allParams = ['deviceId']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -314,9 +287,6 @@ class InterfaceApi(object):
 
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         
@@ -354,14 +324,11 @@ class InterfaceApi(object):
             deviceId, str: Device ID (required)
             
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: CountResult
         """
 
-        allParams = ['deviceId', 'scope']
+        allParams = ['deviceId']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -385,9 +352,6 @@ class InterfaceApi(object):
 
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         
@@ -428,14 +392,11 @@ class InterfaceApi(object):
             name, str: Interface name (required)
             
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: DeviceIfResult
         """
 
-        allParams = ['deviceId', 'name', 'scope']
+        allParams = ['deviceId', 'name']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -462,9 +423,6 @@ class InterfaceApi(object):
             queryParams['name'] = self.apiClient.toPathValue(params['name'])
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         
@@ -508,14 +466,11 @@ class InterfaceApi(object):
             recordsToReturn, int: Number of records to return (required)
             
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: DeviceIfListResult
         """
 
-        allParams = ['deviceId', 'startIndex', 'recordsToReturn', 'scope']
+        allParams = ['deviceId', 'startIndex', 'recordsToReturn']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -539,9 +494,6 @@ class InterfaceApi(object):
 
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         
@@ -588,14 +540,11 @@ class InterfaceApi(object):
 
         Args:
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: DeviceIfListResult
         """
 
-        allParams = ['scope']
+        allParams = []
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -619,9 +568,6 @@ class InterfaceApi(object):
 
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         
@@ -653,14 +599,11 @@ class InterfaceApi(object):
             id, str: Interface ID (required)
             
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: DeviceIfResult
         """
 
-        allParams = ['id', 'scope']
+        allParams = ['id']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -684,9 +627,6 @@ class InterfaceApi(object):
 
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         

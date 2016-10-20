@@ -18,10 +18,10 @@ class IPPoolAllocationDTO(object):
             'status': 'str',
             
             
-            'siteId': 'str',
-            
-            
             'deviceId': 'str',
+            
+            
+            'siteId': 'str',
             
             
             'ipSubnet': 'str',
@@ -41,9 +41,9 @@ class IPPoolAllocationDTO(object):
             
             'status': 'status',
             
-            'siteId': 'siteId',
-            
             'deviceId': 'deviceId',
+            
+            'siteId': 'siteId',
             
             'ipSubnet': 'ipSubnet',
             
@@ -60,10 +60,10 @@ class IPPoolAllocationDTO(object):
         self.status = None # str
         
         
-        self.siteId = None # str
-        
-        
         self.deviceId = None # str
+        
+        
+        self.siteId = None # str
         
         
         self.ipSubnet = None # str

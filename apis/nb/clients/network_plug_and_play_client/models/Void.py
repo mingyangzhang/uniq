@@ -7,6 +7,7 @@
 class Void(object):
 
 
+
     def __init__(self):
         """
         Attributes:
@@ -14,11 +15,11 @@ class Void(object):
           attributeMap (dict): The key is attribute name and the value is json key in definition.
         """
         self.swaggerTypes = {
-            
+
         }
 
         self.attributeMap = {
-            
-        }       
 
-        
+        }
+
+

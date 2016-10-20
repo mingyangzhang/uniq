@@ -23,14 +23,12 @@ class NetworkdeviceApi(object):
 
         Args:
 
-            scope, str: Authorization Scope for RBAC (required)
-
 
         #changed this manually from 'object' to 'NetworkDeviceListResult'
         Returns: NetworkDeviceListResult
         """
 
-        allParams = ['scope']
+        allParams = []
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -54,9 +52,6 @@ class NetworkdeviceApi(object):
 
 
 
-
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
 
 
 
@@ -89,14 +84,11 @@ class NetworkdeviceApi(object):
             networkDeviceBriefNIO, NetworkDeviceBriefNIO: networkDeviceBriefNIO (required)
 
 
-            scope, str: Authorization Scope for RBAC (required)
-
-
 
         Returns: TaskIdResult
         """
 
-        allParams = ['networkDeviceBriefNIO', 'scope']
+        allParams = ['networkDeviceBriefNIO']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -120,9 +112,6 @@ class NetworkdeviceApi(object):
 
 
 
-
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
 
 
 
@@ -154,14 +143,11 @@ class NetworkdeviceApi(object):
 
         Args:
 
-            scope, str: Authorization Scope for RBAC (required)
-
-
 
         Returns: RawCliInfoNIOListResult
         """
 
-        allParams = ['scope']
+        allParams = []
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -185,9 +171,6 @@ class NetworkdeviceApi(object):
 
 
 
-
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
 
 
 
@@ -216,14 +199,11 @@ class NetworkdeviceApi(object):
 
         Args:
 
-            scope, str: Authorization Scope for RBAC (required)
-
-
 
         Returns: CountResult
         """
 
-        allParams = ['scope']
+        allParams = []
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -247,9 +227,6 @@ class NetworkdeviceApi(object):
 
 
 
-
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
 
 
 
@@ -278,14 +255,11 @@ class NetworkdeviceApi(object):
 
         Args:
 
-            scope, str: Authorization Scope for RBAC (required)
-
-
 
         Returns: CountResult
         """
 
-        allParams = ['scope']
+        allParams = []
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -309,9 +283,6 @@ class NetworkdeviceApi(object):
 
 
 
-
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
 
 
 
@@ -343,14 +314,11 @@ class NetworkdeviceApi(object):
             ipAddress, str: Device IP address (required)
 
 
-            scope, str: Authorization Scope for RBAC (required)
-
-
 
         Returns: NetworkDeviceResult
         """
 
-        allParams = ['ipAddress', 'scope']
+        allParams = ['ipAddress']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -374,9 +342,6 @@ class NetworkdeviceApi(object):
 
 
 
-
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
 
 
 
@@ -411,14 +376,11 @@ class NetworkdeviceApi(object):
 
         Args:
 
-            scope, str: Authorization Scope for RBAC (required)
-
-
 
         Returns: NetworkDeviceListResult
         """
 
-        allParams = ['scope']
+        allParams = []
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -442,9 +404,6 @@ class NetworkdeviceApi(object):
 
 
 
-
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
 
 
 
@@ -476,14 +435,11 @@ class NetworkdeviceApi(object):
             networkDeviceNIO, NetworkDeviceNIO: networkDeviceNIO (required)
 
 
-            scope, str: Authorization Scope for RBAC (required)
-
-
 
         Returns: TaskIdResult
         """
 
-        allParams = ['networkDeviceNIO', 'scope']
+        allParams = ['networkDeviceNIO']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -507,9 +463,6 @@ class NetworkdeviceApi(object):
 
 
 
-
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
 
 
 
@@ -544,14 +497,11 @@ class NetworkdeviceApi(object):
             locationId, str: Location ID (required)
 
 
-            scope, str: Authorization Scope for RBAC (required)
-
-
 
         Returns: NetworkDeviceListResult
         """
 
-        allParams = ['locationId', 'scope']
+        allParams = ['locationId']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -575,9 +525,6 @@ class NetworkdeviceApi(object):
 
 
 
-
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
 
 
 
@@ -621,14 +568,11 @@ class NetworkdeviceApi(object):
             recordsToReturn, int: Number of records to return (required)
 
 
-            scope, str: Authorization Scope for RBAC (required)
-
-
 
         Returns: NetworkDeviceListResult
         """
 
-        allParams = ['locationId', 'startIndex', 'recordsToReturn', 'scope']
+        allParams = ['locationId', 'startIndex', 'recordsToReturn']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -652,9 +596,6 @@ class NetworkdeviceApi(object):
 
 
 
-
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
 
 
 
@@ -707,14 +648,11 @@ class NetworkdeviceApi(object):
             recordsToReturn, int: recordsToReturn (required)
 
 
-            scope, str: Authorization Scope for RBAC (required)
-
-
 
         Returns: NetworkDeviceListResult
         """
 
-        allParams = ['startIndex', 'recordsToReturn', 'scope']
+        allParams = ['startIndex', 'recordsToReturn']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -738,9 +676,6 @@ class NetworkdeviceApi(object):
 
 
 
-
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
 
 
 
@@ -781,14 +716,11 @@ class NetworkdeviceApi(object):
 
         Args:
 
-            scope, str: Authorization Scope for RBAC (required)
-
-
 
         Returns: NetworkManagementInfoResult
         """
 
-        allParams = ['scope']
+        allParams = []
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -812,9 +744,6 @@ class NetworkdeviceApi(object):
 
 
 
-
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
 
 
 
@@ -843,14 +772,11 @@ class NetworkdeviceApi(object):
 
         Args:
 
-            scope, str: Authorization Scope for RBAC (required)
-
-
 
         Returns: CountResult
         """
 
-        allParams = ['scope']
+        allParams = []
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -875,9 +801,6 @@ class NetworkdeviceApi(object):
 
 
 
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
-
 
 
 
@@ -899,6 +822,7 @@ class NetworkdeviceApi(object):
 
 
 
+
     def getModuleByNetworkDeviceId(self, **kwargs):
         """Gives all the modules associated with given device id
 
@@ -916,15 +840,6 @@ class NetworkdeviceApi(object):
             nameList, list[str]: nameList (required)
 
 
-            equipmentTypeList, list[str]: equipmentTypeList (required)
-
-
-            serviceStateList, list[str]: serviceStateList (required)
-
-
-            isPhysicallyPresentList, list[str]: isPhysicallyPresentList (required)
-
-
             vendorEquipmentTypeList, list[str]: vendorEquipmentTypeList (required)
 
 
@@ -937,14 +852,11 @@ class NetworkdeviceApi(object):
             filterOperation, str: filterOperation (required)
 
 
-            scope, str: Authorization Scope for RBAC (required)
-
-
 
         Returns: ModuleListResult
         """
 
-        allParams = ['deviceId', 'limit', 'offset', 'nameList', 'equipmentTypeList', 'serviceStateList', 'isPhysicallyPresentList', 'vendorEquipmentTypeList', 'partNumberList', 'operationalStateCodeList', 'filterOperation', 'scope']
+        allParams = ['deviceId', 'limit', 'offset', 'nameList', 'vendorEquipmentTypeList', 'partNumberList', 'operationalStateCodeList', 'filterOperation']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -979,15 +891,6 @@ class NetworkdeviceApi(object):
         if ('nameList' in params):
             queryParams['nameList'] = self.apiClient.toPathValue(params['nameList'])
 
-        if ('equipmentTypeList' in params):
-            queryParams['equipmentTypeList'] = self.apiClient.toPathValue(params['equipmentTypeList'])
-
-        if ('serviceStateList' in params):
-            queryParams['serviceStateList'] = self.apiClient.toPathValue(params['serviceStateList'])
-
-        if ('isPhysicallyPresentList' in params):
-            queryParams['isPhysicallyPresentList'] = self.apiClient.toPathValue(params['isPhysicallyPresentList'])
-
         if ('vendorEquipmentTypeList' in params):
             queryParams['vendorEquipmentTypeList'] = self.apiClient.toPathValue(params['vendorEquipmentTypeList'])
 
@@ -1001,9 +904,6 @@ class NetworkdeviceApi(object):
             queryParams['filterOperation'] = self.apiClient.toPathValue(params['filterOperation'])
 
 
-
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
 
 
 
@@ -1038,15 +938,6 @@ class NetworkdeviceApi(object):
             nameList, list[str]: nameList (required)
 
 
-            equipmentTypeList, list[str]: equipmentTypeList (required)
-
-
-            serviceStateList, list[str]: serviceStateList (required)
-
-
-            isPhysicallyPresentList, list[str]: isPhysicallyPresentList (required)
-
-
             vendorEquipmentTypeList, list[str]: vendorEquipmentTypeList (required)
 
 
@@ -1059,14 +950,11 @@ class NetworkdeviceApi(object):
             filterOperation, str: filterOperation (required)
 
 
-            scope, str: Authorization Scope for RBAC (required)
-
-
 
         Returns: CountResult
         """
 
-        allParams = ['deviceId', 'nameList', 'equipmentTypeList', 'serviceStateList', 'isPhysicallyPresentList', 'vendorEquipmentTypeList', 'partNumberList', 'operationalStateCodeList', 'filterOperation', 'scope']
+        allParams = ['deviceId', 'nameList', 'vendorEquipmentTypeList', 'partNumberList', 'operationalStateCodeList', 'filterOperation']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -1095,15 +983,6 @@ class NetworkdeviceApi(object):
         if ('nameList' in params):
             queryParams['nameList'] = self.apiClient.toPathValue(params['nameList'])
 
-        if ('equipmentTypeList' in params):
-            queryParams['equipmentTypeList'] = self.apiClient.toPathValue(params['equipmentTypeList'])
-
-        if ('serviceStateList' in params):
-            queryParams['serviceStateList'] = self.apiClient.toPathValue(params['serviceStateList'])
-
-        if ('isPhysicallyPresentList' in params):
-            queryParams['isPhysicallyPresentList'] = self.apiClient.toPathValue(params['isPhysicallyPresentList'])
-
         if ('vendorEquipmentTypeList' in params):
             queryParams['vendorEquipmentTypeList'] = self.apiClient.toPathValue(params['vendorEquipmentTypeList'])
 
@@ -1117,9 +996,6 @@ class NetworkdeviceApi(object):
             queryParams['filterOperation'] = self.apiClient.toPathValue(params['filterOperation'])
 
 
-
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
 
 
 
@@ -1151,14 +1027,11 @@ class NetworkdeviceApi(object):
             id, str: id (required)
 
 
-            scope, str: Authorization Scope for RBAC (required)
-
-
 
         Returns: ModuleResult
         """
 
-        allParams = ['id', 'scope']
+        allParams = ['id']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -1182,9 +1055,6 @@ class NetworkdeviceApi(object):
 
 
 
-
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
 
 
 
@@ -1222,14 +1092,11 @@ class NetworkdeviceApi(object):
             serialNumber, str: Device serial number (required)
 
 
-            scope, str: Authorization Scope for RBAC (required)
-
-
 
         Returns: NetworkDeviceResult
         """
 
-        allParams = ['serialNumber', 'scope']
+        allParams = ['serialNumber']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -1253,9 +1120,6 @@ class NetworkdeviceApi(object):
 
 
 
-
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
 
 
 
@@ -1293,14 +1157,11 @@ class NetworkdeviceApi(object):
             id, str: Device ID (required)
 
 
-            scope, str: Authorization Scope for RBAC (required)
-
-
 
         Returns: NetworkDeviceResult
         """
 
-        allParams = ['id', 'scope']
+        allParams = ['id']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -1324,9 +1185,6 @@ class NetworkdeviceApi(object):
 
 
 
-
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
 
 
 
@@ -1364,14 +1222,11 @@ class NetworkdeviceApi(object):
             id, str: Device ID (required)
 
 
-            scope, str: Authorization Scope for RBAC (required)
-
-
 
         Returns: TaskIdResult
         """
 
-        allParams = ['id', 'scope']
+        allParams = ['id']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -1395,9 +1250,6 @@ class NetworkdeviceApi(object):
 
 
 
-
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
 
 
 
@@ -1435,14 +1287,11 @@ class NetworkdeviceApi(object):
             id, str: Device ID (required)
 
 
-            scope, str: Authorization Scope for RBAC (required)
-
-
 
         Returns: NetworkDeviceBriefNIOResult
         """
 
-        allParams = ['id', 'scope']
+        allParams = ['id']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -1466,9 +1315,6 @@ class NetworkdeviceApi(object):
 
 
 
-
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
 
 
 
@@ -1506,14 +1352,11 @@ class NetworkdeviceApi(object):
             id, str: Device ID (required)
 
 
-            scope, str: Authorization Scope for RBAC (required)
-
-
 
         Returns: NetworkDeviceResult
         """
 
-        allParams = ['id', 'scope']
+        allParams = ['id']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -1537,9 +1380,6 @@ class NetworkdeviceApi(object):
 
 
 
-
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
 
 
 
@@ -1577,14 +1417,11 @@ class NetworkdeviceApi(object):
             id, str: Device ID (required)
 
 
-            scope, str: Authorization Scope for RBAC (required)
-
-
 
         Returns: TaskIdResult
         """
 
-        allParams = ['id', 'scope']
+        allParams = ['id']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -1608,9 +1445,6 @@ class NetworkdeviceApi(object):
 
 
 
-
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
 
 
 
@@ -1641,21 +1475,18 @@ class NetworkdeviceApi(object):
 
     #changed this from getRunningConfig to getRunningConfigById manually
     def getRunningConfigById(self, **kwargs):
-        """Retrieves device config by device id
+        """Retrieves device config
 
         Args:
 
             networkDeviceId, str: networkDeviceId (required)
 
 
-            scope, str: Authorization Scope for RBAC (required)
-
-
 
         Returns: SuccessResult
         """
 
-        allParams = ['networkDeviceId', 'scope']
+        allParams = ['networkDeviceId']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -1679,9 +1510,6 @@ class NetworkdeviceApi(object):
 
 
 
-
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
 
 
 
@@ -1722,14 +1550,11 @@ class NetworkdeviceApi(object):
             recordsToReturn, int: Number of records to return (required)
 
 
-            scope, str: Authorization Scope for RBAC (required)
-
-
 
         Returns: NetworkDeviceListResult
         """
 
-        allParams = ['startIndex', 'recordsToReturn', 'scope']
+        allParams = ['startIndex', 'recordsToReturn']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -1753,9 +1578,6 @@ class NetworkdeviceApi(object):
 
 
 
-
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
 
 
 

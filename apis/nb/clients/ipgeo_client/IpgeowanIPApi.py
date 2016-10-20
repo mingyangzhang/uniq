@@ -36,7 +36,7 @@ class IpgeowanIPApi(object):
         allParams = ['wanIP', 'scope']
 
         params = locals()
-        for (key, val) in params['kwargs'].items():
+        for (key, val) in list(params['kwargs'].items()):
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method getCityInfo" % key)
             params[key] = val

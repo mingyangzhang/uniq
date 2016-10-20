@@ -1,66 +1,66 @@
 {
-    "resourcePath": "/relevance",
     "produces": [
         "application/json"
     ],
-    "basePath": "/",
-    "models": {
-        "RelevanceListResult": {
-            "properties": {
-                "response": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "version": {
-                    "type": "string"
-                }
-            },
-            "description": "",
-            "id": "RelevanceListResult",
-            "extends": ""
-        }
-    },
-    "swaggerVersion": "1.2",
+    "resourcePath": "/relevance",
+    "basePath": "/policy-manager-service",
     "apiVersion": "1.0",
     "apis": [
         {
             "operations": [
                 {
-                    "notes": "Get all Relevance(s)",
-                    "nickname": "getAllRelevanceLevels",
                     "produces": [
                         "application/json"
                     ],
-                    "deprecated": "false",
                     "method": "GET",
-                    "parameters": [],
+                    "deprecated": "false",
                     "responseMessages": [
                         {
-                            "responseModel": "RelevanceListResult",
+                            "code": 200,
                             "message": "This Request is OK",
-                            "code": 200
+                            "responseModel": "RelevanceListResult"
                         },
                         {
-                            "message": "This user is Forbidden Access to this Resource",
-                            "code": 403
+                            "code": 403,
+                            "message": "This user is Forbidden Access to this Resource"
                         },
                         {
-                            "message": "Not Authorized Yet, Credentials to be supplied",
-                            "code": 401
+                            "code": 401,
+                            "message": "Not Authorized Yet, Credentials to be supplied"
                         },
                         {
-                            "message": "No Resource Found",
-                            "code": 404
+                            "code": 404,
+                            "message": "No Resource Found"
                         }
                     ],
                     "type": "RelevanceListResult",
-                    "summary": "Lists all relevances"
+                    "summary": "Lists all relevances",
+                    "nickname": "getAllRelevanceLevels",
+                    "parameters": [],
+                    "notes": "Get all Relevance(s)"
                 }
             ],
             "description": "getAllRelevanceLevels",
             "path": "/relevance"
         }
-    ]
+    ],
+    "models": {
+        "RelevanceListResult": {
+            "properties": {
+                "response": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "extends": "",
+            "id": "RelevanceListResult",
+            "description": ""
+        }
+    },
+    "swaggerVersion": "1.2"
 }

@@ -15,25 +15,25 @@ class CertifiedImageDTO(object):
         """
         self.swaggerTypes = {
             
-            'imageId': 'str',
+            'platform': 'str',
             
             
-            'platform': 'str'
+            'imageId': 'str'
             
         }
 
         self.attributeMap = {
             
-            'imageId': 'imageId',
+            'platform': 'platform',
             
-            'platform': 'platform'
+            'imageId': 'imageId'
             
         }       
 
         
         
-        self.imageId = None # str
-        
-        
         self.platform = None # str
+        
+        
+        self.imageId = None # str
         

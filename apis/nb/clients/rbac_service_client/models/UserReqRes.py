@@ -21,10 +21,10 @@ class UserReqRes(object):
             'password': 'str',
             
             
-            'username': 'str',
-            
-            
             'authorization': 'list[ScopeRole]',
+            
+            
+            'username': 'str',
             
             
             'oldPassword': 'str'
@@ -37,9 +37,9 @@ class UserReqRes(object):
             
             'password': 'password',
             
-            'username': 'username',
-            
             'authorization': 'authorization',
+            
+            'username': 'username',
             
             'oldPassword': 'oldPassword'
             
@@ -53,13 +53,13 @@ class UserReqRes(object):
         
         self.password = None # str
         
-        #Username
-        
-        self.username = None # str
-        
         #User Authorization Scope
         
         self.authorization = None # list[ScopeRole]
+        
+        #Username
+        
+        self.username = None # str
         
         
         self.oldPassword = None # str

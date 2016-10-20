@@ -15,25 +15,25 @@ class AclPortInfo(object):
         """
         self.swaggerTypes = {
             
-            'sourcePorts': 'list[str]',
+            'destPorts': 'list[str]',
             
             
-            'destPorts': 'list[str]'
+            'sourcePorts': 'list[str]'
             
         }
 
         self.attributeMap = {
             
-            'sourcePorts': 'sourcePorts',
+            'destPorts': 'destPorts',
             
-            'destPorts': 'destPorts'
+            'sourcePorts': 'sourcePorts'
             
         }       
 
         
         
-        self.sourcePorts = None # list[str]
-        
-        
         self.destPorts = None # list[str]
+        
+        
+        self.sourcePorts = None # list[str]
         

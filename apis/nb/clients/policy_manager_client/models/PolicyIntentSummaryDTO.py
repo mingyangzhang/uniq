@@ -18,28 +18,31 @@ class PolicyIntentSummaryDTO(object):
             'operations': 'list[str]',
             
             
+            'numberOfDevices': 'int',
+            
+            
             'applicationsStale': 'bool',
+            
+            
+            'allPoliciesDeleted': 'bool',
+            
+            
+            'serviceProviderProfileStale': 'bool',
             
             
             'policyScope': 'str',
             
             
-            'scopeWirelessSegment': 'str',
-            
-            
             'lastUpdateTime': 'int',
-            
-            
-            'latestPolicyVersion': 'int',
             
             
             'numberOfAssignedApplications': 'int',
             
             
-            'numberOfDevices': 'int',
+            'scopeWirelessSegment': 'str',
             
             
-            'allPoliciesDeleted': 'bool'
+            'latestPolicyVersion': 'int'
             
         }
 
@@ -47,21 +50,23 @@ class PolicyIntentSummaryDTO(object):
             
             'operations': 'operations',
             
+            'numberOfDevices': 'numberOfDevices',
+            
             'applicationsStale': 'applicationsStale',
+            
+            'allPoliciesDeleted': 'allPoliciesDeleted',
+            
+            'serviceProviderProfileStale': 'serviceProviderProfileStale',
             
             'policyScope': 'policyScope',
             
-            'scopeWirelessSegment': 'scopeWirelessSegment',
-            
             'lastUpdateTime': 'lastUpdateTime',
-            
-            'latestPolicyVersion': 'latestPolicyVersion',
             
             'numberOfAssignedApplications': 'numberOfAssignedApplications',
             
-            'numberOfDevices': 'numberOfDevices',
+            'scopeWirelessSegment': 'scopeWirelessSegment',
             
-            'allPoliciesDeleted': 'allPoliciesDeleted'
+            'latestPolicyVersion': 'latestPolicyVersion'
             
         }       
 
@@ -70,35 +75,39 @@ class PolicyIntentSummaryDTO(object):
         
         self.operations = None # list[str]
         
+        #The number of devices in the policy scope
+        
+        self.numberOfDevices = None # int
+        
         #Flag to indicate if applications are stale in the policy
         
         self.applicationsStale = None # bool
+        
+        #Flag to indicate if all policies are deleted in the policy scope
+        
+        self.allPoliciesDeleted = None # bool
+        
+        #Flag to indicate if Service Provider Profiles are stale in the policy scope
+        
+        self.serviceProviderProfileStale = None # bool
         
         #Scope of the policy
         
         self.policyScope = None # str
         
-        #Wireless segment of the policy
-        
-        self.scopeWirelessSegment = None # str
-        
         #Last update time of the policy
         
         self.lastUpdateTime = None # int
-        
-        #Latest version of the policy
-        
-        self.latestPolicyVersion = None # int
         
         #The number of assigned applications in the policy
         
         self.numberOfAssignedApplications = None # int
         
-        #The number of devices in the policy scope
+        #Wireless segment of the policy
         
-        self.numberOfDevices = None # int
+        self.scopeWirelessSegment = None # str
         
-        #Flag to indicate if all policies are deleted in the policy scope
+        #Latest version of the policy
         
-        self.allPoliciesDeleted = None # bool
+        self.latestPolicyVersion = None # int
         

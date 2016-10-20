@@ -15,25 +15,25 @@ class AclMatchingPorts(object):
         """
         self.swaggerTypes = {
             
-            'ports': 'list[AclPortInfo]',
+            'protocol': 'str',
             
             
-            'protocol': 'str'
+            'ports': 'list[AclPortInfo]'
             
         }
 
         self.attributeMap = {
             
-            'ports': 'ports',
+            'protocol': 'protocol',
             
-            'protocol': 'protocol'
+            'ports': 'ports'
             
         }       
 
         
         
-        self.ports = None # list[AclPortInfo]
-        
-        
         self.protocol = None # str
+        
+        
+        self.ports = None # list[AclPortInfo]
         

@@ -14,66 +14,66 @@ class Date(object):
           attributeMap (dict): The key is attribute name and the value is json key in definition.
         """
         self.swaggerTypes = {
-
-            'hours': 'int',
-
-
-            'minutes': 'int',
-
-
-            'seconds': 'int',
-
-
+            
             'time': 'int',
-
-
+            
+            
+            'hours': 'int',
+            
+            
+            'minutes': 'int',
+            
+            
+            'seconds': 'int',
+            
+            
             'year': 'int',
-
-
+            
+            
             'month': 'int',
-
-
+            
+            
             'date': 'int'
-
+            
         }
 
         self.attributeMap = {
-
-            'hours': 'hours',
-
-            'minutes': 'minutes',
-
-            'seconds': 'seconds',
-
+            
             'time': 'time',
-
+            
+            'hours': 'hours',
+            
+            'minutes': 'minutes',
+            
+            'seconds': 'seconds',
+            
             'year': 'year',
-
+            
             'month': 'month',
-
+            
             'date': 'date'
+            
+        }       
 
-        }
-
-
-
-        self.hours = None # int
-
-
-        self.minutes = None # int
-
-
-        self.seconds = None # int
-
-
+        
+        
         self.time = None # int
-
-
+        
+        
+        self.hours = None # int
+        
+        
+        self.minutes = None # int
+        
+        
+        self.seconds = None # int
+        
+        
         self.year = None # int
-
-
+        
+        
         self.month = None # int
-
-
+        
+        
         self.date = None # int
-
+        

@@ -15,33 +15,33 @@ class FlowAnalysisRequestResult(object):
         """
         self.swaggerTypes = {
             
+            'flowAnalysisId': 'str',
+            
+            
             'url': 'str',
             
             
-            'taskId': 'str',
-            
-            
-            'flowAnalysisId': 'str'
+            'taskId': 'str'
             
         }
 
         self.attributeMap = {
             
+            'flowAnalysisId': 'flowAnalysisId',
+            
             'url': 'url',
             
-            'taskId': 'taskId',
-            
-            'flowAnalysisId': 'flowAnalysisId'
+            'taskId': 'taskId'
             
         }       
 
+        
+        
+        self.flowAnalysisId = None # str
         
         
         self.url = None # str
         
         
         self.taskId = None # str
-        
-        
-        self.flowAnalysisId = None # str
         

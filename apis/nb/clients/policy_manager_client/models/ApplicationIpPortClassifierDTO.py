@@ -24,16 +24,16 @@ class ApplicationIpPortClassifierDTO(object):
             'ports': 'list[int]',
             
             
-            'lowerPort': 'int',
-            
-            
-            'upperPort': 'int',
+            'ipPorts': 'list[int]',
             
             
             'subnetMask': 'int',
             
             
-            'ipPorts': 'list[int]'
+            'lowerPort': 'int',
+            
+            
+            'upperPort': 'int'
             
         }
 
@@ -45,13 +45,13 @@ class ApplicationIpPortClassifierDTO(object):
             
             'ports': 'ports',
             
-            'lowerPort': 'lowerPort',
-            
-            'upperPort': 'upperPort',
+            'ipPorts': 'ipPorts',
             
             'subnetMask': 'subnetMask',
             
-            'ipPorts': 'ipPorts'
+            'lowerPort': 'lowerPort',
+            
+            'upperPort': 'upperPort'
             
         }       
 
@@ -68,6 +68,14 @@ class ApplicationIpPortClassifierDTO(object):
         
         self.ports = None # list[int]
         
+        #L3 Protocol numbers of the application
+        
+        self.ipPorts = None # list[int]
+        
+        #Subnet mask. Defaults to 32
+        
+        self.subnetMask = None # int
+        
         #Lower Port of the Port range.
         
         self.lowerPort = None # int
@@ -75,12 +83,4 @@ class ApplicationIpPortClassifierDTO(object):
         #Upper Port of the Port range.
         
         self.upperPort = None # int
-        
-        #Subnet mask. Defaults to 32
-        
-        self.subnetMask = None # int
-        
-        #L3 Protocol numbers of the application
-        
-        self.ipPorts = None # list[int]
         

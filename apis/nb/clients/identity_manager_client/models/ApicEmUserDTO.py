@@ -18,10 +18,10 @@ class ApicEmUserDTO(object):
             'description': 'str',
             
             
-            'hosts': 'list[HostBriefDTO]',
+            'name': 'str',
             
             
-            'name': 'str'
+            'hosts': 'list[HostBriefDTO]'
             
         }
 
@@ -29,9 +29,9 @@ class ApicEmUserDTO(object):
             
             'description': 'description',
             
-            'hosts': 'hosts',
+            'name': 'name',
             
-            'name': 'name'
+            'hosts': 'hosts'
             
         }       
 
@@ -40,8 +40,8 @@ class ApicEmUserDTO(object):
         self.description = None # str
         
         
-        self.hosts = None # list[HostBriefDTO]
-        
-        
         self.name = None # str
+        
+        
+        self.hosts = None # list[HostBriefDTO]
         

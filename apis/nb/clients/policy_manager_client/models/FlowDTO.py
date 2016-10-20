@@ -24,46 +24,43 @@ class FlowDTO(object):
             'status': 'str',
             
             
-            'codec': 'str',
-            
-            
             'applicationName': 'str',
             
             
-            'flowType': 'str',
-            
-            
-            'sourcePort': 'str',
-            
-            
-            'destPort': 'str',
-            
-            
-            'interfaceId': 'str',
+            'codec': 'str',
             
             
             'interfaceName': 'str',
             
             
-            'sourceIP': 'str',
+            'sourcePort': 'str',
+            
+            
+            'failureReason': 'str',
             
             
             'destIP': 'str',
             
             
-            'matchDSCP': 'str',
+            'averageBandwidth': 'str',
+            
+            
+            'clientReference': 'str',
+            
+            
+            'destPort': 'str',
             
             
             'detailedFlowType': 'str',
             
             
-            'averageBandwidth': 'str',
+            'flowType': 'str',
             
             
-            'peakBandwidth': 'str',
+            'interfaceId': 'str',
             
             
-            'clientReference': 'str',
+            'matchDSCP': 'str',
             
             
             'networkDeviceId': 'str',
@@ -72,7 +69,10 @@ class FlowDTO(object):
             'networkDeviceName': 'str',
             
             
-            'failureReason': 'str'
+            'peakBandwidth': 'str',
+            
+            
+            'sourceIP': 'str'
             
         }
 
@@ -84,39 +84,39 @@ class FlowDTO(object):
             
             'status': 'status',
             
-            'codec': 'codec',
-            
             'applicationName': 'applicationName',
             
-            'flowType': 'flowType',
-            
-            'sourcePort': 'sourcePort',
-            
-            'destPort': 'destPort',
-            
-            'interfaceId': 'interfaceId',
+            'codec': 'codec',
             
             'interfaceName': 'interfaceName',
             
-            'sourceIP': 'sourceIP',
+            'sourcePort': 'sourcePort',
+            
+            'failureReason': 'failureReason',
             
             'destIP': 'destIP',
             
-            'matchDSCP': 'matchDSCP',
+            'averageBandwidth': 'averageBandwidth',
+            
+            'clientReference': 'clientReference',
+            
+            'destPort': 'destPort',
             
             'detailedFlowType': 'detailedFlowType',
             
-            'averageBandwidth': 'averageBandwidth',
+            'flowType': 'flowType',
             
-            'peakBandwidth': 'peakBandwidth',
+            'interfaceId': 'interfaceId',
             
-            'clientReference': 'clientReference',
+            'matchDSCP': 'matchDSCP',
             
             'networkDeviceId': 'networkDeviceId',
             
             'networkDeviceName': 'networkDeviceName',
             
-            'failureReason': 'failureReason'
+            'peakBandwidth': 'peakBandwidth',
+            
+            'sourceIP': 'sourceIP'
             
         }       
 
@@ -132,61 +132,56 @@ class FlowDTO(object):
         
         self.status = None # str
         
-        #codec
-        
-        self.codec = None # str
-        
         #APIC-EM application name
         
         self.applicationName = None # str
         
-        #flowType
+        #codec
         
-        self.flowType = None # str
-        
-        #sourcePort
-        
-        self.sourcePort = None # str
-        
-        #destPort
-        
-        self.destPort = None # str
-        
-        #interfaceId
-        
-        self.interfaceId = None # str
+        self.codec = None # str
         
         #interfaceName
         
         self.interfaceName = None # str
         
-        #sourceIP
+        #sourcePort
         
-        self.sourceIP = None # str
+        self.sourcePort = None # str
+        
+        
+        self.failureReason = None # str
         
         #destIP
         
         self.destIP = None # str
         
-        #DSCP of the flow
+        #averageBandwidth in kbps (min: 0, max: 2147483647 kbps)
         
-        self.matchDSCP = None # str
+        self.averageBandwidth = None # str
+        
+        #clientReference (can be used by the client as a reference to this resource
+        
+        self.clientReference = None # str
+        
+        #destPort
+        
+        self.destPort = None # str
         
         #detailedFlowType (more detailed classification than flowType)
         
         self.detailedFlowType = None # str
         
-        #averageBandwidth in kbps (min: 0, max: 2147483647 kbps)
+        #flowType
         
-        self.averageBandwidth = None # str
+        self.flowType = None # str
         
-        #peakBandwidth in kbps (min: 0, max: 2147483647 kbps)
+        #interfaceId
         
-        self.peakBandwidth = None # str
+        self.interfaceId = None # str
         
-        #clientReference (can be used by the client as a reference to this resource
+        #DSCP of the flow
         
-        self.clientReference = None # str
+        self.matchDSCP = None # str
         
         #networkDeviceId
         
@@ -196,6 +191,11 @@ class FlowDTO(object):
         
         self.networkDeviceName = None # str
         
+        #peakBandwidth in kbps (min: 0, max: 2147483647 kbps)
         
-        self.failureReason = None # str
+        self.peakBandwidth = None # str
+        
+        #sourceIP
+        
+        self.sourceIP = None # str
         

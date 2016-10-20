@@ -29,14 +29,11 @@ class TagApi(object):
             resourceId, str: Resource ID (required)
             
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: TagDtoListResult
         """
 
-        allParams = ['resourceType', 'resourceId', 'scope']
+        allParams = ['resourceType', 'resourceId']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -66,9 +63,6 @@ class TagApi(object):
             queryParams['resourceId'] = self.apiClient.toPathValue(params['resourceId'])
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         
@@ -100,14 +94,11 @@ class TagApi(object):
             tagDto, TagDto: TagDto with the new tag (required)
             
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: TaskIdResult
         """
 
-        allParams = ['tagDto', 'scope']
+        allParams = ['tagDto']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -131,9 +122,6 @@ class TagApi(object):
 
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         
@@ -168,14 +156,11 @@ class TagApi(object):
             tagDto, TagDto: TagDto with the tag (required)
             
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: TaskIdResult
         """
 
-        allParams = ['tagDto', 'scope']
+        allParams = ['tagDto']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -199,9 +184,6 @@ class TagApi(object):
 
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         
@@ -236,14 +218,11 @@ class TagApi(object):
             tagDto, TagDto: TagDto with tag ID, resource ID and resource type (required)
             
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: TaskIdResult
         """
 
-        allParams = ['tagDto', 'scope']
+        allParams = ['tagDto']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -267,9 +246,6 @@ class TagApi(object):
 
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         
@@ -310,14 +286,11 @@ class TagApi(object):
             resourceId, str: Resource ID (required)
             
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: TaskIdResult
         """
 
-        allParams = ['id', 'resourceType', 'resourceId', 'scope']
+        allParams = ['id', 'resourceType', 'resourceId']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -347,9 +320,6 @@ class TagApi(object):
             queryParams['resourceId'] = self.apiClient.toPathValue(params['resourceId'])
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         
@@ -387,14 +357,11 @@ class TagApi(object):
             id, str: Tag ID (required)
             
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: TagDtoResult
         """
 
-        allParams = ['id', 'scope']
+        allParams = ['id']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -418,9 +385,6 @@ class TagApi(object):
 
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         
@@ -458,14 +422,11 @@ class TagApi(object):
             id, str: Tag ID (required)
             
             
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
         
         Returns: TaskIdResult
         """
 
-        allParams = ['id', 'scope']
+        allParams = ['id']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -489,9 +450,6 @@ class TagApi(object):
 
         
 
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
         
 
         

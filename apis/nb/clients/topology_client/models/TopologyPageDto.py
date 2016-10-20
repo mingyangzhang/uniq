@@ -15,48 +15,36 @@ class TopologyPageDto(object):
         """
         self.swaggerTypes = {
             
-            'id': 'str',
+            'applicationUuid': 'str',
+            
+            
+            'name': 'str',
             
             
             'description': 'str',
             
             
-            'defaultViewId': 'str',
+            'id': 'str',
             
             
-            'applicationUuid': 'str',
-            
-            
-            'name': 'str'
+            'defaultViewId': 'str'
             
         }
 
         self.attributeMap = {
             
-            'id': 'id',
+            'applicationUuid': 'applicationUuid',
+            
+            'name': 'name',
             
             'description': 'description',
             
-            'defaultViewId': 'defaultViewId',
+            'id': 'id',
             
-            'applicationUuid': 'applicationUuid',
-            
-            'name': 'name'
+            'defaultViewId': 'defaultViewId'
             
         }       
 
-        
-        #Unique identifier for this Page
-        
-        self.id = None # str
-        
-        #Description for this Page
-        
-        self.description = None # str
-        
-        #Default View unique identifier for this Page
-        
-        self.defaultViewId = None # str
         
         #Application unique identifier for this Page
         
@@ -65,4 +53,16 @@ class TopologyPageDto(object):
         #Name for this Page
         
         self.name = None # str
+        
+        #Description for this Page
+        
+        self.description = None # str
+        
+        #Unique identifier for this Page
+        
+        self.id = None # str
+        
+        #Default View unique identifier for this Page
+        
+        self.defaultViewId = None # str
         

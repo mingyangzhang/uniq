@@ -15,10 +15,25 @@ class UUID(object):
         """
         self.swaggerTypes = {
             
+            'leastSignificantBits': 'int',
+            
+            
+            'mostSignificantBits': 'int'
+            
         }
 
         self.attributeMap = {
             
+            'leastSignificantBits': 'leastSignificantBits',
+            
+            'mostSignificantBits': 'mostSignificantBits'
+            
         }       
 
+        
+        
+        self.leastSignificantBits = None # int
+        
+        
+        self.mostSignificantBits = None # int
         

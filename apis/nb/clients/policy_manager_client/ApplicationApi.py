@@ -35,13 +35,13 @@ class ApplicationApi(object):
             name, str: Retrieve application by name (required)
             
             
-            trafficClass, str: Retrieve applications by trafficClass (required)
+            trafficClass, str: Retrieve applications by trafficClass. (required)
             
             
             offset, str: Starting index of the resources (1 based), This should be only used in conjuction with the limit param. (required)
             
             
-            limit, str: Number of resources to return, WARNING: results may take an unexpectely long time with more than 50 results requested. (required)
+            limit, str: Number of resources to return. (required)
             
             
         

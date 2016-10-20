@@ -15,41 +15,42 @@ class GenericIpAddressPoolDTO(object):
         """
         self.swaggerTypes = {
             
+            'addressPoolType': 'str',
+            
+            
+            'usagePercentage': 'int',
+            
+            
             'address': 'str',
             
             
             'id': 'str',
             
             
-            'prefix': 'str',
-            
-            
-            'addressPoolType': 'str',
-            
-            
-            'ipv4Subnet': 'str',
-            
-            
-            'usagePercentage': 'int'
+            'prefix': 'str'
             
         }
 
         self.attributeMap = {
             
+            'addressPoolType': 'addressPoolType',
+            
+            'usagePercentage': 'usagePercentage',
+            
             'address': 'address',
             
             'id': 'id',
             
-            'prefix': 'prefix',
-            
-            'addressPoolType': 'addressPoolType',
-            
-            'ipv4Subnet': 'ipv4Subnet',
-            
-            'usagePercentage': 'usagePercentage'
+            'prefix': 'prefix'
             
         }       
 
+        
+        
+        self.addressPoolType = None # str
+        
+        
+        self.usagePercentage = None # int
         
         
         self.address = None # str
@@ -59,13 +60,4 @@ class GenericIpAddressPoolDTO(object):
         
         
         self.prefix = None # str
-        
-        
-        self.addressPoolType = None # str
-        
-        
-        self.ipv4Subnet = None # str
-        
-        
-        self.usagePercentage = None # int
         

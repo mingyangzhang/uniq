@@ -15,25 +15,25 @@ class VlanListResult(object):
         """
         self.swaggerTypes = {
             
-            'response': 'list[VlanDTO]',
+            'version': 'str',
             
             
-            'version': 'str'
+            'response': 'list[VlanDTO]'
             
         }
 
         self.attributeMap = {
             
-            'response': 'response',
+            'version': 'version',
             
-            'version': 'version'
+            'response': 'response'
             
         }       
 
         
         
-        self.response = None # list[VlanDTO]
-        
-        
         self.version = None # str
+        
+        
+        self.response = None # list[VlanDTO]
         

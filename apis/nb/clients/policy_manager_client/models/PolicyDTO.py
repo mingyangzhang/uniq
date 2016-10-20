@@ -15,22 +15,22 @@ class PolicyDTO(object):
         """
         self.swaggerTypes = {
             
-            'description': 'str',
+            'priority': 'int',
             
             
             'name': 'str',
             
             
-            'priority': 'int',
+            'description': 'str',
             
             
             'contract': 'PolicyContractDTO',
             
             
-            'producer': 'ProducerDTO',
-            
-            
             'consumer': 'ConsumerDTO',
+            
+            
+            'producer': 'ProducerDTO',
             
             
             'id': 'str',
@@ -45,17 +45,17 @@ class PolicyDTO(object):
 
         self.attributeMap = {
             
-            'description': 'description',
+            'priority': 'priority',
             
             'name': 'name',
             
-            'priority': 'priority',
+            'description': 'description',
             
             'contract': 'contract',
             
-            'producer': 'producer',
-            
             'consumer': 'consumer',
+            
+            'producer': 'producer',
             
             'id': 'id',
             
@@ -66,29 +66,29 @@ class PolicyDTO(object):
         }       
 
         
-        #description
+        #priority
         
-        self.description = None # str
+        self.priority = None # int
         
         #name
         
         self.name = None # str
         
-        #priority
+        #description
         
-        self.priority = None # int
+        self.description = None # str
         
         #contract
         
         self.contract = None # PolicyContractDTO
         
-        #producer
-        
-        self.producer = None # ProducerDTO
-        
         #consumer
         
         self.consumer = None # ConsumerDTO
+        
+        #producer
+        
+        self.producer = None # ProducerDTO
         
         #id
         

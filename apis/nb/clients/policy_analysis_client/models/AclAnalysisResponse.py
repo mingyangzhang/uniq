@@ -15,33 +15,33 @@ class AclAnalysisResponse(object):
         """
         self.swaggerTypes = {
             
+            'result': 'str',
+            
+            
             'aclName': 'str',
             
             
-            'matchingAces': 'list[AclAce]',
-            
-            
-            'result': 'str'
+            'matchingAces': 'list[AclAce]'
             
         }
 
         self.attributeMap = {
             
+            'result': 'result',
+            
             'aclName': 'aclName',
             
-            'matchingAces': 'matchingAces',
-            
-            'result': 'result'
+            'matchingAces': 'matchingAces'
             
         }       
 
+        
+        
+        self.result = None # str
         
         
         self.aclName = None # str
         
         
         self.matchingAces = None # list[AclAce]
-        
-        
-        self.result = None # str
         

@@ -15,18 +15,6 @@ class Package(object):
         """
         self.swaggerTypes = {
             
-            'name': 'str',
-            
-            
-            'annotations': 'list[Annotation]',
-            
-            
-            'declaredAnnotations': 'list[Annotation]',
-            
-            
-            'sealed': 'bool',
-            
-            
             'specificationTitle': 'str',
             
             
@@ -42,19 +30,23 @@ class Package(object):
             'implementationVersion': 'str',
             
             
-            'implementationVendor': 'str'
+            'implementationVendor': 'str',
+            
+            
+            'name': 'str',
+            
+            
+            'annotations': 'list[Annotation]',
+            
+            
+            'declaredAnnotations': 'list[Annotation]',
+            
+            
+            'sealed': 'bool'
             
         }
 
         self.attributeMap = {
-            
-            'name': 'name',
-            
-            'annotations': 'annotations',
-            
-            'declaredAnnotations': 'declaredAnnotations',
-            
-            'sealed': 'sealed',
             
             'specificationTitle': 'specificationTitle',
             
@@ -66,22 +58,18 @@ class Package(object):
             
             'implementationVersion': 'implementationVersion',
             
-            'implementationVendor': 'implementationVendor'
+            'implementationVendor': 'implementationVendor',
+            
+            'name': 'name',
+            
+            'annotations': 'annotations',
+            
+            'declaredAnnotations': 'declaredAnnotations',
+            
+            'sealed': 'sealed'
             
         }       
 
-        
-        
-        self.name = None # str
-        
-        
-        self.annotations = None # list[Annotation]
-        
-        
-        self.declaredAnnotations = None # list[Annotation]
-        
-        
-        self.sealed = None # bool
         
         
         self.specificationTitle = None # str
@@ -100,4 +88,16 @@ class Package(object):
         
         
         self.implementationVendor = None # str
+        
+        
+        self.name = None # str
+        
+        
+        self.annotations = None # list[Annotation]
+        
+        
+        self.declaredAnnotations = None # list[Annotation]
+        
+        
+        self.sealed = None # bool
         

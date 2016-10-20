@@ -1,63 +1,64 @@
 {
-    "swaggerVersion": "1.2",
     "apis": [
         {
+            "description": "getSegmentInfo",
             "operations": [
                 {
-                    "deprecated": "false",
-                    "parameters": [
-                        {
-                            "required": true,
-                            "allowMultiple": false,
-                            "description": "Type of segment",
-                            "defaultValue": "",
-                            "name": "type",
-                            "type": "string",
-                            "paramType": "query"
-                        },
-                        {
-                            "required": false,
-                            "allowMultiple": false,
-                            "description": "Policy tag",
-                            "defaultValue": "",
-                            "name": "policyTag",
-                            "type": "string",
-                            "paramType": "query"
-                        }
-                    ],
-                    "summary": "list of segment info based on the policyTag",
-                    "notes": "Gets list of segment info based on policyTag",
                     "nickname": "getSegmentInfo",
-                    "method": "GET",
-                    "type": "SegmentResult",
+                    "notes": "Gets list of segment info based on policyTag",
+                    "summary": "list of segment info based on the policyTag",
                     "produces": [
                         "application/json"
                     ],
+                    "method": "GET",
+                    "deprecated": "false",
                     "responseMessages": [
                         {
-                            "responseModel": "SegmentResult",
+                            "message": "This Request is OK",
                             "code": 200,
-                            "message": "This Request is OK"
+                            "responseModel": "SegmentResult"
                         },
                         {
-                            "code": 403,
-                            "message": "This user is Forbidden Access to this Resource"
+                            "message": "This user is Forbidden Access to this Resource",
+                            "code": 403
                         },
                         {
-                            "code": 401,
-                            "message": "Not Authorized Yet, Credentials to be supplied"
+                            "message": "Not Authorized Yet, Credentials to be supplied",
+                            "code": 401
                         },
                         {
-                            "code": 404,
-                            "message": "No Resource Found"
+                            "message": "No Resource Found",
+                            "code": 404
+                        }
+                    ],
+                    "type": "SegmentResult",
+                    "parameters": [
+                        {
+                            "name": "type",
+                            "allowMultiple": false,
+                            "paramType": "query",
+                            "type": "string",
+                            "description": "Type of segment",
+                            "required": true,
+                            "defaultValue": ""
+                        },
+                        {
+                            "name": "policyTag",
+                            "allowMultiple": false,
+                            "paramType": "query",
+                            "type": "string",
+                            "description": "Policy tag",
+                            "required": false,
+                            "defaultValue": ""
                         }
                     ]
                 }
             ],
-            "description": "getSegmentInfo",
             "path": "/segment"
         }
     ],
+    "apiVersion": "1.0",
+    "swaggerVersion": "1.2",
     "models": {
         "NetworkDeviceBrief": {
             "properties": {
@@ -68,9 +69,9 @@
                     "type": "string"
                 }
             },
+            "description": "",
             "extends": "",
-            "id": "NetworkDeviceBrief",
-            "description": ""
+            "id": "NetworkDeviceBrief"
         },
         "SegmentDto": {
             "properties": {
@@ -78,34 +79,33 @@
                     "type": "string"
                 },
                 "networkDevices": {
+                    "type": "array",
                     "items": {
                         "$ref": "NetworkDeviceBrief"
-                    },
-                    "type": "array"
+                    }
                 }
             },
+            "description": "",
             "extends": "",
-            "id": "SegmentDto",
-            "description": ""
+            "id": "SegmentDto"
         },
         "SegmentResult": {
             "properties": {
-                "response": {
-                    "items": {
-                        "$ref": "SegmentDto"
-                    },
-                    "type": "array"
-                },
                 "version": {
                     "type": "string"
+                },
+                "response": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "SegmentDto"
+                    }
                 }
             },
+            "description": "",
             "extends": "",
-            "id": "SegmentResult",
-            "description": ""
+            "id": "SegmentResult"
         }
     },
-    "apiVersion": "1.0",
     "basePath": "/apic-em-inventory-manager-service",
     "produces": [
         "application/json"

@@ -18,10 +18,10 @@ class ServiceTicketRbac(object):
             'idleTimeout': 'int',
             
             
-            'serviceTicket': 'str',
+            'sessionTimeout': 'int',
             
             
-            'sessionTimeout': 'int'
+            'serviceTicket': 'str'
             
         }
 
@@ -29,9 +29,9 @@ class ServiceTicketRbac(object):
             
             'idleTimeout': 'idleTimeout',
             
-            'serviceTicket': 'serviceTicket',
+            'sessionTimeout': 'sessionTimeout',
             
-            'sessionTimeout': 'sessionTimeout'
+            'serviceTicket': 'serviceTicket'
             
         }       
 
@@ -39,10 +39,10 @@ class ServiceTicketRbac(object):
         
         self.idleTimeout = None # int
         
+        
+        self.sessionTimeout = None # int
+        
         #Service Ticket to be used as authentication Ticket
         
         self.serviceTicket = None # str
-        
-        
-        self.sessionTimeout = None # int
         

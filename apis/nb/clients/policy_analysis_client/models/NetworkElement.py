@@ -15,36 +15,6 @@ class NetworkElement(object):
         """
         self.swaggerTypes = {
             
-            'role': 'str',
-            
-            
-            'ip': 'str',
-            
-            
-            'ingressVirtualInterface': 'Interface',
-            
-            
-            'egressVirtualInterface': 'Interface',
-            
-            
-            'ingressPhysicalInterface': 'Interface',
-            
-            
-            'egressPhysicalInterface': 'Interface',
-            
-            
-            'linkInformationSource': 'str',
-            
-            
-            'tunnels': 'list[str]',
-            
-            
-            'accuracyList': 'list[Accuracy]',
-            
-            
-            'perfMonCollection': 'str',
-            
-            
             'deviceStatistics': 'DeviceStatistics',
             
             
@@ -63,37 +33,47 @@ class NetworkElement(object):
             'detailedStatus': 'DetailedStatus',
             
             
+            'tunnels': 'list[str]',
+            
+            
+            'linkInformationSource': 'str',
+            
+            
+            'accuracyList': 'list[Accuracy]',
+            
+            
+            'perfMonCollection': 'str',
+            
+            
             'name': 'str',
             
             
             'id': 'str',
             
             
-            'type': 'str'
+            'type': 'str',
+            
+            
+            'role': 'str',
+            
+            
+            'ip': 'str',
+            
+            
+            'egressPhysicalInterface': 'Interface',
+            
+            
+            'egressVirtualInterface': 'Interface',
+            
+            
+            'ingressPhysicalInterface': 'Interface',
+            
+            
+            'ingressVirtualInterface': 'Interface'
             
         }
 
         self.attributeMap = {
-            
-            'role': 'role',
-            
-            'ip': 'ip',
-            
-            'ingressVirtualInterface': 'ingressVirtualInterface',
-            
-            'egressVirtualInterface': 'egressVirtualInterface',
-            
-            'ingressPhysicalInterface': 'ingressPhysicalInterface',
-            
-            'egressPhysicalInterface': 'egressPhysicalInterface',
-            
-            'linkInformationSource': 'linkInformationSource',
-            
-            'tunnels': 'tunnels',
-            
-            'accuracyList': 'accuracyList',
-            
-            'perfMonCollection': 'perfMonCollection',
             
             'deviceStatistics': 'deviceStatistics',
             
@@ -107,53 +87,34 @@ class NetworkElement(object):
             
             'detailedStatus': 'detailedStatus',
             
+            'tunnels': 'tunnels',
+            
+            'linkInformationSource': 'linkInformationSource',
+            
+            'accuracyList': 'accuracyList',
+            
+            'perfMonCollection': 'perfMonCollection',
+            
             'name': 'name',
             
             'id': 'id',
             
-            'type': 'type'
+            'type': 'type',
+            
+            'role': 'role',
+            
+            'ip': 'ip',
+            
+            'egressPhysicalInterface': 'egressPhysicalInterface',
+            
+            'egressVirtualInterface': 'egressVirtualInterface',
+            
+            'ingressPhysicalInterface': 'ingressPhysicalInterface',
+            
+            'ingressVirtualInterface': 'ingressVirtualInterface'
             
         }       
 
-        
-        #Role of device in network(can be access,core,distribution or border router)
-        
-        self.role = None # str
-        
-        #Network Device IP
-        
-        self.ip = None # str
-        
-        #Ingress virtual interface of the network device
-        
-        self.ingressVirtualInterface = None # Interface
-        
-        #Egress virtual interface of the network device
-        
-        self.egressVirtualInterface = None # Interface
-        
-        #Igress physical interface of the network device
-        
-        self.ingressPhysicalInterface = None # Interface
-        
-        #Egress physical interface of the network device
-        
-        self.egressPhysicalInterface = None # Interface
-        
-        #The source of the link information to the next hop
-        
-        self.linkInformationSource = None # str
-        
-        #Tunnels this network element is in
-        
-        self.tunnels = None # list[str]
-        
-        
-        self.accuracyList = None # list[Accuracy]
-        
-        #A status value from [ INPROGRESS, SUCCESS, FAILED ] 
-        
-        self.perfMonCollection = None # str
         
         
         self.deviceStatistics = None # DeviceStatistics
@@ -174,6 +135,21 @@ class NetworkElement(object):
         
         self.detailedStatus = None # DetailedStatus
         
+        #Tunnels this network element is in
+        
+        self.tunnels = None # list[str]
+        
+        #The source of the link information to the next hop
+        
+        self.linkInformationSource = None # str
+        
+        
+        self.accuracyList = None # list[Accuracy]
+        
+        #A status value from [ INPROGRESS, SUCCESS, FAILED ] 
+        
+        self.perfMonCollection = None # str
+        
         #Network Device name
         
         self.name = None # str
@@ -185,4 +161,28 @@ class NetworkElement(object):
         #Network Device Type(can be switch,router,wired host or wireless host)
         
         self.type = None # str
+        
+        #Role of device in network(can be access,core,distribution or border router)
+        
+        self.role = None # str
+        
+        #Network Device IP
+        
+        self.ip = None # str
+        
+        #Egress physical interface of the network device
+        
+        self.egressPhysicalInterface = None # Interface
+        
+        #Egress virtual interface of the network device
+        
+        self.egressVirtualInterface = None # Interface
+        
+        #Igress physical interface of the network device
+        
+        self.ingressPhysicalInterface = None # Interface
+        
+        #Ingress virtual interface of the network device
+        
+        self.ingressVirtualInterface = None # Interface
         

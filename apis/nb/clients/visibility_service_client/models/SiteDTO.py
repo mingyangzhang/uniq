@@ -33,6 +33,12 @@ class SiteDTO(object):
             'lanRoutingQualifier': 'str',
             
             
+            'brownFieldSite': 'bool',
+            
+            
+            'layer2Site': 'bool',
+            
+            
             'devices': 'list[SiteDeviceDTO]',
             
             
@@ -48,13 +54,7 @@ class SiteDTO(object):
             'siteConfigurationType': 'str',
             
             
-            'layer2Site': 'bool',
-            
-            
             'errorHandleCondition': 'str',
-            
-            
-            'brownFieldSite': 'bool',
             
             
             'name': 'str'
@@ -75,6 +75,10 @@ class SiteDTO(object):
             
             'lanRoutingQualifier': 'lanRoutingQualifier',
             
+            'brownFieldSite': 'brownFieldSite',
+            
+            'layer2Site': 'layer2Site',
+            
             'devices': 'devices',
             
             'vlans': 'vlans',
@@ -85,11 +89,7 @@ class SiteDTO(object):
             
             'siteConfigurationType': 'siteConfigurationType',
             
-            'layer2Site': 'layer2Site',
-            
             'errorHandleCondition': 'errorHandleCondition',
-            
-            'brownFieldSite': 'brownFieldSite',
             
             'name': 'name'
             
@@ -115,6 +115,12 @@ class SiteDTO(object):
         self.lanRoutingQualifier = None # str
         
         
+        self.brownFieldSite = None # bool
+        
+        
+        self.layer2Site = None # bool
+        
+        
         self.devices = None # list[SiteDeviceDTO]
         
         
@@ -130,13 +136,7 @@ class SiteDTO(object):
         self.siteConfigurationType = None # str
         
         
-        self.layer2Site = None # bool
-        
-        
         self.errorHandleCondition = None # str
-        
-        
-        self.brownFieldSite = None # bool
         
         
         self.name = None # str

@@ -7,6 +7,7 @@
 class ZtdMemberDetail(object):
 
 
+
     def __init__(self):
         """
         Attributes:
@@ -42,13 +43,8 @@ class ZtdMemberDetail(object):
             'attributeInfo': 'object',
 
 
-            'id': 'str',
+            'id': 'str'
 
-
-            'licenseInUse': 'str',
-
-
-            'port': 'list[ZtdPort]'
         }
 
         self.attributeMap = {
@@ -71,11 +67,8 @@ class ZtdMemberDetail(object):
 
             'attributeInfo': 'attributeInfo',
 
-            'id': 'id',
+            'id': 'id'
 
-            'licenseInUse': 'licenseInUse',
-
-            'port': 'port'
         }
 
 
@@ -109,8 +102,3 @@ class ZtdMemberDetail(object):
 
         self.id = None # str
 
-
-        self.licenseInUse = None  # str
-
-
-        self.port = None  # list[ZtdPort]

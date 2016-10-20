@@ -18,16 +18,22 @@ class ScalableGroupDTO(object):
             'description': 'str',
             
             
+            'name': 'str',
+            
+            
+            'id': 'str',
+            
+            
+            'state': 'str',
+            
+            
             'createTime': 'int',
-            
-            
-            'scalableGroupExternalHandle': 'str',
             
             
             'lastUpdateTime': 'int',
             
             
-            'applications': 'list[ApplicationV2DTOBrief]',
+            'scalableGroupExternalHandle': 'str',
             
             
             'applicationGroups': 'list[ApplicationGroupDTOBrief]',
@@ -36,7 +42,7 @@ class ScalableGroupDTO(object):
             'parentScalableGroup': 'ScalableGroupBriefDTO',
             
             
-            'identitySourceIpAddress': 'str',
+            'applications': 'list[ApplicationV2DTOBrief]',
             
             
             'identitySourceId': 'str',
@@ -45,13 +51,7 @@ class ScalableGroupDTO(object):
             'identitySourceType': 'str',
             
             
-            'name': 'str',
-            
-            
-            'id': 'str',
-            
-            
-            'state': 'str'
+            'identitySourceIpAddress': 'str'
             
         }
 
@@ -59,29 +59,29 @@ class ScalableGroupDTO(object):
             
             'description': 'description',
             
-            'createTime': 'createTime',
+            'name': 'name',
             
-            'scalableGroupExternalHandle': 'scalableGroupExternalHandle',
+            'id': 'id',
+            
+            'state': 'state',
+            
+            'createTime': 'createTime',
             
             'lastUpdateTime': 'lastUpdateTime',
             
-            'applications': 'applications',
+            'scalableGroupExternalHandle': 'scalableGroupExternalHandle',
             
             'applicationGroups': 'applicationGroups',
             
             'parentScalableGroup': 'parentScalableGroup',
             
-            'identitySourceIpAddress': 'identitySourceIpAddress',
+            'applications': 'applications',
             
             'identitySourceId': 'identitySourceId',
             
             'identitySourceType': 'identitySourceType',
             
-            'name': 'name',
-            
-            'id': 'id',
-            
-            'state': 'state'
+            'identitySourceIpAddress': 'identitySourceIpAddress'
             
         }       
 
@@ -89,42 +89,6 @@ class ScalableGroupDTO(object):
         #description
         
         self.description = None # str
-        
-        #createTime
-        
-        self.createTime = None # int
-        
-        #scalableGroupExternalHandle
-        
-        self.scalableGroupExternalHandle = None # str
-        
-        #lastUpdateTime
-        
-        self.lastUpdateTime = None # int
-        
-        #applications that belong to the scalable group.
-        
-        self.applications = None # list[ApplicationV2DTOBrief]
-        
-        #applicationGroups that belong to the scalable group.
-        
-        self.applicationGroups = None # list[ApplicationGroupDTOBrief]
-        
-        #parentScalableGroup from which user, user groups are inherited.
-        
-        self.parentScalableGroup = None # ScalableGroupBriefDTO
-        
-        #identitySourceIpAddress
-        
-        self.identitySourceIpAddress = None # str
-        
-        #identitySourceId
-        
-        self.identitySourceId = None # str
-        
-        #identitySourceType
-        
-        self.identitySourceType = None # str
         
         #name
         
@@ -137,4 +101,40 @@ class ScalableGroupDTO(object):
         #state
         
         self.state = None # str
+        
+        #createTime
+        
+        self.createTime = None # int
+        
+        #lastUpdateTime
+        
+        self.lastUpdateTime = None # int
+        
+        #scalableGroupExternalHandle
+        
+        self.scalableGroupExternalHandle = None # str
+        
+        #applicationGroups that belong to the scalable group.
+        
+        self.applicationGroups = None # list[ApplicationGroupDTOBrief]
+        
+        #parentScalableGroup from which user, user groups are inherited.
+        
+        self.parentScalableGroup = None # ScalableGroupBriefDTO
+        
+        #applications that belong to the scalable group.
+        
+        self.applications = None # list[ApplicationV2DTOBrief]
+        
+        #identitySourceId
+        
+        self.identitySourceId = None # str
+        
+        #identitySourceType
+        
+        self.identitySourceType = None # str
+        
+        #identitySourceIpAddress
+        
+        self.identitySourceIpAddress = None # str
         

@@ -15,13 +15,16 @@ class InterfaceInfoDTO(object):
         """
         self.swaggerTypes = {
             
+            'ipAddress': 'str',
+            
+            
             'subnetMask': 'str',
             
             
             'networkAddress': 'str',
             
             
-            'ipAddress': 'str',
+            'switchPort': 'bool',
             
             
             'interfaceName': 'str',
@@ -30,31 +33,31 @@ class InterfaceInfoDTO(object):
             'nextHop': 'str',
             
             
-            'trunkPort': 'bool',
-            
-            
-            'switchPort': 'bool'
+            'trunkPort': 'bool'
             
         }
 
         self.attributeMap = {
             
+            'ipAddress': 'ipAddress',
+            
             'subnetMask': 'subnetMask',
             
             'networkAddress': 'networkAddress',
             
-            'ipAddress': 'ipAddress',
+            'switchPort': 'switchPort',
             
             'interfaceName': 'interfaceName',
             
             'nextHop': 'nextHop',
             
-            'trunkPort': 'trunkPort',
-            
-            'switchPort': 'switchPort'
+            'trunkPort': 'trunkPort'
             
         }       
 
+        
+        
+        self.ipAddress = None # str
         
         
         self.subnetMask = None # str
@@ -63,7 +66,7 @@ class InterfaceInfoDTO(object):
         self.networkAddress = None # str
         
         
-        self.ipAddress = None # str
+        self.switchPort = None # bool
         
         
         self.interfaceName = None # str
@@ -73,7 +76,4 @@ class InterfaceInfoDTO(object):
         
         
         self.trunkPort = None # bool
-        
-        
-        self.switchPort = None # bool
         

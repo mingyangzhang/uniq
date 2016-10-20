@@ -57,7 +57,7 @@ class Method(object):
             'varArgs': 'bool',
             
             
-            'defaultValue': 'object',
+            'defaultValue': 'dict',
             
             
             'parameterAnnotations': 'list[Array]',
@@ -154,7 +154,7 @@ class Method(object):
         self.varArgs = None # bool
         
         
-        self.defaultValue = None # object
+        self.defaultValue = None # dict
         
         
         self.parameterAnnotations = None # list[Array]

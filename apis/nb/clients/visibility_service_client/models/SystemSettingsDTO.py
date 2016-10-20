@@ -39,10 +39,10 @@ class SystemSettingsDTO(object):
             'syslog': 'list[SyslogSettingsDTO]',
             
             
-            'certifiedIOSRelease': 'list[CertifiedImageDTO]',
+            'dhcp': 'DHCPServerSettingsDTO',
             
             
-            'dhcp': 'DHCPServerSettingsDTO'
+            'certifiedIOSRelease': 'list[CertifiedImageDTO]'
             
         }
 
@@ -64,9 +64,9 @@ class SystemSettingsDTO(object):
             
             'syslog': 'syslog',
             
-            'certifiedIOSRelease': 'certifiedIOSRelease',
+            'dhcp': 'dhcp',
             
-            'dhcp': 'dhcp'
+            'certifiedIOSRelease': 'certifiedIOSRelease'
             
         }       
 
@@ -96,8 +96,8 @@ class SystemSettingsDTO(object):
         self.syslog = None # list[SyslogSettingsDTO]
         
         
-        self.certifiedIOSRelease = None # list[CertifiedImageDTO]
-        
-        
         self.dhcp = None # DHCPServerSettingsDTO
+        
+        
+        self.certifiedIOSRelease = None # list[CertifiedImageDTO]
         

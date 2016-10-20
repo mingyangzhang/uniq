@@ -15,25 +15,25 @@ class CodeSigner(object):
         """
         self.swaggerTypes = {
             
-            'signerCertPath': 'CertPath',
+            'timestamp': 'Timestamp',
             
             
-            'timestamp': 'Timestamp'
+            'signerCertPath': 'CertPath'
             
         }
 
         self.attributeMap = {
             
-            'signerCertPath': 'signerCertPath',
+            'timestamp': 'timestamp',
             
-            'timestamp': 'timestamp'
+            'signerCertPath': 'signerCertPath'
             
         }       
 
         
         
-        self.signerCertPath = None # CertPath
-        
-        
         self.timestamp = None # Timestamp
+        
+        
+        self.signerCertPath = None # CertPath
         

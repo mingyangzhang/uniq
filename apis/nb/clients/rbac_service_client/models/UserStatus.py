@@ -15,41 +15,41 @@ class UserStatus(object):
         """
         self.swaggerTypes = {
             
-            'username': 'str',
-            
-            
-            'accountLocked': 'bool',
+            'lockedAt': 'str',
             
             
             'lockExpiration': 'int',
             
             
-            'lockedAt': 'str'
+            'accountLocked': 'bool',
+            
+            
+            'username': 'str'
             
         }
 
         self.attributeMap = {
             
-            'username': 'username',
-            
-            'accountLocked': 'accountLocked',
+            'lockedAt': 'lockedAt',
             
             'lockExpiration': 'lockExpiration',
             
-            'lockedAt': 'lockedAt'
+            'accountLocked': 'accountLocked',
+            
+            'username': 'username'
             
         }       
 
         
         
-        self.username = None # str
-        
-        
-        self.accountLocked = None # bool
+        self.lockedAt = None # str
         
         
         self.lockExpiration = None # int
         
         
-        self.lockedAt = None # str
+        self.accountLocked = None # bool
+        
+        
+        self.username = None # str
         

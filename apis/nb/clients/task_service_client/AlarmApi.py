@@ -16,14 +16,14 @@ class AlarmApi(object):
     def __init__(self, apiClient):
       self.apiClient = apiClient
 
-
-
+    
+    
     def getAlarmWithFilter(self, **kwargs):
         """Retrieve Alarms
 
         Args:
-
-
+            
+        
         Returns: ListAlarmDTOResponse
         """
 
@@ -49,37 +49,37 @@ class AlarmApi(object):
         headerParams['Accept'] = 'application/json'
         headerParams['Content-Type'] = 'application/json'
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
+        
 
         postData = (formParams if formParams else bodyParam)
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams, files=files)
 
-
+        
         if not response:
             return None
 
         responseObject = self.apiClient.deserialize(response, 'ListAlarmDTOResponse')
         return responseObject
-
-
-
-
+        
+        
+        
+    
     def getAlarmCountWithFilter(self, **kwargs):
         """Retrieve Count of number of alarms
 
         Args:
-
-
+            
+        
         Returns: int
         """
 
@@ -105,43 +105,43 @@ class AlarmApi(object):
         headerParams['Accept'] = 'application/json'
         headerParams['Content-Type'] = 'application/json'
 
+        
 
+        
 
+        
 
+        
 
-
-
-
-
-
+        
 
         postData = (formParams if formParams else bodyParam)
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams, files=files)
 
-
+        
         if not response:
             return None
 
-        responseObject = self.apiClient.deserialize(response, 'CountResult')
+        responseObject = self.apiClient.deserialize(response, 'int')
         return responseObject
-
-
-
-
+        
+        
+        
+    
     def acknowledgeAlarm(self, **kwargs):
         """Acknowledge an Alarm by UUID
 
         Args:
-
+            
             alertUUID, str: alertUUID (required)
-
-
+            
+            
             alarmDTO, AlarmDTO: alarmDTO (required)
-
-
-
+            
+            
+        
         Returns: SuccessResult
         """
 
@@ -167,33 +167,39 @@ class AlarmApi(object):
         headerParams['Accept'] = 'application/json'
         headerParams['Content-Type'] = 'application/json'
 
+        
 
+        
 
-
-
-
+        
         if ('alertUUID' in params):
             replacement = str(self.apiClient.toPathValue(params['alertUUID']))
             replacement = urllib.parse.quote(replacement)
             resourcePath = resourcePath.replace('{' + 'alertUUID' + '}',
                                                 replacement)
+        
 
+        
 
-
-
-
+        
         if ('alarmDTO' in params):
             bodyParam = params['alarmDTO']
-
+        
 
         postData = (formParams if formParams else bodyParam)
 
         response = self.apiClient.callAPI(resourcePath, method, queryParams,
                                           postData, headerParams, files=files)
 
-
+        
         if not response:
             return None
 
         responseObject = self.apiClient.deserialize(response, 'SuccessResult')
         return responseObject
+        
+        
+        
+    
+
+

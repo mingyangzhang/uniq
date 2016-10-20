@@ -15,25 +15,25 @@ class DetailedStatus(object):
         """
         self.swaggerTypes = {
             
-            'aclTraceCalculation': 'str',
+            'aclTraceCalculationFailureReason': 'str',
             
             
-            'aclTraceCalculationFailureReason': 'str'
+            'aclTraceCalculation': 'str'
             
         }
 
         self.attributeMap = {
             
-            'aclTraceCalculation': 'aclTraceCalculation',
+            'aclTraceCalculationFailureReason': 'aclTraceCalculationFailureReason',
             
-            'aclTraceCalculationFailureReason': 'aclTraceCalculationFailureReason'
+            'aclTraceCalculation': 'aclTraceCalculation'
             
         }       
 
         
         
-        self.aclTraceCalculation = None # str
-        
-        
         self.aclTraceCalculationFailureReason = None # str
+        
+        
+        self.aclTraceCalculation = None # str
         

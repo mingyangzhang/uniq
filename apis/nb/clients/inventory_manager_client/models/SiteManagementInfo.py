@@ -14,64 +14,64 @@ class SiteManagementInfo(object):
           attributeMap (dict): The key is attribute name and the value is json key in definition.
         """
         self.swaggerTypes = {
-
-            'description': 'str',
-
-
-            'deviceIds': 'list[str]',
-
-
+            
             'name': 'str',
-
-
+            
+            
             'location': 'str',
-
-            #changed this manually from 'object' to 'dict'
+            
+            
             'properties': 'dict',
-
-
-            'id': 'str'
-
+            
+            
+            'id': 'str',
+            
+            
+            'description': 'str',
+            
+            
+            'deviceIds': 'list[str]'
+            
         }
 
         self.attributeMap = {
-
-            'description': 'description',
-
-            'deviceIds': 'deviceIds',
-
+            
             'name': 'name',
-
+            
             'location': 'location',
-
+            
             'properties': 'properties',
+            
+            'id': 'id',
+            
+            'description': 'description',
+            
+            'deviceIds': 'deviceIds'
+            
+        }       
 
-            'id': 'id'
-
-        }
-
-
-        #Description of site
-
-        self.description = None # str
-
-        #Unique identifier of devices that are associated with site
-
-        self.deviceIds = None # list[str]
-
+        
         #Name of site
-
+        
         self.name = None # str
-
+        
         #Location of site
-
+        
         self.location = None # str
-
+        
         #Properties of site
-
-        self.properties = None # dict #changed this manually from 'object' to 'dict'
-
+        
+        self.properties = None # dict
+        
         #Unique identifier of site
-
+        
         self.id = None # str
-
+        
+        #Description of site
+        
+        self.description = None # str
+        
+        #Unique identifier of devices that are associated with site
+        
+        self.deviceIds = None # list[str]
+        

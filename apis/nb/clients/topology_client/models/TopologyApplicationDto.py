@@ -15,30 +15,26 @@ class TopologyApplicationDto(object):
         """
         self.swaggerTypes = {
             
-            'id': 'str',
-            
-            
             'description': 'str',
             
             
-            'name': 'str'
+            'name': 'str',
+            
+            
+            'id': 'str'
             
         }
 
         self.attributeMap = {
             
-            'id': 'id',
-            
             'description': 'description',
             
-            'name': 'name'
+            'name': 'name',
+            
+            'id': 'id'
             
         }       
 
-        
-        #Unique identifier for this Application
-        
-        self.id = None # str
         
         #Description for this Application
         
@@ -47,4 +43,8 @@ class TopologyApplicationDto(object):
         #Name for this Application
         
         self.name = None # str
+        
+        #Unique identifier for this Application
+        
+        self.id = None # str
         

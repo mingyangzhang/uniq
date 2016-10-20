@@ -15,19 +15,19 @@ class CiscoIseDTO(object):
         """
         self.swaggerTypes = {
             
-            'username': 'str',
-            
-            
-            'password': 'str',
+            'description': 'str',
             
             
             'id': 'str',
             
             
-            'description': 'str',
+            'password': 'str',
             
             
             'ipAddress': 'str',
+            
+            
+            'username': 'str',
             
             
             'keystoreFileId': 'str',
@@ -51,15 +51,15 @@ class CiscoIseDTO(object):
 
         self.attributeMap = {
             
-            'username': 'username',
-            
-            'password': 'password',
+            'description': 'description',
             
             'id': 'id',
             
-            'description': 'description',
+            'password': 'password',
             
             'ipAddress': 'ipAddress',
+            
+            'username': 'username',
             
             'keystoreFileId': 'keystoreFileId',
             
@@ -76,25 +76,25 @@ class CiscoIseDTO(object):
         }       
 
         
-        #username
+        #description
         
-        self.username = None # str
-        
-        #password
-        
-        self.password = None # str
+        self.description = None # str
         
         #id
         
         self.id = None # str
         
-        #description
+        #password
         
-        self.description = None # str
+        self.password = None # str
         
         #ipAddress
         
         self.ipAddress = None # str
+        
+        #username
+        
+        self.username = None # str
         
         #keystoreFileId
         

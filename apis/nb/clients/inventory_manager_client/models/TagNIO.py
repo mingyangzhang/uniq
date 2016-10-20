@@ -18,22 +18,22 @@ class TagNIO(object):
             'id': 'str',
             
             
-            'lastUpdated': 'str',
+            'interfaceId': 'str',
             
             
-            'locationId': 'str',
-            
-            
-            'linkId': 'str',
+            'networkDeviceId': 'str',
             
             
             'tag': 'str',
             
             
-            'interfaceId': 'str',
+            'linkId': 'str',
             
             
-            'networkDeviceId': 'str'
+            'lastUpdated': 'str',
+            
+            
+            'locationId': 'str'
             
         }
 
@@ -41,17 +41,17 @@ class TagNIO(object):
             
             'id': 'id',
             
-            'lastUpdated': 'lastUpdated',
+            'interfaceId': 'interfaceId',
             
-            'locationId': 'locationId',
-            
-            'linkId': 'linkId',
+            'networkDeviceId': 'networkDeviceId',
             
             'tag': 'tag',
             
-            'interfaceId': 'interfaceId',
+            'linkId': 'linkId',
             
-            'networkDeviceId': 'networkDeviceId'
+            'lastUpdated': 'lastUpdated',
+            
+            'locationId': 'locationId'
             
         }       
 
@@ -60,22 +60,6 @@ class TagNIO(object):
         
         self.id = None # str
         
-        #Time when the device interface info last got updated
-        
-        self.lastUpdated = None # str
-        
-        #Unique identifier of location
-        
-        self.locationId = None # str
-        
-        #Unique identifier of link
-        
-        self.linkId = None # str
-        
-        #Tag Id
-        
-        self.tag = None # str
-        
         #Unique identifier of the interface
         
         self.interfaceId = None # str
@@ -83,4 +67,20 @@ class TagNIO(object):
         #Unique identifier of device
         
         self.networkDeviceId = None # str
+        
+        #Tag Id
+        
+        self.tag = None # str
+        
+        #Unique identifier of link
+        
+        self.linkId = None # str
+        
+        #Time when the device interface info last got updated
+        
+        self.lastUpdated = None # str
+        
+        #Unique identifier of location
+        
+        self.locationId = None # str
         

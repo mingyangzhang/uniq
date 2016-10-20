@@ -15,34 +15,28 @@ class CertificateBrief(object):
         """
         self.swaggerTypes = {
             
-            'issuer': 'str',
-            
-            
             'commonName': 'str',
+            
+            
+            'issuer': 'str',
             
             
             'serialNumber': 'str',
             
             
-            'proxyEnabled': 'str',
+            'gvSerialId': 'str',
             
             
             'selfSigned': 'str',
             
             
-            'gvSerialId': 'str',
+            'proxyEnabled': 'str',
             
             
             'expiry': 'str',
             
             
-            'filePath': 'str',
-            
-            
-            'lastCertFilePath': 'str',
-            
-            
-            'attributeInfo': 'object',
+            'attributeInfo': 'dict',
             
             
             'id': 'str'
@@ -51,23 +45,19 @@ class CertificateBrief(object):
 
         self.attributeMap = {
             
-            'issuer': 'issuer',
-            
             'commonName': 'commonName',
+            
+            'issuer': 'issuer',
             
             'serialNumber': 'serialNumber',
             
-            'proxyEnabled': 'proxyEnabled',
+            'gvSerialId': 'gvSerialId',
             
             'selfSigned': 'selfSigned',
             
-            'gvSerialId': 'gvSerialId',
+            'proxyEnabled': 'proxyEnabled',
             
             'expiry': 'expiry',
-            
-            'filePath': 'filePath',
-            
-            'lastCertFilePath': 'lastCertFilePath',
             
             'attributeInfo': 'attributeInfo',
             
@@ -76,35 +66,36 @@ class CertificateBrief(object):
         }       
 
         
-        
-        self.issuer = None # str
-        
+        #Certificate common name
         
         self.commonName = None # str
         
+        #Certificate issuer
+        
+        self.issuer = None # str
+        
+        #Certificate serial-number
         
         self.serialNumber = None # str
         
-        
-        self.proxyEnabled = None # str
-        
-        
-        self.selfSigned = None # str
-        
+        #Grapevine certificate serial identification
         
         self.gvSerialId = None # str
         
+        #Set if this is a self-signed certificate
+        
+        self.selfSigned = None # str
+        
+        #Set if this is a proxy certificate
+        
+        self.proxyEnabled = None # str
+        
+        #Certificate expiry
         
         self.expiry = None # str
         
         
-        self.filePath = None # str
-        
-        
-        self.lastCertFilePath = None # str
-        
-        
-        self.attributeInfo = None # object
+        self.attributeInfo = None # dict
         
         
         self.id = None # str

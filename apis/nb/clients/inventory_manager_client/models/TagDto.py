@@ -15,10 +15,10 @@ class TagDto(object):
         """
         self.swaggerTypes = {
             
-            'resourceId': 'str',
-            
-            
             'id': 'str',
+            
+            
+            'resourceId': 'str',
             
             
             'tag': 'str',
@@ -30,9 +30,9 @@ class TagDto(object):
 
         self.attributeMap = {
             
-            'resourceId': 'resourceId',
-            
             'id': 'id',
+            
+            'resourceId': 'resourceId',
             
             'tag': 'tag',
             
@@ -41,13 +41,13 @@ class TagDto(object):
         }       
 
         
-        #Id of the resource to which the tag to be associated
-        
-        self.resourceId = None # str
-        
         #Unique identifier for tag
         
         self.id = None # str
+        
+        #Id of the resource to which the tag to be associated
+        
+        self.resourceId = None # str
         
         #Name of the tag
         

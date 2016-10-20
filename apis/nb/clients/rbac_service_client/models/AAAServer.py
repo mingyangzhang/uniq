@@ -15,7 +15,10 @@ class AAAServer(object):
         """
         self.swaggerTypes = {
 
-            'protocol': 'str',
+            'sharedSecret': 'str',
+
+
+            'serverIp': 'str',
 
 
             'authenticationPort': 'int',
@@ -29,20 +32,20 @@ class AAAServer(object):
 
             'socketTimeout': 'int',
 
+
             #changed this manually from UUID to str
             'serverId': 'str',
 
 
-            'serverIp': 'str',
-
-
-            'sharedSecret': 'str'
+            'protocol': 'str'
 
         }
 
         self.attributeMap = {
 
-            'protocol': 'protocol',
+            'sharedSecret': 'sharedSecret',
+
+            'serverIp': 'serverIp',
 
             'authenticationPort': 'authenticationPort',
 
@@ -54,16 +57,18 @@ class AAAServer(object):
 
             'serverId': 'serverId',
 
-            'serverIp': 'serverIp',
-
-            'sharedSecret': 'sharedSecret'
+            'protocol': 'protocol'
 
         }
 
 
-        #Protocol
+        #Shared Secret
 
-        self.protocol = None # str
+        self.sharedSecret = None # str
+
+        #Server IP Address
+
+        self.serverIp = None # str
 
         #Authentication Port
 
@@ -85,11 +90,7 @@ class AAAServer(object):
         #changed this manually from UUID to str
         self.serverId = None # str
 
-        #Server IP Address
+        #Protocol
 
-        self.serverIp = None # str
-
-        #Shared Secret
-
-        self.sharedSecret = None # str
+        self.protocol = None # str
 

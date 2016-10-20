@@ -14,26 +14,26 @@ class IPGeoModelResult(object):
           attributeMap (dict): The key is attribute name and the value is json key in definition.
         """
         self.swaggerTypes = {
-
+            
             'version': 'str',
-
-
-            'response': 'IPGeoModel'
-
+            
+            
+            'response': 'HashMap«string,IPGeoModel»'
+            
         }
 
         self.attributeMap = {
-
+            
             'version': 'version',
-
+            
             'response': 'response'
+            
+        }       
 
-        }
-
-
-
+        
+        
         self.version = None # str
-
-
-        self.response = None # IPGeoModel
-
+        
+        
+        self.response = None # HashMap«string,IPGeoModel»
+        

@@ -394,27 +394,24 @@ class IwanApi(object):
         
         
     
-    def exportIPPoolAllocationForNetwork(self, **kwargs):
-        """API to get CSV file with IP address allocation details for the network
+    def getIPPoolAllocationForNetwork(self, **kwargs):
+        """API to get IP address allocation details for the network
 
         Args:
             
             scope, str: Authorization Scope for RBAC (required)
             
             
-            Accept, list[str]: accept (required)
-            
-            
         
-        Returns: list[str]
+        Returns: IPPoolAllocationListResult
         """
 
-        allParams = ['scope', 'Accept']
+        allParams = ['scope']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
             if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method exportIPPoolAllocationForNetwork" % key)
+                raise TypeError("Got an unexpected keyword argument '%s' to method getIPPoolAllocationForNetwork" % key)
             params[key] = val
         del params['kwargs']
 
@@ -428,17 +425,14 @@ class IwanApi(object):
         files = {}
         bodyParam = None
 
-        headerParams['Accept'] = 'application/octet-stream'
-        headerParams['Content-Type'] = 'application/octet-stream,'
+        headerParams['Accept'] = 'application/json'
+        headerParams['Content-Type'] = 'application/json'
 
         
 
         
         if ('scope' in params):
             headerParams['scope'] = params['scope']
-        
-        if ('Accept' in params):
-            headerParams['Accept'] = params['Accept']
         
 
         
@@ -456,7 +450,7 @@ class IwanApi(object):
         if not response:
             return None
 
-        responseObject = self.apiClient.deserialize(response, 'list[str]')
+        responseObject = self.apiClient.deserialize(response, 'IPPoolAllocationListResult')
         return responseObject
         
         
@@ -560,68 +554,6 @@ class IwanApi(object):
         
         
     
-    def getIPPoolAllocationForNetwork(self, **kwargs):
-        """API to get IP address allocation details for the network
-
-        Args:
-            
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
-        
-        Returns: IPPoolAllocationListResult
-        """
-
-        allParams = ['scope']
-
-        params = locals()
-        for (key, val) in list(params['kwargs'].items()):
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method getIPPoolAllocationForNetwork" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/iwan/ippool-allocation'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'GET'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        files = {}
-        bodyParam = None
-
-        headerParams['Accept'] = 'application/json'
-        headerParams['Content-Type'] = 'application/json'
-
-        
-
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
-        
-
-        
-
-        
-
-        
-
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams, files=files)
-
-        
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'IPPoolAllocationListResult')
-        return responseObject
-        
-        
-        
-    
     def getIPPoolAllocationForSite(self, **kwargs):
         """API to get IP address allocation details for a site
 
@@ -688,74 +620,6 @@ class IwanApi(object):
             return None
 
         responseObject = self.apiClient.deserialize(response, 'IPPoolAllocationListResult')
-        return responseObject
-        
-        
-        
-    
-    def validateVlan(self, **kwargs):
-        """Validate IP address pool(s)
-
-        Args:
-            
-            ipAddressPoolDTO, list[GenericIpAddressPoolDTO]: GenericIpAddressPoolDTO object (required)
-            
-            
-            scope, str: Authorization Scope for RBAC (required)
-            
-            
-        
-        Returns: TaskIdResult
-        """
-
-        allParams = ['ipAddressPoolDTO', 'scope']
-
-        params = locals()
-        for (key, val) in list(params['kwargs'].items()):
-            if key not in allParams:
-                raise TypeError("Got an unexpected keyword argument '%s' to method validateVlan" % key)
-            params[key] = val
-        del params['kwargs']
-
-        resourcePath = '/iwan/ippool/validate'
-        resourcePath = resourcePath.replace('{format}', 'json')
-        method = 'POST'
-
-        queryParams = {}
-        headerParams = {}
-        formParams = {}
-        files = {}
-        bodyParam = None
-
-        headerParams['Accept'] = 'application/json'
-        headerParams['Content-Type'] = 'application/json'
-
-        
-
-        
-        if ('scope' in params):
-            headerParams['scope'] = params['scope']
-        
-
-        
-
-        
-
-        
-        if ('ipAddressPoolDTO' in params):
-            bodyParam = params['ipAddressPoolDTO']
-        
-
-        postData = (formParams if formParams else bodyParam)
-
-        response = self.apiClient.callAPI(resourcePath, method, queryParams,
-                                          postData, headerParams, files=files)
-
-        
-        if not response:
-            return None
-
-        responseObject = self.apiClient.deserialize(response, 'TaskIdResult')
         return responseObject
         
         

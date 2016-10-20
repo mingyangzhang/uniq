@@ -1,23 +1,23 @@
 {
+    "apiVersion": "1.0",
     "apis": [
         {
-            "description": "getRoles",
             "path": "/user/role",
             "operations": [
                 {
-                    "notes": "This method is used to get the list of roles",
+                    "method": "GET",
+                    "summary": "getRoles",
+                    "deprecated": "false",
                     "produces": [
                         "application/json"
                     ],
-                    "method": "GET",
-                    "deprecated": "false",
-                    "summary": "getRoles",
                     "parameters": [],
+                    "type": "RoleListResult",
                     "responseMessages": [
                         {
                             "code": 200,
-                            "responseModel": "RoleListResult",
-                            "message": "This Request is OK"
+                            "message": "This Request is OK",
+                            "responseModel": "RoleListResult"
                         },
                         {
                             "code": 403,
@@ -32,40 +32,18 @@
                             "message": "No Resource Found"
                         }
                     ],
-                    "nickname": "getRoles",
-                    "type": "RoleListResult"
+                    "notes": "This method is used to get the list of roles",
+                    "nickname": "getRoles"
                 }
-            ]
+            ],
+            "description": "getRoles"
         }
     ],
-    "basePath": "/",
     "produces": [
         "application/json"
     ],
-    "resourcePath": "/user/role",
     "models": {
-        "Role": {
-            "properties": {
-                "role": {
-                    "description": "User Role",
-                    "enum": [
-                        "ROLE_OBSERVER",
-                        " ROLE_ADMIN"
-                    ],
-                    "type": "string"
-                }
-            },
-            "description": "",
-            "extends": "",
-            "id": "Role",
-            "required": [
-                "role"
-            ]
-        },
         "RoleListResult": {
-            "description": "",
-            "extends": "",
-            "id": "RoleListResult",
             "properties": {
                 "response": {
                     "items": {
@@ -76,9 +54,31 @@
                 "version": {
                     "type": "string"
                 }
-            }
+            },
+            "extends": "",
+            "id": "RoleListResult",
+            "description": ""
+        },
+        "Role": {
+            "properties": {
+                "role": {
+                    "enum": [
+                        "ROLE_OBSERVER",
+                        " ROLE_ADMIN"
+                    ],
+                    "description": "User Role",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "role"
+            ],
+            "id": "Role",
+            "description": "",
+            "extends": ""
         }
     },
-    "apiVersion": "1.0",
-    "swaggerVersion": "1.2"
+    "swaggerVersion": "1.2",
+    "basePath": "/",
+    "resourcePath": "/user/role"
 }

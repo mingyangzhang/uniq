@@ -15,25 +15,25 @@ class EventTypeEnum(object):
         """
         self.swaggerTypes = {
             
-            'value': 'str',
+            'ordinal': 'int',
             
             
-            'ordinal': 'int'
+            'value': 'str'
             
         }
 
         self.attributeMap = {
             
-            'value': 'value',
+            'ordinal': 'ordinal',
             
-            'ordinal': 'ordinal'
+            'value': 'value'
             
         }       
 
         
         
-        self.value = None # str
-        
-        
         self.ordinal = None # int
+        
+        
+        self.value = None # str
         

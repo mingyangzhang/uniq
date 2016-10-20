@@ -14,73 +14,73 @@ class NetworkDeviceManagementInfo(object):
           attributeMap (dict): The key is attribute name and the value is json key in definition.
         """
         self.swaggerTypes = {
-
-            'family': 'str',
-
-
-            'hostname': 'str',
-
-            #changed this manually from 'object' to 'dict'
-            'credentials': 'dict',
-
-
-            'series': 'str',
-
-
-            'managementIpAddress': 'str',
-
-
+            
             'id': 'str',
-
-
-            'type': 'str'
-
+            
+            
+            'type': 'str',
+            
+            
+            'family': 'str',
+            
+            
+            'managementIpAddress': 'str',
+            
+            
+            'credentials': 'dict',
+            
+            
+            'series': 'str',
+            
+            
+            'hostname': 'str'
+            
         }
 
         self.attributeMap = {
-
-            'family': 'family',
-
-            'hostname': 'hostname',
-
-            'credentials': 'credentials',
-
-            'series': 'series',
-
-            'managementIpAddress': 'managementIpAddress',
-
+            
             'id': 'id',
+            
+            'type': 'type',
+            
+            'family': 'family',
+            
+            'managementIpAddress': 'managementIpAddress',
+            
+            'credentials': 'credentials',
+            
+            'series': 'series',
+            
+            'hostname': 'hostname'
+            
+        }       
 
-            'type': 'type'
-
-        }
-
-
-        #Family of device as switch, router, wireless lan controller, accesspoints
-
-        self.family = None # str
-
-        #Device name
-
-        self.hostname = None # str
-
-        #Credential info
-
-        self.credentials = None # dict #changed this manually from 'object' to 'dict'
-
-        #Device series
-
-        self.series = None # str
-
-        #IP address of the device
-
-        self.managementIpAddress = None # str
-
+        
         #Unique identifier of device
-
+        
         self.id = None # str
-
+        
         #Type of device as switch, router, wireless lan controller, accesspoints
-
+        
         self.type = None # str
-
+        
+        #Family of device as switch, router, wireless lan controller, accesspoints
+        
+        self.family = None # str
+        
+        #IP address of the device
+        
+        self.managementIpAddress = None # str
+        
+        #Credential info
+        
+        self.credentials = None # dict
+        
+        #Device series
+        
+        self.series = None # str
+        
+        #Device name
+        
+        self.hostname = None # str
+        

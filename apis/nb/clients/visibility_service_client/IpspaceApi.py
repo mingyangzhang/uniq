@@ -236,6 +236,9 @@ class IpspaceApi(object):
             globalSetting, IpAddressGlobalDTO: globalSetting (required)
             
             
+            scheduleAt, str: scheduleAt (required)
+            
+            
             scope, str: Authorization Scope for RBAC (required)
             
             
@@ -246,7 +249,7 @@ class IpspaceApi(object):
         Returns: TaskIdResult
         """
 
-        allParams = ['globalSetting', 'scope', 'username']
+        allParams = ['globalSetting', 'scheduleAt', 'scope', 'username']
 
         params = locals()
         for (key, val) in list(params['kwargs'].items()):
@@ -268,6 +271,9 @@ class IpspaceApi(object):
         headerParams['Accept'] = 'application/json'
         headerParams['Content-Type'] = 'application/json'
 
+        
+        if ('scheduleAt' in params):
+            queryParams['scheduleAt'] = self.apiClient.toPathValue(params['scheduleAt'])
         
 
         

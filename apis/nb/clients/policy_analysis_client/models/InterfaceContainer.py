@@ -15,27 +15,27 @@ class InterfaceContainer(object):
         """
         self.swaggerTypes = {
             
-            'physicalInterface': 'Interface',
+            'virtualInterface': 'list[Interface]',
             
             
-            'virtualInterface': 'list[Interface]'
+            'physicalInterface': 'Interface'
             
         }
 
         self.attributeMap = {
             
-            'physicalInterface': 'physicalInterface',
+            'virtualInterface': 'virtualInterface',
             
-            'virtualInterface': 'virtualInterface'
+            'physicalInterface': 'physicalInterface'
             
         }       
 
         
-        #ID of Physical interface on a device
-        
-        self.physicalInterface = None # Interface
-        
         #A list of Virtual interface IDs on a device
         
         self.virtualInterface = None # list[Interface]
+        
+        #ID of Physical interface on a device
+        
+        self.physicalInterface = None # Interface
         

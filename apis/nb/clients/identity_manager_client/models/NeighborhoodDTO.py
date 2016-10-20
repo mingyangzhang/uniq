@@ -15,54 +15,54 @@ class NeighborhoodDTO(object):
         """
         self.swaggerTypes = {
             
-            'description': 'str',
-            
-            
-            'listofScalableGroups': 'list[str]',
+            'type': 'str',
             
             
             'name': 'str',
             
             
+            'description': 'str',
+            
+            
             'id': 'str',
             
             
-            'type': 'str'
+            'listofScalableGroups': 'list[str]'
             
         }
 
         self.attributeMap = {
             
-            'description': 'description',
-            
-            'listofScalableGroups': 'listofScalableGroups',
+            'type': 'type',
             
             'name': 'name',
             
+            'description': 'description',
+            
             'id': 'id',
             
-            'type': 'type'
+            'listofScalableGroups': 'listofScalableGroups'
             
         }       
 
         
-        #Description of the group
+        #Isolation Property
         
-        self.description = None # str
-        
-        #List of Scalable Groups
-        
-        self.listofScalableGroups = None # list[str]
+        self.type = None # str
         
         #Neighborhood Name
         
         self.name = None # str
         
+        #Description of the group
+        
+        self.description = None # str
+        
         #UUID of the Neighborhood
         
         self.id = None # str
         
-        #Isolation Property
+        #List of Scalable Groups
         
-        self.type = None # str
+        self.listofScalableGroups = None # list[str]
         

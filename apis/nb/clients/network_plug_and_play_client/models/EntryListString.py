@@ -7,6 +7,7 @@
 class EntryListString(object):
 
 
+
     def __init__(self):
         """
         Attributes:
@@ -14,18 +15,18 @@ class EntryListString(object):
           attributeMap (dict): The key is attribute name and the value is json key in definition.
         """
         self.swaggerTypes = {
-            
+
             'key': 'list[str]'
 
         }
 
         self.attributeMap = {
-            
-            'key': 'key'
-            
-        }       
 
-        
-        
+            'key': 'key'
+
+        }
+
+
+
         self.key = None # list[str]
-        
+

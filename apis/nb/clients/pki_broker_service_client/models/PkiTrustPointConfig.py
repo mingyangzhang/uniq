@@ -30,21 +30,6 @@ class PkiTrustPointConfig(object):
             'iosCli': 'list[str]',
             
             
-            'iosSecureCli': 'list[str]',
-            
-            
-            'pkcs12Url': 'str',
-            
-            
-            'pkcs12Password': 'str',
-            
-            
-            'provisionType': 'str',
-            
-            
-            'sdnIp': 'str',
-            
-            
             'rsaKeySize': 'str',
             
             
@@ -66,7 +51,22 @@ class PkiTrustPointConfig(object):
             'caFingerprint': 'str',
             
             
-            'enrollThreshold': 'str'
+            'enrollThreshold': 'str',
+            
+            
+            'iosSecureCli': 'list[str]',
+            
+            
+            'pkcs12Url': 'str',
+            
+            
+            'pkcs12Password': 'str',
+            
+            
+            'provisionType': 'str',
+            
+            
+            'sdnIp': 'str'
             
         }
 
@@ -82,16 +82,6 @@ class PkiTrustPointConfig(object):
             
             'iosCli': 'iosCli',
             
-            'iosSecureCli': 'iosSecureCli',
-            
-            'pkcs12Url': 'pkcs12Url',
-            
-            'pkcs12Password': 'pkcs12Password',
-            
-            'provisionType': 'provisionType',
-            
-            'sdnIp': 'sdnIp',
-            
             'rsaKeySize': 'rsaKeySize',
             
             'fqdn': 'fqdn',
@@ -106,7 +96,17 @@ class PkiTrustPointConfig(object):
             
             'caFingerprint': 'caFingerprint',
             
-            'enrollThreshold': 'enrollThreshold'
+            'enrollThreshold': 'enrollThreshold',
+            
+            'iosSecureCli': 'iosSecureCli',
+            
+            'pkcs12Url': 'pkcs12Url',
+            
+            'pkcs12Password': 'pkcs12Password',
+            
+            'provisionType': 'provisionType',
+            
+            'sdnIp': 'sdnIp'
             
         }       
 
@@ -125,21 +125,6 @@ class PkiTrustPointConfig(object):
         
         
         self.iosCli = None # list[str]
-        
-        
-        self.iosSecureCli = None # list[str]
-        
-        
-        self.pkcs12Url = None # str
-        
-        
-        self.pkcs12Password = None # str
-        
-        
-        self.provisionType = None # str
-        
-        
-        self.sdnIp = None # str
         
         
         self.rsaKeySize = None # str
@@ -164,4 +149,19 @@ class PkiTrustPointConfig(object):
         
         
         self.enrollThreshold = None # str
+        
+        
+        self.iosSecureCli = None # list[str]
+        
+        
+        self.pkcs12Url = None # str
+        
+        
+        self.pkcs12Password = None # str
+        
+        
+        self.provisionType = None # str
+        
+        
+        self.sdnIp = None # str
         

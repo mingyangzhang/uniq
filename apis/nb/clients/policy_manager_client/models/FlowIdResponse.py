@@ -15,25 +15,25 @@ class FlowIdResponse(object):
         """
         self.swaggerTypes = {
             
-            'taskId': 'str',
+            'flowId': 'str',
             
             
-            'flowId': 'str'
+            'taskId': 'str'
             
         }
 
         self.attributeMap = {
             
-            'taskId': 'taskId',
+            'flowId': 'flowId',
             
-            'flowId': 'flowId'
+            'taskId': 'taskId'
             
         }       
 
         
         
-        self.taskId = None # str
-        
-        
         self.flowId = None # str
+        
+        
+        self.taskId = None # str
         

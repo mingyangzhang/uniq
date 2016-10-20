@@ -15,39 +15,31 @@ class IdentityAuthFileInfoDTO(object):
         """
         self.swaggerTypes = {
             
-            'fileId': 'str',
-            
-            
-            'fileType': 'str',
-            
-            
             'id': 'str',
             
             
-            'fileName': 'str'
+            'fileName': 'str',
+            
+            
+            'fileId': 'str',
+            
+            
+            'fileType': 'str'
             
         }
 
         self.attributeMap = {
             
-            'fileId': 'fileId',
-            
-            'fileType': 'fileType',
-            
             'id': 'id',
             
-            'fileName': 'fileName'
+            'fileName': 'fileName',
+            
+            'fileId': 'fileId',
+            
+            'fileType': 'fileType'
             
         }       
 
-        
-        #fileId
-        
-        self.fileId = None # str
-        
-        #fileType
-        
-        self.fileType = None # str
         
         #id
         
@@ -56,4 +48,12 @@ class IdentityAuthFileInfoDTO(object):
         #fileName
         
         self.fileName = None # str
+        
+        #fileId
+        
+        self.fileId = None # str
+        
+        #fileType
+        
+        self.fileType = None # str
         

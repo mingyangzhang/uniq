@@ -15,33 +15,33 @@ class IPPoolAllocationSuggestionDTO(object):
         """
         self.swaggerTypes = {
             
-            'totalNumberOfVlanIPs': 'int',
+            'vlanSingleSubnetPrefix': 'int',
             
             
             'genericPoolSubnetPrefix': 'int',
             
             
-            'vlanSingleSubnetPrefix': 'int'
+            'totalNumberOfVlanIPs': 'int'
             
         }
 
         self.attributeMap = {
             
-            'totalNumberOfVlanIPs': 'totalNumberOfVlanIPs',
+            'vlanSingleSubnetPrefix': 'vlanSingleSubnetPrefix',
             
             'genericPoolSubnetPrefix': 'genericPoolSubnetPrefix',
             
-            'vlanSingleSubnetPrefix': 'vlanSingleSubnetPrefix'
+            'totalNumberOfVlanIPs': 'totalNumberOfVlanIPs'
             
         }       
 
         
         
-        self.totalNumberOfVlanIPs = None # int
+        self.vlanSingleSubnetPrefix = None # int
         
         
         self.genericPoolSubnetPrefix = None # int
         
         
-        self.vlanSingleSubnetPrefix = None # int
+        self.totalNumberOfVlanIPs = None # int
         

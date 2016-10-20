@@ -15,16 +15,16 @@ class PolicyPreviewDTO(object):
         """
         self.swaggerTypes = {
             
-            'state': 'str',
+            'deviceConfigs': 'list[PolicyPreviewDeviceConfigDTO]',
             
             
             'policies': 'list[Policy]',
             
             
+            'state': 'str',
+            
+            
             'networkDeviceIds': 'list[str]',
-            
-            
-            'deviceConfigs': 'list[PolicyPreviewDeviceConfigDTO]',
             
             
             'id': 'str',
@@ -39,13 +39,13 @@ class PolicyPreviewDTO(object):
 
         self.attributeMap = {
             
-            'state': 'state',
+            'deviceConfigs': 'deviceConfigs',
             
             'policies': 'policies',
             
-            'networkDeviceIds': 'networkDeviceIds',
+            'state': 'state',
             
-            'deviceConfigs': 'deviceConfigs',
+            'networkDeviceIds': 'networkDeviceIds',
             
             'id': 'id',
             
@@ -56,21 +56,21 @@ class PolicyPreviewDTO(object):
         }       
 
         
-        #state
+        #list of preview device configs
         
-        self.state = None # str
+        self.deviceConfigs = None # list[PolicyPreviewDeviceConfigDTO]
         
         #list of policies
         
         self.policies = None # list[Policy]
         
-        #list of network device ids
+        #one of {DISABLE, ENABLE_DEVICE}
+        
+        self.state = None # str
+        
+        #list of network device ids, required when state is ENABLE_DEVICE
         
         self.networkDeviceIds = None # list[str]
-        
-        #list of preview device configs
-        
-        self.deviceConfigs = None # list[PolicyPreviewDeviceConfigDTO]
         
         #id
         

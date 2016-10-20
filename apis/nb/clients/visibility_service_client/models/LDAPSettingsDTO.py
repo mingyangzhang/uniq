@@ -21,16 +21,16 @@ class LDAPSettingsDTO(object):
             'username': 'str',
             
             
-            'groupAttribute': 'str',
-            
-            
-            'securityPrincipal': 'str',
-            
-            
             'ldapServerUrl': 'str',
             
             
-            'securityAuthentication': 'str'
+            'securityAuthentication': 'str',
+            
+            
+            'groupAttribute': 'str',
+            
+            
+            'securityPrincipal': 'str'
             
         }
 
@@ -40,13 +40,13 @@ class LDAPSettingsDTO(object):
             
             'username': 'username',
             
-            'groupAttribute': 'groupAttribute',
-            
-            'securityPrincipal': 'securityPrincipal',
-            
             'ldapServerUrl': 'ldapServerUrl',
             
-            'securityAuthentication': 'securityAuthentication'
+            'securityAuthentication': 'securityAuthentication',
+            
+            'groupAttribute': 'groupAttribute',
+            
+            'securityPrincipal': 'securityPrincipal'
             
         }       
 
@@ -58,14 +58,14 @@ class LDAPSettingsDTO(object):
         self.username = None # str
         
         
-        self.groupAttribute = None # str
-        
-        
-        self.securityPrincipal = None # str
-        
-        
         self.ldapServerUrl = None # str
         
         
         self.securityAuthentication = None # str
+        
+        
+        self.groupAttribute = None # str
+        
+        
+        self.securityPrincipal = None # str
         
