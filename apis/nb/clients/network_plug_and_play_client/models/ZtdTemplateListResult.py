@@ -4,8 +4,7 @@
 # LICENSE file in the root directory of this project.
 
 
-class EntryListString(object):
-
+class ZtdTemplateListResult(object):
 
 
     def __init__(self):
@@ -15,18 +14,26 @@ class EntryListString(object):
           attributeMap (dict): The key is attribute name and the value is json key in definition.
         """
         self.swaggerTypes = {
-
-            'key': 'list[str]'
-
+            
+            'version': 'str',
+            
+            
+            'response': 'list[ZtdTemplate]'
+            
         }
 
         self.attributeMap = {
+            
+            'version': 'version',
+            
+            'response': 'response'
+            
+        }       
 
-            'key': 'key'
-
-        }
-
-
-
-        self.key = None # list[str]
-
+        
+        
+        self.version = None # str
+        
+        
+        self.response = None # list[ZtdTemplate]
+        

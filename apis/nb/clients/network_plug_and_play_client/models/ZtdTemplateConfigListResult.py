@@ -1,11 +1,10 @@
-    #!/usr/bin/env python
+#!/usr/bin/env python
 #pylint: skip-file
 # This source code is licensed under the Apache license found in the
 # LICENSE file in the root directory of this project.
 
 
-class CountResult(object):
-
+class ZtdTemplateConfigListResult(object):
 
 
     def __init__(self):
@@ -15,26 +14,26 @@ class CountResult(object):
           attributeMap (dict): The key is attribute name and the value is json key in definition.
         """
         self.swaggerTypes = {
-
+            
             'version': 'str',
-
-
-            'response': 'int'
-
+            
+            
+            'response': 'list[ZtdTemplateConfig]'
+            
         }
 
         self.attributeMap = {
-
+            
             'version': 'version',
-
+            
             'response': 'response'
+            
+        }       
 
-        }
-
-
-
+        
+        
         self.version = None # str
-
-
-        self.response = None # int
-
+        
+        
+        self.response = None # list[ZtdTemplateConfig]
+        
